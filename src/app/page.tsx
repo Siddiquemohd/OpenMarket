@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAxios } from "@/providers/AxiosProvider";
 import {
   FaLinkedin,
   FaYoutube,
@@ -72,8 +73,10 @@ function WaitlistForm({
   formId: string;
   theme?: "green" | "navy";
 }) {
+  const axios = useAxios();
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const {
     register,
@@ -86,11 +89,20 @@ function WaitlistForm({
 
   const onSubmit = async (data: PhoneFormValues) => {
     setIsLoading(true);
-    // Simulate API request delay
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setIsLoading(false);
-    setIsSuccess(true);
-    reset();
+    setErrorMessage(null);
+    try {
+      await axios.post("/web/wishlist", {
+        number: data.phone,
+      });
+      setIsSuccess(true);
+      reset();
+    } catch (err: any) {
+      console.error("Error submitting to waitlist:", err);
+      const msg = err.response?.data?.message || err.message || "Something went wrong. Please try again.";
+      setErrorMessage(msg);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -118,6 +130,15 @@ function WaitlistForm({
                 className="text-sm font-semibold text-red-200 px-1"
               >
                 {errors.phone.message}
+              </motion.p>
+            )}
+            {errorMessage && (
+              <motion.p
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-sm font-semibold text-red-200 px-1"
+              >
+                {errorMessage}
               </motion.p>
             )}
 
@@ -153,7 +174,10 @@ function WaitlistForm({
               Thank you for joining. We will notify you as soon as the OpenMarket app is ready.
             </p>
             <button
-              onClick={() => setIsSuccess(false)}
+              onClick={() => {
+                setErrorMessage(null);
+                setIsSuccess(false);
+              }}
               className="mt-4 text-xs font-semibold text-white underline underline-offset-4 opacity-80 hover:opacity-100"
             >
               Register another number
