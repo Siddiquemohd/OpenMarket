@@ -35,7 +35,12 @@ import {
   FiCheckSquare,
   FiLayers,
   FiAward,
-  FiCamera
+  FiCamera,
+  FiCheckCircle,
+  FiXCircle,
+  FiUserMinus,
+  FiUser,
+  FiSliders
 } from "react-icons/fi";
 
 // Validation schema for the mobile number
@@ -48,6 +53,39 @@ const phoneSchema = z.object({
 });
 
 type PhoneFormValues = z.infer<typeof phoneSchema>;
+
+// Reusable LogoCheckmark SVG component
+function LogoCheckmark({
+  className = "",
+  size = 20,
+  checkColor = "#0B3C5F",
+  circleColor = "#0FA958",
+}: {
+  className?: string;
+  size?: number;
+  checkColor?: string;
+  circleColor?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <circle cx="12" cy="12" r="9" stroke={circleColor} strokeWidth="2" fill="none" />
+      <path
+        d="M8 12L11 15L16.5 9"
+        stroke={checkColor}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 // Logo Component using logo.png from the public folder
 function Logo() {
@@ -282,15 +320,20 @@ export default function Home() {
 
             {/* Left Hero Text Content */}
             <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="flex flex-col">
+              <div className="flex flex-col gap-3">
+                <div className="self-start px-3 py-1 bg-brand-dark-green/10 rounded-full border border-brand-dark-green/20 text-brand-dark-green text-xs font-black tracking-wider uppercase">
+                  A BETTER WAY FOR B2B TRADE
+                </div>
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]"
+                  className="text-5xl md:text-6xl lg:text-[68px] font-extrabold tracking-tight leading-[1.05] text-brand-navy"
                 >
-                  <span className="text-brand-navy block">FAIR TRADE</span>
-                  <span className="text-brand-green block mt-1">IS BROKEN.</span>
+                  <span className="block">EXISTING B2B</span>
+                  <span className="block mt-1">MARKETPLACES</span>
+                  <span className="text-brand-green block mt-1">ARE UNFAIR</span>
+                  <span className="text-brand-green block mt-1">AND BROKEN.</span>
                 </motion.h1>
               </div>
 
@@ -298,11 +341,11 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-lg md:text-xl font-medium text-slate-600 max-w-xl leading-relaxed"
+                className="text-lg md:text-xl font-bold text-brand-navy/80 max-w-xl leading-relaxed"
               >
-                The current system rewards who pays the most,
+                They reward who pays the most,
                 <br />
-                <span className="text-brand-green font-bold">not</span> who serves the best.
+                <span className="text-brand-green font-black">not</span> who serves the best.
               </motion.p>
 
               {/* Hero Pain Points Bullet List */}
@@ -319,8 +362,8 @@ export default function Home() {
                   "Trust Deficit",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full bg-brand-green text-white">
-                      <FiX size={12} className="stroke-[3]" />
+                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-brand-green text-brand-green">
+                      <FiX size={10} className="stroke-[3.5]" />
                     </span>
                     <span className="text-base font-bold text-brand-navy">{item}</span>
                   </div>
@@ -331,37 +374,61 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-base font-semibold text-brand-green max-w-lg leading-relaxed mt-2"
+                className="text-base font-medium text-slate-700 max-w-lg leading-relaxed mt-2"
               >
-                OpenMarket is building a fair marketplace where visibility is earned through activity, engagement, trust and contribution.
+                <span className="text-brand-green font-extrabold">OpenMarket</span> is building a fair <span className="text-brand-navy font-extrabold">B2B marketplace</span> where visibility is earned through activity, engagement, trust and contribution.
               </motion.p>
             </div>
 
-            {/* Right Hero Image (Broken Metal Chain) */}
+            {/* Right Hero Image & 4 Badges */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ 
-                  opacity: 1, 
-                  scale: 1,
-                  y: [0, -10, 0]
-                }}
-                transition={{ 
-                  opacity: { duration: 0.8 },
-                  scale: { duration: 0.8 },
-                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                }}
-                className="relative w-full max-w-[450px] aspect-square flex items-center justify-center"
-              >
-                <Image
-                  src="/broken_chain_v2.png"
-                  alt="Metal chain breaking apart, symbolic of broken fair trade"
-                  width={450}
-                  height={450}
-                  priority
-                  className="object-contain hover:scale-102 transition-transform duration-500"
-                />
-              </motion.div>
+              <div className="flex flex-col items-center gap-6 w-full max-w-[450px]">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    y: [0, -10, 0]
+                  }}
+                  transition={{ 
+                    opacity: { duration: 0.8 },
+                    scale: { duration: 0.8 },
+                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                  }}
+                  className="relative w-full aspect-square flex items-center justify-center"
+                >
+                  <Image
+                    src="/broken_chain_v2.png"
+                    alt="Metal chain breaking apart, symbolic of broken fair trade"
+                    width={450}
+                    height={450}
+                    priority
+                    className="object-contain hover:scale-102 transition-transform duration-500"
+                  />
+                </motion.div>
+
+                {/* 4 Badges Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="w-full bg-white border border-slate-100 rounded-2xl shadow-md p-4 grid grid-cols-4 gap-2 text-center"
+                >
+                  {[
+                    "For Businesses.",
+                    "By Businesses.",
+                    "Built on Trust.",
+                    "Designed for Growth.",
+                  ].map((badgeText, idx) => (
+                    <div key={idx} className="flex flex-col items-center gap-2 border-r last:border-r-0 border-slate-100 px-1 py-1">
+                      <LogoCheckmark size={22} className="flex-shrink-0" />
+                      <span className="text-[10px] sm:text-[11px] font-black text-brand-navy leading-tight">
+                        {badgeText}
+                      </span>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
 
@@ -379,8 +446,8 @@ export default function Home() {
             <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Box Left Side */}
               <div className="lg:col-span-7 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-brand-green text-white shadow-md">
-                  <FaUsers size={28} />
+                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md">
+                  <LogoCheckmark size={32} />
                 </div>
                 <div className="flex flex-col gap-2">
                   <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -397,14 +464,14 @@ export default function Home() {
                 <WaitlistForm formId="waitlist-top" theme="green" />
 
                 {/* Features tags below input */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-semibold text-white/90 tracking-wide mt-2">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-bold text-white/90 tracking-wide mt-2">
                   <div className="flex items-center gap-1.5">
-                    <FiShield size={14} className="text-white" />
+                    <FiCheckCircle size={14} className="text-white" />
                     <span>No Spam</span>
                   </div>
                   <span className="hidden sm:inline text-white/20">|</span>
                   <div className="flex items-center gap-1.5">
-                    <FiSlash size={14} className="text-white rotate-90" />
+                    <FiXCircle size={14} className="text-white" />
                     <span>No Advertisements</span>
                   </div>
                   <span className="hidden sm:inline text-white/20">|</span>
@@ -414,6 +481,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Founding Members Note at the Bottom */}
+            <div className="relative flex items-center justify-center gap-2 text-sm font-bold text-white/95 mt-8 pt-4 border-t border-white/10 w-full">
+              <FaUsers size={18} className="text-white/80" />
+              <span>
+                Limited to the first <span className="text-brand-green font-black">1,000</span> founding members.
+              </span>
             </div>
           </motion.div>
         </section>
@@ -436,34 +511,54 @@ export default function Home() {
                   <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-green/10 text-brand-green">
                     <FaStore size={22} />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-extrabold tracking-tight">
-                    <span className="text-brand-green block">WHAT SELLERS</span>
-                    <span className="text-brand-navy block">ARE FACING</span>
+                  <h3 className="text-lg md:text-xl font-extrabold tracking-tight text-brand-navy">
+                    WHAT <span className="text-brand-green font-black">SELLERS</span> ARE FACING
                   </h3>
                 </div>
 
-                 <ul className="flex flex-col gap-4 flex-grow">
+                 <ul className="flex flex-col gap-6 flex-grow">
                   {[
-                    { text: "90% of enquiries are useless", icon: <FiMessageSquare size={20} className="text-brand-green flex-shrink-0 mt-0.5" /> },
-                    { text: "Same enquiry to multiple sellers", icon: <FiCheckSquare size={20} className="text-brand-green flex-shrink-0 mt-0.5" /> },
-                    { text: "Membership fees keep increasing", icon: <FiLayers size={20} className="text-brand-green flex-shrink-0 mt-0.5" /> },
-                    { text: "Basic membership feels worthless", icon: <FiAward size={20} className="text-brand-green flex-shrink-0 mt-0.5" /> },
+                    {
+                      title: "90% of enquiries are useless",
+                      desc: "Most enquiries never become business.",
+                      icon: <FiMessageSquare size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                    },
+                    {
+                      title: "Same enquiry to multiple sellers",
+                      desc: "Leading to price wars instead of genuine opportunities.",
+                      icon: <FiCheckCircle size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                    },
+                    {
+                      title: "Membership fees keep increasing",
+                      desc: "Pay more every year for little additional value.",
+                      icon: <FiCheckCircle size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                    },
+                    {
+                      title: "Basic membership feels worthless",
+                      desc: "The best opportunities often go to the highest bidder.",
+                      icon: <FiSliders size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                    },
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3.5 group">
                       {item.icon}
-                      <span className="text-base font-bold text-brand-navy/90 group-hover:translate-x-1 transition-transform">
-                        {item.text}
-                      </span>
+                      <div className="flex flex-col">
+                        <span className="text-base font-extrabold text-brand-navy">
+                          {item.title}
+                        </span>
+                        <span className="text-xs font-bold text-slate-500 mt-0.5 leading-relaxed">
+                          {item.desc}
+                        </span>
+                      </div>
                     </li>
                   ))}
                 </ul>
 
                 <a
                   href="#waitlist-banner"
-                  className="flex items-center gap-2 text-brand-green font-bold hover:text-brand-dark-green transition-colors mt-4 self-start group"
+                  className="flex items-center gap-2 text-brand-green font-bold hover:text-brand-dark-green transition-colors mt-4 self-start group text-sm"
                 >
                   Learn more
-                  <FaArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </motion.div>
 
@@ -480,34 +575,54 @@ export default function Home() {
                   <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-navy/10 text-brand-navy">
                     <FaShoppingCart size={22} />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-extrabold tracking-tight">
-                    <span className="text-brand-navy block">WHAT BUYERS</span>
-                    <span className="text-brand-navy block">ARE FACING</span>
+                  <h3 className="text-lg md:text-xl font-extrabold tracking-tight text-brand-navy">
+                    WHAT <span className="text-brand-navy font-black">BUYERS</span> ARE FACING
                   </h3>
                 </div>
 
-                 <ul className="flex flex-col gap-4 flex-grow">
+                 <ul className="flex flex-col gap-6 flex-grow">
                   {[
-                    { text: "Fraud sellers damage trust", icon: <FiCamera size={20} className="text-brand-navy flex-shrink-0 mt-0.5" /> },
-                    { text: "Difficult to find genuine suppliers", icon: <FiActivity size={20} className="text-brand-navy flex-shrink-0 mt-0.5" /> },
-                    { text: "Difficult to find active suppliers", icon: <FiSearch size={20} className="text-brand-navy flex-shrink-0 mt-0.5" /> },
-                    { text: "Too many choices. Too little clarity.", icon: <FiBell size={20} className="text-brand-navy flex-shrink-0 mt-0.5" /> },
+                    {
+                      title: "Fraud sellers damage trust",
+                      desc: "A few bad actors make it harder for.",
+                      icon: <FiUserMinus size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                    },
+                    {
+                      title: "Difficult to find genuine suppliers",
+                      desc: "Trustworthy suppliers are difficult to identify.",
+                      icon: <FiUser size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                    },
+                    {
+                      title: "Difficult to find active suppliers",
+                      desc: "Many listings are inactive or unresponsive.",
+                      icon: <FiCheckCircle size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                    },
+                    {
+                      title: "Too many choices. Too little clarity.",
+                      desc: "Hundreds of suppliers. Very little transparency.",
+                      icon: <FiShield size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                    },
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3.5 group">
                       {item.icon}
-                      <span className="text-base font-bold text-brand-navy/90 group-hover:translate-x-1 transition-transform">
-                        {item.text}
-                      </span>
+                      <div className="flex flex-col">
+                        <span className="text-base font-extrabold text-brand-navy">
+                          {item.title}
+                        </span>
+                        <span className="text-xs font-bold text-slate-500 mt-0.5 leading-relaxed">
+                          {item.desc}
+                        </span>
+                      </div>
                     </li>
                   ))}
                 </ul>
 
                 <a
                   href="#waitlist-banner"
-                  className="flex items-center gap-2 text-brand-navy font-bold hover:text-slate-700 transition-colors mt-4 self-start group"
+                  className="flex items-center gap-2 text-brand-navy font-bold hover:text-slate-700 transition-colors mt-4 self-start group text-sm"
                 >
                   Learn more
-                  <FaArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </motion.div>
 
@@ -530,28 +645,23 @@ export default function Home() {
               {[
                 {
                   title: "Visibility Cannot Be Bought",
-                  desc: "Rankings based on activity, engagement and reputation.",
-                  icon: <FiShield size={24} />,
+                  desc: "Rankings based on activity,\nengagement, trust and\ncontribution. Not\nadvertising budgets.",
                 },
                 {
                   title: "Leads Not Diverted to Highest Bidder",
-                  desc: "Relevant businesses get fair visibility.",
-                  icon: <FaUsers size={24} />,
+                  desc: "Relevant businesses\nget fair visibility.",
                 },
                 {
                   title: "Reputation Over Advertising",
-                  desc: "Trust and performance matter more than spending.",
-                  icon: <FaStar size={24} />,
+                  desc: "Trust and performance\nmatter more\nthan spending.",
                 },
                 {
                   title: "Active Businesses Get Better Visibility",
-                  desc: "Buyers find suppliers who are actually ready to serve.",
-                  icon: <FaChartLine size={24} />,
+                  desc: "Buyers find suppliers\nwho are actually\nready to serve.",
                 },
                 {
                   title: "Built By The Community",
-                  desc: "For businesses. By businesses.",
-                  icon: <FaUsers size={24} />,
+                  desc: "For businesses.\nBy businesses.",
                 },
               ].map((benefit, index) => (
                 <motion.div
@@ -564,14 +674,12 @@ export default function Home() {
                   className="flex flex-col items-center text-center p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green/30 hover:bg-brand-light-green transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-full bg-brand-light-green flex items-center justify-center mb-5 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                    {cloneElement(benefit.icon, {
-                      className: "text-brand-green group-hover:text-brand-navy transition-colors duration-300"
-                    })}
+                    <LogoCheckmark size={24} className="group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <h4 className="text-base font-extrabold text-brand-navy leading-tight mb-2 min-h-[40px] flex items-center justify-center">
                     {benefit.title}
                   </h4>
-                  <p className="text-sm font-semibold text-slate-500 leading-relaxed">
+                  <p className="text-sm font-semibold text-slate-500 leading-relaxed whitespace-pre-line">
                     {benefit.desc}
                   </p>
                 </motion.div>
@@ -628,26 +736,26 @@ export default function Home() {
                   <p>
                     OpenMarket is my commitment to building a transparent, community-driven marketplace where businesses can connect with confidence and grow fairly.
                   </p>
-                  <p className="text-brand-navy">
+                  <p>
                     This journey begins with the first 1,000 businesses who believe change is possible.
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-slate-200 mt-2">
                   <div className="flex flex-col">
-                    <span className="text-brand-navy font-black tracking-wide text-base">KIRAN PAILWAN</span>
-                    <span className="text-brand-green font-bold text-xs uppercase tracking-wider">Founder, OpenMarket</span>
+                    <span className="text-brand-navy font-black tracking-wide text-base">— KIRAN PAILWAN</span>
+                    <span className="text-brand-green font-black tracking-wider text-xs uppercase mt-0.5">FOUNDER, OPENMARKET</span>
                   </div>
 
                   <a
                     href="https://linkedin.com/in/kiranpailwan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0077B5] hover:bg-[#006295] text-white font-bold text-sm transition-colors self-start shadow-sm group"
+                    className="flex items-center gap-2 text-[#0077B5] hover:text-[#005a8a] font-extrabold text-sm transition-colors group self-start sm:self-center"
                   >
-                    <FaLinkedin size={18} />
+                    <FaLinkedin size={18} className="text-[#0077B5]" />
                     <span>Connect on Linkedin</span>
-                    <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                    <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
                   </a>
                 </div>
               </motion.div>
@@ -669,8 +777,8 @@ export default function Home() {
 
               {/* Left Column: CTA Headline */}
               <div className="lg:col-span-7 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-[#097B3E] text-white shadow-inner">
-                  <FaUsers size={28} />
+                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md">
+                  <LogoCheckmark size={32} />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">
@@ -709,31 +817,31 @@ export default function Home() {
             <span>Vashi, Navi Mumbai | Hadapsar, Pune</span>
             <a
               href="mailto:hello@openmarket.co.in"
-              className="text-brand-green hover:underline font-bold mt-1"
+              className="text-[#0077B5] hover:underline font-bold mt-1"
             >
               hello@openmarket.co.in
             </a>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-100 text-[#0077B5] hover:bg-slate-200 transition-colors flex items-center justify-center shadow-sm"
+              className="text-[#0B3C5F] hover:text-brand-green transition-colors"
               aria-label="LinkedIn"
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin size={28} />
             </a>
             <a
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-slate-100 text-[#FF0000] hover:bg-slate-200 transition-colors flex items-center justify-center shadow-sm"
+              className="text-[#0B3C5F] hover:text-brand-green transition-colors"
               aria-label="YouTube"
             >
-              <FaYoutube size={20} />
+              <FaYoutube size={32} />
             </a>
           </div>
 
