@@ -9,7 +9,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useAxios } from "@/providers/AxiosProvider";
 import {
   FaLinkedin,
-  FaYoutube,
   FaPhoneAlt,
   FaArrowRight,
   FaCheck,
@@ -18,6 +17,7 @@ import {
   FaStar,
   FaStore,
   FaShoppingCart,
+  FaWhatsapp,
 } from "react-icons/fa";
 import {
   FiMenu,
@@ -40,7 +40,10 @@ import {
   FiXCircle,
   FiUserMinus,
   FiUser,
-  FiSliders
+  FiSliders,
+  FiTarget,
+  FiUsers,
+  FiBriefcase
 } from "react-icons/fi";
 
 // Validation schema for the mobile number
@@ -90,12 +93,12 @@ function LogoCheckmark({
 // Logo Component using logo.png from the public folder
 function Logo() {
   return (
-    <div className="relative w-[180px] h-[40px] flex-shrink-0">
+    <div className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
       <Image
         src="/logo.png"
         alt="OpenMarket Logo"
         fill
-        sizes="180px"
+        sizes="230px"
         priority
         className="object-contain object-left"
       />
@@ -385,12 +388,12 @@ export default function Home() {
               <div className="flex flex-col items-center gap-6 w-full max-w-[450px]">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ 
-                    opacity: 1, 
+                  animate={{
+                    opacity: 1,
                     scale: 1,
                     y: [0, -10, 0]
                   }}
-                  transition={{ 
+                  transition={{
                     opacity: { duration: 0.8 },
                     scale: { duration: 0.8 },
                     y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
@@ -412,18 +415,18 @@ export default function Home() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="w-full bg-white border border-slate-100 rounded-2xl shadow-md p-4 grid grid-cols-4 gap-2 text-center"
+                  className="w-full bg-white border border-slate-200 rounded-2xl shadow-md p-4 grid grid-cols-4 gap-2 text-center"
                 >
                   {[
-                    "For Businesses.",
-                    "By Businesses.",
-                    "Built on Trust.",
-                    "Designed for Growth.",
-                  ].map((badgeText, idx) => (
-                    <div key={idx} className="flex flex-col items-center gap-2 border-r last:border-r-0 border-slate-100 px-1 py-1">
-                      <LogoCheckmark size={22} className="flex-shrink-0" />
+                    { text: "For Businesses.", icon: <FiBriefcase size={22} className="text-[#0FA958] flex-shrink-0" /> },
+                    { text: "By Businesses.", icon: <FiUsers size={22} className="text-[#0FA958] flex-shrink-0" /> },
+                    { text: "Built on Trust.", icon: <FiShield size={22} className="text-[#0FA958] flex-shrink-0" /> },
+                    { text: "Designed for Growth.", icon: <FiTrendingUp size={22} className="text-[#0FA958] flex-shrink-0" /> },
+                  ].map((badge, idx) => (
+                    <div key={idx} className="flex flex-col items-center gap-2 border-r last:border-r-0 border-slate-200 px-1 py-1">
+                      {badge.icon}
                       <span className="text-[10px] sm:text-[11px] font-black text-brand-navy leading-tight">
-                        {badgeText}
+                        {badge.text}
                       </span>
                     </div>
                   ))}
@@ -442,7 +445,7 @@ export default function Home() {
           >
             {/* Background absolute decor circle */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
-            
+
             <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Box Left Side */}
               <div className="lg:col-span-7 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
@@ -505,47 +508,47 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -8, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
-                className="bg-brand-light-green border border-emerald-100/60 rounded-3xl p-8 md:p-10 flex flex-col gap-8 shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-brand-light-green border border-emerald-100/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-green/10 text-brand-green">
-                    <FaStore size={22} />
+                  <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-green/10 text-brand-green">
+                    <FaStore size={26} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-extrabold tracking-tight text-brand-navy">
+                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
                     WHAT <span className="text-brand-green font-black">SELLERS</span> ARE FACING
                   </h3>
                 </div>
 
-                 <ul className="flex flex-col gap-6 flex-grow">
+                <ul className="flex flex-col gap-8 flex-grow">
                   {[
                     {
                       title: "90% of enquiries are useless",
                       desc: "Most enquiries never become business.",
-                      icon: <FiMessageSquare size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                      icon: <FiMessageSquare size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
                     },
                     {
                       title: "Same enquiry to multiple sellers",
                       desc: "Leading to price wars instead of genuine opportunities.",
-                      icon: <FiCheckCircle size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                      icon: <FiCheckCircle size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
                     },
                     {
                       title: "Membership fees keep increasing",
                       desc: "Pay more every year for little additional value.",
-                      icon: <FiCheckCircle size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                      icon: <FiCheckCircle size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
                     },
                     {
                       title: "Basic membership feels worthless",
                       desc: "The best opportunities often go to the highest bidder.",
-                      icon: <FiSliders size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                      icon: <FiSliders size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
                     },
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3.5 group">
+                    <li key={idx} className="flex items-start gap-4 group">
                       {item.icon}
                       <div className="flex flex-col">
-                        <span className="text-base font-extrabold text-brand-navy">
+                        <span className="text-lg font-black text-brand-navy">
                           {item.title}
                         </span>
-                        <span className="text-xs font-bold text-slate-500 mt-0.5 leading-relaxed">
+                        <span className="text-[13.5px] font-semibold text-slate-500 mt-1 leading-relaxed">
                           {item.desc}
                         </span>
                       </div>
@@ -564,52 +567,53 @@ export default function Home() {
 
               {/* Right Column: Buyers Card */}
               <motion.div
+                id="buyers"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -8, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
-                className="bg-brand-light-blue border border-blue-100/60 rounded-3xl p-8 md:p-10 flex flex-col gap-8 shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-brand-light-blue border border-blue-100/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300 scroll-mt-24"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-brand-navy/10 text-brand-navy">
-                    <FaShoppingCart size={22} />
+                  <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-navy/10 text-brand-navy">
+                    <FaShoppingCart size={26} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-extrabold tracking-tight text-brand-navy">
+                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
                     WHAT <span className="text-brand-navy font-black">BUYERS</span> ARE FACING
                   </h3>
                 </div>
 
-                 <ul className="flex flex-col gap-6 flex-grow">
+                <ul className="flex flex-col gap-8 flex-grow">
                   {[
                     {
                       title: "Fraud sellers damage trust",
                       desc: "A few bad actors make it harder for.",
-                      icon: <FiUserMinus size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                      icon: <FiUserMinus size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
                     },
                     {
                       title: "Difficult to find genuine suppliers",
                       desc: "Trustworthy suppliers are difficult to identify.",
-                      icon: <FiUser size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                      icon: <FiUser size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
                     },
                     {
                       title: "Difficult to find active suppliers",
                       desc: "Many listings are inactive or unresponsive.",
-                      icon: <FiCheckCircle size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                      icon: <FiCheckCircle size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
                     },
                     {
                       title: "Too many choices. Too little clarity.",
                       desc: "Hundreds of suppliers. Very little transparency.",
-                      icon: <FiShield size={20} className="text-brand-navy flex-shrink-0 mt-1" />
+                      icon: <FiShield size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
                     },
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3.5 group">
+                    <li key={idx} className="flex items-start gap-4 group">
                       {item.icon}
                       <div className="flex flex-col">
-                        <span className="text-base font-extrabold text-brand-navy">
+                        <span className="text-lg font-black text-brand-navy">
                           {item.title}
                         </span>
-                        <span className="text-xs font-bold text-slate-500 mt-0.5 leading-relaxed">
+                        <span className="text-[13.5px] font-semibold text-slate-500 mt-1 leading-relaxed">
                           {item.desc}
                         </span>
                       </div>
@@ -646,22 +650,27 @@ export default function Home() {
                 {
                   title: "Visibility Cannot Be Bought",
                   desc: "Rankings based on activity,\nengagement, trust and\ncontribution. Not\nadvertising budgets.",
+                  icon: <FiShield size={24} />,
                 },
                 {
                   title: "Leads Not Diverted to Highest Bidder",
                   desc: "Relevant businesses\nget fair visibility.",
+                  icon: <FiTarget size={24} />,
                 },
                 {
                   title: "Reputation Over Advertising",
                   desc: "Trust and performance\nmatter more\nthan spending.",
+                  icon: <FiAward size={24} />,
                 },
                 {
                   title: "Active Businesses Get Better Visibility",
                   desc: "Buyers find suppliers\nwho are actually\nready to serve.",
+                  icon: <FiActivity size={24} />,
                 },
                 {
                   title: "Built By The Community",
                   desc: "For businesses.\nBy businesses.",
+                  icon: <FiUsers size={24} />,
                 },
               ].map((benefit, index) => (
                 <motion.div
@@ -674,7 +683,9 @@ export default function Home() {
                   className="flex flex-col items-center text-center p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green/30 hover:bg-brand-light-green transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-full bg-brand-light-green flex items-center justify-center mb-5 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                    <LogoCheckmark size={24} className="group-hover:scale-110 transition-transform duration-300" />
+                    {cloneElement(benefit.icon, {
+                      className: "text-brand-green group-hover:text-brand-navy transition-colors duration-300"
+                    })}
                   </div>
                   <h4 className="text-base font-extrabold text-brand-navy leading-tight mb-2 min-h-[40px] flex items-center justify-center">
                     {benefit.title}
@@ -704,7 +715,7 @@ export default function Home() {
                   className="relative max-w-[280px] w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-white"
                 >
                   <Image
-                    src="/founder.png"
+                    src="/founder.jpeg"
                     alt="Kiran Pailwan - Founder, OpenMarket"
                     fill
                     sizes="(max-w-768px) 100vw, 280px"
@@ -748,7 +759,7 @@ export default function Home() {
                   </div>
 
                   <a
-                    href="https://linkedin.com/in/kiranpailwan"
+                    href="https://www.linkedin.com/in/kiranpailwan/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-[#0077B5] hover:text-[#005a8a] font-extrabold text-sm transition-colors group self-start sm:self-center"
@@ -804,16 +815,15 @@ export default function Home() {
 
       </main>
 
-      {/* 8. Footer */}
       <footer className="bg-white border-t border-slate-100 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 lg:gap-36">
 
           {/* Logo & Tagline */}
           <Logo />
 
           {/* Contact & Copyright Info */}
           <div className="text-center text-xs font-semibold text-slate-500 leading-relaxed flex flex-col gap-1">
-            <span>© 2026 Uneefy Infratech Pvt. Ltd.</span>
+            <span>© 2026 Uneefy Intratech Pvt. Ltd.</span>
             <span>Vashi, Navi Mumbai | Hadapsar, Pune</span>
             <a
               href="mailto:hello@openmarket.co.in"
@@ -823,30 +833,19 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-6">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#0B3C5F] hover:text-brand-green transition-colors"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={28} />
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#0B3C5F] hover:text-brand-green transition-colors"
-              aria-label="YouTube"
-            >
-              <FaYoutube size={32} />
-            </a>
-          </div>
-
         </div>
       </footer>
+
+      {/* Floating WhatsApp Widget */}
+      <a
+        href="https://wa.me/918108359977"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed left-6 bottom-6 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group font-bold text-sm shadow-[#25D366]/30 hover:shadow-[#25D366]/50 border border-[#25D366]/20 font-sans"
+      >
+        <FaWhatsapp size={20} className="text-white" />
+        <span className="tracking-wide">+91 81083 59977</span>
+      </a>
     </div>
   );
 }
