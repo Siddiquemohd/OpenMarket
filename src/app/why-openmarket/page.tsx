@@ -275,10 +275,10 @@ export default function WhyOpenMarket() {
                     <FaLockOpen className="text-brand-green text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-green mb-0.5">
                       Open
                     </h4>
-                    <p className="text-[14px] lg:text-[15px] font-medium text-slate-800 leading-relaxed max-w-[210px] lg:max-w-[240px]">
+                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-slate-600 leading-relaxed max-w-[210px] lg:max-w-[240px]">
                       Transparent and accessible for all businesses.
                     </p>
                   </div>
@@ -293,10 +293,10 @@ export default function WhyOpenMarket() {
                     <FaBalanceScale className="text-brand-navy text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-[23px] font-extrabold text-[#0B3C5F] mb-1">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-[#0B3C5F] mb-0.5">
                       Fair
                     </h4>
-                    <p className="text-[14px] lg:text-[15px] font-medium text-slate-800 leading-relaxed max-w-[210px] lg:max-w-[240px]">
+                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-slate-600 leading-relaxed max-w-[210px] lg:max-w-[240px]">
                       Success should not depend on advertising budgets.
                     </p>
                   </div>
@@ -311,10 +311,10 @@ export default function WhyOpenMarket() {
                     <FaHandshake className="text-brand-green text-[50px] lg:text-[64px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-green mb-0.5">
                       Community Driven
                     </h4>
-                    <p className="text-[14px] lg:text-[15px] font-medium text-slate-800 leading-relaxed max-w-[190px] lg:max-w-[230px]">
+                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-slate-600 leading-relaxed max-w-[190px] lg:max-w-[230px]">
                       Built with sellers and buyers, not for them.
                     </p>
                   </div>
