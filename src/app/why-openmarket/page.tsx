@@ -271,10 +271,10 @@ export default function WhyOpenMarket() {
           </div>
         </section>
 
-        {/* 2. Mission Section (Rounded Card and Three Pillars) */}
+        {/* 2. Mission Section (Rounded Card and Three Pillars in one unified layout) */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm mb-10 flex flex-col items-center text-center">
+            <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col items-center text-center">
               
               {/* Centered label with horizontal lines */}
               <div className="flex items-center gap-4 w-full max-w-xl mb-4">
@@ -285,37 +285,62 @@ export default function WhyOpenMarket() {
                 <div className="flex-grow h-[1.5px] bg-brand-green/30" />
               </div>
               
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-navy tracking-tight max-w-2xl leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-navy tracking-tight max-w-3xl leading-tight mb-4">
                 To build India’s most trusted B2B marketplace.
               </h2>
-              <p className="text-xs md:text-sm font-semibold text-slate-500 max-w-3xl leading-relaxed">
+              <p className="text-xs md:text-sm font-semibold text-slate-500 max-w-3xl leading-relaxed mb-10">
                 A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
               </p>
-            </div>
 
-            {/* Three Mission Items Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <MissionCard
-                title="Open"
-                desc="Transparent and accessible for all businesses."
-                icon={<FaLock size={20} className="text-brand-green" />}
-                iconBgClass="bg-brand-light-green text-brand-green"
-                titleColorClass="text-brand-green"
-              />
-              <MissionCard
-                title="Fair"
-                desc="Success should not depend on advertising budgets."
-                icon={<FaBalanceScale size={20} className="text-[#0B3C5F]" />}
-                iconBgClass="bg-brand-light-blue text-[#0B3C5F]"
-                titleColorClass="text-brand-navy"
-              />
-              <MissionCard
-                title="Community Driven"
-                desc="Built with sellers and buyers, not for them."
-                icon={<FaHandshake size={24} className="text-brand-green" />}
-                iconBgClass="bg-brand-light-green text-brand-green"
-                titleColorClass="text-brand-green"
-              />
+              {/* Three Mission Items Grid - Row layout with vertical separators */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-left pt-2">
+                
+                {/* Item 1: Open */}
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-brand-light-green text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <FaLock size={22} className="text-brand-green" />
+                  </div>
+                  <div className="flex flex-col">
+                    <h4 className="text-[17px] font-extrabold text-brand-green mb-0.5">
+                      Open
+                    </h4>
+                    <p className="text-xs md:text-sm font-semibold text-slate-500 leading-normal max-w-[200px]">
+                      Transparent and accessible for all businesses.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 2: Fair */}
+                <div className="flex items-center gap-4 md:border-l border-slate-100 md:pl-8">
+                  <div className="w-16 h-16 rounded-full bg-brand-light-blue text-[#0B3C5F] flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <FaBalanceScale size={24} className="text-[#0B3C5F]" />
+                  </div>
+                  <div className="flex flex-col">
+                    <h4 className="text-[17px] font-extrabold text-[#0B3C5F] mb-0.5">
+                      Fair
+                    </h4>
+                    <p className="text-xs md:text-sm font-semibold text-slate-500 leading-normal max-w-[200px]">
+                      Success should not depend on advertising budgets.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Item 3: Community Driven */}
+                <div className="flex items-center gap-4 md:border-l border-slate-100 md:pl-8">
+                  <div className="w-16 h-16 rounded-full bg-brand-light-green text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <FaHandshake size={26} className="text-brand-green" />
+                  </div>
+                  <div className="flex flex-col">
+                    <h4 className="text-[17px] font-extrabold text-brand-green mb-0.5">
+                      Community Driven
+                    </h4>
+                    <p className="text-xs md:text-sm font-semibold text-slate-500 leading-normal max-w-[200px]">
+                      Built with sellers and buyers, not for them.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </section>
