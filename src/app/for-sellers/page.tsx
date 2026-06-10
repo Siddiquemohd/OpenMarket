@@ -61,18 +61,16 @@ interface BenefitCardProps {
 }
 function BenefitCard({ title, desc, icon }: BenefitCardProps) {
   return (
-    <div className="flex items-start gap-4 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-      <div className="w-11 h-11 rounded-full bg-brand-light-green flex items-center justify-center text-brand-green shadow-sm flex-shrink-0">
+    <div className="flex min-h-[190px] flex-col items-center justify-start rounded-2xl border border-slate-100 bg-white px-4 pt-6 pb-5 text-center shadow-[0_4px_16px_rgba(15,23,42,0.06)] h-full">
+      <div className="w-11 h-11 rounded-full bg-brand-light-green flex items-center justify-center text-brand-green mb-4 flex-shrink-0">
         {icon}
       </div>
-      <div className="flex flex-col text-left">
-        <h4 className="text-sm font-extrabold text-brand-navy mb-0.5">
-          {title}
-        </h4>
-        <p className="text-[11.5px] font-bold text-slate-500 leading-normal max-w-[340px]">
-          {desc}
-        </p>
-      </div>
+      <h4 className="text-[13px] font-black text-brand-green mb-1.5 leading-snug">
+        {title}
+      </h4>
+      <p className="text-[11px] font-semibold text-slate-500 leading-normal whitespace-pre-line">
+        {desc}
+      </p>
     </div>
   );
 }
@@ -141,28 +139,28 @@ export default function ForSellers() {
   const benefits = [
     {
       title: "Equal Opportunity",
-      desc: "No pay-to-rank. Every seller gets a fair chance.",
-      icon: <FaUserPlus size={20} />
+      desc: "No pay-to-rank.\nEvery seller gets\na fair chance.",
+      icon: <FaBalanceScale size={24} />
     },
     {
       title: "Activity Based Visibility",
-      desc: "The more active and engaged you are, the more visible you become.",
-      icon: <FiTrendingUp size={20} />
+      desc: "The more active and\nengaged you are,\nthe more visible\nyou become.",
+      icon: <FiTrendingUp size={24} />
     },
     {
       title: "Genuine Enquiries",
-      desc: "Buyers connect with relevant sellers. Better leads, higher conversion.",
-      icon: <FaUsers size={20} />
+      desc: "Buyers connect with\nrelevant sellers.\nBetter leads, higher\nconversion.",
+      icon: <FaUsers size={24} />
     },
     {
       title: "Build Reputation",
-      desc: "Ratings, reviews and response time help you build trust and credibility.",
-      icon: <FaStar size={18} />
+      desc: "Ratings, reviews and\nresponse time help you\nbuild trust and credibility.",
+      icon: <FaStar size={22} />
     },
     {
       title: "Long Term Growth",
-      desc: "Better visibility leads to more enquiries, repeat business and sustainable growth.",
-      icon: <FaChartLine size={20} />
+      desc: "Better visibility leads\nto more enquiries,\nrepeat business and\nsustainable growth.",
+      icon: <FaChartLine size={24} />
     }
   ];
 
@@ -374,70 +372,78 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 4: OpenMarket value section */}
-        <section className="bg-slate-50 py-16 border-t border-b border-slate-100">
+        <section className="bg-white pt-10 pb-8 border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             
-            {/* Header Content */}
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-brand-navy tracking-tight mb-2">
-                On OpenMarket, Visibility is Earned – Not Bought
-              </h2>
-              <p className="text-sm md:text-[14.5px] font-semibold text-slate-500 max-w-xl mx-auto leading-relaxed">
-                We reward sellers who are active, responsive and engaged.
-              </p>
-            </div>
-
-            {/* Two Column Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Two Column Layout: Left (Heading + 5 Cards), Right (Checklist Panel) */}
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_300px]">
               
-              {/* Left Column: 5 Benefit Cards */}
-              <div className="lg:col-span-7 flex flex-col gap-4">
-                {benefits.map((b, idx) => (
-                  <BenefitCard
-                    key={idx}
-                    title={b.title}
-                    desc={b.desc}
-                    icon={b.icon}
-                  />
-                ))}
+              {/* Left Column: Heading & 5 Benefit Cards */}
+              <div className="flex flex-col justify-start gap-4">
+                
+                {/* Header Content */}
+                <div className="mb-2">
+                  <h2 className="text-center text-xl md:text-2xl font-black text-brand-navy tracking-tight mb-1">
+                    On OpenMarket, Visibility is Earned - Not Bought
+                  </h2>
+                  <p className="text-center text-xs md:text-sm font-semibold text-slate-500 max-w-xl leading-relaxed mx-auto mb-6">
+                    We reward sellers who are active, responsive and engaged.
+                  </p>
+               
+
+                {/* 5 Benefit Cards in one row on desktop */}
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                  {benefits.map((b, idx) => (
+                    <BenefitCard
+                      key={idx}
+                      title={b.title}
+                      desc={b.desc}
+                      icon={b.icon}
+                    />
+                  ))}
+                </div>
+ </div>
               </div>
 
               {/* Right Column: Visibility Checklist Panel */}
-              <div className="lg:col-span-5">
-                <div className="bg-brand-light-green border border-emerald-100/60 rounded-3xl p-8 shadow-sm text-left relative overflow-hidden flex flex-col h-full min-h-[440px]">
-                  
-                  <h3 className="text-lg font-black text-brand-navy mb-5 flex items-center gap-2">
-                    <FiTrendingUp className="text-brand-green" size={20} />
+              <div className="bg-brand-light-green border border-emerald-100/60 rounded-2xl p-4 shadow-sm text-left relative overflow-hidden flex flex-col h-full justify-between">
+                
+                <div>
+                  <h3 className="text-[12.5px] font-black text-brand-navy mb-2.5 flex items-center gap-1.5">
+                    <FiTrendingUp className="text-brand-green flex-shrink-0" size={15} />
                     <span>What Improves Your Visibility?</span>
                   </h3>
 
                   {/* Checklist */}
-                  <div className="flex flex-col gap-4 flex-grow mb-8">
+                  <div className="flex flex-col gap-2 mb-3.5">
                     {visibilityTips.map((tip, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <span className="w-5 h-5 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
-                          <FaCheck size={8} />
+                      <div key={idx} className="flex items-center gap-2">
+                        <span className="w-4 h-4 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
+                          <FaCheck size={5} />
                         </span>
-                        <span className="text-[13px] font-bold text-brand-navy">
+                        <span className="text-[11px] font-semibold text-brand-navy">
                           {tip}
                         </span>
                       </div>
                     ))}
                   </div>
-
-                  {/* Bottom Text Panel */}
-                  <div className="border-t border-emerald-100/60 pt-5 flex items-end justify-between">
-                    <div className="flex flex-col">
-                      <span className="text-sm font-black text-brand-green leading-snug">Your engagement.</span>
-                      <span className="text-base font-black text-brand-navy">Your visibility. Your growth.</span>
-                    </div>
-                    {/* Tiny green chart graphic */}
-                    <div className="text-brand-green opacity-80 mb-1">
-                      <FaChartLine size={48} />
-                    </div>
-                  </div>
-
                 </div>
+
+                {/* Bottom Text Panel */}
+                <div className="border-t border-emerald-100/60 pt-3 flex items-end justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-[10.5px] font-bold text-brand-green leading-tight">Your engagement.</span>
+                    <span className="text-[11.5px] font-black text-brand-navy mt-0.5 leading-tight">
+                      Your visibility.<br />
+                      Your growth.
+                    </span>
+                  </div>
+                  {/* Tiny green chart graphic */}
+                  <div className="text-brand-green opacity-80 flex-shrink-0 mb-0.5">
+                    <FiTrendingUp size={28} />
+                  </div>
+                </div>
+
               </div>
 
             </div>
