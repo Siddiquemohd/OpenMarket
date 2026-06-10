@@ -16,9 +16,9 @@ import {
   FaBalanceScale, 
   FaHandshake,
   FaCheck,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaCompass
 } from "react-icons/fa";
-import { FiCheckCircle } from "react-icons/fi";
 
 /**
  * Reusable Mission Card Component
@@ -81,12 +81,12 @@ function StatItem({ value, label, icon }: StatItemProps) {
  */
 export default function WhyOpenMarket() {
   const credentials = [
-    { text: "Electrical Engineer, VJTI Mumbai (2003)", icon: <FaGraduationCap className="text-brand-navy" size={15} /> },
-    { text: "Founder & Director, Uneefy Intratech Pvt. Ltd.", icon: <FaBriefcase className="text-brand-navy" size={14} /> },
-    { text: "20+ Years in Industrial Products, Projects & B2B Business", icon: <FaStar className="text-brand-navy" size={14} /> },
-    { text: "Worked with L&T, Bajaj Electricals, Valmont and other industry leaders", icon: <FaUsers className="text-brand-navy" size={14} /> },
-    { text: "Served 300+ Industrial Customers", icon: <FaUsers className="text-brand-navy" size={14} /> },
-    { text: "Passionate about building a fair and transparent marketplace for Indian businesses", icon: <FiCheckCircle className="text-brand-navy" size={15} /> },
+    { text: "Electrical Engineer, VJTI Mumbai (2003)", icon: <FaGraduationCap className="text-brand-navy" size={16} /> },
+    { text: "Founder & Director, Uneefy Intratech Pvt. Ltd.", icon: <FaBriefcase className="text-brand-navy" size={15} /> },
+    { text: "20+ Years in Industrial Products, Projects & B2B Business", icon: <FaStar className="text-brand-navy" size={15} /> },
+    { text: "Worked with L&T, Bajaj Electricals, Valmont and other industry leaders", icon: <FaUsers className="text-brand-navy" size={15} /> },
+    { text: "Served 300+ Industrial Customers", icon: <FaUsers className="text-brand-navy" size={15} /> },
+    { text: "Passionate about building a fair and transparent marketplace for Indian businesses", icon: <FaCompass className="text-brand-navy" size={16} /> },
   ];
 
   const benefits = [
@@ -164,53 +164,53 @@ export default function WhyOpenMarket() {
 
             {/* Right Column: Founder Profile Card matching the portrait styling */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] shadow-xl relative overflow-hidden">
+              <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] shadow-xl p-4 relative flex flex-col gap-0">
                 
-                {/* Dotted Grid Pattern SVG */}
-                <div className="absolute top-28 right-8 w-40 h-40 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
-
                 {/* Portrait Area Container */}
-                <div className="relative h-[410px] w-full overflow-hidden flex justify-center">
+                <div className="relative h-[340px] w-full overflow-hidden bg-slate-50/60 rounded-[24px] flex justify-center">
+                  {/* Dotted Grid Pattern SVG */}
+                  <div className="absolute top-4 right-4 w-36 h-36 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
+
                   {/* Pale Green Semi-Circle (Arch) Background behind Portrait */}
-                  <div className="absolute left-1/2 bottom-0 h-[210px] w-[420px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
+                  <div className="absolute left-1/2 bottom-0 w-[340px] h-[170px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
 
                   {/* Profile Image - Normal Portrait with bottom crop */}
-                  <div className="absolute z-10 bottom-0 w-[400px] h-[328px] overflow-hidden left-1/2 -translate-x-1/2">
-                    <div className="absolute w-[400px] h-[340px] -bottom-[12px] left-0">
-                      <Image
-                        src="/founder2.png"
-                        alt="Kiran Pailwan - Founder, OpenMarket"
-                        fill
-                        sizes="400px"
-                        priority
-                        className="object-contain object-bottom"
-                      />
-                    </div>
+                  <div className="absolute z-10 bottom-[-10px] w-[340px] h-[272px] left-1/2 -translate-x-1/2">
+                    <Image
+                      src="/founder2.png"
+                      alt="Kiran Pailwan - Founder, OpenMarket"
+                      fill
+                      sizes="340px"
+                      priority
+                      className="object-contain object-bottom"
+                    />
                   </div>
                 </div>
 
                 {/* Overlapping Attached Info Card below */}
-                <div className="relative z-20 bg-white border-t border-slate-50 p-6 rounded-b-[32px] shadow-[-5px_-5px_15px_-5px_rgba(0,0,0,0.02)]">
-                  <div className="text-center pb-4 border-b border-slate-100">
+                <div className="relative z-20 -mt-12 mx-2 bg-white border border-slate-100 p-6 rounded-[24px] shadow-lg">
+                  <div className="text-left pb-4">
                     <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-1">
                       MEET THE FOUNDER
                     </span>
-                    <h3 className="text-[22px] font-black text-brand-navy leading-snug">
+                    <h3 className="text-[24px] font-black text-brand-navy leading-snug">
                       Kiran Pailwan
                     </h3>
-                    <span className="text-xs font-bold text-brand-green tracking-wide block mt-0.5">
+                    <span className="text-sm font-bold text-brand-green tracking-wide block mt-0.5">
                       Founder, OpenMarket
                     </span>
+                    {/* Green underline below subtitle */}
+                    <div className="w-10 h-[2px] bg-brand-green mt-3 mb-2" />
                   </div>
 
                   {/* Credentials checklist */}
-                  <div className="py-4 flex flex-col gap-3.5">
+                  <div className="py-4 flex flex-col gap-4">
                     {credentials.map((cred, idx) => (
                       <div key={idx} className="flex items-start gap-3.5">
-                        <span className="flex-shrink-0 flex items-center justify-center w-[22px] h-[22px] rounded-full bg-brand-light-green text-brand-navy mt-0.5 shadow-sm">
+                        <span className="flex-shrink-0 text-brand-navy mt-1">
                           {cred.icon}
                         </span>
-                        <span className="text-[13.5px] font-bold text-brand-navy leading-normal">
+                        <span className="text-[14px] font-medium text-slate-700 leading-normal">
                           {cred.text}
                         </span>
                       </div>
@@ -233,9 +233,9 @@ export default function WhyOpenMarket() {
                         href="https://www.linkedin.com/in/kiranpailwan/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 border border-[#0077B5] hover:bg-[#0077B5]/5 text-[#0077B5] rounded-xl font-bold text-xs shadow-sm transition-all"
+                        className="flex items-center justify-center gap-2 py-2.5 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl font-bold text-sm shadow-sm transition-all"
                       >
-                        <FaLinkedin size={16} />
+                        <FaLinkedin size={18} className="text-[#0077B5]" />
                         <span>LinkedIn</span>
                       </a>
 
@@ -244,14 +244,14 @@ export default function WhyOpenMarket() {
                         href="https://wa.me/918108359977"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 border border-[#25D366] hover:bg-[#25D366]/5 text-[#25D366] rounded-xl font-bold text-xs shadow-sm transition-all"
+                        className="flex items-center justify-center gap-2 py-2.5 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl font-bold text-sm shadow-sm transition-all"
                       >
-                        <FaWhatsapp size={16} />
+                        <FaWhatsapp size={18} className="text-[#25D366]" />
                         <span>WhatsApp</span>
                       </a>
                     </div>
                     
-                    <span className="text-[10px] font-semibold text-slate-400 italic text-center mt-1.5 block">
+                    <span className="text-[11px] font-semibold text-slate-400 italic text-center mt-2 block">
                       I personally read every message from our founding members.
                     </span>
                   </div>
