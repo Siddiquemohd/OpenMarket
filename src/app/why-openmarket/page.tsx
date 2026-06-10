@@ -198,7 +198,7 @@ export default function WhyOpenMarket() {
                 </div>
 
                 {/* Overlapping Attached Info Card below */}
-                <div className="relative z-20 bg-white border-t border-slate-50 p-6 rounded-b-[32px] shadow-[-5px_-5px_15px_-5px_rgba(0,0,0,0.02)]">
+                <div className="relative z-20 bg-white -mt-6 p-6 rounded-[32px] shadow-[-5px_-5px_15px_-5px_rgba(0,0,0,0.02)]">
                   <div className="text-left pb-4 border-b border-slate-100">
                     <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-1">
                       MEET THE FOUNDER
