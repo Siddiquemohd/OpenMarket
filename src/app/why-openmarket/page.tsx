@@ -169,20 +169,23 @@ export default function WhyOpenMarket() {
                 {/* Dotted Grid Pattern SVG */}
                 <div className="absolute top-8 right-8 w-40 h-40 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
 
-                {/* Pale Green Circular Background behind Portrait */}
-                <div className="absolute left-1/2 top-20 h-[310px] w-[310px] -translate-x-1/2 rounded-full bg-brand-light-green pointer-events-none" />
+                {/* Portrait Area Container */}
+                <div className="relative h-[410px] w-full overflow-hidden flex justify-center">
+                  {/* Pale Green Semi-Circle (Arch) Background behind Portrait */}
+                  <div className="absolute left-1/2 bottom-0 h-[190px] w-[380px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
 
-                {/* Profile Image - Normal Portrait (no circular clipping on image) */}
-                <div className="relative z-10 flex justify-center pt-8">
-                  <div className="relative w-[325px] h-[385px]">
-                    <Image
-                      src="/founder2.png"
-                      alt="Kiran Pailwan - Founder, OpenMarket"
-                      fill
-                      sizes="325px"
-                      priority
-                      className="object-contain object-bottom"
-                    />
+                  {/* Profile Image - Normal Portrait with bottom crop */}
+                  <div className="absolute z-10 bottom-0 w-[350px] h-[375px] overflow-hidden">
+                    <div className="absolute w-[350px] h-[410px] -bottom-[35px] left-0">
+                      <Image
+                        src="/founder2.png"
+                        alt="Kiran Pailwan - Founder, OpenMarket"
+                        fill
+                        sizes="350px"
+                        priority
+                        className="object-contain object-bottom"
+                      />
+                    </div>
                   </div>
                 </div>
 
