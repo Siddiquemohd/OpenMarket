@@ -170,16 +170,16 @@ export default function WhyOpenMarket() {
                 <div className="absolute top-8 right-8 w-40 h-40 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
 
                 {/* Pale Green Circular Background behind Portrait */}
-                <div className="absolute left-1/2 top-20 h-[280px] w-[280px] -translate-x-1/2 rounded-full bg-brand-light-green pointer-events-none" />
+                <div className="absolute left-1/2 top-20 h-[310px] w-[310px] -translate-x-1/2 rounded-full bg-brand-light-green pointer-events-none" />
 
                 {/* Profile Image - Normal Portrait (no circular clipping on image) */}
                 <div className="relative z-10 flex justify-center pt-8">
-                  <div className="relative w-[280px] h-[340px]">
+                  <div className="relative w-[325px] h-[385px]">
                     <Image
-                      src="/founder.jpeg"
+                      src="/founder1.png"
                       alt="Kiran Pailwan - Founder, OpenMarket"
                       fill
-                      sizes="280px"
+                      sizes="325px"
                       priority
                       className="object-contain object-bottom"
                     />
