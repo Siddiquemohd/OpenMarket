@@ -272,7 +272,7 @@ export default function WhyOpenMarket() {
                 {/* Item 1: Open */}
                 <div className="flex items-center gap-5 lg:gap-6 md:pr-6 lg:pr-8">
                   <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
-                    <FaLockOpen className="text-brand-green text-[30px] lg:text-[36px]" />
+                    <FaLockOpen className="text-brand-green text-[36px] lg:text-[46px]" />
                   </div>
                   <div className="flex flex-col">
                     <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1.5">
@@ -290,7 +290,7 @@ export default function WhyOpenMarket() {
                 {/* Item 2: Fair */}
                 <div className="flex items-center gap-5 lg:gap-6 md:px-6 lg:px-8">
                   <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-blue flex items-center justify-center shadow-sm">
-                    <FaBalanceScale className="text-brand-navy text-[30px] lg:text-[36px]" />
+                    <FaBalanceScale className="text-brand-navy text-[36px] lg:text-[46px]" />
                   </div>
                   <div className="flex flex-col">
                     <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-navy mb-1.5">
@@ -308,7 +308,7 @@ export default function WhyOpenMarket() {
                 {/* Item 3: Community Driven */}
                 <div className="flex items-center gap-5 lg:gap-6 md:pl-6 lg:pl-8">
                   <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
-                    <FaHandshake className="text-brand-green text-[36px] lg:text-[42px]" />
+                    <FaHandshake className="text-brand-green text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
                     <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1.5">
