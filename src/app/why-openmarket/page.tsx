@@ -275,7 +275,7 @@ export default function WhyOpenMarket() {
                     <FaLockOpen className="text-brand-green text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-navy mb-0.5">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-green mb-0.5">
                       Open
                     </h4>
                     <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[210px] lg:max-w-[240px]">
@@ -311,7 +311,7 @@ export default function WhyOpenMarket() {
                     <FaHandshake className="text-brand-green text-[50px] lg:text-[64px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-navy mb-0.5">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-green mb-0.5">
                       Community Driven
                     </h4>
                     <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[190px] lg:max-w-[230px]">
