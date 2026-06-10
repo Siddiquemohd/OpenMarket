@@ -176,7 +176,7 @@ export default function WhyOpenMarket() {
                 <div className="relative z-10 flex justify-center pt-8">
                   <div className="relative w-[325px] h-[385px]">
                     <Image
-                      src="/founder1.png"
+                      src="/founder2.png"
                       alt="Kiran Pailwan - Founder, OpenMarket"
                       fill
                       sizes="325px"
