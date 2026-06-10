@@ -272,7 +272,7 @@ export default function WhyOpenMarket() {
         </section>
 
         {/* 2. Mission Section (Rounded Card and Three Pillars) */}
-        <section className="bg-slate-50 border-y border-slate-100 py-16">
+        <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm mb-10 flex flex-col items-center text-center">
               
