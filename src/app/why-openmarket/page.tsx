@@ -335,8 +335,8 @@ export default function WhyOpenMarket() {
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-[380px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-white border border-slate-100">
                   <Image
-                    src="/broken_chain_v2.png"
-                    alt="Handshake B2B Illustration"
+                    src="/Partnership.png"
+                    alt="Partnership B2B Illustration"
                     fill
                     sizes="(max-w-768px) 100vw, 380px"
                     className="object-contain p-4"
