@@ -258,7 +258,7 @@ export default function WhyOpenMarket() {
                   <div className="flex-grow h-[2px] bg-brand-green/40" />
                 </div>
                 
-                <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-navy tracking-tight leading-tight mb-2 md:whitespace-nowrap">
+                <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-blue tracking-tight leading-tight mb-2 md:whitespace-nowrap">
                   To build India’s most trusted B2B marketplace.
                 </h2>
                 <p className="text-sm md:text-[15px] font-medium text-brand-navy max-w-3xl leading-relaxed">
