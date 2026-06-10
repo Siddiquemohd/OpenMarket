@@ -172,16 +172,16 @@ export default function WhyOpenMarket() {
                 {/* Portrait Area Container */}
                 <div className="relative h-[410px] w-full overflow-hidden flex justify-center">
                   {/* Pale Green Semi-Circle (Arch) Background behind Portrait */}
-                  <div className="absolute left-1/2 bottom-0 h-[190px] w-[380px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
+                  <div className="absolute left-1/2 bottom-0 h-[210px] w-[420px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
 
                   {/* Profile Image - Normal Portrait with bottom crop */}
-                  <div className="absolute z-10 bottom-0 w-[350px] h-[375px] overflow-hidden">
-                    <div className="absolute w-[350px] h-[410px] -bottom-[35px] left-0">
+                  <div className="absolute z-10 bottom-0 w-[400px] h-[328px] overflow-hidden left-1/2 -translate-x-1/2">
+                    <div className="absolute w-[400px] h-[340px] -bottom-[12px] left-0">
                       <Image
                         src="/founder2.png"
                         alt="Kiran Pailwan - Founder, OpenMarket"
                         fill
-                        sizes="350px"
+                        sizes="400px"
                         priority
                         className="object-contain object-bottom"
                       />
