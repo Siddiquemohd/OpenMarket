@@ -20,7 +20,6 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import {
-  FiMenu,
   FiX,
   FiShield,
   FiAlertTriangle,
@@ -90,21 +89,6 @@ function LogoCheckmark({
   );
 }
 
-// Logo Component using logo.png from the public folder
-function Logo() {
-  return (
-    <div className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
-      <Image
-        src="/logo.png"
-        alt="OpenMarket Logo"
-        fill
-        sizes="230px"
-        priority
-        className="object-contain object-left"
-      />
-    </div>
-  );
-}
 
 // Waitlist Form Component used in top and bottom banners
 function WaitlistForm({
@@ -239,89 +223,8 @@ function WaitlistForm({
 }
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <div className="flex flex-col min-h-screen bg-white text-slate-800 antialiased font-sans">
-      {/* 1. Header */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Logo />
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-brand-navy hover:bg-slate-100 transition-colors md:hidden focus:outline-none"
-            aria-label="Toggle Menu"
-          >
-            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 font-semibold text-brand-navy text-sm">
-            <a href="#sellers" className="hover:text-brand-green transition-colors">For Sellers</a>
-            <a href="#buyers" className="hover:text-brand-green transition-colors">For Buyers</a>
-            <a href="#difference" className="hover:text-brand-green transition-colors">The Difference</a>
-            <a href="#why-building" className="hover:text-brand-green transition-colors">Our Story</a>
-            <a
-              href="#waitlist-banner"
-              className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm"
-            >
-              Join Waitlist
-            </a>
-          </nav>
-        </div>
-
-        {/* Mobile Navigation Drawer */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-b border-slate-100 overflow-hidden px-6 pb-6 pt-2"
-            >
-              <nav className="flex flex-col gap-4 font-semibold text-brand-navy text-base">
-                <a
-                  href="#sellers"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 border-b border-slate-50 hover:text-brand-green transition-colors"
-                >
-                  For Sellers
-                </a>
-                <a
-                  href="#buyers"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 border-b border-slate-50 hover:text-brand-green transition-colors"
-                >
-                  For Buyers
-                </a>
-                <a
-                  href="#difference"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 border-b border-slate-50 hover:text-brand-green transition-colors"
-                >
-                  The Difference
-                </a>
-                <a
-                  href="#why-building"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 border-b border-slate-50 hover:text-brand-green transition-colors"
-                >
-                  Our Story
-                </a>
-                <a
-                  href="#waitlist-banner"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2"
-                >
-                  Join Waitlist
-                </a>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-
+    <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       {/* Main Page Layout */}
       <main className="flex-grow">
 
