@@ -173,12 +173,12 @@ export default function WhyOpenMarket() {
 
                   {/* Dotted Grid Pattern SVG behind portrait but on top of arch */}
                   <div 
-                    className="absolute top-16 right-6 w-52 h-52 opacity-40 pointer-events-none" 
+                    className="absolute top-12 right-6 w-64 h-64 opacity-40 pointer-events-none" 
                     style={{ 
-                      backgroundImage: 'radial-gradient(#0FA958 2.5px, transparent 2.5px)', 
-                      backgroundSize: '12px 12px',
-                      maskImage: 'linear-gradient(to left, black 20%, transparent 100%)',
-                      WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)'
+                      backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', 
+                      backgroundSize: '10px 10px',
+                      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)',
+                      maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)'
                     }} 
                   />
 
