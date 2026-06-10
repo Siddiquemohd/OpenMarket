@@ -15,8 +15,7 @@ import {
   FaLockOpen, 
   FaBalanceScale, 
   FaHandshake,
-  FaCheck,
-  FaMapMarkerAlt
+  FaCheck
 } from "react-icons/fa";
 import { FiCheckCircle } from "react-icons/fi";
 
@@ -333,7 +332,7 @@ export default function WhyOpenMarket() {
               
               {/* Left Column: Business Handshake/Illustration Image */}
               <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-[380px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-white border border-slate-100">
+                <div className="relative w-full max-w-[450px] aspect-[4/3] rounded-2xl overflow-hidden border border-slate-100">
                   <Image
                     src="/Partnership1.png"
                     alt="Partnership B2B Illustration"
@@ -385,7 +384,7 @@ export default function WhyOpenMarket() {
         </section>
 
         {/* 4. Stats Section */}
-        <section className="bg-slate-50 border-t border-slate-100 py-12">
+        <section className="border-slate-100 ">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <StatItem
@@ -406,7 +405,15 @@ export default function WhyOpenMarket() {
               <StatItem
                 value="Nationwide"
                 label="Network Across India"
-                icon={<FaMapMarkerAlt size={18} className="text-[#0B3C5F]" />}
+                icon={
+                  <Image
+                    src="/india.svg"
+                    alt="Indian Map"
+                    width={22}
+                    height={22}
+                    className="object-contain"
+                  />
+                }
               />
             </div>
           </div>
