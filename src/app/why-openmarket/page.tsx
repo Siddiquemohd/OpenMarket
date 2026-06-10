@@ -166,13 +166,13 @@ export default function WhyOpenMarket() {
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] shadow-xl relative overflow-hidden">
                 
-                {/* Dotted Grid Pattern SVG */}
-                <div className="absolute top-28 right-8 w-40 h-40 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
-
                 {/* Portrait Area Container */}
                 <div className="relative h-[328px] w-full overflow-hidden flex justify-center">
                   {/* Pale Green Semi-Circle (Arch) Background behind Portrait */}
                   <div className="absolute left-1/2 bottom-0 h-[210px] w-[420px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
+
+                  {/* Dotted Grid Pattern SVG behind portrait but on top of arch */}
+                  <div className="absolute top-16 right-6 w-52 h-52 opacity-25 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
 
                   {/* Profile Image - Normal Portrait with bottom crop */}
                   <div className="absolute z-10 bottom-0 w-[400px] h-[328px] overflow-hidden left-1/2 -translate-x-1/2">
