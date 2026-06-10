@@ -251,11 +251,11 @@ export default function WhyOpenMarket() {
               {/* Centered Mission Header */}
               <div className="flex flex-col items-center text-center mb-10 lg:mb-12">
                 <div className="flex items-center gap-4 w-full max-w-xl mb-3.5">
-                  <div className="flex-grow h-[1.5px] bg-brand-green/30" />
-                  <span className="text-xs font-bold text-brand-green tracking-widest uppercase">
+                  <div className="flex-grow h-[2px] bg-brand-green/40" />
+                  <span className="text-sm font-black text-brand-green tracking-widest uppercase">
                     OUR MISSION
                   </span>
-                  <div className="flex-grow h-[1.5px] bg-brand-green/30" />
+                  <div className="flex-grow h-[2px] bg-brand-green/40" />
                 </div>
                 
                 <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-navy tracking-tight leading-tight mb-2 md:whitespace-nowrap">
