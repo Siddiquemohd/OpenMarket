@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -10,7 +11,7 @@ import { FiMenu, FiX } from "react-icons/fi";
  */
 export function Logo() {
   return (
-    <div className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
+    <a href="/" className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
       <Image
         src="/logo.png"
         alt="OpenMarket Logo"
@@ -19,7 +20,7 @@ export function Logo() {
         priority
         className="object-contain object-left"
       />
-    </div>
+    </a>
   );
 }
 
@@ -28,13 +29,19 @@ export function Logo() {
  */
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
-    { label: "For Sellers", href: "#sellers" },
-    { label: "For Buyers", href: "#buyers" },
-    { label: "The Difference", href: "#difference" },
-    { label: "Our Story", href: "#why-building" },
+    { label: "Why OpenMarket", href: "/why-openmarket" },
+    { label: "For Sellers", href: "/#sellers" },
+    { label: "For Buyers", href: "/#buyers" },
+    { label: "The Difference", href: "/#difference" },
+    { label: "Our Story", href: "/#why-building" },
   ];
+
+  const isActive = (href: string) => {
+    return pathname === href;
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
@@ -51,18 +58,22 @@ export function Header() {
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8 font-semibold text-brand-navy text-sm">
+        <nav className="hidden md:flex items-center gap-8 font-semibold text-sm">
           {navLinks.map((link, idx) => (
             <a
               key={idx}
               href={link.href}
-              className="hover:text-brand-green transition-colors"
+              className={`transition-colors duration-200 ${
+                isActive(link.href)
+                  ? "text-brand-green font-bold"
+                  : "text-brand-navy hover:text-brand-green"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#waitlist-banner"
+            href="/#waitlist-banner"
             className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm"
           >
             Join Waitlist
@@ -79,19 +90,23 @@ export function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b border-slate-100 overflow-hidden px-6 pb-6 pt-2"
           >
-            <nav className="flex flex-col gap-4 font-semibold text-brand-navy text-base">
+            <nav className="flex flex-col gap-4 font-semibold text-base">
               {navLinks.map((link, idx) => (
                 <a
                   key={idx}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 border-b border-slate-50 hover:text-brand-green transition-colors"
+                  className={`py-2 border-b border-slate-50 transition-colors duration-200 ${
+                    isActive(link.href)
+                      ? "text-brand-green font-bold"
+                      : "text-brand-navy hover:text-brand-green"
+                  }`}
                 >
                   {link.label}
                 </a>
               ))}
               <a
-                href="#waitlist-banner"
+                href="/#waitlist-banner"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2"
               >
