@@ -164,28 +164,31 @@ export default function WhyOpenMarket() {
 
             {/* Right Column: Founder Profile Card matching the portrait styling */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] p-6 shadow-xl relative overflow-hidden">
+              <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] shadow-xl relative overflow-hidden">
                 
                 {/* Dotted Grid Pattern SVG */}
-                <div className="absolute top-4 right-4 w-32 h-32 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
+                <div className="absolute top-8 right-8 w-40 h-40 opacity-15 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', backgroundSize: '10px 10px' }} />
 
                 {/* Pale Green Circular Background behind Portrait */}
-                <div className="absolute top-[8%] left-[24%] w-[220px] h-[220px] bg-brand-light-green rounded-full blur-sm opacity-90 pointer-events-none -z-10" />
+                <div className="absolute left-1/2 top-20 h-[280px] w-[280px] -translate-x-1/2 rounded-full bg-brand-light-green pointer-events-none" />
 
-                {/* Profile Image & Detail */}
-                <div className="flex flex-col items-center text-center pb-5 border-b border-slate-100 relative">
-                  <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-white shadow-lg mb-5 bg-slate-50">
+                {/* Profile Image - Normal Portrait (no circular clipping on image) */}
+                <div className="relative z-10 flex justify-center pt-8">
+                  <div className="relative w-[280px] h-[340px]">
                     <Image
                       src="/founder.jpeg"
                       alt="Kiran Pailwan - Founder, OpenMarket"
                       fill
-                      sizes="176px"
+                      sizes="280px"
                       priority
-                      className="object-cover object-top"
+                      className="object-contain object-bottom"
                     />
                   </div>
-                  
-                  <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm w-full max-w-[340px]">
+                </div>
+
+                {/* Overlapping Attached Info Card below */}
+                <div className="relative z-20 bg-white border-t border-slate-50 p-6 rounded-b-[32px] shadow-[-5px_-5px_15px_-5px_rgba(0,0,0,0.02)]">
+                  <div className="text-center pb-4 border-b border-slate-100">
                     <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-1">
                       MEET THE FOUNDER
                     </span>
@@ -196,60 +199,61 @@ export default function WhyOpenMarket() {
                       Founder, OpenMarket
                     </span>
                   </div>
-                </div>
 
-                {/* Credentials checklist */}
-                <div className="py-5 flex flex-col gap-3.5">
-                  {credentials.map((cred, idx) => (
-                    <div key={idx} className="flex items-start gap-3.5">
-                      <span className="flex-shrink-0 flex items-center justify-center w-[22px] h-[22px] rounded-full bg-brand-light-green text-brand-navy mt-0.5 shadow-sm">
-                        {cred.icon}
+                  {/* Credentials checklist */}
+                  <div className="py-4 flex flex-col gap-3.5">
+                    {credentials.map((cred, idx) => (
+                      <div key={idx} className="flex items-start gap-3.5">
+                        <span className="flex-shrink-0 flex items-center justify-center w-[22px] h-[22px] rounded-full bg-brand-light-green text-brand-navy mt-0.5 shadow-sm">
+                          {cred.icon}
+                        </span>
+                        <span className="text-[13.5px] font-bold text-brand-navy leading-normal">
+                          {cred.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Contact Links */}
+                  <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+                    <div className="flex items-center gap-3 w-full my-1">
+                      <div className="flex-grow h-[1px] bg-slate-200" />
+                      <span className="text-[11px] font-black text-brand-green text-center uppercase tracking-widest whitespace-nowrap">
+                        Connect with Kiran
                       </span>
-                      <span className="text-[13.5px] font-bold text-brand-navy leading-normal">
-                        {cred.text}
-                      </span>
+                      <div className="flex-grow h-[1px] bg-slate-200" />
                     </div>
-                  ))}
-                </div>
+                    
+                    <div className="grid grid-cols-2 gap-3.5">
+                      {/* LinkedIn Button */}
+                      <a
+                        href="https://www.linkedin.com/in/kiranpailwan/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 py-3 border border-[#0077B5] hover:bg-[#0077B5]/5 text-[#0077B5] rounded-xl font-bold text-xs shadow-sm transition-all"
+                      >
+                        <FaLinkedin size={16} />
+                        <span>LinkedIn</span>
+                      </a>
 
-                {/* Contact Links */}
-                <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
-                  <div className="flex items-center gap-3 w-full my-1">
-                    <div className="flex-grow h-[1px] bg-slate-200" />
-                    <span className="text-[11px] font-black text-brand-green text-center uppercase tracking-widest whitespace-nowrap">
-                      Connect with Kiran
+                      {/* WhatsApp Button */}
+                      <a
+                        href="https://wa.me/918108359977"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 py-3 border border-[#25D366] hover:bg-[#25D366]/5 text-[#25D366] rounded-xl font-bold text-xs shadow-sm transition-all"
+                      >
+                        <FaWhatsapp size={16} />
+                        <span>WhatsApp</span>
+                      </a>
+                    </div>
+                    
+                    <span className="text-[10px] font-semibold text-slate-400 italic text-center mt-1.5 block">
+                      I personally read every message from our founding members.
                     </span>
-                    <div className="flex-grow h-[1px] bg-slate-200" />
                   </div>
-                  
-                  <div className="grid grid-cols-2 gap-3.5">
-                    {/* LinkedIn Button */}
-                    <a
-                      href="https://www.linkedin.com/in/kiranpailwan/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 py-3 border border-[#0077B5] hover:bg-[#0077B5]/5 text-[#0077B5] rounded-xl font-bold text-xs shadow-sm transition-all"
-                    >
-                      <FaLinkedin size={16} />
-                      <span>LinkedIn</span>
-                    </a>
-
-                    {/* WhatsApp Button */}
-                    <a
-                      href="https://wa.me/918108359977"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 py-3 border border-[#25D366] hover:bg-[#25D366]/5 text-[#25D366] rounded-xl font-bold text-xs shadow-sm transition-all"
-                    >
-                      <FaWhatsapp size={16} />
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-                  
-                  <span className="text-[10px] font-semibold text-slate-400 italic text-center mt-1.5 block">
-                    I personally read every message from our founding members.
-                  </span>
                 </div>
+
               </div>
             </div>
 
