@@ -32,11 +32,11 @@ export function Header() {
   const pathname = usePathname();
 
   const navLinks = [
+    { label: "Home", href: "/" },
     { label: "Why OpenMarket", href: "/why-openmarket" },
+    { label: "Mission", href: "/#difference" },
     { label: "For Sellers", href: "/#sellers" },
     { label: "For Buyers", href: "/#buyers" },
-    { label: "The Difference", href: "/#difference" },
-    { label: "Our Story", href: "/#why-building" },
   ];
 
   const isActive = (href: string) => {
@@ -63,9 +63,9 @@ export function Header() {
             <a
               key={idx}
               href={link.href}
-              className={`transition-colors duration-200 ${
+              className={`transition-colors duration-200 py-1 ${
                 isActive(link.href)
-                  ? "text-brand-green font-bold"
+                  ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
                   : "text-brand-navy hover:text-brand-green"
               }`}
             >
@@ -76,7 +76,7 @@ export function Header() {
             href="/#waitlist-banner"
             className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm"
           >
-            Join Waitlist
+            Join Now
           </a>
         </nav>
       </div>
@@ -110,7 +110,7 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2"
               >
-                Join Waitlist
+                Join Now
               </a>
             </nav>
           </motion.div>
