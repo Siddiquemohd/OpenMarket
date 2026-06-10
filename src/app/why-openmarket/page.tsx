@@ -406,12 +406,10 @@ export default function WhyOpenMarket() {
                 value="Nationwide"
                 label="Network Across India"
                 icon={
-                  <Image
+                  <img
                     src="/india.svg"
                     alt="Indian Map"
-                    width={22}
-                    height={22}
-                    className="object-contain"
+                    className="w-7 h-7 object-contain"
                   />
                 }
               />
