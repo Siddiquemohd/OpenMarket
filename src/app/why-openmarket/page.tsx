@@ -261,7 +261,7 @@ export default function WhyOpenMarket() {
                 <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-blue tracking-tight leading-tight mb-2 md:whitespace-nowrap">
                   To build India’s most trusted B2B marketplace.
                 </h2>
-                <p className="text-sm md:text-[15px] font-medium text-brand-navy max-w-3xl leading-relaxed">
+                <p className="text-sm md:text-[15px] font-medium text-brand-blue max-w-3xl leading-relaxed">
                   A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
                 </p>
               </div>
@@ -290,10 +290,10 @@ export default function WhyOpenMarket() {
                 {/* Item 2: Fair */}
                 <div className="flex items-center gap-5 lg:gap-6 md:px-6 lg:px-8">
                   <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-blue flex items-center justify-center shadow-sm">
-                    <FaBalanceScale className="text-brand-navy text-[42px] lg:text-[54px]" />
+                    <FaBalanceScale className="text-brand-blue text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-navy mb-0.5">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-blue mb-0.5">
                       Fair
                     </h4>
                     <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[210px] lg:max-w-[240px]">
