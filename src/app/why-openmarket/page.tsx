@@ -20,35 +20,7 @@ import {
 } from "react-icons/fa";
 import { FiCheckCircle } from "react-icons/fi";
 
-/**
- * Reusable Mission Card Component
- */
-interface MissionCardProps {
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-  iconBgClass: string;
-  titleColorClass: string;
-}
-function MissionCard({ title, desc, icon, iconBgClass, titleColorClass }: MissionCardProps) {
-  return (
-    <motion.div
-      whileHover={{ y: -6, scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-      className="flex flex-col items-center text-center p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-md hover:border-brand-green/30 transition-all duration-300 group"
-    >
-      <div className={`w-16 h-16 rounded-full ${iconBgClass} flex items-center justify-center mb-5 group-hover:scale-110 transition-all duration-300 shadow-sm`}>
-        {icon}
-      </div>
-      <h4 className={`text-xl font-extrabold ${titleColorClass} mb-2`}>
-        {title}
-      </h4>
-      <p className="text-sm font-semibold text-slate-500 leading-relaxed max-w-[240px]">
-        {desc}
-      </p>
-    </motion.div>
-  );
-}
+
 
 /**
  * Reusable Stat Item Component
@@ -271,76 +243,85 @@ export default function WhyOpenMarket() {
           </div>
         </section>
 
-        {/* 2. Mission Section (Rounded Card and Three Pillars in one unified layout) */}
+        {/* 2. Mission Section (Single Large Card containing Header and Pillars) */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col items-center text-center">
+            <div className="bg-white border border-slate-100 rounded-[32px] p-8 md:p-12 lg:p-14 shadow-sm w-full">
               
-              {/* Centered label with horizontal lines */}
-              <div className="flex items-center gap-4 w-full max-w-xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-brand-green/30" />
-                <span className="text-xs font-black text-brand-green tracking-widest uppercase">
-                  OUR MISSION
-                </span>
-                <div className="flex-grow h-[1.5px] bg-brand-green/30" />
+              {/* Centered Mission Header */}
+              <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
+                <div className="flex items-center gap-4 w-full max-w-xl mb-4">
+                  <div className="flex-grow h-[1.5px] bg-brand-green/30" />
+                  <span className="text-xs font-black text-brand-green tracking-widest uppercase">
+                    OUR MISSION
+                  </span>
+                  <div className="flex-grow h-[1.5px] bg-brand-green/30" />
+                </div>
+                
+                <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-navy tracking-tight leading-none mb-4 md:whitespace-nowrap">
+                  To build India’s most trusted B2B marketplace.
+                </h2>
+                <p className="text-xs md:text-[14px] font-semibold text-slate-500 max-w-3xl leading-relaxed">
+                  A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
+                </p>
               </div>
-              
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-navy tracking-tight max-w-3xl leading-tight mb-4">
-                To build India’s most trusted B2B marketplace.
-              </h2>
-              <p className="text-xs md:text-sm font-semibold text-slate-500 max-w-3xl leading-relaxed mb-10">
-                A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
-              </p>
 
-              {/* Three Mission Items Grid - Row layout with vertical separators */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-left pt-2">
+              {/* Three Mission Items Grid with Vertical Dividers */}
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 md:gap-0 items-center w-full">
                 
                 {/* Item 1: Open */}
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-brand-light-green text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <FaLock size={22} className="text-brand-green" />
+                <div className="flex items-center gap-5 md:pr-6 lg:pr-8">
+                  <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
+                    <FaLock className="text-brand-green text-[22px] lg:text-[26px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-[17px] font-extrabold text-brand-green mb-0.5">
+                    <h4 className="text-lg lg:text-[21px] font-extrabold text-brand-green mb-1">
                       Open
                     </h4>
-                    <p className="text-xs md:text-sm font-semibold text-slate-500 leading-normal max-w-[200px]">
+                    <p className="text-xs lg:text-[14px] font-semibold text-slate-500 leading-relaxed max-w-[190px] lg:max-w-[210px]">
                       Transparent and accessible for all businesses.
                     </p>
                   </div>
                 </div>
 
+                {/* Vertical Divider 1 */}
+                <div className="hidden md:block h-16 w-[1px] bg-slate-200" />
+
                 {/* Item 2: Fair */}
-                <div className="flex items-center gap-4 md:border-l border-slate-100 md:pl-8">
-                  <div className="w-16 h-16 rounded-full bg-brand-light-blue text-[#0B3C5F] flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <FaBalanceScale size={24} className="text-[#0B3C5F]" />
+                <div className="flex items-center gap-5 md:px-6 lg:px-8">
+                  <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-brand-light-blue flex items-center justify-center shadow-sm">
+                    <FaBalanceScale className="text-brand-navy text-[22px] lg:text-[26px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-[17px] font-extrabold text-[#0B3C5F] mb-0.5">
+                    <h4 className="text-lg lg:text-[21px] font-extrabold text-brand-navy mb-1">
                       Fair
                     </h4>
-                    <p className="text-xs md:text-sm font-semibold text-slate-500 leading-normal max-w-[200px]">
+                    <p className="text-xs lg:text-[14px] font-semibold text-slate-500 leading-relaxed max-w-[190px] lg:max-w-[210px]">
                       Success should not depend on advertising budgets.
                     </p>
                   </div>
                 </div>
 
+                {/* Vertical Divider 2 */}
+                <div className="hidden md:block h-16 w-[1px] bg-slate-200" />
+
                 {/* Item 3: Community Driven */}
-                <div className="flex items-center gap-4 md:border-l border-slate-100 md:pl-8">
-                  <div className="w-16 h-16 rounded-full bg-brand-light-green text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <FaHandshake size={26} className="text-brand-green" />
+                <div className="flex items-center gap-5 md:pl-6 lg:pl-8">
+                  <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
+                    <FaHandshake className="text-brand-green text-[26px] lg:text-[32px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-[17px] font-extrabold text-brand-green mb-0.5">
+                    <h4 className="text-lg lg:text-[21px] font-extrabold text-brand-green mb-1">
                       Community Driven
                     </h4>
-                    <p className="text-xs md:text-sm font-semibold text-slate-500 leading-normal max-w-[200px]">
+                    <p className="text-xs lg:text-[14px] font-semibold text-slate-500 leading-relaxed max-w-[190px] lg:max-w-[210px]">
                       Built with sellers and buyers, not for them.
                     </p>
                   </div>
                 </div>
 
               </div>
+
             </div>
           </div>
         </section>
