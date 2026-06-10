@@ -249,19 +249,19 @@ export default function WhyOpenMarket() {
             <div className="bg-white border border-slate-100 rounded-[32px] p-8 md:p-12 lg:p-14 shadow-sm w-full">
               
               {/* Centered Mission Header */}
-              <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
-                <div className="flex items-center gap-4 w-full max-w-xl mb-4">
+              <div className="flex flex-col items-center text-center mb-10 lg:mb-12">
+                <div className="flex items-center gap-4 w-full max-w-xl mb-3.5">
                   <div className="flex-grow h-[1.5px] bg-brand-green/30" />
-                  <span className="text-xs font-black text-brand-green tracking-widest uppercase">
+                  <span className="text-xs font-bold text-brand-green tracking-widest uppercase">
                     OUR MISSION
                   </span>
                   <div className="flex-grow h-[1.5px] bg-brand-green/30" />
                 </div>
                 
-                <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-navy tracking-tight leading-none mb-4 md:whitespace-nowrap">
+                <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-navy tracking-tight leading-tight mb-2 md:whitespace-nowrap">
                   To build India’s most trusted B2B marketplace.
                 </h2>
-                <p className="text-xs md:text-[14px] font-semibold text-slate-500 max-w-3xl leading-relaxed">
+                <p className="text-sm md:text-[15px] font-medium text-slate-800 max-w-3xl leading-relaxed">
                   A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
                 </p>
               </div>
@@ -275,10 +275,10 @@ export default function WhyOpenMarket() {
                     <FaLockOpen className="text-brand-green text-[36px] lg:text-[46px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1.5">
+                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1">
                       Open
                     </h4>
-                    <p className="text-[13.5px] lg:text-[15px] font-semibold text-slate-500 leading-relaxed max-w-[210px] lg:max-w-[240px]">
+                    <p className="text-[14px] lg:text-[15px] font-medium text-slate-800 leading-relaxed max-w-[210px] lg:max-w-[240px]">
                       Transparent and accessible for all businesses.
                     </p>
                   </div>
@@ -293,10 +293,10 @@ export default function WhyOpenMarket() {
                     <FaBalanceScale className="text-brand-navy text-[36px] lg:text-[46px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-navy mb-1.5">
+                    <h4 className="text-xl lg:text-[23px] font-extrabold text-[#0B3C5F] mb-1">
                       Fair
                     </h4>
-                    <p className="text-[13.5px] lg:text-[15px] font-semibold text-slate-500 leading-relaxed max-w-[210px] lg:max-w-[240px]">
+                    <p className="text-[14px] lg:text-[15px] font-medium text-slate-800 leading-relaxed max-w-[210px] lg:max-w-[240px]">
                       Success should not depend on advertising budgets.
                     </p>
                   </div>
@@ -311,10 +311,10 @@ export default function WhyOpenMarket() {
                     <FaHandshake className="text-brand-green text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1.5">
+                    <h4 className="text-xl lg:text-[23px] font-extrabold text-brand-green mb-1">
                       Community Driven
                     </h4>
-                    <p className="text-[13.5px] lg:text-[15px] font-semibold text-slate-500 leading-relaxed max-w-[190px] lg:max-w-[230px]">
+                    <p className="text-[14px] lg:text-[15px] font-medium text-slate-800 leading-relaxed max-w-[190px] lg:max-w-[230px]">
                       Built with sellers and buyers, not for them.
                     </p>
                   </div>
