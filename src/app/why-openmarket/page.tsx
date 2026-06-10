@@ -311,7 +311,7 @@ export default function WhyOpenMarket() {
                     <FaHandshake className="text-brand-green text-[50px] lg:text-[64px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-2xl font-extrabold text-brand-green mb-0.5">
+                    <h4 className="text-xl lg:text-2xl font-extrabold text-brand-green mb-0.5 whitespace-nowrap">
                       Community Driven
                     </h4>
                     <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[190px] lg:max-w-[230px]">
