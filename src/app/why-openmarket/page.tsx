@@ -327,19 +327,19 @@ export default function WhyOpenMarket() {
         </section>
 
         {/* 3. Founding Member Section */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <div className="bg-brand-light-green border border-emerald-100/60 rounded-3xl p-8 md:p-10 shadow-sm">
+        <section className="max-w-7xl mx-auto px-6 py-8">
+          <div className="bg-brand-light-green border border-emerald-100/60 rounded-3xl px-8 py-6 md:px-10 md:py-8 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               {/* Left Column: Business Handshake/Illustration Image */}
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-[380px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-white border border-slate-100">
                   <Image
-                    src="/Partnership.png"
+                    src="/Partnership1.png"
                     alt="Partnership B2B Illustration"
                     fill
                     sizes="(max-w-768px) 100vw, 380px"
-                    className="object-contain p-4"
+                    className="object-contain"
                   />
                 </div>
               </div>
