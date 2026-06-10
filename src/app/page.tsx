@@ -168,7 +168,7 @@ function WaitlistForm({
               <motion.p
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-sm font-semibold text-red-200 px-1"
+                className={`text-sm font-semibold px-1 ${theme === "navy" ? "text-red-500" : "text-red-200"}`}
               >
                 {errors.phone.message}
               </motion.p>
@@ -177,7 +177,7 @@ function WaitlistForm({
               <motion.p
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-sm font-semibold text-red-200 px-1"
+                className={`text-sm font-semibold px-1 ${theme === "navy" ? "text-red-500" : "text-red-200"}`}
               >
                 {errorMessage}
               </motion.p>
@@ -205,13 +205,19 @@ function WaitlistForm({
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center p-6 text-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"
+            className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border backdrop-blur-sm shadow-md ${
+              theme === "navy"
+                ? "bg-white border-slate-200 text-slate-800"
+                : "bg-white/10 border-white/20 text-white"
+            }`}
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-brand-green mb-3 shadow-md">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-brand-green mb-3 shadow-md border border-slate-100">
               <FaCheck size={20} />
             </div>
-            <h4 className="text-lg font-bold text-white mb-1">You're on the list!</h4>
-            <p className="text-sm text-green-100 max-w-xs">
+            <h4 className={`text-lg font-bold mb-1 ${theme === "navy" ? "text-brand-navy" : "text-white"}`}>
+              You're on the list!
+            </h4>
+            <p className={`text-sm max-w-xs ${theme === "navy" ? "text-slate-500" : "text-green-100"}`}>
               Thank you for joining. We will notify you as soon as the OpenMarket app is ready.
             </p>
             <button
@@ -219,7 +225,9 @@ function WaitlistForm({
                 setErrorMessage(null);
                 setIsSuccess(false);
               }}
-              className="mt-4 text-xs font-semibold text-white underline underline-offset-4 opacity-80 hover:opacity-100"
+              className={`mt-4 text-xs font-semibold underline underline-offset-4 opacity-80 hover:opacity-100 ${
+                theme === "navy" ? "text-slate-600 hover:text-brand-green" : "text-white"
+              }`}
             >
               Register another number
             </button>
@@ -775,8 +783,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7. Bottom Waitlist CTA Banner (Navy Banner) */}
-        <section id="waitlist-banner" className="bg-brand-deep-navy text-white py-12 md:py-16">
+        {/* 7. Bottom Waitlist CTA Banner (Light Green Banner) */}
+        <section id="waitlist-banner" className="bg-brand-light-green text-brand-navy border-t border-slate-100 py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -792,10 +800,10 @@ export default function Home() {
                   <LogoCheckmark size={32} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
                     BE AMONG THE FIRST <span className="text-brand-green font-black">1,000</span> MEMBERS
                   </h3>
-                  <p className="text-sm md:text-base text-slate-300 font-semibold tracking-wide">
+                  <p className="text-sm md:text-base text-slate-500 font-semibold tracking-wide">
                     Help shape the future of B2B trade.
                   </p>
                 </div>
@@ -814,38 +822,6 @@ export default function Home() {
         </section>
 
       </main>
-
-      <footer className="bg-white border-t border-slate-100 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 lg:gap-36">
-
-          {/* Logo & Tagline */}
-          <Logo />
-
-          {/* Contact & Copyright Info */}
-          <div className="text-center text-xs font-semibold text-slate-500 leading-relaxed flex flex-col gap-1">
-            <span>© 2026 Uneefy Intratech Pvt. Ltd.</span>
-            <span>Vashi, Navi Mumbai | Hadapsar, Pune</span>
-            <a
-              href="mailto:hello@openmarket.co.in"
-              className="text-[#0077B5] hover:underline font-bold mt-1"
-            >
-              hello@openmarket.co.in
-            </a>
-          </div>
-
-        </div>
-      </footer>
-
-      {/* Floating WhatsApp Widget */}
-      <a
-        href="https://wa.me/918108359977"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed left-6 bottom-6 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 group font-bold text-sm shadow-[#25D366]/30 hover:shadow-[#25D366]/50 border border-[#25D366]/20 font-sans"
-      >
-        <FaWhatsapp size={20} className="text-white" />
-        <span className="tracking-wide">+91 81083 59977</span>
-      </a>
     </div>
   );
 }
