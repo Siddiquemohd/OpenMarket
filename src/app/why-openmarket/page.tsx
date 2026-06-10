@@ -261,7 +261,7 @@ export default function WhyOpenMarket() {
                 <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-navy tracking-tight leading-tight mb-2 md:whitespace-nowrap">
                   To build India’s most trusted B2B marketplace.
                 </h2>
-                <p className="text-sm md:text-[15px] font-medium text-brand-navy/90 max-w-3xl leading-relaxed">
+                <p className="text-sm md:text-[15px] font-medium text-brand-navy max-w-3xl leading-relaxed">
                   A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
                 </p>
               </div>
@@ -275,10 +275,10 @@ export default function WhyOpenMarket() {
                     <FaLockOpen className="text-brand-green text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-green mb-0.5">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-navy mb-0.5">
                       Open
                     </h4>
-                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy/80 leading-relaxed max-w-[210px] lg:max-w-[240px]">
+                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[210px] lg:max-w-[240px]">
                       Transparent and accessible for all businesses.
                     </p>
                   </div>
@@ -293,10 +293,10 @@ export default function WhyOpenMarket() {
                     <FaBalanceScale className="text-brand-navy text-[42px] lg:text-[54px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-lg lg:text-[20px] font-extrabold text-[#0B3C5F] mb-0.5">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-navy mb-0.5">
                       Fair
                     </h4>
-                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy/80 leading-relaxed max-w-[210px] lg:max-w-[240px]">
+                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[210px] lg:max-w-[240px]">
                       Success should not depend on advertising budgets.
                     </p>
                   </div>
@@ -311,10 +311,10 @@ export default function WhyOpenMarket() {
                     <FaHandshake className="text-brand-green text-[50px] lg:text-[64px]" />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-green mb-0.5">
+                    <h4 className="text-lg lg:text-[20px] font-extrabold text-brand-navy mb-0.5">
                       Community Driven
                     </h4>
-                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy/80 leading-relaxed max-w-[190px] lg:max-w-[230px]">
+                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[190px] lg:max-w-[230px]">
                       Built with sellers and buyers, not for them.
                     </p>
                   </div>
