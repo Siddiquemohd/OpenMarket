@@ -10,7 +10,7 @@ import { FiMapPin } from "react-icons/fi";
 export function Footer() {
   const quickLinks = [
     { label: "Why OpenMarket", href: "/why-openmarket" },
-    { label: "For Sellers", href: "/#sellers" },
+    { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/#buyers" },
     { label: "Our Mission", href: "/#why-building" },
     { label: "Founding Members", href: "/#why-building" },

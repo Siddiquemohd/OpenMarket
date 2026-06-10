@@ -3,17 +3,17 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { 
-  FaLinkedin, 
-  FaWhatsapp, 
-  FaUsers, 
-  FaArrowRight, 
-  FaGraduationCap, 
-  FaBriefcase, 
-  FaStar, 
-  FaBuilding, 
-  FaLockOpen, 
-  FaBalanceScale, 
+import {
+  FaLinkedin,
+  FaWhatsapp,
+  FaUsers,
+  FaArrowRight,
+  FaGraduationCap,
+  FaBriefcase,
+  FaStar,
+  FaBuilding,
+  FaLockOpen,
+  FaBalanceScale,
   FaHandshake,
   FaCheck
 } from "react-icons/fa";
@@ -32,7 +32,7 @@ interface StatItemProps {
 function StatItem({ value, label, icon }: StatItemProps) {
   return (
     <div className="flex items-center gap-4 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center shadow-sm">
+      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
         {icon}
       </div>
       <div className="flex flex-col text-left">
@@ -70,11 +70,11 @@ export default function WhyOpenMarket() {
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
-        
+
         {/* 1. Hero & Founder Profile Card */}
         <section className="max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Left Column: Heading and Introduction */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div className="flex flex-col gap-3">
@@ -84,7 +84,7 @@ export default function WhyOpenMarket() {
                   </span>
                   <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
                 </div>
-                
+
                 <h1 className="text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-brand-navy mt-4">
                   We’re Not Building <br />
                   Another Marketplace. <br />
@@ -136,21 +136,21 @@ export default function WhyOpenMarket() {
             {/* Right Column: Founder Profile Card matching the portrait styling */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] shadow-xl relative overflow-hidden">
-                
+
                 {/* Portrait Area Container */}
                 <div className="relative h-[328px] w-full overflow-hidden flex justify-center">
                   {/* Pale Green Semi-Circle (Arch) Background behind Portrait */}
                   <div className="absolute left-1/2 bottom-0 h-[210px] w-[420px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
 
                   {/* Dotted Grid Pattern SVG behind portrait but on top of arch */}
-                  <div 
-                    className="absolute top-12 right-6 w-64 h-64 opacity-40 pointer-events-none" 
-                    style={{ 
-                      backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)', 
+                  <div
+                    className="absolute top-12 right-6 w-64 h-64 opacity-40 pointer-events-none"
+                    style={{
+                      backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)',
                       backgroundSize: '10px 10px',
                       WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)',
                       maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)'
-                    }} 
+                    }}
                   />
 
                   {/* Profile Image - Normal Portrait with bottom crop */}
@@ -205,7 +205,7 @@ export default function WhyOpenMarket() {
                       </span>
                       <div className="flex-grow h-[1px] bg-slate-200" />
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-3.5">
                       {/* LinkedIn Button */}
                       <a
@@ -229,7 +229,7 @@ export default function WhyOpenMarket() {
                         <span>WhatsApp</span>
                       </a>
                     </div>
-                    
+
                     <span className="text-[10px] font-semibold text-slate-400 italic text-center mt-1.5 block">
                       I personally read every message from our founding members.
                     </span>
@@ -246,7 +246,7 @@ export default function WhyOpenMarket() {
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="bg-white border border-slate-100 rounded-[32px] p-8 md:p-12 lg:p-14 shadow-sm w-full">
-              
+
               {/* Centered Mission Header */}
               <div className="flex flex-col items-center text-center mb-6 lg:mb-8">
                 <div className="flex items-center gap-4 w-full max-w-xl mb-3.5">
@@ -256,7 +256,7 @@ export default function WhyOpenMarket() {
                   </span>
                   <div className="flex-grow h-[2px] bg-brand-green/40" />
                 </div>
-                
+
                 <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-blue tracking-tight leading-tight mb-2 md:whitespace-nowrap">
                   To build India’s most trusted B2B marketplace.
                 </h2>
@@ -267,7 +267,7 @@ export default function WhyOpenMarket() {
 
               {/* Three Mission Items Grid with Vertical Dividers */}
               <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 md:gap-0 items-center w-full">
-                
+
                 {/* Item 1: Open */}
                 <div className="flex items-center gap-5 lg:gap-6 md:pr-6 lg:pr-8">
                   <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
@@ -329,7 +329,7 @@ export default function WhyOpenMarket() {
         <section className="max-w-7xl mx-auto px-6 py-8">
           <div className="bg-brand-light-green border border-emerald-100/60 rounded-3xl px-8 py-6 md:px-10 md:py-8 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              
+
               {/* Left Column: Business Handshake/Illustration Image */}
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative w-full max-w-[450px] aspect-[4/3] rounded-2xl overflow-hidden border border-slate-100">
@@ -390,27 +390,29 @@ export default function WhyOpenMarket() {
               <StatItem
                 value="300+"
                 label="Industrial Customers Served"
-                icon={<FaUsers size={20} className="text-brand-green" />}
+                icon={<FaUsers size={50} className="text-brand-green" />}
               />
               <StatItem
                 value="20+"
                 label="Years of Industrial & B2B Experience"
-                icon={<FaBriefcase size={18} className="text-[#0B3C5F]" />}
+                icon={<FaBriefcase size={50} className="text-[#0B3C5F]" />}
               />
               <StatItem
                 value="1000+"
                 label="Products & Solutions Delivered"
-                icon={<FaBuilding size={18} className="text-brand-green" />}
+                icon={<FaBuilding size={50} className="text-brand-green" />}
               />
               <StatItem
                 value="Nationwide"
                 label="Network Across India"
                 icon={
-                  <img
-                    src="/india.svg"
-                    alt="Indian Map"
-                    className="w-7 h-7 object-contain"
-                  />
+                  <div className="flex h-40 w-40 items-center justify-center">
+                    <img
+                      src="/india.png"
+                      alt="India map"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                 }
               />
             </div>

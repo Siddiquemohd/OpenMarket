@@ -35,7 +35,7 @@ export function Header() {
     { label: "Home", href: "/" },
     { label: "Why OpenMarket", href: "/why-openmarket" },
     { label: "Mission", href: "/#difference" },
-    { label: "For Sellers", href: "/#sellers" },
+    { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/#buyers" },
   ];
 
