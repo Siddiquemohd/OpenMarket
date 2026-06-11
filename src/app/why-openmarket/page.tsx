@@ -47,10 +47,13 @@ function StatItem({ value, label, icon }: StatItemProps) {
   );
 }
 
+import { useOtpModal } from "@/providers/OtpModalProvider";
+
 /**
  * Why OpenMarket Page component
  */
 export default function WhyOpenMarket() {
+  const { openOtpModal } = useOtpModal();
   const credentials = [
     { text: "Electrical Engineer, VJTI Mumbai (2003)", icon: <FaGraduationCap className="text-brand-navy" size={15} /> },
     { text: "Founder & Director, Uneefy Intratech Pvt. Ltd.", icon: <FaBriefcase className="text-brand-navy" size={14} /> },
@@ -113,9 +116,9 @@ export default function WhyOpenMarket() {
               </div>
 
               <div className="pt-2">
-                <a
-                  href="/#waitlist-banner"
-                  className="inline-flex items-center gap-4 bg-brand-green hover:bg-brand-dark-green text-white pl-6 pr-8 py-3.5 rounded-2xl shadow-md transition-all duration-300 hover:scale-102 active:scale-98 text-left group"
+                <button
+                  onClick={() => openOtpModal()}
+                  className="inline-flex items-center gap-4 bg-brand-green hover:bg-brand-dark-green text-white pl-6 pr-8 py-3.5 rounded-2xl shadow-md transition-all duration-300 hover:scale-102 active:scale-98 text-left group cursor-pointer focus:outline-none"
                 >
                   <div className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-white/10 text-white">
                     <FaUsers size={20} />
@@ -129,7 +132,7 @@ export default function WhyOpenMarket() {
                       Be an Early Member of OpenMarket
                     </span>
                   </div>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -369,13 +372,13 @@ export default function WhyOpenMarket() {
                 </div>
 
                 <div className="pt-2">
-                  <a
-                    href="/#waitlist-banner"
-                    className="inline-flex items-center gap-3 bg-brand-green hover:bg-brand-dark-green text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all group"
+                  <button
+                    onClick={() => openOtpModal()}
+                    className="inline-flex items-center gap-3 bg-brand-green hover:bg-brand-dark-green text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all group cursor-pointer focus:outline-none"
                   >
                     <FaUsers size={16} />
                     <span>Join the First 1000 Businesses</span>
-                  </a>
+                  </button>
                 </div>
               </div>
 

@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAxios } from "@/providers/AxiosProvider";
+import { useOtpModal } from "@/providers/OtpModalProvider";
 import {
   FaLinkedin,
   FaPhoneAlt,
@@ -98,10 +98,7 @@ function WaitlistForm({
   formId: string;
   theme?: "green" | "navy";
 }) {
-  const axios = useAxios();
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const { openOtpModal } = useOtpModal();
 
   const {
     register,
@@ -112,112 +109,48 @@ function WaitlistForm({
     resolver: zodResolver(phoneSchema),
   });
 
-  const onSubmit = async (data: PhoneFormValues) => {
-    setIsLoading(true);
-    setErrorMessage(null);
-    try {
-      await axios.post("/web/wishlist", {
-        number: data.phone,
-      });
-      setIsSuccess(true);
-      reset();
-    } catch (err: any) {
-      console.error("Error submitting to waitlist:", err);
-      const msg = err.response?.data?.message || err.message || "Something went wrong. Please try again.";
-      setErrorMessage(msg);
-    } finally {
-      setIsLoading(false);
-    }
+  const onSubmit = (data: PhoneFormValues) => {
+    openOtpModal(data.phone);
+    reset();
   };
 
   return (
     <div className="w-full">
-      <AnimatePresence mode="wait">
-        {!isSuccess ? (
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 w-full">
-            <div className="relative w-full">
-              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-brand-navy">
-                <FaPhoneAlt size={16} className="rotate-90" />
-              </span>
-              <input
-                type="tel"
-                placeholder="Enter your mobile number"
-                {...register("phone")}
-                suppressHydrationWarning
-                className={`w-full py-3.5 pl-11 pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border ${errors.phone ? "border-red-500 ring-2 ring-red-200" : "border-slate-200"
-                  } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all`}
-              />
-            </div>
-            {errors.phone && (
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`text-sm font-semibold px-1 ${theme === "navy" ? "text-red-500" : "text-red-200"}`}
-              >
-                {errors.phone.message}
-              </motion.p>
-            )}
-            {errorMessage && (
-              <motion.p
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`text-sm font-semibold px-1 ${theme === "navy" ? "text-red-500" : "text-red-200"}`}
-              >
-                {errorMessage}
-              </motion.p>
-            )}
-
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              disabled={isLoading}
-              type="submit"
-              suppressHydrationWarning
-              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-white font-bold tracking-wider text-sm md:text-base transition-colors shadow-md bg-brand-green hover:bg-brand-dark-green disabled:opacity-75 disabled:cursor-not-allowed"
-            >
-              {isLoading ? (
-                <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              ) : (
-                <>
-                  JOIN THE WAITLIST
-                  <FaArrowRight size={14} />
-                </>
-              )}
-            </motion.button>
-          </form>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className={`flex flex-col items-center justify-center p-6 text-center rounded-2xl border backdrop-blur-sm shadow-md ${
-              theme === "navy"
-                ? "bg-white border-slate-200 text-slate-800"
-                : "bg-white/10 border-white/20 text-white"
-            }`}
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 w-full">
+        <div className="relative w-full">
+          <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-brand-navy">
+            <FaPhoneAlt size={16} className="rotate-90" />
+          </span>
+          <input
+            type="tel"
+            placeholder="Enter your mobile number"
+            {...register("phone")}
+            suppressHydrationWarning
+            className={`w-full py-3.5 pl-11 pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border ${errors.phone ? "border-red-500 ring-2 ring-red-200" : "border-slate-200"
+              } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all`}
+          />
+        </div>
+        {errors.phone && (
+          <motion.p
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`text-sm font-semibold px-1 ${theme === "navy" ? "text-red-500" : "text-red-200"}`}
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-brand-green mb-3 shadow-md border border-slate-100">
-              <FaCheck size={20} />
-            </div>
-            <h4 className={`text-lg font-bold mb-1 ${theme === "navy" ? "text-brand-navy" : "text-white"}`}>
-              You're on the list!
-            </h4>
-            <p className={`text-sm max-w-xs ${theme === "navy" ? "text-slate-500" : "text-green-100"}`}>
-              Thank you for joining. We will notify you as soon as the OpenMarket app is ready.
-            </p>
-            <button
-              onClick={() => {
-                setErrorMessage(null);
-                setIsSuccess(false);
-              }}
-              className={`mt-4 text-xs font-semibold underline underline-offset-4 opacity-80 hover:opacity-100 ${
-                theme === "navy" ? "text-slate-600 hover:text-brand-green" : "text-white"
-              }`}
-            >
-              Register another number
-            </button>
-          </motion.div>
+            {errors.phone.message}
+          </motion.p>
         )}
-      </AnimatePresence>
+
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          type="submit"
+          suppressHydrationWarning
+          className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-white font-bold tracking-wider text-sm md:text-base transition-colors shadow-md bg-brand-green hover:bg-brand-dark-green"
+        >
+          JOIN THE WAITLIST
+          <FaArrowRight size={14} />
+        </motion.button>
+      </form>
     </div>
   );
 }

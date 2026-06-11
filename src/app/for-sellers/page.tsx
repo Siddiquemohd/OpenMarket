@@ -106,8 +106,11 @@ function StepCard({ step, title, desc, icon }: StepCardProps) {
   );
 }
 
+import { useOtpModal } from "@/providers/OtpModalProvider";
+
 // For Sellers Page Component
 export default function ForSellers() {
+  const { openOtpModal } = useOtpModal();
   const problems = [
     {
       title: "Pay To Get Seen",
@@ -227,13 +230,13 @@ export default function ForSellers() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2">
-                <a
-                  href="/#waitlist-banner"
-                  className="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-dark-green text-white px-5 py-3 rounded-xl font-bold text-sm shadow-md transition-all duration-300 hover:scale-102"
+                <button
+                  onClick={() => openOtpModal()}
+                  className="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-dark-green text-white px-5 py-3 rounded-xl font-bold text-sm shadow-md transition-all duration-300 hover:scale-102 cursor-pointer focus:outline-none"
                 >
                   <span>Register Your Business</span>
                   <FaArrowRight size={12} />
-                </a>
+                </button>
                 <a
                   href="#how-it-works"
                   className="inline-flex items-center gap-2 border border-slate-200 hover:bg-slate-50 text-slate-700 px-5 py-3 rounded-xl font-bold text-sm transition-all"
@@ -491,57 +494,47 @@ export default function ForSellers() {
 
         {/* SECTION 6: Professional profile / contact info */}
         <section className="max-w-7xl mx-auto px-6 py-8">
-          <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="rounded-2xl bg-[#f8fbf9] border border-[#e2eae5]/60 px-8 py-7 shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#e2eae5] items-stretch">
               
               {/* Left Column: Bullets */}
-              <div className="lg:col-span-5 flex flex-col text-left">
-                <h3 className="text-lg font-black text-brand-green tracking-wide mb-5 uppercase">
+              <div className="lg:col-span-5 pb-6 lg:pb-0 lg:pr-8 flex flex-col text-left">
+                <h3 className="text-[17px] md:text-[19px] font-extrabold text-brand-green tracking-tight mb-4">
                   Built By An Industrial Professional
                 </h3>
                 
-                <div className="flex flex-col gap-3.5">
-                  <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <FaCheck size={8} />
-                    </span>
-                    <span className="text-[13px] font-bold text-brand-navy">
+                <div className="flex flex-col gap-2.5">
+                  <div className="flex items-start gap-2.5">
+                    <FiCheckCircle size={16} className="text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[13px] font-bold text-brand-navy leading-snug">
                       Electrical Engineer, VJTI Mumbai (2003)
                     </span>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <FaCheck size={8} />
-                    </span>
-                    <span className="text-[13px] font-bold text-brand-navy">
+                  <div className="flex items-start gap-2.5">
+                    <FiCheckCircle size={16} className="text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[13px] font-bold text-brand-navy leading-snug">
                       20+ Years of Industrial & B2B Business Experience
                     </span>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <FaCheck size={8} />
-                    </span>
-                    <span className="text-[13px] font-bold text-brand-navy">
+                  <div className="flex items-start gap-2.5">
+                    <FiCheckCircle size={16} className="text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[13px] font-bold text-brand-navy leading-snug">
                       Founder, Uneefy Intratech Pvt. Ltd.
                     </span>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <FaCheck size={8} />
-                    </span>
-                    <span className="text-[13px] font-bold text-brand-navy">
+                  <div className="flex items-start gap-2.5">
+                    <FiCheckCircle size={16} className="text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[13px] font-bold text-brand-navy leading-snug">
                       Served 300+ Industrial Customers
                     </span>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                      <FaCheck size={8} />
-                    </span>
-                    <span className="text-[13px] font-bold text-brand-navy">
+                  <div className="flex items-start gap-2.5">
+                    <FiCheckCircle size={16} className="text-brand-green mt-0.5 flex-shrink-0" />
+                    <span className="text-[13px] font-bold text-brand-navy leading-snug">
                       Based in Navi Mumbai, Maharashtra
                     </span>
                   </div>
@@ -549,42 +542,46 @@ export default function ForSellers() {
               </div>
 
               {/* Middle Column: Shield Block */}
-              <div className="lg:col-span-3 flex lg:justify-center items-center h-full pt-4 lg:pt-0">
-                <div className="flex items-center gap-4 text-left">
-                  <div className="w-16 h-16 rounded-full bg-white border border-emerald-100 flex items-center justify-center text-brand-green shadow-sm flex-shrink-0">
-                    <FiCheckCircle size={28} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-black text-brand-navy">Real People.</span>
-                    <span className="text-sm font-black text-brand-navy">Real Address.</span>
-                    <span className="text-sm font-black text-brand-navy">Real Mission.</span>
+              <div className="lg:col-span-3 py-6 lg:py-0 lg:px-8 flex items-center justify-center">
+                <div className="flex items-center gap-3.5 text-left">
+                  <Image
+                    src="/Trust.svg"
+                    alt="Trust Shield"
+                    width={108}
+                    height={108}
+                    className="flex-shrink-0"
+                  />
+                  <div className="flex flex-col text-[14.5px] font-extrabold text-brand-navy leading-tight">
+                    <span>Real People.</span>
+                    <span>Real Address.</span>
+                    <span>Real Mission.</span>
                   </div>
                 </div>
               </div>
 
               {/* Right Column: Office info */}
-              <div className="lg:col-span-4 flex flex-col text-left gap-4 pt-4 lg:pt-0">
-                <div className="flex items-start gap-3">
-                  <FiMapPin className="text-brand-green mt-1 flex-shrink-0" size={18} />
-                  <div className="flex flex-col">
-                    <span className="text-[13.5px] font-black text-brand-navy">Our Office</span>
-                    <span className="text-[12.5px] font-bold text-slate-500 leading-relaxed mt-0.5">
+              <div className="lg:col-span-4 pt-6 lg:pt-0 lg:pl-8 flex flex-col text-left gap-3">
+                <div className="flex items-start gap-2.5">
+                  <FiMapPin className="text-brand-green mt-0.5 flex-shrink-0" size={17} />
+                  <div className="flex flex-col leading-snug">
+                    <span className="text-[13.5px] font-extrabold text-brand-navy">Our Office</span>
+                    <span className="text-[12.5px] font-bold text-brand-navy mt-0.5">
                       Vashi, Navi Mumbai,<br />
                       Maharashtra - 400703, India
                     </span>
                   </div>
                 </div>
 
-                <p className="text-[12.5px] font-bold text-slate-400">
+                <p className="text-[11.5px] font-semibold text-slate-400 mt-1">
                   We are just a call or WhatsApp away.
                 </p>
 
-                <div className="flex flex-col gap-2.5">
+                <div className="flex flex-col gap-2 mt-0.5">
                   <a
                     href="tel:+919320012345"
-                    className="inline-flex items-center gap-3 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors"
+                    className="inline-flex items-center gap-2.5 text-[13px] font-bold text-brand-navy hover:text-brand-green transition-colors"
                   >
-                    <FaPhoneAlt size={13} className="text-brand-green" />
+                    <FaPhoneAlt size={13} className="text-brand-green flex-shrink-0" />
                     <span>+91 93200 12345</span>
                   </a>
                   
@@ -592,9 +589,9 @@ export default function ForSellers() {
                     href="https://wa.me/919320012345"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 text-sm font-bold text-brand-navy hover:text-brand-green transition-colors"
+                    className="inline-flex items-center gap-2.5 text-[13px] font-bold text-brand-navy hover:text-brand-green transition-colors"
                   >
-                    <FaWhatsapp size={15} className="text-brand-green" />
+                    <FaWhatsapp size={15} className="text-brand-green flex-shrink-0" />
                     <span>Chat on WhatsApp</span>
                   </a>
                 </div>
@@ -626,13 +623,13 @@ export default function ForSellers() {
 
               {/* Right Column: Register CTA Button */}
               <div className="flex flex-col items-center md:items-end gap-2 flex-shrink-0">
-                <a
-                  href="/#waitlist-banner"
-                  className="bg-brand-green hover:bg-brand-dark-green text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all duration-300 hover:scale-102 flex items-center gap-2"
+                <button
+                  onClick={() => openOtpModal()}
+                  className="bg-brand-green hover:bg-brand-dark-green text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all duration-300 hover:scale-102 flex items-center gap-2 cursor-pointer focus:outline-none"
                 >
                   <span>Register Your Business Now</span>
                   <FaArrowRight size={12} />
-                </a>
+                </button>
                 <span className="text-[10.5px] font-bold text-emerald-100/60 tracking-wide">
                   It’s Free to Join Early
                 </span>

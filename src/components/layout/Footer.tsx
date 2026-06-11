@@ -11,8 +11,8 @@ export function Footer() {
   const quickLinks = [
     { label: "Why OpenMarket", href: "/why-openmarket" },
     { label: "For Sellers", href: "/for-sellers" },
-    { label: "For Buyers", href: "/#buyers" },
-    { label: "Our Mission", href: "/#why-building" },
+    { label: "For Buyers", href: "/for-buyers" },
+    { label: "Our Mission", href: "/our-mission" },
     { label: "Founding Members", href: "/#why-building" },
     { label: "Contact Us", href: "mailto:hello@openmarket.co.in" },
   ];

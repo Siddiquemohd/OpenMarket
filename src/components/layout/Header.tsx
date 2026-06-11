@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
+import { useOtpModal } from "@/providers/OtpModalProvider";
+
 /**
  * Reusable Logo Component
  */
@@ -30,13 +32,14 @@ export function Logo() {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { openOtpModal } = useOtpModal();
 
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "Why OpenMarket", href: "/why-openmarket" },
-    { label: "Mission", href: "/#difference" },
+    { label: "Our Mission", href: "/our-mission" },
     { label: "For Sellers", href: "/for-sellers" },
-    { label: "For Buyers", href: "/#buyers" },
+    { label: "For Buyers", href: "/for-buyers" },
   ];
 
   const isActive = (href: string) => {
@@ -72,12 +75,12 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <a
-            href="/#waitlist-banner"
-            className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm"
+          <button
+            onClick={() => openOtpModal()}
+            className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none"
           >
             Join Now
-          </a>
+          </button>
         </nav>
       </div>
 
@@ -105,13 +108,15 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/#waitlist-banner"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2"
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openOtpModal();
+                }}
+                className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2 cursor-pointer w-full focus:outline-none"
               >
                 Join Now
-              </a>
+              </button>
             </nav>
           </motion.div>
         )}
