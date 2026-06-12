@@ -16,12 +16,12 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
   const axios = useAxios();
   const [step, setStep] = useState<"phone" | "otp" | "success">("phone");
   const [phone, setPhone] = useState("");
-  const [otp, setOtp] = useState("");
+  const [otpValues, setOtpValues] = useState<string[]>(["", "", "", ""]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-  const otpInputRef = useRef<HTMLInputElement>(null);
+  const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   // Clear or prepopulate state when modal opens
   useEffect(() => {
@@ -29,7 +29,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
       setError(null);
       setSuccessMessage(null);
       setIsLoading(false);
-      setOtp("");
+      setOtpValues(["", "", "", ""]);
       
       if (initialPhone) {
         const cleaned = initialPhone.trim();
@@ -44,10 +44,12 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
     }
   }, [isOpen, initialPhone]);
 
-  // Focus OTP input when step changes to otp
+  // Focus first OTP input when step changes to otp
   useEffect(() => {
-    if (step === "otp" && otpInputRef.current) {
-      otpInputRef.current.focus();
+    if (step === "otp" && otpRefs.current[0]) {
+      setTimeout(() => {
+        otpRefs.current[0]?.focus();
+      }, 50);
     }
   }, [step]);
 
@@ -64,9 +66,14 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
     setError(null);
     try {
       const { phoneWithPlus } = formatPhoneNumber(phoneNumber);
-      await axios.post("/web/wishlist/send-otp", {
+      const res = await axios.post("/web/wishlist/send-otp", {
         number: phoneWithPlus,
       });
+      // Check if number already exists in wishlist
+      if (res.data?.data?.alreadyExists) {
+        setError(res.data.msg || "Number is already in the wishlist");
+        return;
+      }
       setStep("otp");
     } catch (err: any) {
       console.error("Error sending OTP:", err);
@@ -93,9 +100,14 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
     setError(null);
     try {
       const { phoneWithPlus } = formatPhoneNumber(phone);
-      await axios.post("/web/wishlist/send-otp", {
+      const res = await axios.post("/web/wishlist/send-otp", {
         number: phoneWithPlus,
       });
+      // Check if number already exists in wishlist
+      if (res.data?.data?.alreadyExists) {
+        setError(res.data.msg || "Number is already in the wishlist");
+        return;
+      }
       setStep("otp");
     } catch (err: any) {
       console.error("Error sending OTP:", err);
@@ -108,12 +120,9 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
 
   const handleVerifyOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!otp) {
-      setError("Please enter the OTP");
-      return;
-    }
-    if (otp.length < 4) {
-      setError("OTP must be at least 4 digits");
+    const otpString = otpValues.join("");
+    if (otpString.length < 4) {
+      setError("Please enter all 4 digits of the OTP");
       return;
     }
 
@@ -123,7 +132,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
       const { phoneWithoutPlus } = formatPhoneNumber(phone);
       await axios.post("/web/wishlist/verify-otp", {
         number: phoneWithoutPlus,
-        otp: otp,
+        otp: otpString,
       });
       setSuccessMessage("OTP verified successfully! You are now on the waitlist.");
       setStep("success");
@@ -133,6 +142,60 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
       setError(msg);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleOtpChange = (val: string, index: number) => {
+    const cleanVal = val.replace(/[^0-9]/g, "");
+    if (!cleanVal) {
+      const newOtpValues = [...otpValues];
+      newOtpValues[index] = "";
+      setOtpValues(newOtpValues);
+      return;
+    }
+
+    const digit = cleanVal[cleanVal.length - 1]; // take the last character entered
+    const newOtpValues = [...otpValues];
+    newOtpValues[index] = digit;
+    setOtpValues(newOtpValues);
+
+    // Auto-focus next input
+    if (index < 3) {
+      otpRefs.current[index + 1]?.focus();
+    }
+  };
+
+  const handleOtpKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
+    if (e.key === "Backspace") {
+      if (!otpValues[index] && index > 0) {
+        // Current input is empty, focus previous and clear it
+        const newOtpValues = [...otpValues];
+        newOtpValues[index - 1] = "";
+        setOtpValues(newOtpValues);
+        otpRefs.current[index - 1]?.focus();
+      } else {
+        // Just clear current input
+        const newOtpValues = [...otpValues];
+        newOtpValues[index] = "";
+        setOtpValues(newOtpValues);
+      }
+      e.preventDefault();
+    }
+  };
+
+  const handleOtpPaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pastedData = e.clipboardData.getData("text").replace(/[^0-9]/g, "").slice(0, 4);
+    if (pastedData.length > 0) {
+      const newOtpValues = [...otpValues];
+      for (let i = 0; i < 4; i++) {
+        newOtpValues[i] = pastedData[i] || "";
+      }
+      setOtpValues(newOtpValues);
+      
+      // Focus the last filled input or the 4th input
+      const focusIndex = Math.min(pastedData.length - 1, 3);
+      otpRefs.current[focusIndex]?.focus();
     }
   };
 
@@ -259,22 +322,23 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
                 </div>
 
                 <form onSubmit={handleVerifyOtpSubmit} className="flex flex-col gap-3 w-full text-left mt-2">
-                  <div className="relative w-full">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-brand-navy">
-                      <FiShield size={16} />
-                    </span>
-                    <input
-                      ref={otpInputRef}
-                      type="text"
-                      inputMode="numeric"
-                      pattern="[0-9]*"
-                      maxLength={6}
-                      placeholder="Enter verification code"
-                      value={otp}
-                      onChange={(e) => setOtp(e.target.value)}
-                      disabled={isLoading}
-                      className="w-full py-3.5 pl-11 pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all text-center tracking-[0.2em] font-mono"
-                    />
+                  <div className="flex justify-center gap-3 sm:gap-4 my-2">
+                    {otpValues.map((value, index) => (
+                      <input
+                        key={index}
+                        ref={(el) => { otpRefs.current[index] = el; }}
+                        type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        maxLength={1}
+                        value={value}
+                        onChange={(e) => handleOtpChange(e.target.value, index)}
+                        onKeyDown={(e) => handleOtpKeyDown(e, index)}
+                        onPaste={handleOtpPaste}
+                        disabled={isLoading}
+                        className="w-12 h-12 sm:w-14 sm:h-14 text-center text-xl font-extrabold border border-slate-200 rounded-xl focus:border-brand-green focus:ring-2 focus:ring-brand-green/30 focus:outline-none transition-all text-slate-900 bg-white shadow-sm"
+                      />
+                    ))}
                   </div>
 
                   {error && (
