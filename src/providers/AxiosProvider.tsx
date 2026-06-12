@@ -12,7 +12,7 @@ interface AxiosProviderProps {
 export function AxiosProvider({ children }: AxiosProviderProps) {
   const axiosInstance = useMemo(() => {
     return axios.create({
-      baseURL: process.env.NEXT_PUBLIC_API_URL || "/api/v1/open-market",
+      baseURL: process.env.NEXT_PUBLIC_API_URL || "https://backend.openmarket.co.in/api/v1",
       headers: {
         "Content-Type": "application/json",
       },
