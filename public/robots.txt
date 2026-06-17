@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Host
+Host: https://www.openmarket.co.in
+
+# Sitemaps
+Sitemap: https://www.openmarket.co.in/sitemap.xml
