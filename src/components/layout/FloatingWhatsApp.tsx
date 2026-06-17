@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
 /**
@@ -6,6 +9,12 @@ import { FaWhatsapp } from "react-icons/fa";
  * Renders a fixed WhatsApp button on the bottom left corner of the screen.
  */
 export function FloatingWhatsApp() {
+  const pathname = usePathname();
+
+  if (pathname === "/founding-members") {
+    return null;
+  }
+
   return (
     <a
       href="https://wa.me/918108359977"

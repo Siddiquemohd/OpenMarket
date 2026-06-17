@@ -344,7 +344,7 @@ export default function OurMission() {
 
               {/* Mission Text */}
               <p className="text-[14px] sm:text-[16px] md:text-[17px] font-bold text-brand-navy/90 leading-relaxed text-left flex-grow max-w-3xl lg:px-6">
-                To build India's most <span className="font-extrabold text-brand-navy">trusted</span> B2B marketplace that promotes <span className="font-extrabold text-brand-navy">fair trade</span>, rewards <span className="font-extrabold text-brand-navy">genuine</span> businesses, and helps buyers connect with <span className="font-extrabold text-brand-navy">reliable and responsive suppliers</span>.
+                To build India&apos;s most <span className="font-extrabold text-brand-navy">trusted</span> B2B marketplace that promotes <span className="font-extrabold text-brand-navy">fair trade</span>, rewards <span className="font-extrabold text-brand-navy">genuine</span> businesses, and helps buyers connect with <span className="font-extrabold text-brand-navy">reliable and responsive suppliers</span>.
               </p>
 
               {/* Right Mountain climbing illustration */}

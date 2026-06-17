@@ -541,7 +541,7 @@ export default function ForBuyers() {
                     <FaUsers size={16} />
                   </div>
                   <p className="text-[11.5px] font-bold text-brand-navy leading-relaxed mt-0.5">
-                    "This means buyers see suppliers who are active, relevant, and serious about doing business."
+                    &quot;This means buyers see suppliers who are active, relevant, and serious about doing business.&quot;
                   </p>
                 </div>
               </div>

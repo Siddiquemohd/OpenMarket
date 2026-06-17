@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -13,7 +14,7 @@ import { useOtpModal } from "@/providers/OtpModalProvider";
  */
 export function Logo() {
   return (
-    <a href="/" className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
+    <Link href="/" className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
       <Image
         src="/logo.png"
         alt="OpenMarket Logo"
@@ -22,7 +23,7 @@ export function Logo() {
         priority
         className="object-contain object-left"
       />
-    </a>
+    </Link>
   );
 }
 
@@ -54,6 +55,7 @@ export function Header() {
         {/* Toggle Button for Mobile Devices */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          suppressHydrationWarning
           className="p-2 rounded-lg text-brand-navy hover:bg-slate-100 transition-colors md:hidden focus:outline-none"
           aria-label="Toggle Menu"
         >
@@ -77,6 +79,7 @@ export function Header() {
           ))}
           <button
             onClick={() => openOtpModal()}
+            suppressHydrationWarning
             className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none"
           >
             Join Now
@@ -113,6 +116,7 @@ export function Header() {
                   setMobileMenuOpen(false);
                   openOtpModal();
                 }}
+                suppressHydrationWarning
                 className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2 cursor-pointer w-full focus:outline-none"
               >
                 Join Now

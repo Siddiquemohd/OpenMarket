@@ -13,7 +13,7 @@ export function Footer() {
     { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/for-buyers" },
     { label: "Our Mission", href: "/our-mission" },
-    { label: "Founding Members", href: "/#why-building" },
+    { label: "Founding Members", href: "/founding-members" },
     { label: "Contact Us", href: "mailto:hello@openmarket.co.in" },
   ];
 

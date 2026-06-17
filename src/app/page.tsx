@@ -577,7 +577,7 @@ export default function Home() {
                 className="lg:col-span-8 flex flex-col gap-6"
               >
                 <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                  <span className="text-brand-navy">WHY I'M BUILDING </span>
+                  <span className="text-brand-navy">WHY I&apos;M BUILDING </span>
                   <span className="text-brand-green">OPENMARKET</span>
                 </h2>
 
@@ -586,7 +586,7 @@ export default function Home() {
                     For more than two decades, I have worked with manufacturers, contractors, traders and suppliers.
                   </p>
                   <p>
-                    I have personally experienced the frustrations of today's B2B marketplaces.
+                    I have personally experienced the frustrations of today&apos;s B2B marketplaces.
                   </p>
                   <p>
                     OpenMarket is my commitment to building a transparent, community-driven marketplace where businesses can connect with confidence and grow fairly.

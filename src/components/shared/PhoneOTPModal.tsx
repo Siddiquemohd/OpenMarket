@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useCallback, useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAxios } from "@/providers/AxiosProvider";
 import { FaPhoneAlt, FaCheck, FaArrowRight } from "react-icons/fa";
-import { FiX, FiShield, FiAlertCircle, FiLock } from "react-icons/fi";
+import { FiX, FiAlertCircle, FiLock } from "react-icons/fi";
 
 interface PhoneOTPModalProps {
   isOpen: boolean;
@@ -12,10 +12,35 @@ interface PhoneOTPModalProps {
   initialPhone?: string;
 }
 
+type ApiErrorBody = {
+  message?: string;
+  error?: string;
+};
+
+function getErrorMessage(error: unknown, fallback: string) {
+  if (
+    typeof error === "object" &&
+    error !== null &&
+    "response" in error &&
+    typeof error.response === "object" &&
+    error.response !== null &&
+    "data" in error.response
+  ) {
+    const data = error.response.data as ApiErrorBody;
+    return data.message || data.error || fallback;
+  }
+
+  if (error instanceof Error) {
+    return error.message;
+  }
+
+  return fallback;
+}
+
 export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPModalProps) {
-  const axios = useAxios();
+  const api = useAxios();
   const [step, setStep] = useState<"phone" | "otp" | "success">("phone");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState(initialPhone.trim());
   const [otpValues, setOtpValues] = useState<string[]>(["", "", "", ""]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,26 +48,45 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
 
   const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  // Clear or prepopulate state when modal opens
-  useEffect(() => {
-    if (isOpen) {
-      setError(null);
-      setSuccessMessage(null);
-      setIsLoading(false);
-      setOtpValues(["", "", "", ""]);
-      
-      if (initialPhone) {
-        const cleaned = initialPhone.trim();
-        setPhone(cleaned);
-        setStep("phone");
-        // Trigger auto-send if a phone is provided inline
-        autoSendOtp(cleaned);
-      } else {
-        setPhone("");
-        setStep("phone");
+  const formatPhoneNumber = (num: string) => {
+    const cleaned = num.trim().replace(/[\s()-]/g, "");
+    const phoneWithPlus = cleaned.startsWith("+") ? cleaned : `+${cleaned}`;
+    const phoneWithoutPlus = phoneWithPlus.replace("+", "");
+    return { phoneWithPlus, phoneWithoutPlus };
+  };
+
+  const autoSendOtp = useCallback(async (phoneNumber: string) => {
+    if (!phoneNumber) return;
+    setIsLoading(true);
+    setError(null);
+    try {
+      const { phoneWithPlus } = formatPhoneNumber(phoneNumber);
+      const res = await api.post("/web/wishlist/send-otp", {
+        number: phoneWithPlus,
+      });
+      // Check if number already exists in wishlist
+      if (res.data?.data?.alreadyExists) {
+        setError(res.data.msg || "Number is already in the wishlist");
+        return;
       }
+      setStep("otp");
+    } catch (err: unknown) {
+      console.error("Error sending OTP:", err);
+      setError(getErrorMessage(err, "Failed to send OTP. Please try again."));
+    } finally {
+      setIsLoading(false);
     }
-  }, [isOpen, initialPhone]);
+  }, [api]);
+
+  useEffect(() => {
+    if (!initialPhone) return;
+
+    const timeoutId = window.setTimeout(() => {
+      void autoSendOtp(initialPhone);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [autoSendOtp, initialPhone]);
 
   // Focus first OTP input when step changes to otp
   useEffect(() => {
@@ -52,37 +96,6 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
       }, 50);
     }
   }, [step]);
-
-  const formatPhoneNumber = (num: string) => {
-    const cleaned = num.trim().replace(/[\s()-]/g, "");
-    const phoneWithPlus = cleaned.startsWith("+") ? cleaned : `+${cleaned}`;
-    const phoneWithoutPlus = phoneWithPlus.replace("+", "");
-    return { phoneWithPlus, phoneWithoutPlus };
-  };
-
-  const autoSendOtp = async (phoneNumber: string) => {
-    if (!phoneNumber) return;
-    setIsLoading(true);
-    setError(null);
-    try {
-      const { phoneWithPlus } = formatPhoneNumber(phoneNumber);
-      const res = await axios.post("/web/wishlist/send-otp", {
-        number: phoneWithPlus,
-      });
-      // Check if number already exists in wishlist
-      if (res.data?.data?.alreadyExists) {
-        setError(res.data.msg || "Number is already in the wishlist");
-        return;
-      }
-      setStep("otp");
-    } catch (err: any) {
-      console.error("Error sending OTP:", err);
-      const msg = err.response?.data?.message || err.response?.data?.error || err.message || "Failed to send OTP. Please try again.";
-      setError(msg);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleSendOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,7 +113,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
     setError(null);
     try {
       const { phoneWithPlus } = formatPhoneNumber(phone);
-      const res = await axios.post("/web/wishlist/send-otp", {
+      const res = await api.post("/web/wishlist/send-otp", {
         number: phoneWithPlus,
       });
       // Check if number already exists in wishlist
@@ -109,10 +122,9 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
         return;
       }
       setStep("otp");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error sending OTP:", err);
-      const msg = err.response?.data?.message || err.response?.data?.error || err.message || "Failed to send OTP. Please try again.";
-      setError(msg);
+      setError(getErrorMessage(err, "Failed to send OTP. Please try again."));
     } finally {
       setIsLoading(false);
     }
@@ -130,16 +142,15 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
     setError(null);
     try {
       const { phoneWithoutPlus } = formatPhoneNumber(phone);
-      await axios.post("/web/wishlist/verify-otp", {
+      await api.post("/web/wishlist/verify-otp", {
         number: phoneWithoutPlus,
         otp: otpString,
       });
       setSuccessMessage("OTP verified successfully! You are now on the waitlist.");
       setStep("success");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error verifying OTP:", err);
-      const msg = err.response?.data?.message || err.response?.data?.error || err.message || "Invalid OTP. Please try again.";
-      setError(msg);
+      setError(getErrorMessage(err, "Invalid OTP. Please try again."));
     } finally {
       setIsLoading(false);
     }
@@ -317,7 +328,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
                     Verify Your Mobile Number
                   </h3>
                   <p className="text-xs font-semibold text-slate-500 max-w-xs mx-auto leading-relaxed">
-                    We've sent a 4-digit OTP to your number <span className="font-bold text-brand-navy">{phone}</span>.
+                    We&apos;ve sent a 4-digit OTP to your number <span className="font-bold text-brand-navy">{phone}</span>.
                   </p>
                 </div>
 
@@ -402,7 +413,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
               >
                 <div className="flex flex-col gap-1.5">
                   <h3 className="text-xl font-extrabold text-brand-navy tracking-tight">
-                    You're on the list!
+                    You&apos;re on the list!
                   </h3>
                   <p className="text-sm font-semibold text-slate-500 max-w-xs mx-auto leading-relaxed">
                     {successMessage || "Thank you for joining. We will notify you as soon as the OpenMarket app is ready."}

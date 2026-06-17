@@ -27,7 +27,9 @@ export function OtpModalProvider({ children }: { children: React.ReactNode }) {
   return (
     <OtpModalContext.Provider value={{ openOtpModal, closeOtpModal }}>
       {children}
-      <PhoneOTPModal isOpen={isOpen} onClose={closeOtpModal} initialPhone={initialPhone} />
+      {isOpen && (
+        <PhoneOTPModal isOpen={isOpen} onClose={closeOtpModal} initialPhone={initialPhone} />
+      )}
     </OtpModalContext.Provider>
   );
 }
