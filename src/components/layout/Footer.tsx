@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import { FaLinkedin, FaWhatsapp, FaChevronRight, FaEnvelope } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
@@ -173,13 +174,13 @@ export function Footer() {
           
           {/* Legal Links */}
           <div className="flex items-center gap-3">
-            <a href="#privacy" className="hover:text-brand-green transition-colors">
+            <Link href="/privacy-policy" className="hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <span>|</span>
-            <a href="#terms" className="hover:text-brand-green transition-colors">
-              Terms of Service
-            </a>
+            <Link href="/terms-and-conditions" className="hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 transition-colors">
+              Terms and Conditions
+            </Link>
           </div>
           
         </div>

@@ -4,6 +4,7 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAxios } from "@/providers/AxiosProvider";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
+import { LegalConsentNotice } from "@/components/shared/LegalConsentNotice";
 import { FaCheck, FaArrowRight } from "react-icons/fa";
 import { FiX, FiAlertCircle, FiLock } from "react-icons/fi";
 
@@ -312,6 +313,8 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
                       </>
                     )}
                   </motion.button>
+
+                  {!initialPhone && <LegalConsentNotice className="text-center px-1" />}
                 </form>
               </motion.div>
             )}

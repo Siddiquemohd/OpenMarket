@@ -9,6 +9,7 @@ import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOtpModal } from "@/providers/OtpModalProvider";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
+import { LegalConsentNotice } from "@/components/shared/LegalConsentNotice";
 import {
   FaLinkedin,
   FaArrowRight,
@@ -119,6 +120,7 @@ function WaitlistForm({
           JOIN THE WAITLIST
           <FaArrowRight size={14} />
         </motion.button>
+        <LegalConsentNotice className="text-center px-1" />
       </form>
     </div>
   );
