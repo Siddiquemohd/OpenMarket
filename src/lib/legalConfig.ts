@@ -7,6 +7,6 @@ export const legalConfig = {
     "S-33, 2nd Floor, Fantasia Business Park Premises, Vashi, Navi Mumbai, Maharashtra - 400703, India",
   country: "India",
   lastUpdated: "June 18, 2026",
-  // TODO: Legal review required - governing jurisdiction was not found in project content or configuration.
-  governingJurisdiction: "[GOVERNING JURISDICTION]",
+  // TODO: Legal review required - governing jurisdiction wording should be reviewed by qualified Indian legal counsel.
+  governingJurisdiction: "Mumbai, Maharashtra, India",
 } as const;

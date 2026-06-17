@@ -165,8 +165,9 @@ export default function TermsAndConditionsPage() {
 
       <LegalSection title="17. Governing Law and Jurisdiction">
         <p>
-          These terms are governed by the laws of {governingJurisdiction}. Courts or forums in {governingJurisdiction} will have jurisdiction,
-          subject to applicable law.
+          These terms shall be governed by and interpreted in accordance with the laws of India. Subject to applicable law, the courts located in{" "}
+          {governingJurisdiction} shall have exclusive jurisdiction over disputes arising out of or relating to these terms, the website, the
+          waitlist, or the services.
         </p>
       </LegalSection>
 
