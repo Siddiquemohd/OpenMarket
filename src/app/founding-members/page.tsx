@@ -3,12 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { useOtpModal } from "@/providers/OtpModalProvider";
+import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import {
   FaArrowRight,
   FaAward,
   FaCheckCircle,
   FaCrown,
-  FaMobileAlt,
   FaRocket,
   FaStar,
   FaUsers,
@@ -58,23 +58,18 @@ const earlyBenefits = [
 
 function PhoneUserIcon() {
   return (
-    <svg viewBox="0 0 72 72" className="h-[62px] w-[62px]" aria-hidden="true">
-      <rect x="22" y="8" width="28" height="52" rx="5" fill="white" stroke="#0B3C5F" strokeWidth="2.4" />
-      <rect x="29" y="13" width="14" height="2.5" rx="1.25" fill="#E5EAF0" />
-      <circle cx="36" cy="31" r="5" fill="#0B3C5F" />
-      <path d="M27.5 48c1.4-6 5.2-9 8.5-9s7.1 3 8.5 9" fill="#0B3C5F" />
-    </svg>
+    <span className="flex h-[62px] w-[62px] items-center justify-center text-brand-navy" aria-hidden="true">
+      <PhoneIcon size={48} />
+    </span>
   );
 }
 
 function PhoneCheckIcon() {
   return (
-    <svg viewBox="0 0 72 72" className="h-[62px] w-[62px]" aria-hidden="true">
-      <rect x="22" y="8" width="28" height="52" rx="5" fill="white" stroke="#0B3C5F" strokeWidth="2.4" />
-      <rect x="29" y="13" width="14" height="2.5" rx="1.25" fill="#E5EAF0" />
-      <circle cx="36" cy="35" r="11" fill="white" stroke="#0FA958" strokeWidth="2.5" />
-      <path d="M30.5 35.2l4 4.2 7.5-9" fill="none" stroke="#0FA958" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <span className="relative flex h-[62px] w-[62px] items-center justify-center text-brand-navy" aria-hidden="true">
+      <PhoneIcon size={48} />
+      <FaCheckCircle className="absolute bottom-1 right-1 text-[20px] text-brand-green" />
+    </span>
   );
 }
 
@@ -222,7 +217,7 @@ const futureBenefits = [
 const gettingStarted = [
   {
     title: "Register with your mobile number",
-    icon: <FaMobileAlt />,
+    icon: <PhoneIcon size={30} />,
   },
   {
     title: "Get the app link and create your FREE profile",

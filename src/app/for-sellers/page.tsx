@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import { 
   FaGraduationCap, 
   FaBriefcase, 
@@ -25,7 +26,6 @@ import {
   FaBoxOpen,
   FaRocket,
   FaChevronRight,
-  FaPhoneAlt,
   FaWhatsapp,
   FaRegEnvelope
 } from "react-icons/fa";
@@ -581,7 +581,7 @@ export default function ForSellers() {
                     href="tel:+919320012345"
                     className="inline-flex items-center gap-2.5 text-[13px] font-bold text-brand-navy hover:text-brand-green transition-colors"
                   >
-                    <FaPhoneAlt size={13} className="text-brand-green flex-shrink-0" />
+                    <PhoneIcon size={15} className="text-brand-green flex-shrink-0" />
                     <span>+91 93200 12345</span>
                   </a>
                   

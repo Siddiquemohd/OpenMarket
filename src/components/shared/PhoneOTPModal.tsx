@@ -3,7 +3,8 @@
 import React, { useCallback, useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAxios } from "@/providers/AxiosProvider";
-import { FaPhoneAlt, FaCheck, FaArrowRight } from "react-icons/fa";
+import { PhoneIcon } from "@/components/shared/PhoneIcon";
+import { FaCheck, FaArrowRight } from "react-icons/fa";
 import { FiX, FiAlertCircle, FiLock } from "react-icons/fi";
 
 interface PhoneOTPModalProps {
@@ -246,7 +247,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
               ? "bg-emerald-50 text-brand-green" 
               : "bg-slate-50 text-brand-navy"
           }`}>
-            {step === "phone" && <FaPhoneAlt size={20} className="rotate-90" />}
+            {step === "phone" && <PhoneIcon size={32} />}
             {step === "otp" && <FiLock size={22} />}
             {step === "success" && <FaCheck size={20} />}
           </div>
@@ -272,7 +273,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
                 <form onSubmit={handleSendOtpSubmit} className="flex flex-col gap-3 w-full text-left mt-2">
                   <div className="relative w-full">
                     <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-brand-navy">
-                      <FaPhoneAlt size={16} className="rotate-90" />
+                      <PhoneIcon size={24} />
                     </span>
                     <input
                       type="tel"

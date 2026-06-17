@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { FaLinkedin, FaWhatsapp, FaChevronRight, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { PhoneIcon } from "@/components/shared/PhoneIcon";
+import { FaLinkedin, FaWhatsapp, FaChevronRight, FaEnvelope } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 
 /**
@@ -84,7 +85,7 @@ export function Footer() {
                 href="tel:+919320012345"
                 className="flex items-center gap-3 text-[15px] font-semibold text-slate-600 hover:text-brand-green transition-colors duration-200"
               >
-                <FaPhoneAlt className="text-[15px] text-brand-navy" />
+                <PhoneIcon size={16} className="text-brand-navy flex-shrink-0" />
                 <span>+91 93200 12345</span>
               </a>
               

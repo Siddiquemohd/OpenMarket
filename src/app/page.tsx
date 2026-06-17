@@ -7,9 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOtpModal } from "@/providers/OtpModalProvider";
+import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import {
   FaLinkedin,
-  FaPhoneAlt,
   FaArrowRight,
   FaCheck,
   FaUsers,
@@ -119,7 +119,7 @@ function WaitlistForm({
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 w-full">
         <div className="relative w-full">
           <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-brand-navy">
-            <FaPhoneAlt size={16} className="rotate-90" />
+            <PhoneIcon size={24} />
           </span>
           <input
             type="tel"
