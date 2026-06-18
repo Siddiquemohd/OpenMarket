@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useOtpModal } from "@/providers/OtpModalProvider";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import {
@@ -292,7 +293,11 @@ export default function FoundingMembersPage() {
               Help Build India&apos;s Most Trusted B2B Marketplace
             </h2>
             <p className="max-w-lg text-lg font-semibold leading-relaxed text-brand-navy/90">
-              The first businesses joining OpenMarket will not just be users. They will be the founding community that helps shape the future of the platform.
+              The first businesses joining OpenMarket will not just be users. They will be the founding community that helps shape{" "}
+              <Link href="/our-mission" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                the OpenMarket mission
+              </Link>
+              .
             </p>
             <button
               onClick={() => openOtpModal()}
@@ -440,7 +445,10 @@ export default function FoundingMembersPage() {
             <div>
               <h2 className="text-3xl font-black">Join The Movement.</h2>
               <p className="mt-2 max-w-xl text-base font-semibold leading-relaxed text-white/90">
-                Help build a marketplace where visibility is earned through activity and engagement, not advertising budgets.
+                Help build a marketplace where visibility is earned through activity and engagement, not advertising budgets.{" "}
+                <Link href="/why-openmarket" className="text-white underline decoration-white/50 underline-offset-4 transition-colors hover:text-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80">
+                  See why OpenMarket is different
+                </Link>
               </p>
             </div>
           </div>

@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint",
-    "test:routes": "node scripts/test-routes.mjs"
+    "test:routes": "node scripts/test-routes.mjs",
+    "test:links": "node scripts/check-internal-links.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

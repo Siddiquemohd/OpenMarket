@@ -2,6 +2,7 @@
 
 import { useState, cloneElement } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -225,7 +226,11 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-base font-medium text-slate-700 max-w-lg leading-relaxed mt-2"
               >
-                <span className="text-brand-green font-extrabold">OpenMarket</span> is building a fair <span className="text-brand-navy font-extrabold">B2B marketplace</span> where visibility is earned through activity, engagement, trust and contribution.
+                <span className="text-brand-green font-extrabold">OpenMarket</span> is building a fair{" "}
+                <Link href="/why-openmarket" className="text-brand-navy font-extrabold underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                  B2B marketplace
+                </Link>{" "}
+                where visibility is earned through activity, engagement, trust and contribution.
               </motion.p>
             </div>
 
@@ -402,13 +407,13 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a
-                  href="#waitlist-banner"
+                <Link
+                  href="/for-sellers"
                   className="flex items-center gap-2 text-brand-green font-bold hover:text-brand-dark-green transition-colors mt-4 self-start group text-sm"
                 >
-                  Learn more
+                  Explore seller opportunities
                   <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </motion.div>
 
               {/* Right Column: Buyers Card */}
@@ -467,13 +472,13 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <a
-                  href="#waitlist-banner"
+                <Link
+                  href="/for-buyers"
                   className="flex items-center gap-2 text-brand-navy font-bold hover:text-slate-700 transition-colors mt-4 self-start group text-sm"
                 >
-                  Learn more
+                  Learn how OpenMarket works for buyers
                   <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </motion.div>
 
             </div>

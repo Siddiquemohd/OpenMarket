@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "../globals.css";
 import {
   FaLinkedin,
@@ -226,7 +227,19 @@ export default function OurMission() {
               </div>
 
               <p className="text-sm md:text-[14.5px] font-bold text-slate-500 leading-relaxed max-w-lg">
-                We exist to create a trusted B2B ecosystem where visibility is earned through activity, engagement, and authenticity—not bought.
+                We exist to create a trusted B2B ecosystem where visibility is earned through activity, engagement, and authenticity—not bought.{" "}
+                <Link href="/why-openmarket" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                  Read why OpenMarket is different
+                </Link>
+                .
+              </p>
+
+              <p className="text-sm md:text-[14.5px] font-bold text-slate-500 leading-relaxed max-w-lg">
+                The mission starts with the{" "}
+                <Link href="/founding-members" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                  founding members
+                </Link>{" "}
+                helping shape the platform from day one.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2">

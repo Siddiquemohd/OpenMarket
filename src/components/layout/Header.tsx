@@ -14,7 +14,7 @@ import { useOtpModal } from "@/providers/OtpModalProvider";
  */
 export function Logo() {
   return (
-    <Link href="/" className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300">
+    <Link href="/" aria-label="OpenMarket home" className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4">
       <Image
         src="/logo.png"
         alt="OpenMarket Logo"
@@ -65,17 +65,18 @@ export function Header() {
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 font-semibold text-sm">
           {navLinks.map((link, idx) => (
-            <a
+            <Link
               key={idx}
               href={link.href}
-              className={`transition-colors duration-200 py-1 ${
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`transition-colors duration-200 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${
                 isActive(link.href)
                   ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
                   : "text-brand-navy hover:text-brand-green"
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => openOtpModal()}
@@ -98,18 +99,19 @@ export function Header() {
           >
             <nav className="flex flex-col gap-4 font-semibold text-base">
               {navLinks.map((link, idx) => (
-                <a
+                <Link
                   key={idx}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`py-2 border-b border-slate-50 transition-colors duration-200 ${
+                  aria-current={isActive(link.href) ? "page" : undefined}
+                  className={`py-2 border-b border-slate-50 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2 ${
                     isActive(link.href)
                       ? "text-brand-green font-bold"
                       : "text-brand-navy hover:text-brand-green"
                   }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <button
                 onClick={() => {

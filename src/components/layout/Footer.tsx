@@ -27,7 +27,11 @@ export function Footer() {
           
           {/* Column 1: Brand / About */}
           <div className="flex flex-col">
-            <div className="relative w-[180px] h-[40px] flex-shrink-0 mb-4">
+            <Link
+              href="/"
+              aria-label="OpenMarket home"
+              className="relative w-[180px] h-[40px] flex-shrink-0 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4"
+            >
               <Image
                 src="/logo.png"
                 alt="OpenMarket Logo"
@@ -36,7 +40,7 @@ export function Footer() {
                 priority
                 className="object-contain object-left"
               />
-            </div>
+            </Link>
             
             {/* Small green divider line */}
             <div className="h-[2px] w-12 bg-brand-green mb-4" />
@@ -56,18 +60,27 @@ export function Footer() {
             <div className="h-[2px] w-8 bg-brand-green mt-2 mb-4" />
             
             <nav className="flex flex-col gap-3">
-              {quickLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="flex items-center gap-2 text-[15px] font-semibold text-slate-600 hover:text-brand-green transition-all duration-200 group"
-                >
-                  <span className="text-[10px] text-brand-green transform group-hover:translate-x-1 transition-transform">
-                    <FaChevronRight />
-                  </span>
-                  {link.label}
-                </a>
-              ))}
+              {quickLinks.map((link, index) => {
+                const className = "flex items-center gap-2 text-[15px] font-semibold text-slate-600 hover:text-brand-green transition-all duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2";
+                const content = (
+                  <>
+                    <span className="text-[10px] text-brand-green transform group-hover:translate-x-1 transition-transform">
+                      <FaChevronRight />
+                    </span>
+                    {link.label}
+                  </>
+                );
+
+                return link.href.startsWith("/") ? (
+                  <Link key={index} href={link.href} className={className}>
+                    {content}
+                  </Link>
+                ) : (
+                  <a key={index} href={link.href} className={className}>
+                    {content}
+                  </a>
+                );
+              })}
             </nav>
           </div>
 

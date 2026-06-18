@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import { 
@@ -226,7 +227,11 @@ export default function ForSellers() {
               </div>
 
               <p className="text-sm md:text-[14.5px] font-bold text-slate-500 leading-relaxed max-w-sm">
-                Unlike other marketplaces, we don’t sell visibility. Your visibility on OpenMarket is based on your <span className="text-brand-navy font-extrabold">activity and engagement</span> on the platform.
+                Unlike other marketplaces, we don’t sell visibility. Your visibility on OpenMarket is based on your{" "}
+                <Link href="/why-openmarket" className="text-brand-navy font-extrabold underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                  activity and engagement
+                </Link>{" "}
+                on the platform.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2">
@@ -554,7 +559,9 @@ export default function ForSellers() {
                   <div className="flex flex-col text-[14.5px] font-extrabold text-brand-navy leading-tight">
                     <span>Real People.</span>
                     <span>Real Address.</span>
-                    <span>Real Mission.</span>
+                    <Link href="/our-mission" className="underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                      Real Mission.
+                    </Link>
                   </div>
                 </div>
               </div>

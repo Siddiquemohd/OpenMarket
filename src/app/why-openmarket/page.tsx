@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FaLinkedin,
@@ -108,7 +109,15 @@ export default function WhyOpenMarket() {
                   We believe there is a better way.
                 </p>
                 <p>
-                  OpenMarket is being built to create a fair, transparent, and trusted marketplace where every seller gets an opportunity to grow and every buyer gets access to genuine suppliers.
+                  OpenMarket is being built to create a fair, transparent, and trusted marketplace where every{" "}
+                  <Link href="/for-sellers" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                    seller gets an opportunity to grow
+                  </Link>{" "}
+                  and every{" "}
+                  <Link href="/for-buyers" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                    buyer gets access to genuine suppliers
+                  </Link>
+                  .
                 </p>
                 <p>
                   This is not just about technology. It is about empowering manufacturers, traders, service providers, startups, and entrepreneurs who believe business should be built on trust, quality, and relationships—not on who pays the most.
@@ -175,7 +184,9 @@ export default function WhyOpenMarket() {
                 <div className="relative z-20 bg-white -mt-6 p-6 rounded-[32px] shadow-[-5px_-5px_15px_-5px_rgba(0,0,0,0.02)]">
                   <div className="text-left pb-4 border-b border-slate-100">
                     <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-1">
-                      MEET THE FOUNDER
+                      <Link href="/founding-members" className="underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                        MEET THE FOUNDER
+                      </Link>
                     </span>
                     <h3 className="text-[22px] font-black text-brand-navy leading-snug">
                       Kiran Pailwan
@@ -353,7 +364,11 @@ export default function WhyOpenMarket() {
                     Become a Founding Member
                   </h3>
                   <p className="text-sm font-semibold text-slate-500 max-w-xl leading-relaxed">
-                    The first 1,000 businesses joining OpenMarket will help shape the future of the platform.
+                    The first 1,000 businesses joining OpenMarket will help shape the future of the platform.{" "}
+                    <Link href="/founding-members" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                      Meet the founding members
+                    </Link>
+                    .
                   </p>
                 </div>
 

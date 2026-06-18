@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "../globals.css";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -358,7 +359,11 @@ export default function ForBuyers() {
               </div>
 
               <p className="text-sm md:text-[14.5px] font-bold text-slate-500 leading-relaxed max-w-lg">
-                OpenMarket helps buyers discover active, trusted, and relevant suppliers based on credibility, responsiveness, and engagement—not advertising spend.
+                OpenMarket helps buyers discover active, trusted, and relevant suppliers based on credibility, responsiveness, and{" "}
+                <Link href="/why-openmarket" className="text-brand-navy underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                  engagement, not advertising spend
+                </Link>
+                .
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2">
@@ -581,7 +586,11 @@ export default function ForBuyers() {
                   “
                 </span>
                 <p className="text-[13px] font-semibold text-slate-600 leading-relaxed pl-1">
-                  As a supplier myself, I have seen how difficult it is for buyers to identify genuine businesses. OpenMarket is being built to create a more transparent and trusted environment for both buyers and sellers.
+                  As a supplier myself, I have seen how difficult it is for buyers to identify genuine businesses. OpenMarket is being built to create a more transparent and trusted environment for both buyers and{" "}
+                  <Link href="/for-sellers" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
+                    sellers
+                  </Link>
+                  .
                 </p>
               </div>
 
