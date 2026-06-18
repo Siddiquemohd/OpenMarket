@@ -1,13 +1,10 @@
 "use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
-
-import { useOtpModal } from "@/providers/OtpModalProvider";
+import { FiMenu, FiX, FiShare2, FiCheck } from "react-icons/fi";
 
 /**
  * Reusable Logo Component
@@ -32,19 +29,42 @@ export function Logo() {
  */
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const pathname = usePathname();
-  const { openOtpModal } = useOtpModal();
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Why OpenMarket", href: "/why-openmarket" },
-    { label: "Our Mission", href: "/our-mission" },
-    { label: "For Sellers", href: "/for-sellers" },
-    { label: "For Buyers", href: "/for-buyers" },
+    { label: "About Us", href: "/our-mission" },
+    { label: "How It Works", href: "/why-openmarket" },
+    { label: "Founding Sellers", href: "/founding-members" },
+    { label: "Contact Us", href: "/contact-us" },
   ];
 
   const isActive = (href: string) => {
     return pathname === href;
+  };
+
+  const handleShare = async () => {
+    const shareUrl = typeof window !== "undefined" ? window.location.origin : "https://www.openmarket.co.in";
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({
+          title: "OpenMarket - Where Fair Trade Matters",
+          text: "Join the movement to build a fair B2B marketplace where visibility is earned through activity and trust.",
+          url: shareUrl,
+        });
+      } catch (err) {
+        console.error("Error sharing:", err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (err) {
+        console.error("Error copying link:", err);
+      }
+    }
   };
 
   return (
@@ -78,13 +98,16 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={() => openOtpModal()}
-            suppressHydrationWarning
-            className="px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none"
-          >
-            Join Now
-          </button>
+          <div className="relative">
+            <button
+              onClick={handleShare}
+              suppressHydrationWarning
+              className="flex items-center gap-2 px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none"
+            >
+              {copied ? <FiCheck size={16} /> : <FiShare2 size={16} />}
+              <span>{copied ? "Link Copied" : "Share OpenMarket"}</span>
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -116,12 +139,13 @@ export function Header() {
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  openOtpModal();
+                  handleShare();
                 }}
                 suppressHydrationWarning
                 className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2 cursor-pointer w-full focus:outline-none"
               >
-                Join Now
+                {copied ? <FiCheck size={18} /> : <FiShare2 size={18} />}
+                <span>{copied ? "Link Copied" : "Share OpenMarket"}</span>
               </button>
             </nav>
           </motion.div>
