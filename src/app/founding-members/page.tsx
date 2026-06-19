@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useOtpModal } from "@/providers/OtpModalProvider";
+import { useAxios } from "@/providers/AxiosProvider";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
 import {
   FaArrowRight,
@@ -272,8 +273,30 @@ function FoundingShield() {
 
 export default function FoundingMembersPage() {
   const { openOtpModal } = useOtpModal();
-  const joined = 387;
+  const axios = useAxios();
+  const [joined, setJoined] = useState(428); // Default fallback matching banner
   const goal = 1000;
+
+  useEffect(() => {
+    let active = true;
+    const fetchCount = async () => {
+      try {
+        const res = await axios.get("/web/total/wishlist");
+        if (res.data?.success && typeof res.data.data?.total === "number") {
+          if (active) {
+            setJoined(res.data.data.total);
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching wishlist count on page:", err);
+      }
+    };
+    fetchCount();
+    return () => {
+      active = false;
+    };
+  }, [axios]);
+
   const remaining = goal - joined;
   const progress = `${(joined / goal) * 100}%`;
 
