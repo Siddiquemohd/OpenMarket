@@ -1,8 +1,10 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useOtpModal } from "@/providers/OtpModalProvider";
+import { useAxios } from "@/providers/AxiosProvider";
 import {
   FiZap,
   FiSettings,
@@ -103,6 +105,28 @@ const categories = [
 
 export default function Home() {
   const { openOtpModal } = useOtpModal();
+  const axios = useAxios();
+  const [joined, setJoined] = useState(428); // Default fallback matching banner
+
+  useEffect(() => {
+    let active = true;
+    const fetchCount = async () => {
+      try {
+        const res = await axios.get("/web/total/wishlist");
+        if (res.data?.success && typeof res.data.data?.total === "number") {
+          if (active) {
+            setJoined(res.data.data.total);
+          }
+        }
+      } catch (err) {
+        console.error("Error fetching wishlist count on page:", err);
+      }
+    };
+    fetchCount();
+    return () => {
+      active = false;
+    };
+  }, [axios]);
 
   const handleCTAClick = () => {
     // Open registration OTP dialog directly
@@ -615,7 +639,7 @@ export default function Home() {
                   </svg>
                   
                   <div className="flex flex-col items-start text-left">
-                    <span className="text-2xl lg:text-3xl font-extrabold leading-none text-white">428+</span>
+                    <span className="text-2xl lg:text-3xl font-extrabold leading-none text-white">{joined}+</span>
                     <span className="text-[10px] lg:text-xs text-white/80 font-medium mt-1">Businesses Joined</span>
                   </div>
                 </div>
