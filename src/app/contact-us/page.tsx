@@ -22,7 +22,7 @@ import {
   FaCheckCircle,
   FaBuilding
 } from "react-icons/fa";
-import { FiMapPin, FiPlus, FiMinus, FiPhone, FiUser, FiMessageSquare, FiCalendar } from "react-icons/fi";
+import { FiMapPin, FiPlus, FiMinus, FiPhone, FiUser, FiMessageSquare, FiCalendar, FiCoffee } from "react-icons/fi";
 
 // Validation schema for contact form
 const contactSchema = z.object({
@@ -622,15 +622,7 @@ export default function ContactUs() {
                     A Cup of Tea Can Start <br />
                     a Great Partnership
                   </h3>
-                  <div className="relative w-[33px] h-[35px] flex-shrink-0">
-                    <Image
-                      src="/green_tea_cup.png"
-                      alt="Tea Cup"
-                      fill
-                      sizes="33px"
-                      className="object-contain"
-                    />
-                  </div>
+                  <FiCoffee size={35} className="text-brand-green flex-shrink-0" />
                 </div>
 
                 {/* Divider */}
