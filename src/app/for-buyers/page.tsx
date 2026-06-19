@@ -52,9 +52,8 @@ import {
 const phoneSchema = z.object({
   phone: z
     .string()
-    .min(10, { message: "Phone number must be at least 10 digits" })
-    .max(15, { message: "Phone number must be at most 15 digits" })
-    .regex(/^[0-9+\-\s()]+$/, { message: "Only numbers and standard symbols (+, -, parentheses) are allowed" }),
+    .length(10, { message: "Phone number must be exactly 10 digits" })
+    .regex(/^[0-9]+$/, { message: "Phone number must contain only numbers" }),
 });
 
 type PhoneFormValues = z.infer<typeof phoneSchema>;
@@ -92,14 +91,20 @@ function WaitlistForm({
     <div className="w-full">
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 w-full">
         <div className="relative w-full">
-          <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-brand-navy">
-            <PhoneIcon size={24} />
-          </span>
+          <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none select-none gap-1.5">
+            <img src="/indian_flag.webp" alt="India Flag" className="w-6 h-4 object-cover rounded-sm" />
+            <span className="text-brand-navy font-bold text-sm">+91</span>
+            <span className="text-slate-300">|</span>
+          </div>
           <input
             type="tel"
             placeholder="Enter your mobile number"
-            {...register("phone")}
-            className="w-full py-3.5 pl-11 pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all"
+            {...register("phone", {
+              onChange: (e) => {
+                e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
+              }
+            })}
+            className="w-full py-3.5 pl-[84px] pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all"
           />
         </div>
         {errors.phone && (

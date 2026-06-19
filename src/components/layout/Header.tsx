@@ -38,10 +38,17 @@ export function Header() {
     { label: "How It Works", href: "/why-openmarket" },
     { label: "Founding Sellers", href: "/founding-members" },
     { label: "Contact Us", href: "/contact-us" },
+    { label: "All Categories", href: "/" },
   ];
 
-  const isActive = (href: string) => {
-    return pathname === href;
+  const isActive = (link: { label: string; href: string }) => {
+    if (link.label === "All Categories" && pathname === "/") {
+      return true;
+    }
+    if (link.label === "Home" && pathname === "/") {
+      return false;
+    }
+    return pathname === link.href;
   };
 
   const handleShare = async () => {
@@ -88,9 +95,9 @@ export function Header() {
             <Link
               key={idx}
               href={link.href}
-              aria-current={isActive(link.href) ? "page" : undefined}
+              aria-current={isActive(link) ? "page" : undefined}
               className={`transition-colors duration-200 py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${
-                isActive(link.href)
+                isActive(link)
                   ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
                   : "text-brand-navy hover:text-brand-green"
               }`}
@@ -99,14 +106,13 @@ export function Header() {
             </Link>
           ))}
           <div className="relative">
-            <button
-              onClick={handleShare}
-              suppressHydrationWarning
-              className="flex items-center gap-2 px-5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none"
+            <Link
+              href="/for-sellers"
+              className="flex items-center gap-2 px-5 py-2.5 bg-[#097B3E] hover:bg-[#075F30] text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none"
             >
-              {copied ? <FiCheck size={16} /> : <FiShare2 size={16} />}
-              <span>{copied ? "Link Copied" : "Share OpenMarket"}</span>
-            </button>
+              <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="19" y2="14"></line><line x1="22" y1="11" x2="16" y2="11"></line></svg>
+              <span>Become a Seller</span>
+            </Link>
           </div>
         </nav>
       </div>
@@ -126,9 +132,9 @@ export function Header() {
                   key={idx}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  aria-current={isActive(link.href) ? "page" : undefined}
+                  aria-current={isActive(link) ? "page" : undefined}
                   className={`py-2 border-b border-slate-50 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2 ${
-                    isActive(link.href)
+                    isActive(link)
                       ? "text-brand-green font-bold"
                       : "text-brand-navy hover:text-brand-green"
                   }`}
@@ -136,17 +142,14 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  handleShare();
-                }}
-                suppressHydrationWarning
-                className="flex items-center justify-center gap-2 py-3 bg-brand-green hover:bg-brand-dark-green text-white rounded-xl text-center font-bold shadow-sm mt-2 cursor-pointer w-full focus:outline-none"
+              <Link
+                href="/for-sellers"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 py-3 bg-[#097B3E] hover:bg-[#075F30] text-white rounded-xl text-center font-bold shadow-sm mt-2 cursor-pointer w-full focus:outline-none"
               >
-                {copied ? <FiCheck size={18} /> : <FiShare2 size={18} />}
-                <span>{copied ? "Link Copied" : "Share OpenMarket"}</span>
-              </button>
+                <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="19" y2="14"></line><line x1="22" y1="11" x2="16" y2="11"></line></svg>
+                <span>Become a Seller</span>
+              </Link>
             </nav>
           </motion.div>
         )}
