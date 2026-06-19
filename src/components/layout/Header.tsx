@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -31,22 +31,41 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const pathname = usePathname();
+  const [currentHash, setCurrentHash] = useState("");
+
+  useEffect(() => {
+    // Set initial hash
+    setCurrentHash(window.location.hash);
+
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("popstate", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handleHashChange);
+    };
+  }, [pathname]);
 
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/our-mission" },
     { label: "How It Works", href: "/why-openmarket" },
     { label: "Founding Sellers", href: "/founding-members" },
+    { label: "For Buyers", href: "/for-buyers" },
     { label: "Contact Us", href: "/contact-us" },
-    { label: "All Categories", href: "/" },
+    { label: "All Categories", href: "/category" },
   ];
 
   const isActive = (link: { label: string; href: string }) => {
-    if (link.label === "All Categories" && pathname === "/") {
-      return true;
+    if (link.label === "All Categories") {
+      return pathname === "/category" || currentHash === "#categories";
     }
-    if (link.label === "Home" && pathname === "/") {
-      return false;
+    if (link.label === "Home") {
+      return pathname === "/" && currentHash !== "#categories";
     }
     return pathname === link.href;
   };
