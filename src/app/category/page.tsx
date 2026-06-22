@@ -27,79 +27,164 @@ import {
   FiSliders,
   FiUserPlus
 } from "react-icons/fi";
-import { FaBolt, FaCog, FaBuilding, FaTruck, FaCar, FaFlask, FaLeaf, FaPlusSquare, FaWrench, FaRoad, FaRocket, FaCheckCircle } from "react-icons/fa";
+import { FaBolt, FaCog, FaBuilding, FaTruck, FaCar, FaFlask, FaLeaf, FaPlusSquare, FaWrench, FaRoad, FaRocket, FaCheckCircle, FaIndustry } from "react-icons/fa";
 
+// Category configuration helper
 // Category configuration helper
 const categories = [
   {
     title: "Electrical & Lighting",
-    icon: <FiZap className="text-amber-500 w-7 h-7" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    icon: <FiZap className="text-amber-500 w-6 h-6" />,
+    items: [
+      "LED Lighting",
+      "Cables & Wires",
+      "Switchgear & Panels",
+      "Electrical Components",
+      "Street Lighting"
+    ]
   },
   {
-    title: "Industrial Supplies & Equipment",
-    icon: <FiCpu className="text-blue-500 w-7 h-7" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    title: "Industrial Supplies",
+    icon: <FaIndustry className="text-blue-500 w-6 h-6" />,
+    items: [
+      "Industrial Tools",
+      "Bearings",
+      "Valves",
+      "Fasteners",
+      "Safety Equipment"
+    ]
   },
   {
     title: "Machinery & Equipment",
-    icon: <FiSettings className="text-purple-500 w-7 h-7" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    icon: <FiSettings className="text-purple-500 w-6 h-6" />,
+    items: [
+      "Manufacturing Machinery",
+      "Packaging Machinery",
+      "Construction Machinery",
+      "Pumps & Compressors",
+      "Generators"
+    ]
   },
   {
     title: "Building & Construction",
     icon: <FaBuilding className="text-orange-500 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "Construction Materials",
+      "Steel & Metal",
+      "Cement & Concrete",
+      "Roofing Materials",
+      "Doors & Windows"
+    ]
   },
   {
     title: "Logistics & Material Handling",
     icon: <FaTruck className="text-cyan-700 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "Material Handling Equipment",
+      "Storage Solutions",
+      "Pallets & Bins",
+      "Racking Systems",
+      "Conveyors"
+    ]
   },
   {
     title: "Automobile & Auto Components",
     icon: <FaCar className="text-red-500 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "Auto Spare Parts",
+      "Batteries",
+      "Tyres & Tubes",
+      "Lubricants",
+      "Garage Equipment"
+    ]
   },
   {
     title: "Chemicals & Raw Materials",
     icon: <FaFlask className="text-emerald-500 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "Industrial Chemicals",
+      "Specialty Chemicals",
+      "Paints & Coatings",
+      "Adhesives & Sealants",
+      "Lubricants & Oils"
+    ]
   },
   {
     title: "IT, Electronics & Automation",
-    icon: <FiMonitor className="text-blue-600 w-7 h-7" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    icon: <FiMonitor className="text-blue-600 w-6 h-6" />,
+    items: [
+      "Industrial Automation",
+      "IoT Solutions",
+      "Networking Products",
+      "CCTV & Security",
+      "Software Services"
+    ]
   },
   {
     title: "Agriculture & Food",
     icon: <FaLeaf className="text-green-500 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "Agricultural Equipment",
+      "Seeds & Pesticides",
+      "Fertilizers",
+      "Food Ingredients",
+      "Dairy Products"
+    ]
   },
   {
     title: "Healthcare & Pharma",
     icon: <FaPlusSquare className="text-rose-500 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "Medical Equipment",
+      "Laboratory Instruments",
+      "Pharma Ingredients",
+      "Surgical Supplies",
+      "Packaging Materials"
+    ]
   },
   {
     title: "Business & Professional Services",
-    icon: <FiBriefcase className="text-amber-800 w-7 h-7" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    icon: <FiBriefcase className="text-amber-800 w-6 h-6" />,
+    items: [
+      "Legal & Compliance",
+      "Accounting & Finance",
+      "HR & Recruitment",
+      "Marketing & Branding",
+      "IT & Digital Services"
+    ]
   },
   {
     title: "Manufacturing Services",
     icon: <FaWrench className="text-blue-400 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "CNC Machining",
+      "Fabrication",
+      "Laser Cutting",
+      "Surface Treatment",
+      "Injection Moulding"
+    ]
   },
   {
     title: "Energy & Environment",
-    icon: <FiActivity className="text-green-600 w-7 h-7" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    icon: <FiActivity className="text-green-600 w-6 h-6" />,
+    items: [
+      "Solar Products",
+      "Energy Equipment",
+      "Water Treatment",
+      "Waste Management",
+      "Environment Monitoring"
+    ]
   },
   {
-    title: "Infrastructure & Government Projects",
+    title: "Infrastructure & Govt. Projects",
     icon: <FaRoad className="text-indigo-500 w-6 h-6" />,
-    items: ["Manufacturers", "Suppliers", "Traders", "Contractors", "Service Providers"]
+    items: [
+      "EPC Contractors",
+      "Roads & Highways",
+      "Smart City Solutions",
+      "Safety & Security",
+      "Prefabricated Structures"
+    ]
   }
 ];
 
@@ -142,40 +227,40 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Hero Left Content */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
+            <div className="lg:col-span-6 flex flex-col gap-6">
               <div className="flex flex-col gap-4">
-                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-brand-navy">
-                  <span className="block">All Industries.</span>
-                  <span className="text-[#097B3E] block mt-1">One B2B Marketplace.</span>
-                </h1>
-                
-                <div className="self-start mt-2">
-                  <span className="inline-flex items-center px-4 py-1.5 bg-[#097B3E] text-white text-sm font-bold rounded-full shadow-sm">
+                <div className="self-start">
+                  <span className="inline-flex items-center px-4 py-1.5 bg-[#E8F5E9] text-[#097B3E] border border-[#C8E6C9] text-sm font-bold rounded-full shadow-sm">
                     100% B2B. 100% Free to Join.
                   </span>
                 </div>
+                
+                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-brand-navy">
+                  <span className="block">A Fairer B2B</span>
+                  <span className="block mt-1">Marketplace Is</span>
+                  <span className="block mt-1">Being <span className="text-[#097B3E]">Built.</span></span>
+                </h1>
               </div>
 
               <p className="text-lg font-medium text-slate-600 leading-relaxed max-w-xl">
-                OpenMarket is a B2B marketplace connecting businesses with other businesses. 
-                Whether you manufacture, trade, distribute or provide services – you are welcome here.
+                OpenMarket connects businesses with real opportunities, not paid rankings. Whether you manufacture, trade, supply, consult or provide services – you are welcome here.
               </p>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <button
                   onClick={handleCTAClick}
-                  className="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#097B3E] hover:bg-[#075F30] text-white font-bold rounded-xl transition-all shadow-md text-base cursor-pointer"
+                  className="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#097B3E] hover:bg-[#075F30] text-white font-bold rounded-xl transition-all shadow-md text-base cursor-pointer group"
                 >
-                  <FaRocket className="w-[18px] h-[18px]" />
-                  Join as a Founding Seller
+                  Become a Founding Seller
+                  <span className="text-white group-hover:translate-x-0.5 transition-transform font-bold">&gt;</span>
                 </button>
                 <Link
                   href="/why-openmarket"
                   className="flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-[#097B3E] text-[#097B3E] hover:bg-slate-50 font-bold rounded-xl transition-all text-base bg-white"
                 >
-                  <FiPlay className="fill-current w-4 h-4" />
-                  Learn How It Works
+                  <FiPlay className="fill-[#097B3E] text-[#097B3E] w-4 h-4" />
+                  Learn More
                 </Link>
               </div>
 
@@ -183,80 +268,49 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-6 mt-4 text-sm font-bold text-slate-600">
                 <div className="flex items-center gap-2">
                   <FiCheckCircle className="text-[#097B3E] w-5 h-5 stroke-[2.5]" />
-                  <span>Verified Businesses</span>
+                  <span>100% B2B Marketplace</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FiCheckCircle className="text-[#097B3E] w-5 h-5 stroke-[2.5]" />
-                  <span>Fair Visibility</span>
+                  <span>No Paid Ranking</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <FiCheckCircle className="text-[#097B3E] w-5 h-5 stroke-[2.5]" />
-                  <span>Real Connections</span>
+                  <span>Free Business Profile</span>
                 </div>
               </div>
             </div>
 
-            {/* Hero Right B2B Diagram Card */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[460px] bg-[#F4FAF6] border border-emerald-100 rounded-3xl p-8 shadow-sm flex flex-col gap-6 items-center">
-                <div className="text-center flex flex-col gap-1">
-                  <span className="text-[#097B3E] text-xs font-black tracking-wider uppercase">We are a B2B Marketplace</span>
-                  <h3 className="text-2xl md:text-3xl font-extrabold text-brand-navy">Business to Business</h3>
-                </div>
+            {/* Hero Right: Map & Businessman handshake illustration + Floating Card */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-end relative">
+              <div className="w-full max-w-[540px] aspect-[4/3] lg:aspect-auto lg:h-[410px] relative">
+                {/* Generated Background Map & Handshake Image */}
+                <Image
+                  src="/business_handshake_worldmap_round_elements_TRANSPARENT.png"
+                  alt="B2B Marketplace Map and Handshake"
+                  width={540}
+                  height={410}
+                  priority
+                  className="object-contain w-full h-full"
+                />
 
-                {/* Inline SVG Diagram */}
-                <div className="w-full py-4 flex items-center justify-between px-2 gap-2">
-                  {/* Left: Factory */}
-                  <div className="flex flex-col items-center gap-2 flex-1">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-emerald-50">
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-navy">
-                        <path d="M2 22H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <path d="M17 22V11L12 14V8L7 11V22" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-                        <path d="M4 22V14L2 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <circle cx="9.5" cy="18" r="1" fill="currentColor"/>
-                        <circle cx="14.5" cy="18" r="1" fill="currentColor"/>
-                        <path d="M12 5V2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                        <path d="M17 8V5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                {/* Floating Card */}
+                <div className="absolute bottom-4 right-4 md:right-[-20px] lg:right-[-30px] lg:top-1/2 lg:bottom-auto lg:-translate-y-1/2 max-w-[210px] bg-white/95 backdrop-blur-md border border-emerald-100/85 rounded-2xl p-3.5 shadow-lg flex flex-col gap-2 z-20">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7.5 h-7.5 rounded-full bg-[#E8F5E9] flex items-center justify-center text-[#097B3E] flex-shrink-0">
+                      {/* Badge check icon */}
+                      <svg className="w-4.5 h-4.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
-                  </div>
-
-                  {/* Center: Connect Lines & B2B Badge */}
-                  <div className="flex flex-col items-center justify-center flex-grow relative">
-                    <div className="flex items-center gap-1 w-full justify-center">
-                      <div className="h-[2px] flex-grow border-t-2 border-dashed border-[#097B3E]"></div>
-                      <div className="w-12 h-12 rounded-full bg-[#097B3E] flex items-center justify-center text-white text-xs font-black shadow-sm flex-shrink-0 z-10">
-                        B2B
-                      </div>
-                      <div className="h-[2px] flex-grow border-t-2 border-dashed border-[#097B3E]"></div>
-                    </div>
-                    {/* Double-ended arrows */}
-                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none px-1">
-                      <span className="text-[#097B3E] text-xs font-bold -ml-1">&larr;</span>
-                      <span className="text-[#097B3E] text-xs font-bold -mr-1">&rarr;</span>
+                    <div className="flex flex-col">
+                      <span className="font-extrabold text-[11px] text-[#0B3C5F] leading-tight">Built for Businesses.</span>
+                      <span className="font-extrabold text-[11px] text-[#097B3E] leading-tight">By Businesses.</span>
                     </div>
                   </div>
-
-                  {/* Right: Office Building */}
-                  <div className="flex flex-col items-center gap-2 flex-1">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-emerald-50">
-                      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-brand-navy">
-                        <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" strokeWidth="2"/>
-                        <line x1="8" y1="6" x2="10" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <line x1="14" y1="6" x2="16" y2="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <line x1="8" y1="10" x2="10" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <line x1="14" y1="10" x2="16" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <line x1="8" y1="14" x2="10" y2="14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <line x1="14" y1="14" x2="16" y2="14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                        <rect x="10" y="18" width="4" height="4" stroke="currentColor" strokeWidth="2"/>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center font-bold flex flex-col gap-1 border-t border-emerald-100/50 pt-4 w-full">
-                  <span className="text-brand-navy text-base">Made for Businesses.</span>
-                  <span className="text-[#097B3E] text-base">Built for Growth.</span>
+                  <p className="text-[10px] font-semibold text-slate-500 leading-normal">
+                    A trusted space for genuine businesses to connect and grow together.
+                  </p>
                 </div>
               </div>
             </div>
@@ -308,8 +362,8 @@ export default function Home() {
                   <FiAward size={22} />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-extrabold text-brand-navy">Founding Seller</span>
-                  <span className="text-xs text-slate-500 font-semibold mt-1">Be one of the first 1000 businesses.</span>
+                  <span className="text-sm font-extrabold text-brand-navy">Founding Seller Benefits</span>
+                  <span className="text-xs text-slate-500 font-semibold mt-1">Early access & exclusive benefits for first 1,000.</span>
                 </div>
               </div>
 
@@ -319,8 +373,8 @@ export default function Home() {
                   <FiGift size={22} />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-extrabold text-brand-navy">Special Benefits</span>
-                  <span className="text-xs text-slate-500 font-semibold mt-1">Exclusive offers for founding sellers.</span>
+                  <span className="text-sm font-extrabold text-brand-navy">Special Offers</span>
+                  <span className="text-xs text-slate-500 font-semibold mt-1">Exclusive pricing & offers for founding sellers.</span>
                 </div>
               </div>
 
@@ -335,11 +389,8 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight">
                 Industries We Support (B2B Only)
               </h2>
-              <p className="text-base text-slate-500 max-w-5xl mx-auto font-medium leading-relaxed">
-                <span className="lg:whitespace-nowrap block">
-                  OpenMarket is being built to support businesses from <span className="text-[#0FA958] font-semibold">every major</span> industry. If you are a business, you can join any category and
-                </span>
-                <span className="block">create your profile for FREE.</span>
+              <p className="text-sm md:text-base text-slate-500 max-w-5xl mx-auto font-medium leading-relaxed">
+                Explore categories that match your business and join today. Any product or service is welcome.
               </p>
             </div>
 
@@ -348,12 +399,12 @@ export default function Home() {
               {categories.map((cat, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between min-h-[340px] hover:shadow-md hover:border-emerald-200 transition-all duration-300 group"
+                  className="bg-white border border-slate-200/60 rounded-2xl p-5 shadow-sm flex flex-col justify-between min-h-[290px] hover:shadow-md hover:border-emerald-200 transition-all duration-300 group"
                 >
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-3">
                     {/* Header Row: Icon & Title */}
-                    <div className="flex items-center gap-3">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex-shrink-0 w-7 h-7 flex items-center justify-center">
                         {cat.icon}
                       </div>
                       <h4 className="text-sm font-extrabold text-brand-navy leading-snug group-hover:text-[#097B3E] transition-colors">
@@ -362,47 +413,50 @@ export default function Home() {
                     </div>
 
                     {/* Bullet List */}
-                    <ul className="flex flex-col gap-2 mt-2">
+                    <ul className="flex flex-col gap-1.5 mt-1">
                       {cat.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-500">
-                          <span className="w-1.5 h-1.5 bg-brand-navy/60 rounded-full flex-shrink-0"></span>
+                          <span className="w-1.5 h-1.5 bg-slate-300 rounded-full flex-shrink-0"></span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Join Category Button */}
+                  {/* Explore Category Link */}
                   <button
                     onClick={handleCTAClick}
-                    className="w-full py-2 border border-[#097B3E] text-[#097B3E] hover:bg-[#097B3E] hover:text-white text-xs font-bold rounded-lg transition-all text-center mt-6 cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs font-extrabold text-[#097B3E] hover:text-[#075F30] transition-colors mt-4 cursor-pointer self-start group"
                   >
-                    Join This Category
+                    <span>Explore Category</span>
+                    <FiArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               ))}
 
               {/* Card 15: Don't see your industry? */}
-              <div className="bg-[#F4FAF6] border border-emerald-100/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between items-center text-center min-h-[340px] hover:shadow-md transition-all duration-300">
-                <div className="flex flex-col items-center gap-6 mt-4">
-                  {/* Green circle with plus */}
-                  <div className="w-16 h-16 rounded-full bg-white shadow-sm border border-emerald-100 flex items-center justify-center text-[#097B3E]">
-                    <FiPlus size={28} className="stroke-[3]" />
+              <div className="bg-white border border-emerald-100/60 rounded-2xl p-5 shadow-sm flex flex-col justify-between items-center text-center min-h-[290px] hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col items-center gap-2.5 mt-2">
+                  {/* Plus Icon inside circle */}
+                  <div className="w-10 h-10 rounded-full border-2 border-[#097B3E] flex items-center justify-center text-[#097B3E]">
+                    <FiPlus size={20} className="stroke-[3]" />
                   </div>
                   
-                  <div className="flex flex-col gap-2">
-                    <h4 className="text-base font-extrabold text-brand-navy">
-                      Don&apos;t see your industry?
+                  <div className="flex flex-col gap-1.5">
+                    <h4 className="text-sm font-extrabold text-[#097B3E]">
+                      Don&apos;t see your
+                      <br />
+                      industry?
                     </h4>
-                    <p className="text-xs text-slate-500 font-semibold px-2">
-                      We welcome all legitimate businesses.
+                    <p className="text-xs text-slate-500 font-semibold px-2 leading-relaxed">
+                      We welcome all legitimate businesses. Register your business and we will keep expanding.
                     </p>
                   </div>
                 </div>
 
                 <button
                   onClick={handleCTAClick}
-                  className="w-full py-3 bg-[#097B3E] hover:bg-[#075F30] text-white text-xs font-bold rounded-lg transition-all shadow-sm mt-6 cursor-pointer"
+                  className="w-full py-2.5 bg-[#097B3E] hover:bg-[#075F30] text-white text-xs font-bold rounded-lg transition-all shadow-sm mt-4 cursor-pointer"
                 >
                   Register Your Business
                 </button>
@@ -412,179 +466,182 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section 4: Horizontal Banner */}
-        <section className="max-w-7xl mx-auto px-6 pb-16">
-          <div className="w-full bg-[#F4FAF6] border border-emerald-100/60 rounded-3xl p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-sm">
-            <div className="flex items-start gap-5 max-w-4xl text-left">
-              {/* Group icon */}
-              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-white shadow-sm border border-emerald-50 flex items-center justify-center text-[#097B3E]">
-                <FiUsers size={24} />
+        {/* Section 4: Become a Founding Seller Banner */}
+        <section className="max-w-7xl mx-auto px-6 pb-12">
+          <div className="w-full bg-[#F4FAF6] border border-emerald-100 rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 shadow-sm">
+            {/* Child 1: Rocket + Title Area */}
+            <div className="flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto">
+              <div className="flex-shrink-0 w-36 h-36 md:w-[200px] md:h-[200px] relative lg:-mt-12 lg:-mb-12">
+                <Image
+                  src="/greeen-rocket.png"
+                  alt="Rocket illustration"
+                  fill
+                  sizes="(max-width: 768px) 144px, 200px"
+                  className="object-contain"
+                />
               </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-extrabold text-brand-navy">
-                  Don&apos;t See Your Exact Category?
-                </h3>
-                <p className="text-sm font-semibold text-slate-500 leading-relaxed">
-                  No problem! OpenMarket is being built for all types of businesses. If your product or service does not fit in any of the above categories, you can still register and create your business profile. We will keep expanding as more businesses join.
-                </p>
-              </div>
-            </div>
-
-            <button
-              onClick={handleCTAClick}
-              className="flex-shrink-0 flex items-center gap-2 px-6 py-3 bg-[#097B3E] hover:bg-[#075F30] text-white font-bold rounded-xl transition-all shadow-md text-sm whitespace-nowrap cursor-pointer"
-            >
-              <FiUserPlus size={16} />
-              Register Your Business
-            </button>
-          </div>
-        </section>
-
-        {/* Section 5: Two-Column Features / Info Grid */}
-        <section className="bg-white border-t border-slate-100 py-16 md:py-20">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
-              {/* Left Column: What You Can Do Right Now */}
-              <div className="bg-[#F4FAF6] border border-emerald-100/60 rounded-3xl p-8 md:p-10 flex flex-col gap-6 shadow-sm justify-between">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl md:text-2xl font-extrabold text-[#097B3E]">
-                    What You Can Do Right Now (Free)
+              <div className="flex flex-col gap-3 max-w-md w-full sm:w-auto">
+                <div className="flex flex-col gap-1 text-center sm:text-left">
+                  <h3 className="text-2xl font-extrabold text-[#097B3E]">
+                    Become a Founding Seller
                   </h3>
-                  <p className="text-sm font-semibold text-slate-700">
-                    As a Founding Seller, you can:
+                  <p className="text-sm font-semibold text-slate-500">
+                    Join the first 1,000 businesses shaping OpenMarket.
                   </p>
                 </div>
-
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  {/* Checklist Columns */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
-                    <div className="flex flex-col gap-3">
-                      {[
-                        "Create your business profile",
-                        "Add company details & contact information",
-                        "Upload products & up to 50 images"
-                      ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5">
-                          <FaCheckCircle className="text-[#0FA958] w-5 h-5 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm font-semibold text-slate-700 leading-snug">{item}</span>
-                        </div>
-                      ))}
+                
+                {/* Dynamic Joined Stats Box */}
+                <div className="bg-white border border-emerald-100 rounded-2xl p-4 shadow-sm flex flex-col gap-3 min-w-[280px]">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#E8F5E9] flex items-center justify-center text-[#097B3E]">
+                      <FiUsers size={20} />
                     </div>
-                    <div className="flex flex-col gap-3">
-                      {[
-                        "Upload services & up to 50 images",
-                        "Share your profile with buyers",
-                        "Invite other businesses to join"
-                      ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5">
-                          <FaCheckCircle className="text-[#0FA958] w-5 h-5 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm font-semibold text-slate-700 leading-snug">{item}</span>
-                        </div>
-                      ))}
+                    <div className="flex flex-col text-left">
+                      <span className="text-xl font-extrabold text-[#0B3C5F] leading-none">
+                        {joined} / 1000
+                      </span>
+                      <span className="text-xs font-semibold text-slate-400 mt-1">
+                        Businesses Joined
+                      </span>
                     </div>
                   </div>
-
-                  {/* Clipboard Illustration */}
-                  <div className="flex-shrink-0 flex items-center justify-center">
-                    <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Shadow */}
-                      <rect x="14" y="14" width="72" height="98" rx="8" fill="#E2E8F0" opacity="0.5" />
-                      {/* Board */}
-                      <rect x="10" y="10" width="72" height="98" rx="8" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="2.5" />
-                      {/* Metal Clip */}
-                      <path d="M36 4C36 2.89543 36.8954 2 38 2H62C63.1046 2 64 2.89543 64 4V12H36V4Z" fill="#94A3B8" />
-                      <rect x="32" y="10" width="36" height="3" fill="#64748B" />
-                      <circle cx="50" cy="6" r="1.5" fill="#475569" />
-                      
-                      {/* User Avatar Circle */}
-                      <circle cx="32" cy="34" r="10" fill="#0FA958" />
-                      {/* Head */}
-                      <circle cx="32" cy="30" r="3.5" fill="#FFFFFF" />
-                      {/* Body */}
-                      <path d="M25 40C25 37 28 35 32 35C36 35 39 37 39 40" fill="#FFFFFF" />
-
-                      {/* Header lines */}
-                      <rect x="48" y="27" width="26" height="2.5" rx="1.25" fill="#CBD5E1" />
-                      <rect x="48" y="34" width="16" height="2" rx="1" fill="#E2E8F0" />
-                      <rect x="48" y="39" width="20" height="2" rx="1" fill="#E2E8F0" />
-
-                      {/* Separator Line */}
-                      <line x1="18" y1="50" x2="74" y2="50" stroke="#E2E8F0" strokeWidth="1.5" />
-
-                      {/* Checklist items */}
-                      <circle cx="24" cy="62" r="3" fill="#A7F3D0" />
-                      <circle cx="24" cy="62" r="1.2" fill="#0FA958" />
-                      <rect x="32" y="61" width="40" height="2" rx="1" fill="#E2E8F0" />
-
-                      <circle cx="24" cy="74" r="3" fill="#A7F3D0" />
-                      <circle cx="24" cy="74" r="1.2" fill="#0FA958" />
-                      <rect x="32" y="73" width="34" height="2" rx="1" fill="#E2E8F0" />
-
-                      <circle cx="24" cy="86" r="3" fill="#A7F3D0" />
-                      <circle cx="24" cy="86" r="1.2" fill="#0FA958" />
-                      <rect x="32" y="85" width="38" height="2" rx="1" fill="#E2E8F0" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: What's Coming Next */}
-              <div className="bg-[#F4F8FC] border border-blue-100/60 rounded-3xl p-8 md:p-10 flex flex-col gap-6 shadow-sm justify-between">
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl md:text-2xl font-extrabold text-[#12629B]">
-                    What&apos;s Coming Next (For Sellers)
-                  </h3>
-                  <p className="text-sm font-semibold text-slate-700">
-                    Once a strong network of businesses is on board, we will unlock powerful features to help you grow.
-                  </p>
-                </div>
-
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  {/* Checklist Columns */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
-                    <div className="flex flex-col gap-3">
-                      {[
-                        "Product & Service Search",
-                        "Buyer Enquiries",
-                        "Business Networking"
-                      ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5">
-                          <FaCheckCircle className="text-[#12629B] w-5 h-5 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm font-semibold text-slate-700 leading-snug">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      {[
-                        "Seller Discovery",
-                        "Advanced Marketplace Tools",
-                        "Analytics & Insights"
-                      ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5">
-                          <FaCheckCircle className="text-[#12629B] w-5 h-5 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm font-semibold text-slate-700 leading-snug">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Rocket Illustration */}
-                  <div className="flex-shrink-0 flex items-center justify-center relative w-[130px] h-[130px] self-center">
-                    <Image
-                      src="/rocket3.png"
-                      alt="Rocket illustration"
-                      fill
-                      sizes="130px"
-                      className="object-contain"
+                  {/* Progress Bar */}
+                  <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                    <div 
+                      className="bg-[#097B3E] h-full rounded-full transition-all duration-500" 
+                      style={{ width: `${Math.min((joined / 1000) * 100, 100)}%` }}
                     />
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Child 2: Checklist of Benefits (Centered with equal space left & right) */}
+            <div className="flex flex-col gap-3 min-w-[220px] w-full lg:w-auto lg:mx-auto">
+              <span className="text-xs font-black tracking-wider uppercase text-[#097B3E] text-center lg:text-left">
+                Founding Seller Benefits
+              </span>
+              <div className="flex flex-col gap-2.5">
+                {[
+                  "Founding Seller Pricing",
+                  "Early Access to New Features",
+                  "Priority Visibility in Platform",
+                  "Exclusive Offers & Benefits"
+                ].map((benefit, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <FiCheckCircle className="text-[#097B3E] w-4.5 h-4.5 stroke-[2.5]" />
+                    <span className="text-xs font-bold text-slate-600">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Child 3: CTA Button Column */}
+            <div className="flex flex-col items-center gap-2 flex-shrink-0 min-w-[200px] w-full lg:w-auto">
+              <button
+                onClick={handleCTAClick}
+                className="w-full py-3.5 px-6 bg-[#006428] hover:bg-[#004d1f] text-white font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-sm cursor-pointer"
+              >
+                Reserve My Spot
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-3.5 h-3.5 text-white">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <span className="text-xs font-semibold text-slate-500">
+                Limited spots available!
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: How OpenMarket Works */}
+        <section className="bg-white border-y border-slate-100 py-16">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col gap-10">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-brand-navy text-center">
+              How OpenMarket Works
+            </h2>
+            
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 max-w-5xl mx-auto w-full">
+              {/* Step 1 */}
+              <div className="flex items-center gap-4 flex-1">
+                {/* Step badge */}
+                <div className="w-7 h-7 rounded-full bg-[#097B3E] text-white flex items-center justify-center text-xs font-black flex-shrink-0">
+                  1
+                </div>
+                {/* Icon box */}
+                <div className="w-14 h-14 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#097B3E] flex-shrink-0">
+                  <FiUserPlus size={24} />
+                </div>
+                {/* Text */}
+                <div className="flex flex-col text-left">
+                  <span className="text-base font-extrabold text-[#097B3E]">Create Your Profile</span>
+                  <span className="text-xs font-semibold text-slate-500 mt-1 leading-relaxed">
+                    Sign up and create your business profile for free.
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow Connector 1 */}
+              <div className="hidden lg:flex items-center justify-center text-slate-300 mx-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex items-center gap-4 flex-1">
+                {/* Step badge */}
+                <div className="w-7 h-7 rounded-full bg-[#097B3E] text-white flex items-center justify-center text-xs font-black flex-shrink-0">
+                  2
+                </div>
+                {/* Icon box */}
+                <div className="w-14 h-14 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#097B3E] flex-shrink-0">
+                  <FiUploadCloud size={24} />
+                </div>
+                {/* Text */}
+                <div className="flex flex-col text-left">
+                  <span className="text-base font-extrabold text-[#097B3E]">Upload Products & Services</span>
+                  <span className="text-xs font-semibold text-slate-500 mt-1 leading-relaxed">
+                    Add your products, services and business details.
+                  </span>
+                </div>
+              </div>
+
+              {/* Arrow Connector 2 */}
+              <div className="hidden lg:flex items-center justify-center text-slate-300 mx-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </div>
+
+              {/* Step 3 */}
+              <div className="flex items-center gap-4 flex-1">
+                {/* Step badge */}
+                <div className="w-7 h-7 rounded-full bg-[#097B3E] text-white flex items-center justify-center text-xs font-black flex-shrink-0">
+                  3
+                </div>
+                {/* Icon box */}
+                <div className="w-14 h-14 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#097B3E] flex-shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6">
+                    <line x1="6" y1="20" x2="6" y2="13" strokeLinecap="round" />
+                    <line x1="12" y1="20" x2="12" y2="8" strokeLinecap="round" />
+                    <line x1="18" y1="20" x2="18" y2="3" strokeLinecap="round" />
+                  </svg>
+                </div>
+                {/* Text */}
+                <div className="flex flex-col text-left">
+                  <span className="text-base font-extrabold text-[#097B3E]">Grow With OpenMarket</span>
+                  <span className="text-xs font-semibold text-slate-500 mt-1 leading-relaxed">
+                    Get discovered, connect with businesses and grow.
+                  </span>
+                </div>
+              </div>
 
             </div>
           </div>
-        </section>        {/* Section 6: Stats & Founder Goal CTA Banner (Dark green, large block) */}
+        </section>
+
+        {/* Section 6: Stats & Founder Goal CTA Banner (Dark green, large block) */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16">
           <div className="w-full bg-[#1b6d45] rounded-3xl overflow-hidden shadow-xl flex flex-col lg:flex-row items-center lg:items-stretch relative py-8 px-6 lg:py-6 lg:px-8">
             
