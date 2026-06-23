@@ -36,12 +36,12 @@ export async function POST(req: NextRequest) {
     const { name, company, mobile, email, subject, message } = validation.data;
 
     // Retrieve environment variables
-    const host = process.env.EMAIL_HOST || "mail.dynsimulation.com";
-    const portStr = process.env.EMAIL_PORT || "587";
+    const host = process.env.EMAIL_HOST || "smtp.titan.email";
+    const portStr = process.env.EMAIL_PORT || "465";
     const port = parseInt(portStr, 10);
     const secure = process.env.EMAIL_SECURE === "true" || port === 465;
-    const user = process.env.EMAIL_USER || "webmaster@dynsimulation.com";
-    const pass = process.env.EMAIL_PASS || "dynsimulation@321";
+    const user = process.env.EMAIL_USER || "dev@openmarket.co.in";
+    const pass = process.env.EMAIL_PASS || "*BZnLE5FPg@-kst";
     const to = process.env.EMAIL_TO || "danishkkhan13@gmail.com";
 
     if (!user || !pass) {
