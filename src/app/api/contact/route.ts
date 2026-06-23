@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     const secure = process.env.EMAIL_SECURE === "true" || port === 465;
     const user = process.env.EMAIL_USER;
     const pass = process.env.EMAIL_PASS;
-    const to = process.env.EMAIL_TO || "info@openmarketco.in";
+    const to = process.env.EMAIL_TO || "danishkkhan13@gmail.com";
 
     if (!user || !pass) {
       console.error("Email configuration is missing from environment variables.");
