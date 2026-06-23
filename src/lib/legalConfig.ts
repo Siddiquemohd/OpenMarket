@@ -1,7 +1,7 @@
 export const legalConfig = {
   brandName: "OpenMarket",
   companyLegalName: "Uneefy Intratech Pvt. Ltd.",
-  supportEmail: "hello@openmarket.co.in",
+  supportEmail: "info@openmarketco.in",
   contactNumber: "+91 93200 12345",
   registeredAddress:
     "S-33, 2nd Floor, Fantasia Business Park Premises, Vashi, Navi Mumbai, Maharashtra - 400703, India",

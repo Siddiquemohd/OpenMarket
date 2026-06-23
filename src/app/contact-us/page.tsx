@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOtpModal } from "@/providers/OtpModalProvider";
+import { useAxios } from "@/providers/AxiosProvider";
 import {
   FaWhatsapp,
   FaLinkedin,
@@ -41,6 +42,7 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function ContactUs() {
+  const api = useAxios();
   const { openOtpModal } = useOtpModal();
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -57,11 +59,19 @@ export default function ContactUs() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    // Simulate API request
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Contact form submitted data:", data);
-    setFormSubmitted(true);
-    reset();
+    try {
+      // Simulate API request delay
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      console.log("Contact form submitted data:", data);
+      
+      // Submit the form data to backend API
+      await api.post("/web/contact", data);
+    } catch (err) {
+      console.error("Error submitting contact details to API:", err);
+    } finally {
+      setFormSubmitted(true);
+      reset();
+    }
   };
 
   return (

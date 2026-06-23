@@ -105,11 +105,11 @@ export function Footer() {
 
               {/* Email */}
               <a
-                href="mailto:hello@openmarket.co.in"
+                href="mailto:info@openmarketco.in"
                 className="flex items-center gap-3 text-[15px] font-semibold text-slate-600 hover:text-brand-green transition-colors duration-200"
               >
                 <FaEnvelope className="text-[16px] text-brand-navy" />
-                <span>hello@openmarket.co.in</span>
+                <span>info@openmarketco.in</span>
               </a>
 
               {/* Divider */}
@@ -173,81 +173,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar matching screenshot */}
-      <div className="w-full border-t border-slate-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-
-          {/* Left Column: Shield and Text */}
-          <div className="flex items-start gap-3.5 max-w-lg">
-            <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 text-brand-green shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <path d="M9 11l2 2 4-4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="text-sm font-black text-brand-navy leading-snug">
-                Where Fair Trade Matters.
-              </span>
-              <p className="text-xs font-semibold text-slate-500 leading-relaxed mt-0.5">
-                A marketplace being built by businesses, for businesses.<br />
-                Thank you for being part of this journey.
-              </p>
-            </div>
-          </div>
-
-          {/* Center Column: Logo */}
-          <div className="flex-shrink-0 relative w-[140px] h-[32px]">
-            <Image
-              src="/logo.png"
-              alt="OpenMarket Logo"
-              fill
-              sizes="140px"
-              className="object-contain"
-            />
-          </div>
-
-          {/* Right Column: Follow Us & Icons */}
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
-              Follow Us
-            </span>
-            <div className="flex items-center gap-3">
-              {/* LinkedIn */}
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="w-8 h-8 rounded-full bg-[#0077B5] text-white flex items-center justify-center text-sm transition-transform hover:scale-110 shadow-sm"
-              >
-                <FaLinkedin size={16} />
-              </a>
-              {/* Facebook */}
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center text-sm transition-transform hover:scale-110 shadow-sm"
-              >
-                <FaFacebookF size={16} />
-              </a>
-              {/* WhatsApp */}
-              <a
-                href="https://wa.me/919320012345"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center text-sm transition-transform hover:scale-110 shadow-sm"
-              >
-                <FaWhatsapp size={18} />
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
     </footer>
   );
 }
