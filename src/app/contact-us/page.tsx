@@ -45,6 +45,7 @@ export default function ContactUs() {
   const api = useAxios();
   const { openOtpModal } = useOtpModal();
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -59,18 +60,27 @@ export default function ContactUs() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
+    setSubmitError(null);
     try {
-      // Simulate API request delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Contact form submitted data:", data);
-      
-      // Submit the form data to backend API
-      await api.post("/web/contact", data);
-    } catch (err) {
-      console.error("Error submitting contact details to API:", err);
-    } finally {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || result.error || "Failed to send message");
+      }
+
       setFormSubmitted(true);
       reset();
+    } catch (err: any) {
+      console.error("Error submitting contact form:", err);
+      setSubmitError(err.message || "An unexpected error occurred. Please try again.");
     }
   };
 
@@ -495,6 +505,11 @@ export default function ContactUs() {
                       </div>
 
                       {/* Submit Button */}
+                      {submitError && (
+                        <div className="text-sm text-red-600 font-bold px-4 py-3 bg-red-50 rounded-xl border border-red-200 text-center">
+                          {submitError}
+                        </div>
+                      )}
                       <button
                         type="submit"
                         disabled={isSubmitting}
