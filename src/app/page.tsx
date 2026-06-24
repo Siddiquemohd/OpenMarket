@@ -571,7 +571,7 @@ export default function Home() {
                   className="relative max-w-[280px] w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-white"
                 >
                   <Image
-                    src="/founder.jpeg"
+                    src="/founder2.png"
                     alt="Kiran Pailwan - Founder, OpenMarket"
                     fill
                     sizes="(max-w-768px) 100vw, 280px"
