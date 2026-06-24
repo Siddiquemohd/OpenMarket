@@ -6,6 +6,7 @@ frontend:
         - npm ci --cache .npm --prefer-online
     build:
       commands:
+        - env | grep -e EMAIL_ >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
