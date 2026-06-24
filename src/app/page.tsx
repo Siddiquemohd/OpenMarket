@@ -164,192 +164,248 @@ function WaitlistForm({
 }
 
 export default function Home() {
+  const floatingCards = [
+    {
+      title: "Direct Connection",
+      imageSrc: "/Partnership1.png",
+      className: "top-[10%] left-[8%] w-[120px]",
+      rotateClass: "rotate-3",
+      bgClass: "bg-white border-slate-100",
+      delay: 0.1,
+      floatRange: -10,
+    },
+    {
+      title: "Verified Profiles",
+      icon: <FiShield size={28} className="text-[#0FA958]" />,
+      className: "top-[24%] left-[26%] w-[110px]",
+      rotateClass: "-rotate-6",
+      bgClass: "bg-brand-navy border-[#12629B]",
+      textColorClass: "text-slate-400",
+      delay: 0.3,
+      floatRange: -12,
+    },
+    {
+      title: "Zero Paid Ranking",
+      imageSrc: "/broken_chain_v2.png",
+      className: "top-[8%] left-[50%] -translate-x-1/2 w-[120px]",
+      rotateClass: "rotate-6",
+      bgClass: "bg-orange-50/50 border-orange-200",
+      delay: 0.5,
+      floatRange: -15,
+    },
+    {
+      title: "Nationwide B2B",
+      imageSrc: "/india.png",
+      className: "top-[12%] right-[8%] w-[120px]",
+      rotateClass: "-rotate-3",
+      bgClass: "bg-white border-slate-100",
+      delay: 0.2,
+      floatRange: -8,
+    },
+    {
+      title: "Direct Chat",
+      icon: <FaWhatsapp size={32} className="text-[#25D366]" />,
+      className: "top-[48%] left-[6%] w-[110px]",
+      rotateClass: "-rotate-3",
+      bgClass: "bg-emerald-50/30 border-emerald-100",
+      delay: 0.4,
+      floatRange: -14,
+    },
+    {
+      title: "Designed for Growth",
+      imageSrc: "/greeen-rocket.png",
+      className: "top-[42%] right-[10%] w-[120px]",
+      rotateClass: "rotate-3",
+      bgClass: "bg-white border-slate-100",
+      delay: 0.6,
+      floatRange: -10,
+    },
+    {
+      title: "0% Commission",
+      customContent: (
+        <div className="flex flex-col items-center justify-center h-full">
+          <span className="text-3xl font-black text-white leading-none tracking-tighter">0%</span>
+          <span className="text-[10px] font-black text-emerald-100 uppercase tracking-widest mt-0.5">Fees</span>
+        </div>
+      ),
+      className: "top-[70%] left-[10%] w-[110px]",
+      rotateClass: "rotate-6",
+      bgClass: "bg-gradient-to-br from-[#0FA958] to-[#097B3E] border-emerald-600",
+      delay: 0.7,
+      floatRange: -12,
+    },
+    {
+      title: "For Indian MSMEs",
+      customContent: (
+        <div className="flex flex-col items-center justify-center h-full gap-1">
+          <img src="/indian_flag.webp" alt="India Flag" className="w-8 h-5 object-cover rounded-sm" />
+          <span className="text-[10px] font-bold text-brand-navy">MSME Focus</span>
+        </div>
+      ),
+      className: "top-[78%] left-[48%] -translate-x-1/2 w-[110px]",
+      rotateClass: "-rotate-3",
+      bgClass: "bg-white border-slate-100",
+      delay: 0.8,
+      floatRange: -9,
+    },
+    {
+      title: "Genuine Enquiries",
+      imageSrc: "/cozy_office.png",
+      className: "top-[68%] right-[10%] w-[120px]",
+      rotateClass: "-rotate-6",
+      bgClass: "bg-white border-slate-100",
+      delay: 0.9,
+      floatRange: -11,
+    }
+  ];
+
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       {/* Main Page Layout */}
       <main className="flex-grow">
 
-        {/* 2. Hero & Waitlist Box Container */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-
-            {/* Left Hero Text Content */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="flex flex-col gap-3">
-                <div className="self-start px-3 py-1 bg-brand-dark-green/10 rounded-full border border-brand-dark-green/20 text-brand-dark-green text-xs font-black tracking-wider uppercase">
-                  A BETTER WAY FOR B2B TRADE
+        {/* 2. Unified Premium Hero Section */}
+        <section className="relative w-full min-h-[90vh] lg:min-h-[85vh] flex flex-col justify-center overflow-hidden py-16 md:py-24 bg-white border-b border-slate-100 animate-fade-in">
+          
+          {/* Desktop Floating Cards (Hidden on mobile) */}
+          <div className="hidden lg:block absolute inset-0 pointer-events-none select-none">
+            {floatingCards.map((card, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, card.floatRange, 0]
+                }}
+                transition={{
+                  opacity: { duration: 0.6, delay: card.delay },
+                  scale: { duration: 0.6, delay: card.delay },
+                  y: {
+                    duration: 4 + (idx % 3) * 0.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }
+                }}
+                className={`absolute ${card.className} pointer-events-auto flex flex-col items-center`}
+              >
+                <div className={`w-full aspect-[4/3] rounded-3xl border shadow-sm flex items-center justify-center p-3.5 transition-transform duration-300 hover:scale-105 hover:shadow-md cursor-default select-none ${card.bgClass} ${card.rotateClass}`}>
+                  {card.imageSrc ? (
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={card.imageSrc}
+                        alt={card.title}
+                        fill
+                        sizes="120px"
+                        className="object-contain"
+                      />
+                    </div>
+                  ) : card.customContent ? (
+                    card.customContent
+                  ) : (
+                    card.icon
+                  )}
                 </div>
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-5xl md:text-6xl lg:text-[68px] font-extrabold tracking-tight leading-[1.05] text-brand-navy"
-                >
-                  <span className="block">EXISTING B2B</span>
-                  <span className="block mt-1">MARKETPLACES</span>
-                  <span className="text-brand-green block mt-1">ARE UNFAIR</span>
-                  <span className="text-brand-green block mt-1">AND BROKEN.</span>
-                </motion.h1>
-              </div>
+                <span className={`block text-center text-[10px] font-black uppercase tracking-widest mt-2.5 whitespace-nowrap ${card.textColorClass || 'text-slate-500'}`}>
+                  {card.title}
+                </span>
+              </motion.div>
+            ))}
+          </div>
 
+          <div className="max-w-7xl mx-auto px-6 relative w-full h-full flex flex-col items-center justify-center z-20 text-center">
+            
+            {/* Centered Copy */}
+            <div className="max-w-2xl mx-auto flex flex-col items-center gap-6 md:gap-8">
+              <div className="self-center px-3 py-1 bg-brand-dark-green/10 rounded-full border border-brand-dark-green/20 text-brand-dark-green text-xs font-black tracking-wider uppercase">
+                A BETTER WAY FOR B2B TRADE
+              </div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tight leading-[1.1] text-brand-navy"
+              >
+                Get exclusive access to <span className="text-brand-green">India&apos;s fairest</span> B2B marketplace
+              </motion.h1>
+              
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-lg md:text-xl font-bold text-brand-navy/80 max-w-xl leading-relaxed"
+                className="text-base md:text-lg font-semibold text-slate-600 max-w-xl leading-relaxed"
               >
-                They reward who pays the most,
-                <br />
-                <span className="text-brand-green font-black">not</span> who serves the best.
+                A transparent, community-driven space where visibility is earned through activity and trust, not bought with massive advertising budgets.
               </motion.p>
-
-              {/* Hero Pain Points Bullet List */}
+              
+              {/* Centered Waitlist Form */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-2"
+                className="w-full max-w-md bg-white border border-slate-200/80 rounded-2xl shadow-lg p-5 md:p-6"
               >
-                {[
-                  "Useless Leads",
-                  "High Membership Charges",
-                  "Pay-To-Rank Visibility",
-                  "Trust Deficit",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-brand-green text-brand-green">
-                      <FiX size={10} className="stroke-[3.5]" />
-                    </span>
-                    <span className="text-base font-bold text-brand-navy">{item}</span>
-                  </div>
-                ))}
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-base font-medium text-slate-700 max-w-lg leading-relaxed mt-2"
-              >
-                <span className="text-brand-green font-extrabold">OpenMarket</span> is building a fair{" "}
-                <Link href="/why-openmarket" className="text-brand-navy font-extrabold underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                  B2B marketplace
-                </Link>{" "}
-                where visibility is earned through activity, engagement, trust and contribution.
-              </motion.p>
-            </div>
-
-            {/* Right Hero Image & 4 Badges */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="flex flex-col items-center gap-6 w-full max-w-[450px]">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    y: [0, -10, 0]
-                  }}
-                  transition={{
-                    opacity: { duration: 0.8 },
-                    scale: { duration: 0.8 },
-                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                  }}
-                  className="relative w-full aspect-square flex items-center justify-center"
-                >
-                  <Image
-                    src="/broken_chain_v2.png"
-                    alt="Metal chain breaking apart, symbolic of broken fair trade"
-                    width={450}
-                    height={450}
-                    priority
-                    className="object-contain hover:scale-102 transition-transform duration-500"
-                  />
-                </motion.div>
-
-                {/* 4 Badges Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="w-full bg-white border border-slate-200 rounded-2xl shadow-md p-4 grid grid-cols-4 gap-2 text-center"
-                >
-                  {[
-                    { text: "For Businesses.", icon: <FiBriefcase size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                    { text: "By Businesses.", icon: <FiUsers size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                    { text: "Built on Trust.", icon: <FiShield size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                    { text: "Designed for Growth.", icon: <FiTrendingUp size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                  ].map((badge, idx) => (
-                    <div key={idx} className="flex flex-col items-center gap-2 border-r last:border-r-0 border-slate-200 px-1 py-1">
-                      {badge.icon}
-                      <span className="text-[10px] sm:text-[11px] font-black text-brand-navy leading-tight">
-                        {badge.text}
-                      </span>
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
-          </div>
-
-          {/* 3. Top Waitlist Card ( Navy-to-Green gradient box ) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#002D62] to-[#007C44] text-white p-8 md:p-12 shadow-xl mt-12 border border-white/10"
-          >
-            {/* Background absolute decor circle */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
-
-            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Box Left Side */}
-              <div className="lg:col-span-7 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md">
-                  <LogoCheckmark size={32} />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Join The <span className="text-brand-green">Movement</span>
-                  </h3>
-                  <p className="text-base md:text-lg text-emerald-50/90 max-w-xl font-medium leading-relaxed">
-                    Be the first to receive the <span className="font-extrabold text-brand-green">FREE</span> OpenMarket App and help build a fair B2B marketplace.
-                  </p>
-                </div>
-              </div>
-
-              {/* Box Right Side (Waitlist input form) */}
-              <div className="lg:col-span-5 flex flex-col gap-4 w-full">
-                <WaitlistForm formId="waitlist-top" theme="green" />
-
+                <WaitlistForm formId="waitlist-hero" theme="navy" />
+                
                 {/* Features tags below input */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-bold text-white/90 tracking-wide mt-2">
-                  <div className="flex items-center gap-1.5">
-                    <FiCheckCircle size={14} className="text-white" />
+                <div className="flex flex-wrap items-center justify-center gap-y-1.5 gap-x-4 text-[11px] font-bold text-slate-500 tracking-wide mt-4 pt-3 border-t border-slate-100">
+                  <div className="flex items-center gap-1">
+                    <FiCheckCircle size={12} className="text-brand-green" />
                     <span>No Spam</span>
                   </div>
-                  <span className="hidden sm:inline text-white/20">|</span>
-                  <div className="flex items-center gap-1.5">
-                    <FiXCircle size={14} className="text-white" />
+                  <span className="text-slate-300">|</span>
+                  <div className="flex items-center gap-1">
+                    <FiXCircle size={12} className="text-brand-green" />
                     <span>No Advertisements</span>
                   </div>
-                  <span className="hidden sm:inline text-white/20">|</span>
-                  <div className="flex items-center gap-1.5">
-                    <FiBell size={14} className="text-white" />
-                    <span>Only Launch Updates</span>
+                  <span className="text-slate-300">|</span>
+                  <div className="flex items-center gap-1">
+                    <FaUsers size={12} className="text-brand-green" />
+                    <span>Only 1,000 Seats</span>
                   </div>
                 </div>
+              </motion.div>
+            </div>
+
+            {/* Mobile Horizontal Scrollable Cards List */}
+            <div className="lg:hidden w-full mt-12">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-black text-brand-green tracking-widest uppercase">Platform Highlights</span>
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">Swipe →</span>
+              </div>
+              <div className="flex gap-4 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory">
+                {floatingCards.map((card, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-shrink-0 w-[130px] snap-center flex flex-col items-center"
+                  >
+                    <div className={`w-full aspect-[4/3] rounded-3xl border shadow-sm flex items-center justify-center p-3 ${card.bgClass} ${card.rotateClass}`}>
+                      {card.imageSrc ? (
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={card.imageSrc}
+                            alt={card.title}
+                            fill
+                            sizes="130px"
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : card.customContent ? (
+                        card.customContent
+                      ) : (
+                        card.icon
+                      )}
+                    </div>
+                    <span className="block text-center text-[10px] font-black uppercase tracking-wider mt-2.5 whitespace-nowrap text-slate-500">
+                      {card.title}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Founding Members Note at the Bottom */}
-            <div className="relative flex items-center justify-center gap-2 text-sm font-bold text-white/95 mt-8 pt-4 border-t border-white/10 w-full">
-              <FaUsers size={18} className="text-white/80" />
-              <span>
-                Limited to the first <span className="text-brand-green font-black">1,000</span> founding members.
-              </span>
-            </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
