@@ -36,13 +36,13 @@ export async function POST(req: NextRequest) {
     const { name, company, mobile, email, subject, message } = validation.data;
 
     // Retrieve environment variables
-    const host = process.env.EMAIL_HOST || "smtp.titan.email";
+    const host = process.env.EMAIL_HOST || "";
     const portStr = process.env.EMAIL_PORT || "465";
     const port = parseInt(portStr, 10);
     const secure = process.env.EMAIL_SECURE === "true" || port === 465;
-    const user = process.env.EMAIL_USER || "dev@openmarket.co.in";
-    const pass = process.env.EMAIL_PASS || "*BZnLE5FPg@-kst";
-    const to = process.env.EMAIL_TO || "danishkkhan13@gmail.com";
+    const user = process.env.EMAIL_USER || "";
+    const pass = process.env.EMAIL_PASS || "";
+    const to = process.env.EMAIL_TO || "";
 
     if (!user || !pass) {
       console.error("Email configuration is missing from environment variables.");
