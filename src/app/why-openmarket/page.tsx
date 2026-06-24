@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+
 import {
   FaLinkedin,
   FaWhatsapp,
@@ -12,7 +12,6 @@ import {
   FaGraduationCap,
   FaBriefcase,
   FaStar,
-  FaBuilding,
   FaLockOpen,
   FaBalanceScale,
   FaHandshake,
@@ -22,31 +21,7 @@ import { FiCheckCircle } from "react-icons/fi";
 
 
 
-/**
- * Reusable Stat Item Component
- */
-interface StatItemProps {
-  value: string;
-  label: string;
-  icon: React.ReactNode;
-}
-function StatItem({ value, label, icon }: StatItemProps) {
-  return (
-    <div className="flex items-center gap-4 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-      <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center">
-        {icon}
-      </div>
-      <div className="flex flex-col text-left">
-        <span className="text-2xl md:text-3xl font-black text-brand-navy leading-none mb-1 tracking-tight">
-          {value}
-        </span>
-        <span className="text-[11px] sm:text-xs font-bold text-slate-500 leading-snug">
-          {label}
-        </span>
-      </div>
-    </div>
-  );
-}
+
 
 import { useOtpModal } from "@/providers/OtpModalProvider";
 
@@ -401,41 +376,6 @@ export default function WhyOpenMarket() {
           </div>
         </section>
 
-        {/* 4. Stats Section */}
-        <section className="border-slate-100 ">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              <StatItem
-                value="300+"
-                label="Industrial Customers Served"
-                icon={<FaUsers size={50} className="text-brand-green" />}
-              />
-              <StatItem
-                value="20+"
-                label="Years of Industrial & B2B Experience"
-                icon={<FaBriefcase size={50} className="text-[#0B3C5F]" />}
-              />
-              <StatItem
-                value="1000+"
-                label="Products & Solutions Delivered"
-                icon={<FaBuilding size={50} className="text-brand-green" />}
-              />
-              <StatItem
-                value="Nationwide"
-                label="Network Across India"
-                icon={
-                  <div className="flex h-40 w-40 items-center justify-center">
-                    <img
-                      src="/india.png"
-                      alt="India map"
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                }
-              />
-            </div>
-          </div>
-        </section>
 
       </main>
     </div>

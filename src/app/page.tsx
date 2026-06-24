@@ -171,124 +171,215 @@ export default function Home() {
 
         {/* 2. Hero & Waitlist Box Container */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Mobile/Tablet Text Layout */}
+          <div className="lg:hidden text-center mb-8 flex flex-col gap-4">
+            <h1 className="text-4xl md:text-5xl font-black text-brand-navy leading-tight tracking-tight">
+              Get exclusive access<br />to our marketplace
+            </h1>
+            <p className="text-slate-500 font-semibold text-base md:text-lg">
+              Unlimited tools to transform your health and change your life.
+            </p>
+          </div>
 
-            {/* Left Hero Text Content */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="flex flex-col gap-3">
-                <div className="self-start px-3 py-1 bg-brand-dark-green/10 rounded-full border border-brand-dark-green/20 text-brand-dark-green text-xs font-black tracking-wider uppercase">
-                  A BETTER WAY FOR B2B TRADE
-                </div>
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-5xl md:text-6xl lg:text-[68px] font-extrabold tracking-tight leading-[1.05] text-brand-navy"
-                >
-                  <span className="block">EXISTING B2B</span>
-                  <span className="block mt-1">MARKETPLACES</span>
-                  <span className="text-brand-green block mt-1">ARE UNFAIR</span>
-                  <span className="text-brand-green block mt-1">AND BROKEN.</span>
-                </motion.h1>
-              </div>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-lg md:text-xl font-bold text-brand-navy/80 max-w-xl leading-relaxed"
-              >
-                They reward who pays the most,
-                <br />
-                <span className="text-brand-green font-black">not</span> who serves the best.
-              </motion.p>
-
-              {/* Hero Pain Points Bullet List */}
+          {/* Mobile/Tablet Cards Grid Layout */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
+            {[
+              { title: "VO2 Max", image: "/images/vo2_max.png", rotate: "-rotate-2" },
+              { title: "Microbiome Test Kit", image: "/images/microbiome.png", rotate: "rotate-3" },
+              { title: "Full Genome Sequencing", image: "/images/genome.png", rotate: "-rotate-1" },
+              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png", rotate: "rotate-2" },
+              { title: "Grail Cancer Test", image: "/images/cancer_test.png", rotate: "-rotate-3" },
+              { title: "DEXA Scan", image: "/images/dexa_scan.png", rotate: "rotate-1" },
+              { title: "MRIs", image: "/images/mri.png", rotate: "-rotate-2" },
+              { title: "Prescriptions", image: "/images/prescription.png", rotate: "rotate-3" },
+              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png", rotate: "-rotate-1" },
+              { title: "Biomarker Tracking", image: "/images/biomarker.png", rotate: "rotate-2" },
+            ].map((card, idx) => (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-2"
+                key={idx}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className={`bg-white rounded-2xl shadow-sm border border-slate-100 p-2 flex flex-col items-center gap-2 text-center transition-all hover:shadow-md ${card.rotate}`}
               >
-                {[
-                  "Useless Leads",
-                  "High Membership Charges",
-                  "Pay-To-Rank Visibility",
-                  "Trust Deficit",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <span className="flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-full border-2 border-brand-green text-brand-green">
-                      <FiX size={10} className="stroke-[3.5]" />
-                    </span>
-                    <span className="text-base font-bold text-brand-navy">{item}</span>
-                  </div>
-                ))}
+                <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-slate-50 flex items-center justify-center">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(max-w-768px) 150px, 200px"
+                    className="object-cover"
+                  />
+                </div>
+                <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
+                  {card.title}
+                </span>
               </motion.div>
+            ))}
+          </div>
 
-              <motion.p
+          {/* Desktop Circular Layout (lg and up) */}
+          <div className="hidden lg:flex relative w-full max-w-6xl mx-auto aspect-[16/10] items-center justify-center min-h-[680px] overflow-visible mb-12">
+            
+            {/* Centered Hero Text */}
+            <div className="text-center z-20 max-w-md mx-auto pointer-events-auto">
+              <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-base font-medium text-slate-700 max-w-lg leading-relaxed mt-2"
+                transition={{ duration: 0.6 }}
+                className="text-5xl lg:text-[54px] font-black text-[#0B3C5F] leading-[1.1] tracking-tight"
               >
-                <span className="text-brand-green font-extrabold">OpenMarket</span> is building a fair{" "}
-                <Link href="/why-openmarket" className="text-brand-navy font-extrabold underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                  B2B marketplace
-                </Link>{" "}
-                where visibility is earned through activity, engagement, trust and contribution.
+                Get exclusive<br />access to our<br />marketplace
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-slate-500 font-semibold mt-4 text-lg"
+              >
+                Unlimited tools to transform your health and change your life.
               </motion.p>
             </div>
 
-            {/* Right Hero Image & 4 Badges */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="flex flex-col items-center gap-6 w-full max-w-[450px]">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    y: [0, -10, 0]
-                  }}
-                  transition={{
-                    opacity: { duration: 0.8 },
-                    scale: { duration: 0.8 },
-                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-                  }}
-                  className="relative w-full aspect-square flex items-center justify-center"
+            {/* Circular Scattered Cards */}
+            {[
+              {
+                title: "VO2 Max",
+                image: "/images/vo2_max.png",
+                style: { left: "14%", top: "4%" },
+                rotate: -8,
+                widthClass: "w-[125px]",
+                aspectClass: "aspect-[4/3]",
+                floatOffset: -8
+              },
+              {
+                title: "Microbiome Test Kit",
+                image: "/images/microbiome.png",
+                style: { left: "30%", top: "3%" },
+                rotate: -4,
+                widthClass: "w-[105px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -10
+              },
+              {
+                title: "Full Genome Sequencing",
+                image: "/images/genome.png",
+                style: { left: "46%", top: "2%" },
+                rotate: 4,
+                widthClass: "w-[110px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -7
+              },
+              {
+                title: "Continuous Glucose Monitoring",
+                image: "/images/glucose.png",
+                style: { left: "68%", top: "2%" },
+                rotate: -12,
+                widthClass: "w-[165px]",
+                aspectClass: "aspect-[4/3]",
+                floatOffset: -12
+              },
+              {
+                title: "Grail Cancer Test",
+                image: "/images/cancer_test.png",
+                style: { left: "80%", top: "42%" },
+                rotate: 6,
+                widthClass: "w-[110px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -9
+              },
+              {
+                title: "DEXA Scan",
+                image: "/images/dexa_scan.png",
+                style: { left: "70%", top: "72%" },
+                rotate: -10,
+                widthClass: "w-[115px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -11
+              },
+              {
+                title: "MRIs",
+                image: "/images/mri.png",
+                style: { left: "58%", top: "72%" },
+                rotate: 12,
+                widthClass: "w-[90px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -6
+              },
+              {
+                title: "Prescriptions",
+                image: "/images/prescription.png",
+                style: { left: "44%", top: "80%" },
+                rotate: -3,
+                widthClass: "w-[100px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -8
+              },
+              {
+                title: "Intestinal Permeability Panel",
+                image: "/images/intestinal.png",
+                style: { left: "16%", top: "74%" },
+                rotate: -10,
+                widthClass: "w-[145px]",
+                aspectClass: "aspect-[4/3]",
+                floatOffset: -12
+              },
+              {
+                title: "Biomarker Tracking",
+                image: "/images/biomarker.png",
+                style: { left: "8%", top: "41%" },
+                rotate: -5,
+                widthClass: "w-[110px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -9
+              },
+            ].map((card, idx) => (
+              <motion.div
+                key={idx}
+                className="absolute flex flex-col items-center gap-2 group cursor-pointer z-10 hover:z-30 transition-transform duration-300"
+                style={{
+                  ...card.style,
+                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, card.floatOffset, 0]
+                }}
+                whileHover={{
+                  scale: 1.08,
+                  rotate: 0,
+                  transition: { duration: 0.2 }
+                }}
+                transition={{
+                  opacity: { duration: 0.5, delay: idx * 0.05 },
+                  scale: { duration: 0.2 },
+                  y: {
+                    duration: 3.5 + (idx % 3) * 0.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: idx * 0.1
+                  }
+                }}
+              >
+                <div 
+                  className={`relative overflow-hidden rounded-2xl shadow-md border border-slate-100 bg-white transition-shadow group-hover:shadow-xl duration-300 ${card.widthClass} ${card.aspectClass}`}
+                  style={{ transform: `rotate(${card.rotate}deg)` }}
                 >
                   <Image
-                    src="/broken_chain_v2.png"
-                    alt="Metal chain breaking apart, symbolic of broken fair trade"
-                    width={450}
-                    height={450}
-                    priority
-                    className="object-contain hover:scale-102 transition-transform duration-500"
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="180px"
+                    className="object-cover select-none pointer-events-none"
                   />
-                </motion.div>
-
-                {/* 4 Badges Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="w-full bg-white border border-slate-200 rounded-2xl shadow-md p-4 grid grid-cols-4 gap-2 text-center"
-                >
-                  {[
-                    { text: "For Businesses.", icon: <FiBriefcase size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                    { text: "By Businesses.", icon: <FiUsers size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                    { text: "Built on Trust.", icon: <FiShield size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                    { text: "Designed for Growth.", icon: <FiTrendingUp size={22} className="text-[#0FA958] flex-shrink-0" /> },
-                  ].map((badge, idx) => (
-                    <div key={idx} className="flex flex-col items-center gap-2 border-r last:border-r-0 border-slate-200 px-1 py-1">
-                      {badge.icon}
-                      <span className="text-[10px] sm:text-[11px] font-black text-brand-navy leading-tight">
-                        {badge.text}
-                      </span>
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
+                </div>
+                <span className="text-[11px] font-bold text-slate-800 text-center leading-tight max-w-[100px] select-none">
+                  {card.title}
+                </span>
+              </motion.div>
+            ))}
           </div>
 
           {/* 3. Top Waitlist Card ( Navy-to-Green gradient box ) */}
