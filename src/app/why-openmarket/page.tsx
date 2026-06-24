@@ -401,41 +401,6 @@ export default function WhyOpenMarket() {
           </div>
         </section>
 
-        {/* 4. Stats Section */}
-        <section className="border-slate-100 ">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              <StatItem
-                value="300+"
-                label="Industrial Customers Served"
-                icon={<FaUsers size={50} className="text-brand-green" />}
-              />
-              <StatItem
-                value="20+"
-                label="Years of Industrial & B2B Experience"
-                icon={<FaBriefcase size={50} className="text-[#0B3C5F]" />}
-              />
-              <StatItem
-                value="1000+"
-                label="Products & Solutions Delivered"
-                icon={<FaBuilding size={50} className="text-brand-green" />}
-              />
-              <StatItem
-                value="Nationwide"
-                label="Network Across India"
-                icon={
-                  <div className="flex h-40 w-40 items-center justify-center">
-                    <img
-                      src="/india.png"
-                      alt="India map"
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                }
-              />
-            </div>
-          </div>
-        </section>
 
       </main>
     </div>
