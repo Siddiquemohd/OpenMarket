@@ -164,248 +164,283 @@ function WaitlistForm({
 }
 
 export default function Home() {
-  const floatingCards = [
-    {
-      title: "Direct Connection",
-      imageSrc: "/Partnership1.png",
-      className: "top-[10%] left-[8%] w-[120px]",
-      rotateClass: "rotate-3",
-      bgClass: "bg-white border-slate-100",
-      delay: 0.1,
-      floatRange: -10,
-    },
-    {
-      title: "Verified Profiles",
-      icon: <FiShield size={28} className="text-[#0FA958]" />,
-      className: "top-[24%] left-[26%] w-[110px]",
-      rotateClass: "-rotate-6",
-      bgClass: "bg-brand-navy border-[#12629B]",
-      textColorClass: "text-slate-400",
-      delay: 0.3,
-      floatRange: -12,
-    },
-    {
-      title: "Zero Paid Ranking",
-      imageSrc: "/broken_chain_v2.png",
-      className: "top-[8%] left-[50%] -translate-x-1/2 w-[120px]",
-      rotateClass: "rotate-6",
-      bgClass: "bg-orange-50/50 border-orange-200",
-      delay: 0.5,
-      floatRange: -15,
-    },
-    {
-      title: "Nationwide B2B",
-      imageSrc: "/india.png",
-      className: "top-[12%] right-[8%] w-[120px]",
-      rotateClass: "-rotate-3",
-      bgClass: "bg-white border-slate-100",
-      delay: 0.2,
-      floatRange: -8,
-    },
-    {
-      title: "Direct Chat",
-      icon: <FaWhatsapp size={32} className="text-[#25D366]" />,
-      className: "top-[48%] left-[6%] w-[110px]",
-      rotateClass: "-rotate-3",
-      bgClass: "bg-emerald-50/30 border-emerald-100",
-      delay: 0.4,
-      floatRange: -14,
-    },
-    {
-      title: "Designed for Growth",
-      imageSrc: "/greeen-rocket.png",
-      className: "top-[42%] right-[10%] w-[120px]",
-      rotateClass: "rotate-3",
-      bgClass: "bg-white border-slate-100",
-      delay: 0.6,
-      floatRange: -10,
-    },
-    {
-      title: "0% Commission",
-      customContent: (
-        <div className="flex flex-col items-center justify-center h-full">
-          <span className="text-3xl font-black text-white leading-none tracking-tighter">0%</span>
-          <span className="text-[10px] font-black text-emerald-100 uppercase tracking-widest mt-0.5">Fees</span>
-        </div>
-      ),
-      className: "top-[70%] left-[10%] w-[110px]",
-      rotateClass: "rotate-6",
-      bgClass: "bg-gradient-to-br from-[#0FA958] to-[#097B3E] border-emerald-600",
-      delay: 0.7,
-      floatRange: -12,
-    },
-    {
-      title: "For Indian MSMEs",
-      customContent: (
-        <div className="flex flex-col items-center justify-center h-full gap-1">
-          <img src="/indian_flag.webp" alt="India Flag" className="w-8 h-5 object-cover rounded-sm" />
-          <span className="text-[10px] font-bold text-brand-navy">MSME Focus</span>
-        </div>
-      ),
-      className: "top-[78%] left-[48%] -translate-x-1/2 w-[110px]",
-      rotateClass: "-rotate-3",
-      bgClass: "bg-white border-slate-100",
-      delay: 0.8,
-      floatRange: -9,
-    },
-    {
-      title: "Genuine Enquiries",
-      imageSrc: "/cozy_office.png",
-      className: "top-[68%] right-[10%] w-[120px]",
-      rotateClass: "-rotate-6",
-      bgClass: "bg-white border-slate-100",
-      delay: 0.9,
-      floatRange: -11,
-    }
-  ];
-
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       {/* Main Page Layout */}
       <main className="flex-grow">
 
-        {/* 2. Unified Premium Hero Section */}
-        <section className="relative w-full min-h-[90vh] lg:min-h-[85vh] flex flex-col justify-center overflow-hidden py-16 md:py-24 bg-white border-b border-slate-100 animate-fade-in">
+        {/* 2. Hero & Waitlist Box Container */}
+        <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
+          {/* Mobile/Tablet Text Layout */}
+          <div className="lg:hidden text-center mb-8 flex flex-col gap-4">
+            <h1 className="text-4xl md:text-5xl font-black text-brand-navy leading-tight tracking-tight">
+              Get exclusive access<br />to our marketplace
+            </h1>
+            <p className="text-slate-500 font-semibold text-base md:text-lg">
+              Unlimited tools to transform your health and change your life.
+            </p>
+          </div>
 
-          {/* Desktop Floating Cards (Hidden on mobile) */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none select-none">
-            {floatingCards.map((card, idx) => (
+          {/* Mobile/Tablet Cards Grid Layout */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
+            {[
+              { title: "VO2 Max", image: "/images/vo2_max.png", rotate: "-rotate-2" },
+              { title: "Microbiome Test Kit", image: "/images/microbiome.png", rotate: "rotate-3" },
+              { title: "Full Genome Sequencing", image: "/images/genome.png", rotate: "-rotate-1" },
+              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png", rotate: "rotate-2" },
+              { title: "Grail Cancer Test", image: "/images/cancer_test.png", rotate: "-rotate-3" },
+              { title: "DEXA Scan", image: "/images/dexa_scan.png", rotate: "rotate-1" },
+              { title: "MRIs", image: "/images/mri.png", rotate: "-rotate-2" },
+              { title: "Prescriptions", image: "/images/prescription.png", rotate: "rotate-3" },
+              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png", rotate: "-rotate-1" },
+              { title: "Biomarker Tracking", image: "/images/biomarker.png", rotate: "rotate-2" },
+            ].map((card, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  y: [0, card.floatRange, 0]
-                }}
-                transition={{
-                  opacity: { duration: 0.6, delay: card.delay },
-                  scale: { duration: 0.6, delay: card.delay },
-                  y: {
-                    duration: 4 + (idx % 3) * 0.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }
-                }}
-                className={`absolute ${card.className} pointer-events-auto flex flex-col items-center`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                className={`bg-white rounded-2xl shadow-sm border border-slate-100 p-2 flex flex-col items-center gap-2 text-center transition-all hover:shadow-md ${card.rotate}`}
               >
-                <div className={`w-full aspect-[4/3] rounded-3xl border shadow-sm flex items-center justify-center p-3.5 transition-transform duration-300 hover:scale-105 hover:shadow-md cursor-default select-none ${card.bgClass} ${card.rotateClass}`}>
-                  {card.imageSrc ? (
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={card.imageSrc}
-                        alt={card.title}
-                        fill
-                        sizes="120px"
-                        className="object-contain"
-                      />
-                    </div>
-                  ) : card.customContent ? (
-                    card.customContent
-                  ) : (
-                    card.icon
-                  )}
+                <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-slate-50 flex items-center justify-center">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(max-w-768px) 150px, 200px"
+                    className="object-cover"
+                  />
                 </div>
-                <span className={`block text-center text-[10px] font-black uppercase tracking-widest mt-2.5 whitespace-nowrap ${card.textColorClass || 'text-slate-500'}`}>
+                <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
                   {card.title}
                 </span>
               </motion.div>
             ))}
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 relative w-full h-full flex flex-col items-center justify-center z-20 text-center">
+          {/* Desktop Circular Layout (lg and up) */}
+          <div className="hidden lg:flex relative w-full max-w-6xl mx-auto aspect-[16/10] items-center justify-center min-h-[680px] overflow-visible mb-12">
 
-            {/* Centered Copy */}
-            <div className="max-w-2xl mx-auto flex flex-col items-center gap-6 md:gap-8">
-              <div className="self-center px-3 py-1 bg-brand-dark-green/10 rounded-full border border-brand-dark-green/20 text-brand-dark-green text-xs font-black tracking-wider uppercase">
-                A BETTER WAY FOR B2B TRADE
-              </div>
-
+            {/* Centered Hero Text */}
+            <div className="text-center z-20 max-w-md mx-auto pointer-events-auto">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tight leading-[1.1] text-brand-navy"
+                className="text-5xl lg:text-[54px] font-black text-[#0B3C5F] leading-[1.1] tracking-tight"
               >
-                Get exclusive access to <span className="text-brand-green">India&apos;s fairest</span> B2B marketplace
+                Get exclusive<br />access to our<br />marketplace
               </motion.h1>
-
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-base md:text-lg font-semibold text-slate-600 max-w-xl leading-relaxed"
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="text-slate-500 font-semibold mt-4 text-lg"
               >
-                A transparent, community-driven space where visibility is earned through activity and trust, not bought with massive advertising budgets.
+                Unlimited tools to transform your health and change your life.
               </motion.p>
+            </div>
 
-              {/* Centered Waitlist Form */}
+            {/* Circular Scattered Cards */}
+            {[
+              {
+                title: "VO2 Max",
+                image: "/images/vo2_max.png",
+                style: { left: "14%", top: "4%" },
+                rotate: -8,
+                widthClass: "w-[125px]",
+                aspectClass: "aspect-[4/3]",
+                floatOffset: -8
+              },
+              {
+                title: "Microbiome Test Kit",
+                image: "/images/microbiome.png",
+                style: { left: "30%", top: "3%" },
+                rotate: -4,
+                widthClass: "w-[105px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -10
+              },
+              {
+                title: "Full Genome Sequencing",
+                image: "/images/genome.png",
+                style: { left: "46%", top: "2%" },
+                rotate: 4,
+                widthClass: "w-[110px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -7
+              },
+              {
+                title: "Continuous Glucose Monitoring",
+                image: "/images/glucose.png",
+                style: { left: "68%", top: "2%" },
+                rotate: -12,
+                widthClass: "w-[165px]",
+                aspectClass: "aspect-[4/3]",
+                floatOffset: -12
+              },
+              {
+                title: "Grail Cancer Test",
+                image: "/images/cancer_test.png",
+                style: { left: "80%", top: "42%" },
+                rotate: 6,
+                widthClass: "w-[110px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -9
+              },
+              {
+                title: "DEXA Scan",
+                image: "/images/dexa_scan.png",
+                style: { left: "70%", top: "72%" },
+                rotate: -10,
+                widthClass: "w-[115px]",
+                aspectClass: "aspect-[3/4]",
+                floatOffset: -11
+              },
+              {
+                title: "MRIs",
+                image: "/images/mri.png",
+                style: { left: "58%", top: "72%" },
+                rotate: 12,
+                widthClass: "w-[90px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -6
+              },
+              {
+                title: "Prescriptions",
+                image: "/images/prescription.png",
+                style: { left: "44%", top: "80%" },
+                rotate: -3,
+                widthClass: "w-[100px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -8
+              },
+              {
+                title: "Intestinal Permeability Panel",
+                image: "/images/intestinal.png",
+                style: { left: "16%", top: "74%" },
+                rotate: -10,
+                widthClass: "w-[145px]",
+                aspectClass: "aspect-[4/3]",
+                floatOffset: -12
+              },
+              {
+                title: "Biomarker Tracking",
+                image: "/images/biomarker.png",
+                style: { left: "8%", top: "41%" },
+                rotate: -5,
+                widthClass: "w-[110px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -9
+              },
+            ].map((card, idx) => (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="w-full max-w-md bg-white border border-slate-200/80 rounded-2xl shadow-lg p-5 md:p-6"
+                key={idx}
+                className="absolute flex flex-col items-center gap-2 group cursor-pointer z-10 hover:z-30 transition-transform duration-300"
+                style={{
+                  ...card.style,
+                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, card.floatOffset, 0]
+                }}
+                whileHover={{
+                  scale: 1.08,
+                  rotate: 0,
+                  transition: { duration: 0.2 }
+                }}
+                transition={{
+                  opacity: { duration: 0.5, delay: idx * 0.05 },
+                  scale: { duration: 0.2 },
+                  y: {
+                    duration: 3.5 + (idx % 3) * 0.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: idx * 0.1
+                  }
+                }}
               >
-                <WaitlistForm formId="waitlist-hero" theme="navy" />
+                <div
+                  className={`relative overflow-hidden rounded-2xl shadow-md border border-slate-100 bg-white transition-shadow group-hover:shadow-xl duration-300 ${card.widthClass} ${card.aspectClass}`}
+                  style={{ transform: `rotate(${card.rotate}deg)` }}
+                >
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="180px"
+                    className="object-cover select-none pointer-events-none"
+                  />
+                </div>
+                <span className="text-[11px] font-bold text-slate-800 text-center leading-tight max-w-[100px] select-none">
+                  {card.title}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* 3. Top Waitlist Card ( Navy-to-Green gradient box ) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#002D62] to-[#007C44] text-white p-8 md:p-12 shadow-xl mt-12 border border-white/10"
+          >
+            {/* Background absolute decor circle */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
+
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Box Left Side */}
+              <div className="lg:col-span-7 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
+                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md">
+                  <LogoCheckmark size={32} />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+                    Join The <span className="text-brand-green">Movement</span>
+                  </h3>
+                  <p className="text-base md:text-lg text-emerald-50/90 max-w-xl font-medium leading-relaxed">
+                    Be the first to receive the <span className="font-extrabold text-brand-green">FREE</span> OpenMarket App and help build a fair B2B marketplace.
+                  </p>
+                </div>
+              </div>
+
+              {/* Box Right Side (Waitlist input form) */}
+              <div className="lg:col-span-5 flex flex-col gap-4 w-full">
+                <WaitlistForm formId="waitlist-top" theme="green" />
 
                 {/* Features tags below input */}
-                <div className="flex flex-wrap items-center justify-center gap-y-1.5 gap-x-4 text-[11px] font-bold text-slate-500 tracking-wide mt-4 pt-3 border-t border-slate-100">
-                  <div className="flex items-center gap-1">
-                    <FiCheckCircle size={12} className="text-brand-green" />
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-bold text-white/90 tracking-wide mt-2">
+                  <div className="flex items-center gap-1.5">
+                    <FiCheckCircle size={14} className="text-white" />
                     <span>No Spam</span>
                   </div>
-                  <span className="text-slate-300">|</span>
-                  <div className="flex items-center gap-1">
-                    <FiXCircle size={12} className="text-brand-green" />
+                  <span className="hidden sm:inline text-white/20">|</span>
+                  <div className="flex items-center gap-1.5">
+                    <FiXCircle size={14} className="text-white" />
                     <span>No Advertisements</span>
                   </div>
-                  <span className="text-slate-300">|</span>
-                  <div className="flex items-center gap-1">
-                    <FaUsers size={12} className="text-brand-green" />
-                    <span>Only 1,000 Seats</span>
+                  <span className="hidden sm:inline text-white/20">|</span>
+                  <div className="flex items-center gap-1.5">
+                    <FiBell size={14} className="text-white" />
+                    <span>Only Launch Updates</span>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-
-            {/* Mobile Horizontal Scrollable Cards List */}
-            <div className="lg:hidden w-full mt-12">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-black text-brand-green tracking-widest uppercase">Platform Highlights</span>
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider">Swipe →</span>
-              </div>
-              <div className="flex gap-4 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory">
-                {floatingCards.map((card, idx) => (
-                  <div
-                    key={idx}
-                    className="flex-shrink-0 w-[130px] snap-center flex flex-col items-center"
-                  >
-                    <div className={`w-full aspect-[4/3] rounded-3xl border shadow-sm flex items-center justify-center p-3 ${card.bgClass} ${card.rotateClass}`}>
-                      {card.imageSrc ? (
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={card.imageSrc}
-                            alt={card.title}
-                            fill
-                            sizes="130px"
-                            className="object-contain"
-                          />
-                        </div>
-                      ) : card.customContent ? (
-                        card.customContent
-                      ) : (
-                        card.icon
-                      )}
-                    </div>
-                    <span className="block text-center text-[10px] font-black uppercase tracking-wider mt-2.5 whitespace-nowrap text-slate-500">
-                      {card.title}
-                    </span>
-                  </div>
-                ))}
               </div>
             </div>
 
-          </div>
+            {/* Founding Members Note at the Bottom */}
+            <div className="relative flex items-center justify-center gap-2 text-sm font-bold text-white/95 mt-8 pt-4 border-t border-white/10 w-full">
+              <FaUsers size={18} className="text-white/80" />
+              <span>
+                Limited to the first <span className="text-brand-green font-black">1,000</span> founding members.
+              </span>
+            </div>
+          </motion.div>
         </section>
 
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
