@@ -184,16 +184,16 @@ export default function Home() {
           {/* Mobile/Tablet Cards Grid Layout */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { title: "VO2 Max", image: "/images/vo2_max.png", rotate: "-rotate-2" },
-              { title: "Microbiome Test Kit", image: "/images/microbiome.png", rotate: "rotate-3" },
-              { title: "Full Genome Sequencing", image: "/images/genome.png", rotate: "-rotate-1" },
-              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png", rotate: "rotate-2" },
-              { title: "Grail Cancer Test", image: "/images/cancer_test.png", rotate: "-rotate-3" },
-              { title: "DEXA Scan", image: "/images/dexa_scan.png", rotate: "rotate-1" },
-              { title: "MRIs", image: "/images/mri.png", rotate: "-rotate-2" },
-              { title: "Prescriptions", image: "/images/prescription.png", rotate: "rotate-3" },
-              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png", rotate: "-rotate-1" },
-              { title: "Biomarker Tracking", image: "/images/biomarker.png", rotate: "rotate-2" },
+              { title: "VO2 Max", image: "/images/vo2_max.png?v=3", rotate: "-rotate-2" },
+              { title: "Microbiome Test Kit", image: "/images/microbiome.png?v=3", rotate: "rotate-3" },
+              { title: "Full Genome Sequencing", image: "/images/genome.png?v=3", rotate: "-rotate-1" },
+              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png?v=3", rotate: "rotate-2" },
+              { title: "Grail Cancer Test", image: "/images/cancer_test.png?v=3", rotate: "-rotate-3" },
+              { title: "DEXA Scan", image: "/images/dexa_scan.png?v=3", rotate: "rotate-1" },
+              { title: "MRIs", image: "/images/mri.png?v=3", rotate: "-rotate-2" },
+              { title: "Prescriptions", image: "/images/prescription.png?v=3", rotate: "rotate-3" },
+              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png?v=3", rotate: "-rotate-1" },
+              { title: "Biomarker Tracking", image: "/images/biomarker.png?v=3", rotate: "rotate-2" },
             ].map((card, idx) => (
               <motion.div
                 key={idx}
@@ -204,12 +204,10 @@ export default function Home() {
                 className={`bg-white rounded-2xl shadow-sm border border-slate-100 p-2 flex flex-col items-center gap-2 text-center transition-all hover:shadow-md ${card.rotate}`}
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-slate-50 flex items-center justify-center">
-                  <Image
+                  <img
                     src={card.image}
                     alt={card.title}
-                    fill
-                    sizes="(max-w-768px) 150px, 200px"
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
@@ -246,7 +244,7 @@ export default function Home() {
             {[
               {
                 title: "VO2 Max",
-                image: "/images/vo2_max.png",
+                image: "/images/vo2_max.png?v=3",
                 style: { left: "14%", top: "4%" },
                 rotate: -8,
                 widthClass: "w-[125px]",
@@ -255,7 +253,7 @@ export default function Home() {
               },
               {
                 title: "Microbiome Test Kit",
-                image: "/images/microbiome.png",
+                image: "/images/microbiome.png?v=3",
                 style: { left: "30%", top: "3%" },
                 rotate: -4,
                 widthClass: "w-[105px]",
@@ -264,7 +262,7 @@ export default function Home() {
               },
               {
                 title: "Full Genome Sequencing",
-                image: "/images/genome.png",
+                image: "/images/genome.png?v=3",
                 style: { left: "46%", top: "2%" },
                 rotate: 4,
                 widthClass: "w-[110px]",
@@ -273,7 +271,7 @@ export default function Home() {
               },
               {
                 title: "Continuous Glucose Monitoring",
-                image: "/images/glucose.png",
+                image: "/images/glucose.png?v=3",
                 style: { left: "68%", top: "2%" },
                 rotate: -12,
                 widthClass: "w-[165px]",
@@ -282,7 +280,7 @@ export default function Home() {
               },
               {
                 title: "Grail Cancer Test",
-                image: "/images/cancer_test.png",
+                image: "/images/cancer_test.png?v=3",
                 style: { left: "80%", top: "42%" },
                 rotate: 6,
                 widthClass: "w-[110px]",
@@ -291,7 +289,7 @@ export default function Home() {
               },
               {
                 title: "DEXA Scan",
-                image: "/images/dexa_scan.png",
+                image: "/images/dexa_scan.png?v=3",
                 style: { left: "70%", top: "72%" },
                 rotate: -10,
                 widthClass: "w-[115px]",
@@ -300,7 +298,7 @@ export default function Home() {
               },
               {
                 title: "MRIs",
-                image: "/images/mri.png",
+                image: "/images/mri.png?v=3",
                 style: { left: "58%", top: "72%" },
                 rotate: 12,
                 widthClass: "w-[90px]",
@@ -309,7 +307,7 @@ export default function Home() {
               },
               {
                 title: "Prescriptions",
-                image: "/images/prescription.png",
+                image: "/images/prescription.png?v=3",
                 style: { left: "44%", top: "80%" },
                 rotate: -3,
                 widthClass: "w-[100px]",
@@ -318,7 +316,7 @@ export default function Home() {
               },
               {
                 title: "Intestinal Permeability Panel",
-                image: "/images/intestinal.png",
+                image: "/images/intestinal.png?v=3",
                 style: { left: "16%", top: "74%" },
                 rotate: -10,
                 widthClass: "w-[145px]",
@@ -327,7 +325,7 @@ export default function Home() {
               },
               {
                 title: "Biomarker Tracking",
-                image: "/images/biomarker.png",
+                image: "/images/biomarker.png?v=3",
                 style: { left: "8%", top: "41%" },
                 rotate: -5,
                 widthClass: "w-[110px]",
@@ -367,12 +365,10 @@ export default function Home() {
                   className={`relative overflow-hidden rounded-2xl shadow-md border border-slate-100 bg-white transition-shadow group-hover:shadow-xl duration-300 ${card.widthClass} ${card.aspectClass}`}
                   style={{ transform: `rotate(${card.rotate}deg)` }}
                 >
-                  <Image
+                  <img
                     src={card.image}
                     alt={card.title}
-                    fill
-                    sizes="180px"
-                    className="object-cover select-none pointer-events-none"
+                    className="w-full h-full object-cover select-none pointer-events-none"
                   />
                 </div>
                 <span className="text-[11px] font-bold text-slate-800 text-center leading-tight max-w-[100px] select-none">
