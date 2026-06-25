@@ -11,22 +11,24 @@ import { FiMapPin } from "react-icons/fi";
  */
 export function Footer() {
   const quickLinks = [
+    { label: "Home", href: "/" },
     { label: "Why OpenMarket", href: "/why-openmarket" },
     { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/for-buyers" },
     { label: "Our Mission", href: "/our-mission" },
     { label: "Founding Members", href: "/founding-members" },
     { label: "Contact Us", href: "/contact-us" },
+    { label: "All Categories", href: "/category" },
   ];
 
   return (
-    <footer className="w-full bg-white border-t border-slate-200 mt-16 text-slate-600 font-sans">
+    <footer className="w-full bg-white border-t border-slate-200 mt-0 text-slate-600 font-sans">
       {/* Top spacing and main content container */}
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-12 lg:gap-8">
 
           {/* Column 1: Brand / About */}
-          <div className="flex flex-col">
+          <div className="flex flex-col sm:col-span-6 lg:col-span-3">
             <Link
               href="/"
               aria-label="OpenMarket home"
@@ -51,41 +53,43 @@ export function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col">
-            <h4 className="text-base font-bold text-brand-navy tracking-wider uppercase">
-              Quick Links
-            </h4>
+          <div className="flex flex-col sm:col-span-6 lg:col-span-4">
+            <div className="w-fit lg:mx-auto">
+              <h4 className="text-base font-bold text-brand-navy tracking-wider uppercase text-center lg:-translate-x-8">
+                Quick Links
+              </h4>
 
-            {/* Small green divider line */}
-            <div className="h-[2px] w-8 bg-brand-green mt-2 mb-4" />
+              {/* Small green divider line */}
+              <div className="h-[2px] w-8 bg-brand-green mt-2 mb-4 mx-auto lg:-translate-x-8" />
 
-            <nav className="flex flex-col gap-3">
-              {quickLinks.map((link, index) => {
-                const className = "flex items-center gap-2 text-[15px] font-semibold text-slate-600 hover:text-brand-green transition-all duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2";
-                const content = (
-                  <>
-                    <span className="text-[10px] text-brand-green transform group-hover:translate-x-1 transition-transform">
-                      <FaChevronRight />
-                    </span>
-                    {link.label}
-                  </>
-                );
+              <nav className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-3">
+                {quickLinks.map((link, index) => {
+                  const className = "flex items-center gap-2 text-[15px] font-semibold text-slate-600 hover:text-brand-green transition-all duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2";
+                  const content = (
+                    <>
+                      <span className="text-[10px] text-brand-green transform group-hover:translate-x-1 transition-transform">
+                        <FaChevronRight />
+                      </span>
+                      {link.label}
+                    </>
+                  );
 
-                return link.href.startsWith("/") ? (
-                  <Link key={index} href={link.href} className={className}>
-                    {content}
-                  </Link>
-                ) : (
-                  <a key={index} href={link.href} className={className}>
-                    {content}
-                  </a>
-                );
-              })}
-            </nav>
+                  return link.href.startsWith("/") ? (
+                    <Link key={index} href={link.href} className={className}>
+                      {content}
+                    </Link>
+                  ) : (
+                    <a key={index} href={link.href} className={className}>
+                      {content}
+                    </a>
+                  );
+                })}
+              </nav>
+            </div>
           </div>
 
           {/* Column 3: Contact */}
-          <div className="flex flex-col">
+          <div className="flex flex-col sm:col-span-6 lg:col-span-2">
             <h4 className="text-base font-bold text-brand-navy tracking-wider uppercase">
               Contact
             </h4>
@@ -147,7 +151,7 @@ export function Footer() {
           </div>
 
           {/* Column 4: Address */}
-          <div className="flex flex-col">
+          <div className="flex flex-col sm:col-span-6 lg:col-span-3">
             <h4 className="text-base font-bold text-brand-navy tracking-wider uppercase">
               Address
             </h4>

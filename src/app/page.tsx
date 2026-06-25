@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, cloneElement } from "react";
+import { useState, cloneElement, Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -20,6 +20,7 @@ import {
   FaStore,
   FaShoppingCart,
   FaWhatsapp,
+  FaBullhorn,
 } from "react-icons/fa";
 import {
   FiX,
@@ -44,7 +45,9 @@ import {
   FiSliders,
   FiTarget,
   FiUsers,
-  FiBriefcase
+  FiBriefcase,
+  FiMail,
+  FiFrown
 } from "react-icons/fi";
 
 // Validation schema for the mobile number
@@ -170,7 +173,7 @@ export default function Home() {
       <main className="flex-grow">
 
         {/* 2. Hero & Waitlist Box Container */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
+        <section className="max-w-7xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-12">
           {/* Mobile/Tablet Text Layout */}
           <div className="lg:hidden text-center mb-8 flex flex-col gap-4">
             <h1 className="text-4xl md:text-5xl font-black text-brand-navy leading-tight tracking-tight">
@@ -184,16 +187,14 @@ export default function Home() {
           {/* Mobile/Tablet Cards Grid Layout */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { title: "VO2 Max", image: "/images/vo2_max.png?v=3", rotate: "-rotate-2" },
-              { title: "Microbiome Test Kit", image: "/images/microbiome.png?v=3", rotate: "rotate-3" },
-              { title: "Full Genome Sequencing", image: "/images/genome.png?v=3", rotate: "-rotate-1" },
-              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png?v=3", rotate: "rotate-2" },
-              { title: "Grail Cancer Test", image: "/images/cancer_test.png?v=3", rotate: "-rotate-3" },
-              { title: "DEXA Scan", image: "/images/dexa_scan.png?v=3", rotate: "rotate-1" },
-              { title: "MRIs", image: "/images/mri.png?v=3", rotate: "-rotate-2" },
-              { title: "Prescriptions", image: "/images/prescription.png?v=3", rotate: "rotate-3" },
-              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png?v=3", rotate: "-rotate-1" },
-              { title: "Biomarker Tracking", image: "/images/biomarker.png?v=3", rotate: "rotate-2" },
+              { title: "VO2 Max", image: "/images/vo2_max.png?v=3", rotate: "-rotate-2", scaleClass: "scale-[1.2]" },
+              { title: "Full Genome Sequencing", image: "/images/genome.png?v=3", rotate: "-rotate-1", scaleClass: "scale-[1.2]" },
+              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png?v=3", rotate: "rotate-2", scaleClass: "scale-[1.2]" },
+              { title: "Grail Cancer Test", image: "/images/cancer_test.png?v=3", rotate: "-rotate-3", scaleClass: "scale-[1.2]" },
+              { title: "DEXA Scan", image: "/images/dexa_scan.png?v=3", rotate: "rotate-1", scaleClass: "" },
+              { title: "Prescriptions", image: "/images/prescription.png?v=3", rotate: "rotate-3", scaleClass: "" },
+              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png?v=3", rotate: "-rotate-1", scaleClass: "" },
+              { title: "Biomarker Tracking", image: "/images/biomarker.png?v=3", rotate: "rotate-2", scaleClass: "" },
             ].map((card, idx) => (
               <motion.div
                 key={idx}
@@ -207,7 +208,7 @@ export default function Home() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full object-cover ${card.scaleClass}`}
                   />
                 </div>
                 <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
@@ -218,7 +219,7 @@ export default function Home() {
           </div>
 
           {/* Desktop Circular Layout (lg and up) */}
-          <div className="hidden lg:flex relative w-full max-w-6xl mx-auto aspect-[16/10] items-center justify-center min-h-[680px] overflow-visible mb-12">
+          <div className="hidden lg:flex relative w-full max-w-6xl mx-auto aspect-[16/10] items-center justify-center min-h-[700px] overflow-visible mb-0">
 
             {/* Centered Hero Text */}
             <div className="text-center z-20 max-w-md mx-auto pointer-events-auto">
@@ -245,92 +246,82 @@ export default function Home() {
               {
                 title: "VO2 Max",
                 image: "/images/vo2_max.png?v=3",
-                style: { left: "14%", top: "4%" },
+                style: { left: "16%", top: "4%" },
                 rotate: -8,
-                widthClass: "w-[125px]",
-                aspectClass: "aspect-[4/3]",
-                floatOffset: -8
-              },
-              {
-                title: "Microbiome Test Kit",
-                image: "/images/microbiome.png?v=3",
-                style: { left: "30%", top: "3%" },
-                rotate: -4,
-                widthClass: "w-[105px]",
-                aspectClass: "aspect-[3/4]",
-                floatOffset: -10
+                widthClass: "w-[180px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -8,
+                scaleClass: "scale-[1.2]"
               },
               {
                 title: "Full Genome Sequencing",
                 image: "/images/genome.png?v=3",
-                style: { left: "46%", top: "2%" },
+                style: { left: "48%", top: "-4%" },
                 rotate: 4,
-                widthClass: "w-[110px]",
-                aspectClass: "aspect-[3/4]",
-                floatOffset: -7
+                widthClass: "w-[180px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -7,
+                scaleClass: "scale-[1.2]"
               },
               {
                 title: "Continuous Glucose Monitoring",
                 image: "/images/glucose.png?v=3",
-                style: { left: "68%", top: "2%" },
+                style: { left: "72%", top: "0%" },
                 rotate: -12,
-                widthClass: "w-[165px]",
-                aspectClass: "aspect-[4/3]",
-                floatOffset: -12
+                widthClass: "w-[200px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -12,
+                scaleClass: "scale-[1.2]"
               },
               {
                 title: "Grail Cancer Test",
                 image: "/images/cancer_test.png?v=3",
-                style: { left: "80%", top: "42%" },
+                style: { left: "84%", top: "32%" },
                 rotate: 6,
-                widthClass: "w-[110px]",
-                aspectClass: "aspect-[3/4]",
-                floatOffset: -9
+                widthClass: "w-[180px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -9,
+                scaleClass: "scale-[1.2]"
               },
               {
                 title: "DEXA Scan",
                 image: "/images/dexa_scan.png?v=3",
-                style: { left: "70%", top: "72%" },
+                style: { left: "74%", top: "66%" },
                 rotate: -10,
-                widthClass: "w-[115px]",
+                widthClass: "w-[170px]",
                 aspectClass: "aspect-[3/4]",
-                floatOffset: -11
-              },
-              {
-                title: "MRIs",
-                image: "/images/mri.png?v=3",
-                style: { left: "58%", top: "72%" },
-                rotate: 12,
-                widthClass: "w-[90px]",
-                aspectClass: "aspect-[1/1]",
-                floatOffset: -6
+                floatOffset: -11,
+                scaleClass: ""
               },
               {
                 title: "Prescriptions",
                 image: "/images/prescription.png?v=3",
-                style: { left: "44%", top: "80%" },
+                style: { left: "45%", top: "72%" },
                 rotate: -3,
-                widthClass: "w-[100px]",
+                widthClass: "w-[160px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -8
+                floatOffset: -8,
+                scaleClass: ""
               },
               {
                 title: "Intestinal Permeability Panel",
                 image: "/images/intestinal.png?v=3",
-                style: { left: "16%", top: "74%" },
+                style: { left: "14%", top: "66%" },
                 rotate: -10,
-                widthClass: "w-[145px]",
+                widthClass: "w-[220px]",
                 aspectClass: "aspect-[4/3]",
-                floatOffset: -12
+                floatOffset: -12,
+                scaleClass: ""
               },
               {
                 title: "Biomarker Tracking",
                 image: "/images/biomarker.png?v=3",
-                style: { left: "8%", top: "41%" },
+                style: { left: "2%", top: "32%" },
                 rotate: -5,
-                widthClass: "w-[110px]",
+                widthClass: "w-[160px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -9
+                floatOffset: -9,
+                scaleClass: ""
               },
             ].map((card, idx) => (
               <motion.div
@@ -368,7 +359,7 @@ export default function Home() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover select-none pointer-events-none"
+                    className={`w-full h-full object-cover select-none pointer-events-none ${card.scaleClass}`}
                   />
                 </div>
                 <span className="text-[11px] font-bold text-slate-800 text-center leading-tight max-w-[100px] select-none">
@@ -377,70 +368,153 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </section>
 
-          {/* 3. Top Waitlist Card ( Navy-to-Green gradient box ) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#002D62] to-[#007C44] text-white p-8 md:p-12 shadow-xl mt-12 border border-white/10"
-          >
-            {/* Background absolute decor circle */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
+        {/* 3. B2B Broken Marketplace Analysis */}
+        <section className="bg-white py-8 md:py-12 border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
+              
+              {/* Left Column: Heading */}
+              <div className="lg:col-span-4 flex flex-col gap-2">
+                <h2 className="text-xl md:text-2xl font-black text-brand-navy leading-[1.2] tracking-tight uppercase">
+                  The B2B<br />Marketplace<br />
+                  <span className="text-brand-blue">is Broken.</span>
+                </h2>
+                <div className="h-[2px] w-10 bg-brand-green rounded-full" />
+                <p className="text-slate-500 font-semibold text-[13.5px] md:text-[14.5px] mt-0.5 leading-relaxed">
+                  And it's hurting honest businesses every single day.
+                </p>
+              </div>
 
-            <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Box Left Side */}
-              <div className="lg:col-span-7 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md">
-                  <LogoCheckmark size={32} />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Join The <span className="text-brand-green">Movement</span>
-                  </h3>
-                  <p className="text-base md:text-lg text-emerald-50/90 max-w-xl font-medium leading-relaxed">
-                    Be the first to receive the <span className="font-extrabold text-brand-green">FREE</span> OpenMarket App and help build a fair B2B marketplace.
-                  </p>
+              {/* Right Column: Step Flow */}
+              <div className="lg:col-span-8 w-full">
+                <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 md:gap-2 relative">
+                  {[
+                    {
+                      icon: <FaBullhorn size={18} />,
+                      dotColor: "bg-brand-blue",
+                      text: "Businesses spend lakhs on advertising."
+                    },
+                    {
+                      icon: <FiMail size={18} />,
+                      dotColor: "bg-brand-green",
+                      text: "Over 90% enquiries are irrelevant."
+                    },
+                    {
+                      icon: <FiUsers size={18} />,
+                      dotColor: "bg-brand-blue",
+                      text: "The same enquiry reaches multiple sellers."
+                    },
+                    {
+                      icon: <span className="text-base font-bold font-sans">₹</span>,
+                      dotColor: "bg-brand-green",
+                      text: "The lowest price wins."
+                    },
+                    {
+                      icon: <FiFrown size={18} />,
+                      dotColor: "bg-brand-navy",
+                      text: "Everyone loses."
+                    }
+                  ].map((step, idx) => (
+                    <Fragment key={idx}>
+                      <div className="flex flex-row md:flex-col items-center md:items-center flex-grow md:flex-1 md:max-w-[120px] gap-3 md:gap-0">
+                        {/* Icon container */}
+                        <div className="w-10 h-10 rounded-xl bg-brand-light-blue border border-slate-100 flex items-center justify-center text-brand-navy shadow-sm flex-shrink-0">
+                          {step.icon}
+                        </div>
+                        
+                        {/* Connecting Line & Dot Container */}
+                        <div className="flex flex-col items-center md:w-full">
+                          <div className={`w-1.5 h-1.5 rounded-full ${step.dotColor} md:mt-2.5 md:mb-2`} />
+                        </div>
+
+                        {/* Text */}
+                        <p className="text-[11.5px] font-bold text-slate-500 md:text-center leading-relaxed">
+                          {step.text}
+                        </p>
+                      </div>
+
+                      {/* Desktop arrow chevrons */}
+                      {idx < 4 && (
+                        <div className="hidden md:flex text-slate-300 self-center -mt-6 select-none">
+                          <span className="text-base font-bold">›</span>
+                        </div>
+                      )}
+                    </Fragment>
+                  ))}
                 </div>
               </div>
 
-              {/* Box Right Side (Waitlist input form) */}
-              <div className="lg:col-span-5 flex flex-col gap-4 w-full">
-                <WaitlistForm formId="waitlist-top" theme="green" />
+            </div>
+          </div>
+        </section>
 
-                {/* Features tags below input */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-4 text-xs font-bold text-white/90 tracking-wide mt-2">
-                  <div className="flex items-center gap-1.5">
-                    <FiCheckCircle size={14} className="text-white" />
-                    <span>No Spam</span>
-                  </div>
-                  <span className="hidden sm:inline text-white/20">|</span>
-                  <div className="flex items-center gap-1.5">
-                    <FiXCircle size={14} className="text-white" />
-                    <span>No Advertisements</span>
-                  </div>
-                  <span className="hidden sm:inline text-white/20">|</span>
-                  <div className="flex items-center gap-1.5">
-                    <FiBell size={14} className="text-white" />
-                    <span>Only Launch Updates</span>
+        {/* Banner Section: B2B Trade Work */}
+        <section className="relative overflow-hidden py-8 md:py-10 bg-brand-light-blue text-center text-brand-navy border-b border-slate-100">
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-black tracking-tight leading-tight uppercase select-none">
+              Is this really how<br />
+              <span className="text-brand-green">B2B trade</span> should work?
+            </h3>
+          </div>
+        </section>
+
+        {/* Belief Section: Trust & Transparency */}
+        <section className="bg-brand-light-green/60 py-10 md:py-12 text-slate-800 relative overflow-hidden border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+              
+              {/* Left Column: List of beliefs */}
+              <div className="lg:col-span-7 flex flex-col">
+                <span className="font-handwritten text-brand-green text-xl md:text-2xl mb-2 tracking-wide block select-none">
+                  We believe...
+                </span>
+                
+                <div className="flex flex-col gap-2.5">
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none text-brand-navy select-none">
+                    Trust should matter.
+                  </h4>
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none text-brand-navy select-none">
+                    Activity should matter.
+                  </h4>
+                  <h4 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none text-brand-navy select-none">
+                    Transparency should matter.
+                  </h4>
+                  <h4 className="text-brand-green text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none mt-0.5 select-none">
+                    Not advertising budgets.
+                  </h4>
+                </div>
+              </div>
+
+              {/* Right Column: pulsing branding element */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-end">
+                <div className="relative flex flex-col items-center justify-center p-6 rounded-full border border-slate-200/50 bg-white w-[200px] h-[200px] md:w-[240px] md:h-[240px] shadow-sm">
+                  {/* Pulsing glow ring */}
+                  <div className="absolute inset-0 rounded-full border border-brand-green/10 animate-pulse pointer-events-none scale-105" />
+                  
+                  {/* Inside Branding */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="flex items-center gap-1.5 text-xl md:text-2xl font-extrabold tracking-tight text-brand-navy">
+                      <span className="text-brand-green">
+                        <FiCheckCircle size={26} className="inline-block align-middle" />
+                      </span>
+                      <span className="align-middle select-none">OpenMarket</span>
+                    </div>
+                    <div className="h-[1.5px] w-12 bg-brand-green/30 my-3" />
+                    <p className="text-[9px] font-semibold tracking-widest text-slate-400 uppercase leading-relaxed max-w-[130px] select-none">
+                      Where Fair Trade Matters
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Founding Members Note at the Bottom */}
-            <div className="relative flex items-center justify-center gap-2 text-sm font-bold text-white/95 mt-8 pt-4 border-t border-white/10 w-full">
-              <FaUsers size={18} className="text-white/80" />
-              <span>
-                Limited to the first <span className="text-brand-green font-black">1,000</span> founding members.
-              </span>
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
-        <section id="sellers" className="bg-slate-50 py-16 md:py-24 border-y border-slate-100">
+        <section id="sellers" className="bg-white pt-8 pb-16 md:pt-12 md:pb-24 border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
@@ -451,7 +525,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -8, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
-                className="bg-brand-light-green border border-emerald-100/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white border border-slate-200/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-green/10 text-brand-green">
@@ -516,7 +590,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={{ y: -8, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
-                className="bg-brand-light-blue border border-blue-100/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300 scroll-mt-24"
+                className="bg-white border border-slate-200/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300 scroll-mt-24"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-navy/10 text-brand-navy">
@@ -718,43 +792,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 7. Bottom Waitlist CTA Banner (Light Green Banner) */}
-        <section id="waitlist-banner" className="bg-brand-light-green text-brand-navy border-t border-slate-100 py-12 md:py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-7xl mx-auto px-6"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-              {/* Left Column: CTA Headline */}
-              <div className="lg:col-span-7 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md">
-                  <LogoCheckmark size={32} />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
-                    BE AMONG THE FIRST <span className="text-brand-green font-black">1,000</span> MEMBERS
-                  </h3>
-                  <p className="text-sm md:text-base text-slate-500 font-semibold tracking-wide">
-                    Help shape the future of B2B trade.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column: CTA Waitlist Form */}
-              <div className="lg:col-span-5 flex flex-col gap-2 w-full">
-                <WaitlistForm formId="waitlist-bottom" theme="navy" />
-                <span className="text-xs font-semibold text-slate-400 text-center lg:text-left tracking-wide mt-1 pl-1">
-                  Receive the OpenMarket App at launch.
-                </span>
-              </div>
-
-            </div>
-          </motion.div>
-        </section>
 
       </main>
     </div>

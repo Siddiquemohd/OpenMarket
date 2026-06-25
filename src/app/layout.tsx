@@ -7,6 +7,7 @@ import { OtpModalProvider } from "@/providers/OtpModalProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingPromoBanner } from "@/components/layout/FloatingPromoBanner";
+import { WaitlistBanner } from "@/components/layout/WaitlistBanner";
 import { siteConfig } from "@/lib/siteConfig";
 
 const geistSans = Geist({
@@ -88,6 +89,7 @@ export default function RootLayout({
             <Header />
             {children}
             <FloatingPromoBanner />
+            <WaitlistBanner />
             <Footer />
           </OtpModalProvider>
         </AxiosProvider>

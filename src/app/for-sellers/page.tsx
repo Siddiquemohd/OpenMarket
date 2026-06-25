@@ -608,43 +608,7 @@ export default function ForSellers() {
           </div>
         </section>
 
-        {/* SECTION 7: Blue CTA Banner */}
-        <section className="max-w-7xl mx-auto px-6 py-8">
-          <div className="bg-brand-navy text-white rounded-3xl p-8 md:p-10 shadow-lg">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              
-              {/* Left Column: Icon and Info */}
-              <div className="flex items-center gap-5 text-left">
-                <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0 shadow-inner">
-                  <FaRocket size={26} />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-xl md:text-2xl font-black tracking-tight leading-snug">
-                    Be Part of a Fairer Marketplace
-                  </h3>
-                  <p className="text-[12.5px] font-semibold text-emerald-100/80 max-w-md leading-relaxed">
-                    Join the first 1000 businesses building India’s most trusted B2B marketplace – together.
-                  </p>
-                </div>
-              </div>
 
-              {/* Right Column: Register CTA Button */}
-              <div className="flex flex-col items-center md:items-end gap-2 flex-shrink-0">
-                <button
-                  onClick={() => openOtpModal()}
-                  className="bg-brand-green hover:bg-brand-dark-green text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all duration-300 hover:scale-102 flex items-center gap-2 cursor-pointer focus:outline-none"
-                >
-                  <span>Register Your Business Now</span>
-                  <FaArrowRight size={12} />
-                </button>
-                <span className="text-[10.5px] font-bold text-emerald-100/60 tracking-wide">
-                  It’s Free to Join Early
-                </span>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
       </main>
     </div>

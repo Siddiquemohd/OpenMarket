@@ -645,39 +645,7 @@ export default function ForBuyers() {
           </div>
         </section>
 
-        {/* SECTION 8: Blue CTA waitlist strip */}
-        <section className="max-w-7xl mx-auto px-6 py-4">
-          <div className="bg-brand-navy text-white rounded-3xl p-8 md:p-10 shadow-lg relative overflow-hidden">
-            {/* Background decor circle */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16" />
-            
-            <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 text-left">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0 shadow-inner">
-                  <FiSearch size={22} className="text-brand-green" />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-lg md:text-xl font-extrabold tracking-tight leading-snug">
-                    Join the Movement Towards Better B2B Buying
-                  </h3>
-                  <p className="text-[12px] font-semibold text-emerald-100/80 max-w-md leading-relaxed">
-                    Find suppliers based on trust, activity, and engagement—not advertising budgets.
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex-shrink-0">
-                <button
-                  onClick={() => openOtpModal()}
-                  className="bg-brand-green hover:bg-brand-dark-green text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all duration-300 hover:scale-102 flex items-center gap-2"
-                >
-                  <span>Join the Waitlist</span>
-                  <FaArrowRight size={12} />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
 
       </main>
     </div>
