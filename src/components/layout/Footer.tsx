@@ -28,7 +28,6 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-12 lg:gap-8">
 
-          {/* Column 1: Brand / About */}
           <div className="flex flex-col sm:col-span-6 lg:col-span-3">
             <Link
               href="/"
@@ -36,12 +35,12 @@ export function Footer() {
               className="relative w-[180px] h-[40px] flex-shrink-0 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4"
             >
               <Image
-                src="/logo1.png"
+                src="/logo1_transparent.png"
                 alt="OpenMarket Logo"
                 fill
                 sizes="180px"
                 priority
-                className="object-contain object-left"
+                className="object-contain object-left mix-blend-multiply"
               />
             </Link>
 

@@ -172,7 +172,7 @@ export default function Home() {
       <main className="flex-grow">
 
         {/* 2. Hero & Waitlist Box Container */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-12">
+        <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
           {/* Mobile/Tablet Text Layout */}
           <div className="lg:hidden text-center mb-8 px-4 flex flex-col items-center gap-4 relative">
             {/* Soft Ambient Glow */}
@@ -193,14 +193,14 @@ export default function Home() {
           {/* Mobile/Tablet Cards Grid Layout */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { title: "VO2 Max", image: "/images/vo2_max.png?v=3", rotate: "-rotate-2", scaleClass: "scale-[1.2]" },
-              { title: "Full Genome Sequencing", image: "/images/genome.png?v=3", rotate: "-rotate-1", scaleClass: "scale-[1.5]" },
-              { title: "Continuous Glucose Monitoring", image: "/images/glucose.png?v=3", rotate: "rotate-2", scaleClass: "scale-[1.2]" },
-              { title: "Grail Cancer Test", image: "/images/cancer_test.png?v=3", rotate: "-rotate-3", scaleClass: "scale-[1.2]" },
-              { title: "DEXA Scan", image: "/images/dexa_scan.png?v=3", rotate: "rotate-1", scaleClass: "" },
-              { title: "Prescriptions", image: "/images/prescription.png?v=3", rotate: "rotate-3", scaleClass: "" },
-              { title: "Intestinal Permeability Panel", image: "/images/intestinal.png?v=3", rotate: "-rotate-1", scaleClass: "" },
-              { title: "Biomarker Tracking", image: "/images/biomarker.png?v=3", rotate: "rotate-2", scaleClass: "" },
+              { title: "Machinery & Equipment", image: "/images/machinery_equipment.png", rotate: "-rotate-2" },
+              { title: "Building & Construction", image: "/images/building_construction.png", rotate: "-rotate-1" },
+              { title: "Logistics & Material Handling", image: "/images/logistics_material.png", rotate: "rotate-2" },
+              { title: "Automobile & Auto Components", image: "/images/automobile_components.png", rotate: "-rotate-3" },
+              { title: "Chemicals & Raw Materials", image: "/images/chemicals_raw.png", rotate: "rotate-1" },
+              { title: "IT, Electronics & Automation", image: "/images/it_electronics.png", rotate: "rotate-3" },
+              { title: "Healthcare & Pharma", image: "/images/healthcare_pharma.png", rotate: "-rotate-1" },
+              { title: "Infrastructure & Govt. Projects", image: "/images/infrastructure_projects.png", rotate: "rotate-2" },
             ].map((card, idx) => (
               <motion.div
                 key={idx}
@@ -214,15 +214,18 @@ export default function Home() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className={`w-full h-full object-cover ${card.scaleClass}`}
+                    className="w-full h-full object-cover"
                   />
                 </div>
+                <span className="text-xs sm:text-sm font-bold text-brand-navy select-none px-1 py-1 leading-tight">
+                  {card.title}
+                </span>
               </motion.div>
             ))}
           </div>
 
           {/* Desktop Circular Layout (lg and up) */}
-          <div className="hidden lg:flex relative w-full max-w-6xl mx-auto aspect-[16/10] items-center justify-center min-h-[700px] overflow-visible mb-0">
+          <div className="hidden lg:flex relative w-full max-w-6xl mx-auto h-[740px] items-center justify-center overflow-visible mb-0">
 
             {/* Centered Hero Text */}
             <div className="text-center z-20 max-w-3xl mx-auto pointer-events-auto relative py-6">
@@ -255,84 +258,76 @@ export default function Home() {
             {/* Circular Scattered Cards */}
             {[
               {
-                title: "VO2 Max",
-                image: "/images/vo2_max.png?v=3",
-                style: { left: "16%", top: "4%" },
-                rotate: -8,
-                widthClass: "w-[180px]",
+                title: "Machinery & Equipment",
+                image: "/images/machinery_equipment.png",
+                style: { left: "15%", top: "2%" },
+                rotate: -6,
+                widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -8,
-                scaleClass: "scale-[1.2]"
+                floatOffset: -8
               },
               {
-                title: "Full Genome Sequencing",
-                image: "/images/genome.png?v=3",
-                style: { left: "48%", top: "-4%" },
+                title: "Building & Construction",
+                image: "/images/building_construction.png",
+                style: { left: "43%", top: "-10%" },
                 rotate: 4,
-                widthClass: "w-[180px]",
+                widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -7,
-                scaleClass: "scale-[1.5]"
+                floatOffset: -7
               },
               {
-                title: "Continuous Glucose Monitoring",
-                image: "/images/glucose.png?v=3",
-                style: { left: "72%", top: "0%" },
-                rotate: -12,
-                widthClass: "w-[200px]",
+                title: "Logistics & Material Handling",
+                image: "/images/logistics_material.png",
+                style: { left: "71%", top: "2%" },
+                rotate: -8,
+                widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -12,
-                scaleClass: "scale-[1.2]"
+                floatOffset: -10
               },
               {
-                title: "Grail Cancer Test",
-                image: "/images/cancer_test.png?v=3",
-                style: { left: "84%", top: "32%" },
+                title: "Automobile & Auto Components",
+                image: "/images/automobile_components.png",
+                style: { left: "83%", top: "28%" },
                 rotate: 6,
-                widthClass: "w-[180px]",
+                widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -9,
-                scaleClass: "scale-[1.2]"
+                floatOffset: -9
               },
               {
-                title: "DEXA Scan",
-                image: "/images/dexa_scan.png?v=3",
-                style: { left: "74%", top: "66%" },
+                title: "Chemicals & Raw Materials",
+                image: "/images/chemicals_raw.png",
+                style: { left: "71%", top: "64%" },
                 rotate: -10,
-                widthClass: "w-[170px]",
-                aspectClass: "aspect-[3/4]",
-                floatOffset: -11,
-                scaleClass: ""
-              },
-              {
-                title: "Prescriptions",
-                image: "/images/prescription.png?v=3",
-                style: { left: "45%", top: "72%" },
-                rotate: -3,
-                widthClass: "w-[160px]",
+                widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -8,
-                scaleClass: ""
+                floatOffset: -11
               },
               {
-                title: "Intestinal Permeability Panel",
-                image: "/images/intestinal.png?v=3",
-                style: { left: "14%", top: "66%" },
-                rotate: -10,
-                widthClass: "w-[220px]",
-                aspectClass: "aspect-[4/3]",
-                floatOffset: -12,
-                scaleClass: ""
-              },
-              {
-                title: "Biomarker Tracking",
-                image: "/images/biomarker.png?v=3",
-                style: { left: "2%", top: "32%" },
-                rotate: -5,
-                widthClass: "w-[160px]",
+                title: "IT, Electronics & Automation",
+                image: "/images/it_electronics.png",
+                style: { left: "43%", top: "70%" },
+                rotate: 3,
+                widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -9,
-                scaleClass: ""
+                floatOffset: -8
+              },
+              {
+                title: "Healthcare & Pharma",
+                image: "/images/healthcare_pharma.png",
+                style: { left: "15%", top: "64%" },
+                rotate: -8,
+                widthClass: "w-[150px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -10
+              },
+              {
+                title: "Infrastructure & Govt. Projects",
+                image: "/images/infrastructure_projects.png",
+                style: { left: "3%", top: "28%" },
+                rotate: -4,
+                widthClass: "w-[150px]",
+                aspectClass: "aspect-[1/1]",
+                floatOffset: -9
               },
             ].map((card, idx) => (
               <motion.div
@@ -370,9 +365,12 @@ export default function Home() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className={`w-full h-full object-cover select-none pointer-events-none ${card.scaleClass}`}
+                    className="w-full h-full object-cover select-none pointer-events-none"
                   />
                 </div>
+                <span className="text-xs md:text-sm font-black text-brand-navy select-none group-hover:text-brand-green transition-colors duration-200 text-center max-w-[140px] leading-tight mt-1">
+                  {card.title}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -458,11 +456,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Unified B2B Trade & Beliefs Section */}
-        <section className="relative overflow-hidden py-16 md:py-20 bg-gradient-to-b from-[#081E3B] via-[#0B3C5F] to-[#081E3B] text-white border-y border-brand-navy/20">
+        {/* B2B Trade Question Section */}
+        <section className="relative overflow-hidden py-16 md:py-20 bg-brand-deep-navy text-white border-t border-brand-navy/20">
 
           {/* Night Sky & Mountain Silhouette SVG Overlay - positioned in top half */}
-          <div className="absolute right-0 top-0 w-full md:w-[600px] h-[320px] pointer-events-none select-none opacity-40 md:opacity-90 z-0">
+          <div className="absolute right-0 top-0 w-full md:w-[600px] h-full pointer-events-none select-none opacity-40 md:opacity-90 z-0">
             <svg viewBox="0 0 600 320" className="w-full h-full object-cover object-right-bottom" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Stars */}
               <circle cx="100" cy="50" r="1" fill="#fff" opacity="0.6" />
@@ -480,6 +478,20 @@ export default function Home() {
             </svg>
           </div>
 
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            {/* Question Banner */}
+            <div className="flex flex-col items-start text-left">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight leading-tight uppercase select-none max-w-xl">
+                Is this really how<br />
+                <span className="text-brand-green">B2B trade</span> should work?
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        {/* Beliefs Section */}
+        <section className="relative overflow-hidden py-16 md:py-20 bg-brand-navy text-white border-b border-brand-navy/20">
+
           {/* Subtle circular checkmark logo watermark in the background of belief part */}
           <div className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full border-[16px] border-white/5 pointer-events-none flex items-center justify-center select-none translate-x-1/4 translate-y-1/4 z-0">
             <div className="w-[300px] h-[300px] rounded-full border-[8px] border-white/5 flex items-center justify-center">
@@ -487,19 +499,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col gap-12 md:gap-16">
-
-            {/* Top Half: Question Banner */}
-            <div className="flex flex-col items-start text-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight leading-tight uppercase select-none max-w-xl">
-                Is this really how<br />
-                <span className="text-brand-green">B2B trade</span> should work?
-              </h3>
-            </div>
-
-            {/* Separator line with smooth gradient fade */}
-            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Bottom Half: Belief Section */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
 
@@ -529,9 +529,9 @@ export default function Home() {
               <div className="md:col-span-5 flex justify-start md:justify-end items-center">
                 <div className="bg-white px-8 py-6 rounded-2xl shadow-xl flex items-center justify-center w-full max-w-[280px] mx-auto md:mr-0 transition-transform hover:scale-[1.03] duration-300 border border-slate-100/50">
                   <img
-                    src="/logo1.png"
+                    src="/logo1_transparent.png"
                     alt="OpenMarket Logo"
-                    className="w-full h-auto object-contain select-none pointer-events-none"
+                    className="w-full h-auto object-contain select-none pointer-events-none mix-blend-multiply"
                   />
                 </div>
               </div>

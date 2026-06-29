@@ -14,12 +14,12 @@ export function Logo() {
   return (
     <Link href="/" aria-label="OpenMarket home" className="relative w-[168px] h-[56px] flex-shrink-0 transition-transform hover:scale-[1.02] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4">
       <Image
-        src="/logo1.png"
+        src="/logo1_transparent.png"
         alt="OpenMarket Logo"
         fill
         sizes="168px"
         priority
-        className="object-contain object-left"
+        className="object-contain object-left mix-blend-multiply"
       />
     </Link>
   );
