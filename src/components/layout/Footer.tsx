@@ -36,7 +36,7 @@ export function Footer() {
               className="relative w-[180px] h-[40px] flex-shrink-0 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4"
             >
               <Image
-                src="/logo.png"
+                src="/logo1.png"
                 alt="OpenMarket Logo"
                 fill
                 sizes="180px"

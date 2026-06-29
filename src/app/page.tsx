@@ -228,7 +228,7 @@ export default function Home() {
             <div className="text-center z-20 max-w-3xl mx-auto pointer-events-auto relative py-6">
               {/* Ambient Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gradient-to-tr from-brand-green/8 via-brand-blue/5 to-transparent rounded-full blur-[100px] pointer-events-none -z-10" />
-              
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -382,7 +382,7 @@ export default function Home() {
         <section className="bg-white py-8 md:py-12 border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
-              
+
               {/* Left Column: Heading */}
               <div className="lg:col-span-4 flex flex-col gap-2">
                 <h2 className="text-xl md:text-2xl font-black text-brand-navy leading-[1.2] tracking-tight uppercase">
@@ -431,7 +431,7 @@ export default function Home() {
                         <div className="w-10 h-10 rounded-xl bg-brand-light-blue border border-slate-100 flex items-center justify-center text-brand-navy shadow-sm flex-shrink-0">
                           {step.icon}
                         </div>
-                        
+
                         {/* Connecting Line & Dot Container */}
                         <div className="flex flex-col items-center md:w-full">
                           <div className={`w-1.5 h-1.5 rounded-full ${step.dotColor} md:mt-2.5 md:mb-2`} />
@@ -460,7 +460,7 @@ export default function Home() {
 
         {/* Unified B2B Trade & Beliefs Section */}
         <section className="relative overflow-hidden py-16 md:py-20 bg-gradient-to-b from-[#081E3B] via-[#0B3C5F] to-[#081E3B] text-white border-y border-brand-navy/20">
-          
+
           {/* Night Sky & Mountain Silhouette SVG Overlay - positioned in top half */}
           <div className="absolute right-0 top-0 w-full md:w-[600px] h-[320px] pointer-events-none select-none opacity-40 md:opacity-90 z-0">
             <svg viewBox="0 0 600 320" className="w-full h-full object-cover object-right-bottom" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -488,7 +488,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col gap-12 md:gap-16">
-            
+
             {/* Top Half: Question Banner */}
             <div className="flex flex-col items-start text-left">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight leading-tight uppercase select-none max-w-xl">
@@ -502,13 +502,13 @@ export default function Home() {
 
             {/* Bottom Half: Belief Section */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-              
+
               {/* Left Column: List of beliefs */}
               <div className="md:col-span-7 flex flex-col">
                 <span className="text-xs md:text-sm text-slate-300 font-semibold tracking-widest uppercase mb-3 block select-none">
                   We believe...
                 </span>
-                
+
                 <div className="flex flex-col gap-2.5">
                   <h4 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-white select-none">
                     Trust should matter.
@@ -529,7 +529,7 @@ export default function Home() {
               <div className="md:col-span-5 flex justify-start md:justify-end items-center">
                 <div className="bg-white px-8 py-6 rounded-2xl shadow-xl flex items-center justify-center w-full max-w-[280px] mx-auto md:mr-0 transition-transform hover:scale-[1.03] duration-300 border border-slate-100/50">
                   <img
-                    src="/logo.png"
+                    src="/logo1.png"
                     alt="OpenMarket Logo"
                     className="w-full h-auto object-contain select-none pointer-events-none"
                   />

@@ -12,12 +12,12 @@ import { useOtpModal } from "@/providers/OtpModalProvider";
  */
 export function Logo() {
   return (
-    <Link href="/" aria-label="OpenMarket home" className="relative w-[230px] h-[52px] flex-shrink-0 transition-transform hover:scale-102 duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4">
+    <Link href="/" aria-label="OpenMarket home" className="relative w-[168px] h-[56px] flex-shrink-0 transition-transform hover:scale-[1.02] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4">
       <Image
-        src="/logo.png"
+        src="/logo1.png"
         alt="OpenMarket Logo"
         fill
-        sizes="230px"
+        sizes="168px"
         priority
         className="object-contain object-left"
       />
@@ -119,11 +119,10 @@ export function Header() {
               key={idx}
               href={link.href}
               aria-current={isActive(link) ? "page" : undefined}
-              className={`transition-colors duration-200 py-1 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${
-                isActive(link)
-                  ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
-                  : "text-brand-navy hover:text-brand-green"
-              }`}
+              className={`transition-colors duration-200 py-1 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${isActive(link)
+                ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
+                : "text-brand-navy hover:text-brand-green"
+                }`}
             >
               {link.label}
             </Link>
@@ -156,11 +155,10 @@ export function Header() {
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={isActive(link) ? "page" : undefined}
-                  className={`py-2 border-b border-slate-50 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2 ${
-                    isActive(link)
-                      ? "text-brand-green font-bold"
-                      : "text-brand-navy hover:text-brand-green"
-                  }`}
+                  className={`py-2 border-b border-slate-50 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-2 ${isActive(link)
+                    ? "text-brand-green font-bold"
+                    : "text-brand-navy hover:text-brand-green"
+                    }`}
                 >
                   {link.label}
                 </Link>
