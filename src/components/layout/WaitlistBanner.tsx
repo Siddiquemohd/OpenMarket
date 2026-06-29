@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
 import { useOtpModal } from "@/providers/OtpModalProvider";
+import { usePathname } from "next/navigation";
 import { LegalConsentNotice } from "@/components/shared/LegalConsentNotice";
 import { FaArrowRight, FaUsers } from "react-icons/fa";
 import { FiCheckCircle, FiXCircle, FiBell } from "react-icons/fi";
@@ -51,7 +52,12 @@ function LogoCheckmark({
 }
 
 export function WaitlistBanner() {
+  const pathname = usePathname();
   const { openOtpModal } = useOtpModal();
+
+  if (pathname === "/founding-members") {
+    return null;
+  }
 
   const {
     register,

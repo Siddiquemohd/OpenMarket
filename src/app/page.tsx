@@ -32,7 +32,6 @@ import {
   FiAlertOctagon,
   FiAlertCircle,
   FiTrendingUp,
-  FiSlash,
   FiMessageSquare,
   FiCheckSquare,
   FiLayers,
@@ -175,20 +174,27 @@ export default function Home() {
         {/* 2. Hero & Waitlist Box Container */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-12">
           {/* Mobile/Tablet Text Layout */}
-          <div className="lg:hidden text-center mb-8 flex flex-col gap-4">
-            <h1 className="text-4xl md:text-5xl font-black text-brand-navy leading-tight tracking-tight">
-              Get exclusive access<br />to our marketplace
+          <div className="lg:hidden text-center mb-8 px-4 flex flex-col items-center gap-4 relative">
+            {/* Soft Ambient Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-brand-green/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-[#0B3C5F] to-[#164D73]">
+                A marketplace built for genuine businesses.
+              </span>
             </h1>
-            <p className="text-slate-500 font-semibold text-base md:text-lg">
-              Unlimited tools to transform your health and change your life.
-            </p>
+            <div className="mt-2 inline-block">
+              <span className="inline-flex items-center bg-brand-green/10 border border-brand-green/20 text-brand-green font-extrabold text-xs sm:text-sm tracking-wider uppercase px-4 py-2 rounded-full shadow-[0_4px_15px_rgba(15,169,88,0.06)] backdrop-blur-md select-none">
+                Not for advertising budgets.
+              </span>
+            </div>
           </div>
 
           {/* Mobile/Tablet Cards Grid Layout */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
             {[
               { title: "VO2 Max", image: "/images/vo2_max.png?v=3", rotate: "-rotate-2", scaleClass: "scale-[1.2]" },
-              { title: "Full Genome Sequencing", image: "/images/genome.png?v=3", rotate: "-rotate-1", scaleClass: "scale-[1.2]" },
+              { title: "Full Genome Sequencing", image: "/images/genome.png?v=3", rotate: "-rotate-1", scaleClass: "scale-[1.5]" },
               { title: "Continuous Glucose Monitoring", image: "/images/glucose.png?v=3", rotate: "rotate-2", scaleClass: "scale-[1.2]" },
               { title: "Grail Cancer Test", image: "/images/cancer_test.png?v=3", rotate: "-rotate-3", scaleClass: "scale-[1.2]" },
               { title: "DEXA Scan", image: "/images/dexa_scan.png?v=3", rotate: "rotate-1", scaleClass: "" },
@@ -211,9 +217,6 @@ export default function Home() {
                     className={`w-full h-full object-cover ${card.scaleClass}`}
                   />
                 </div>
-                <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
-                  {card.title}
-                </span>
               </motion.div>
             ))}
           </div>
@@ -222,23 +225,31 @@ export default function Home() {
           <div className="hidden lg:flex relative w-full max-w-6xl mx-auto aspect-[16/10] items-center justify-center min-h-[700px] overflow-visible mb-0">
 
             {/* Centered Hero Text */}
-            <div className="text-center z-20 max-w-md mx-auto pointer-events-auto">
+            <div className="text-center z-20 max-w-3xl mx-auto pointer-events-auto relative py-6">
+              {/* Ambient Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gradient-to-tr from-brand-green/8 via-brand-blue/5 to-transparent rounded-full blur-[100px] pointer-events-none -z-10" />
+              
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-5xl lg:text-[54px] font-black text-[#0B3C5F] leading-[1.1] tracking-tight"
+                className="text-5xl lg:text-[56px] font-black tracking-tight leading-[1.15]"
               >
-                Get exclusive<br />access to our<br />marketplace
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-[#0B3C5F] to-[#164D73]">
+                  A marketplace built for<br />genuine businesses.
+                </span>
               </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="text-slate-500 font-semibold mt-4 text-lg"
+                className="mt-6 inline-block"
               >
-                Unlimited tools to transform your health and change your life.
-              </motion.p>
+                <span className="inline-flex items-center bg-brand-green/10 border border-brand-green/20 text-brand-green font-extrabold text-sm md:text-base tracking-wider uppercase px-6 py-3 rounded-full shadow-[0_4px_25px_rgba(15,169,88,0.08)] backdrop-blur-md select-none hover:bg-brand-green/15 transition-colors duration-300">
+                  Not for advertising budgets.
+                </span>
+              </motion.div>
             </div>
 
             {/* Circular Scattered Cards */}
@@ -261,7 +272,7 @@ export default function Home() {
                 widthClass: "w-[180px]",
                 aspectClass: "aspect-[1/1]",
                 floatOffset: -7,
-                scaleClass: "scale-[1.2]"
+                scaleClass: "scale-[1.5]"
               },
               {
                 title: "Continuous Glucose Monitoring",
@@ -362,9 +373,6 @@ export default function Home() {
                     className={`w-full h-full object-cover select-none pointer-events-none ${card.scaleClass}`}
                   />
                 </div>
-                <span className="text-[11px] font-bold text-slate-800 text-center leading-tight max-w-[100px] select-none">
-                  {card.title}
-                </span>
               </motion.div>
             ))}
           </div>
@@ -450,62 +458,81 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Banner Section: B2B Trade Work */}
-        <section className="relative overflow-hidden py-8 md:py-10 bg-brand-light-blue text-center text-brand-navy border-b border-slate-100">
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-black tracking-tight leading-tight uppercase select-none">
-              Is this really how<br />
-              <span className="text-brand-green">B2B trade</span> should work?
-            </h3>
+        {/* Unified B2B Trade & Beliefs Section */}
+        <section className="relative overflow-hidden py-16 md:py-20 bg-gradient-to-b from-[#081E3B] via-[#0B3C5F] to-[#081E3B] text-white border-y border-brand-navy/20">
+          
+          {/* Night Sky & Mountain Silhouette SVG Overlay - positioned in top half */}
+          <div className="absolute right-0 top-0 w-full md:w-[600px] h-[320px] pointer-events-none select-none opacity-40 md:opacity-90 z-0">
+            <svg viewBox="0 0 600 320" className="w-full h-full object-cover object-right-bottom" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Stars */}
+              <circle cx="100" cy="50" r="1" fill="#fff" opacity="0.6" />
+              <circle cx="220" cy="90" r="1.5" fill="#fff" opacity="0.8" />
+              <circle cx="340" cy="40" r="1" fill="#fff" opacity="0.5" />
+              <circle cx="480" cy="110" r="1.2" fill="#fff" opacity="0.7" />
+              <circle cx="550" cy="50" r="1.5" fill="#fff" opacity="0.9" />
+              {/* Mountains */}
+              <path d="M 180 320 L 320 200 L 460 320 Z" fill="#0B3C5F" opacity="0.3" />
+              <path d="M 380 320 L 480 150 L 600 260 L 600 320 Z" fill="#081E3B" opacity="0.6" />
+              <path d="M 440 320 L 520 120 L 600 220 L 600 320 Z" fill="#051427" />
+              {/* Person standing on the peak */}
+              <circle cx="520" cy="99" r="3.5" fill="#ffffff" />
+              <path d="M 520 102.5 L 520 115 M 516 106 L 524 106 M 518.5 115 L 517 124 M 521.5 115 L 523 124" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+            </svg>
           </div>
-        </section>
 
-        {/* Belief Section: Trust & Transparency */}
-        <section className="bg-brand-light-green/60 py-10 md:py-12 text-slate-800 relative overflow-hidden border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+          {/* Subtle circular checkmark logo watermark in the background of belief part */}
+          <div className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full border-[16px] border-white/5 pointer-events-none flex items-center justify-center select-none translate-x-1/4 translate-y-1/4 z-0">
+            <div className="w-[300px] h-[300px] rounded-full border-[8px] border-white/5 flex items-center justify-center">
+              <FaCheck size={140} className="text-white/5" />
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col gap-12 md:gap-16">
+            
+            {/* Top Half: Question Banner */}
+            <div className="flex flex-col items-start text-left">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight leading-tight uppercase select-none max-w-xl">
+                Is this really how<br />
+                <span className="text-brand-green">B2B trade</span> should work?
+              </h3>
+            </div>
+
+            {/* Separator line with smooth gradient fade */}
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+            {/* Bottom Half: Belief Section */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
               
               {/* Left Column: List of beliefs */}
-              <div className="lg:col-span-7 flex flex-col">
-                <span className="font-handwritten text-brand-green text-xl md:text-2xl mb-2 tracking-wide block select-none">
+              <div className="md:col-span-7 flex flex-col">
+                <span className="text-xs md:text-sm text-slate-300 font-semibold tracking-widest uppercase mb-3 block select-none">
                   We believe...
                 </span>
                 
                 <div className="flex flex-col gap-2.5">
-                  <h4 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none text-brand-navy select-none">
+                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-white select-none">
                     Trust should matter.
                   </h4>
-                  <h4 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none text-brand-navy select-none">
+                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-white select-none">
                     Activity should matter.
                   </h4>
-                  <h4 className="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none text-brand-navy select-none">
+                  <h4 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight text-white select-none">
                     Transparency should matter.
                   </h4>
-                  <h4 className="text-brand-green text-lg md:text-xl lg:text-2xl font-black uppercase tracking-tight leading-none mt-0.5 select-none">
+                  <h4 className="text-brand-green text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight mt-1 select-none">
                     Not advertising budgets.
                   </h4>
                 </div>
               </div>
 
-              {/* Right Column: pulsing branding element */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-end">
-                <div className="relative flex flex-col items-center justify-center p-6 rounded-full border border-slate-200/50 bg-white w-[200px] h-[200px] md:w-[240px] md:h-[240px] shadow-sm">
-                  {/* Pulsing glow ring */}
-                  <div className="absolute inset-0 rounded-full border border-brand-green/10 animate-pulse pointer-events-none scale-105" />
-                  
-                  {/* Inside Branding */}
-                  <div className="flex flex-col items-center text-center">
-                    <div className="flex items-center gap-1.5 text-xl md:text-2xl font-extrabold tracking-tight text-brand-navy">
-                      <span className="text-brand-green">
-                        <FiCheckCircle size={26} className="inline-block align-middle" />
-                      </span>
-                      <span className="align-middle select-none">OpenMarket</span>
-                    </div>
-                    <div className="h-[1.5px] w-12 bg-brand-green/30 my-3" />
-                    <p className="text-[9px] font-semibold tracking-widest text-slate-400 uppercase leading-relaxed max-w-[130px] select-none">
-                      Where Fair Trade Matters
-                    </p>
-                  </div>
+              {/* Right Column: branding element */}
+              <div className="md:col-span-5 flex justify-start md:justify-end items-center">
+                <div className="bg-white px-8 py-6 rounded-2xl shadow-xl flex items-center justify-center w-full max-w-[280px] mx-auto md:mr-0 transition-transform hover:scale-[1.03] duration-300 border border-slate-100/50">
+                  <img
+                    src="/logo.png"
+                    alt="OpenMarket Logo"
+                    className="w-full h-auto object-contain select-none pointer-events-none"
+                  />
                 </div>
               </div>
 
@@ -514,7 +541,7 @@ export default function Home() {
         </section>
 
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
-        <section id="sellers" className="bg-white pt-8 pb-16 md:pt-12 md:pb-24 border-y border-slate-100">
+        <section id="sellers" className="bg-white pt-8 pb-10 md:pt-12 md:pb-12 border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
@@ -652,7 +679,7 @@ export default function Home() {
         </section>
 
         {/* 5. The OpenMarket Difference Grid */}
-        <section id="difference" className="py-16 md:py-24 bg-white">
+        <section id="difference" className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">

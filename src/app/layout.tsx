@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: "OpenMarket - Where Fair Trade Matters",
+  title: "OpenMarket - Be Active. Be Visible. !!",
   description: "Join the movement to build a fair B2B marketplace where visibility is earned through activity, engagement, trust, and contribution.",
 };
 

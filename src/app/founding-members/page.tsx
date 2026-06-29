@@ -459,32 +459,7 @@ export default function FoundingMembersPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-14">
-        <div className="flex flex-col items-center justify-between gap-6 rounded-2xl bg-brand-navy px-8 py-7 text-white shadow-lg md:flex-row">
-          <div className="flex items-center gap-6">
-            <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full bg-white text-5xl text-brand-green">
-              <FaUsers />
-            </div>
-            <div>
-              <h2 className="text-3xl font-black">Join The Movement.</h2>
-              <p className="mt-2 max-w-xl text-base font-semibold leading-relaxed text-white/90">
-                Help build a marketplace where visibility is earned through activity and engagement, not advertising budgets.{" "}
-                <Link href="/why-openmarket" className="text-white underline decoration-white/50 underline-offset-4 transition-colors hover:text-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80">
-                  See why OpenMarket is different
-                </Link>
-              </p>
-            </div>
-          </div>
-          <button
-            onClick={() => openOtpModal()}
-            suppressHydrationWarning
-            className="inline-flex min-w-[310px] items-center justify-center gap-4 rounded-xl bg-brand-green px-8 py-4 text-lg font-bold text-white transition-colors hover:bg-brand-dark-green"
-          >
-            Become a Founding Member
-            <FaArrowRight />
-          </button>
-        </div>
-      </section>
+
     </main>
   );
 }

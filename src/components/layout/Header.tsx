@@ -57,6 +57,7 @@ export function Header() {
     { label: "About Us", href: "/our-mission" },
     { label: "How It Works", href: "/why-openmarket" },
     { label: "Founding Members", href: "/founding-members" },
+    { label: "Pricing", href: "/pricing" },
     { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/for-buyers" },
     { label: "Contact Us", href: "/contact-us" },
@@ -78,7 +79,7 @@ export function Header() {
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
         await navigator.share({
-          title: "OpenMarket - Where Fair Trade Matters",
+          title: "OpenMarket - Be Active. Be Visible. !!",
           text: "Join the movement to build a fair B2B marketplace where visibility is earned through activity and trust.",
           url: shareUrl,
         });

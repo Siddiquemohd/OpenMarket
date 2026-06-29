@@ -17,6 +17,7 @@ export function Footer() {
     { label: "For Buyers", href: "/for-buyers" },
     { label: "Our Mission", href: "/our-mission" },
     { label: "Founding Members", href: "/founding-members" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Contact Us", href: "/contact-us" },
     { label: "All Categories", href: "/category" },
   ];
