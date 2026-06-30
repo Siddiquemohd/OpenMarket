@@ -166,7 +166,7 @@ export default function ContactUs() {
         </section>
 
         {/* Section 2: Our Office Location wrapped in one unified card */}
-        <section className="bg-slate-50 border-y border-slate-100 py-16">
+        <section className="bg-white border-b border-slate-100 py-16">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* White card wrapper for the whole section */}
@@ -262,8 +262,9 @@ export default function ContactUs() {
         </section>
 
         {/* Section 3: Connect With Us & Send Us a Message */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <section className="bg-white border-b border-slate-100 py-16">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
             {/* Left Column: Direct Links Connect wrapped in rounded card */}
             <div className="lg:col-span-5 bg-white border border-slate-200/60 rounded-[32px] p-8 md:p-10 shadow-lg flex flex-col justify-between">
@@ -283,7 +284,7 @@ export default function ContactUs() {
                     desc: "Chat with us instantly",
                     href: "https://wa.me/918108359977",
                     icon: <FaWhatsapp size={20} />,
-                    bgColor: "bg-[#F4FAF6] hover:bg-[#E8F5EE]",
+                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
                     iconBg: "bg-[#0FA958]"
                   },
                   {
@@ -291,7 +292,7 @@ export default function ContactUs() {
                     desc: "Connect with us on LinkedIn",
                     href: "https://www.linkedin.com/in/kiranpailwan/",
                     icon: <FaLinkedin size={20} />,
-                    bgColor: "bg-[#F4F8FC] hover:bg-[#E8F0F8]",
+                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
                     iconBg: "bg-[#0077B5]"
                   },
                   {
@@ -299,7 +300,7 @@ export default function ContactUs() {
                     desc: "info@openmarketco.in",
                     href: "mailto:info@openmarketco.in",
                     icon: <FaEnvelope size={18} />,
-                    bgColor: "bg-[#F4FAF6] hover:bg-[#E8F5EE]",
+                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
                     iconBg: "bg-[#0FA958]"
                   },
                   {
@@ -307,7 +308,7 @@ export default function ContactUs() {
                     desc: "+91 81083 59977",
                     href: "tel:+918108359977",
                     icon: <FiPhone size={18} />,
-                    bgColor: "bg-[#F4FAF6] hover:bg-[#E8F5EE]",
+                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
                     iconBg: "bg-[#0FA958]"
                   },
                   {
@@ -315,7 +316,7 @@ export default function ContactUs() {
                     desc: "www.openmarketco.in",
                     href: "https://www.openmarketco.in",
                     icon: <FaGlobe size={18} />,
-                    bgColor: "bg-[#F4FAF6] hover:bg-[#E8F5EE]",
+                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
                     iconBg: "bg-[#0FA958]"
                   },
                 ].map((item, idx) => (
@@ -529,12 +530,12 @@ export default function ContactUs() {
                 </AnimatePresence>
               </div>
             </div>
-
+          </div>
           </div>
         </section>
 
         {/* Section 4: We'd Love to Meet You! & Founder info */}
-        <section className="bg-slate-50 border-t border-slate-100 py-16">
+        <section className="bg-white border-b border-slate-100 py-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 
@@ -622,7 +623,7 @@ export default function ContactUs() {
         </section>
 
         {/* Section 5: Bottom Strip ("A Cup of Tea Can Start a Great Partnership") */}
-        <section className="bg-white border-t border-slate-100 py-12">
+        <section className="bg-white py-12">
           <div className="max-w-7xl mx-auto px-6">
 
             <div className="bg-[#F8FAF9] border border-slate-200/60 rounded-[32px] p-6 md:py-8 md:px-10 shadow-sm w-full flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">

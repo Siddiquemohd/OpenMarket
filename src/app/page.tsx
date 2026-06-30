@@ -269,7 +269,7 @@ export default function Home() {
               {
                 title: "Building & Construction",
                 image: "/images/building_construction.png",
-                style: { left: "43%", top: "-10%" },
+                style: { left: "43%", top: "-3%" },
                 rotate: 4,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
