@@ -481,7 +481,7 @@ export default function PricingPage() {
 
                 {/* ACTIVE Left */}
                 <g>
-                  <rect x="145" y="100" width="105" height="64" rx="10" fill="white" stroke="#3B82F6" stroke-width="1.5" />
+                  <rect x="145" y="100" width="105" height="64" rx="10" fill="white" stroke="#3B82F6" strokeWidth="1.5" />
                   <circle cx="177" cy="120" r="3" fill="#3B82F6" />
                   <text x="185" y="123" fontFamily="sans-serif" fontSize="10" fontWeight="black" fill="#1D4ED8" textAnchor="start">ACTIVE</text>
                   <text x="197" y="138" fontFamily="sans-serif" fontSize="8" fontWeight="bold" fill="#6B7280" textAnchor="middle">Visited within</text>
@@ -499,7 +499,7 @@ export default function PricingPage() {
 
                 {/* ACTIVE Right */}
                 <g>
-                  <rect x="455" y="100" width="105" height="64" rx="10" fill="white" stroke="#3B82F6" stroke-width="1.5" />
+                  <rect x="455" y="100" width="105" height="64" rx="10" fill="white" stroke="#3B82F6" strokeWidth="1.5" />
                   <circle cx="487" cy="120" r="3" fill="#3B82F6" />
                   <text x="495" y="123" fontFamily="sans-serif" fontSize="10" fontWeight="black" fill="#1D4ED8" textAnchor="start">ACTIVE</text>
                   <text x="507" y="138" fontFamily="sans-serif" fontSize="8" fontWeight="bold" fill="#6B7280" textAnchor="middle">Visited within</text>

@@ -227,6 +227,7 @@ const server = spawn(
   "npm",
   ["run", "start", "--", "--hostname", host, "--port", String(port)],
   {
+    shell: true,
     stdio: ["ignore", "pipe", "pipe"],
     env: {
       ...process.env,

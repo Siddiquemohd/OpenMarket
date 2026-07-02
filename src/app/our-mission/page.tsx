@@ -44,11 +44,10 @@ function FloatingMissionCard({
     <div className={`absolute bg-white/95 backdrop-blur-sm border border-[#e2eae5]/80 rounded-2xl p-1.5 sm:p-3 md:p-4 flex flex-col justify-center shadow-md z-20 hover:scale-102 hover:shadow-lg transition-all duration-300 ${className}`}>
       {/* Green Dot indicator */}
       <div
-        className={`absolute w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#0FA958] border border-white shadow-sm top-1/2 -translate-y-1/2 ${
-          dotPosition === "left"
-            ? "left-0 -translate-x-1/2"
-            : "right-0 translate-x-1/2"
-        }`}
+        className={`absolute w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#0FA958] border border-white shadow-sm top-1/2 -translate-y-1/2 ${dotPosition === "left"
+          ? "left-0 -translate-x-1/2"
+          : "right-0 translate-x-1/2"
+          }`}
       />
       <div className="flex flex-col text-left">
         <span className="text-[9px] sm:text-xs md:text-sm font-black text-brand-navy leading-tight mb-0.5">
@@ -210,7 +209,7 @@ export default function OurMission() {
         {/* SECTION 1: Hero Section */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column Content */}
             <div className="lg:col-span-6 flex flex-col gap-6 text-left">
               <div className="flex flex-col gap-3.5">
@@ -256,25 +255,25 @@ export default function OurMission() {
             {/* Right Column Content: Target Graphic & Floating cards with dotted lines */}
             <div className="lg:col-span-6 flex items-center justify-center py-6 lg:py-0 w-full overflow-visible">
               <div className="relative w-full max-w-[540px] h-[240px] sm:h-[300px] flex-shrink-0 select-none overflow-visible">
-                
+
                 {/* SVG Dotted Lines Overlay */}
                 <svg viewBox="0 0 540 300" className="absolute inset-0 w-full h-full pointer-events-none z-0">
                   {/* Outer Concentric Circle (faint guide circle) passing through dots */}
                   <circle cx="270" cy="150" r="150.3" fill="none" stroke="#e2eae5" strokeWidth="1.5" strokeDasharray="3 3" />
-                  
+
                   {/* Inner Concentric Circle (faint guide circle) */}
                   <circle cx="270" cy="150" r="115" fill="none" stroke="#e2eae5" strokeWidth="1.5" strokeDasharray="3 3" />
-                  
+
                   {/* Dashed Connecting Lines */}
                   {/* Top Left Line: from (146, 65) to target (approx 196, 110) */}
                   <path d="M 146 65 C 186 65, 191 90, 196 110" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-                  
+
                   {/* Bottom Left Line: from (146, 235) to target (approx 196, 190) */}
                   <path d="M 146 235 C 186 235, 191 210, 196 190" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-                  
+
                   {/* Top Right Line: from (394, 65) to target (approx 344, 110) */}
                   <path d="M 394 65 C 354 65, 349 90, 344 110" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-                  
+
                   {/* Bottom Right Line: from (394, 235) to target (approx 344, 190) */}
                   <path d="M 394 235 C 354 235, 349 210, 344 190" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
                 </svg>
@@ -300,7 +299,7 @@ export default function OurMission() {
                   dotPosition="right"
                   className="right-[73%] top-[21.67%] -translate-y-1/2 w-[27%]"
                 />
-                
+
                 {/* Bottom Left Card */}
                 <FloatingMissionCard
                   title="Stronger Businesses"
@@ -335,7 +334,7 @@ export default function OurMission() {
         <section className="max-w-7xl mx-auto px-6 py-4">
           <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-2xl px-6 py-5 sm:px-10 sm:py-7 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8">
-              
+
               {/* Left Icon & Title */}
               <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0FA958] flex items-center justify-center text-white flex-shrink-0 shadow-sm">
@@ -365,16 +364,16 @@ export default function OurMission() {
                 <svg width="190" height="88" viewBox="0 0 150 70" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#0FA958]/80 w-[160px] h-[75px] sm:w-[190px] sm:h-[88px]">
                   {/* Faint ground line */}
                   <path d="M 5 65 H 145" stroke="#e2eae5" strokeWidth="1.5" strokeLinecap="round" />
-                  
+
                   {/* Main mountain shape */}
                   <path d="M 35 65 L 95 20 L 135 65" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
                   {/* Ridge lines */}
                   <path d="M 95 20 L 80 40 L 88 55" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M 95 20 L 105 38" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
-                  
+
                   {/* Left smaller mountain */}
                   <path d="M 15 65 L 50 48 L 75 65" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  
+
                   {/* Right smaller mountain */}
                   <path d="M 100 65 L 122 52 L 140 65" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 
@@ -423,7 +422,7 @@ export default function OurMission() {
         {/* SECTION 3: Our Core Values */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Centered header with side lines */}
             <div className="flex flex-col items-center mb-10">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
@@ -455,7 +454,7 @@ export default function OurMission() {
         {/* SECTION 4: What We’re Building */}
         <section className="bg-white py-16 md:py-20 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Centered header with side lines */}
             <div className="flex flex-col items-center mb-10">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
@@ -466,9 +465,9 @@ export default function OurMission() {
                 <div className="flex-grow h-[1.5px] bg-slate-200" />
               </div>
             </div>
- 
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              
+
               {/* Left Column: Stacked build items */}
               <div className="lg:col-span-7 flex flex-col justify-center">
                 <div className="flex flex-col">
@@ -482,21 +481,21 @@ export default function OurMission() {
                   ))}
                 </div>
               </div>
- 
+
               {/* Right Column: Promise Card */}
               <div className="lg:col-span-5">
                 <div className="bg-[#f8fbf9] border border-[#e2eae5]/60 rounded-3xl p-8 sm:p-10 shadow-sm text-left h-full relative overflow-hidden flex flex-col justify-between min-h-[360px]">
-                  
+
                   {/* Floating handshake icon card */}
                   <div className="absolute top-6 right-6 w-12 h-12 rounded-2xl bg-white border border-[#e2eae5]/40 shadow-sm flex items-center justify-center text-brand-green">
                     <FaHandshake className="w-6 h-6" />
                   </div>
- 
+
                   <div>
                     <h3 className="text-lg sm:text-xl font-extrabold text-[#0FA958] mb-6 flex items-center gap-1.5">
                       <span>Our Promise</span>
                     </h3>
- 
+
                     {/* Checklist */}
                     <div className="flex flex-col gap-5">
                       {promiseItems.map((tip, idx) => (
@@ -511,12 +510,12 @@ export default function OurMission() {
                       ))}
                     </div>
                   </div>
- 
+
                 </div>
               </div>
- 
+
             </div>
- 
+
           </div>
         </section>
 
@@ -524,14 +523,14 @@ export default function OurMission() {
         <section className="max-w-7xl mx-auto px-6 py-4">
           <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.02)] overflow-hidden relative">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:items-stretch">
-              
+
               {/* Left Founder image with background */}
               <div className="lg:col-span-3 flex justify-center items-end relative overflow-hidden h-[200px] sm:h-[220px] lg:h-full lg:-mb-10 lg:-ml-10 lg:-mr-0 lg:self-end">
                 {/* Pale green semicircle background */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[120px] w-[240px] sm:h-[130px] sm:w-[260px] rounded-t-full bg-[#d6f0e3]" />
                 <div className="relative z-10 w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] lg:w-[240px] lg:h-[240px] select-none">
                   <Image
-                    src="/founder2.png"
+                    src="/pehlwan.png"
                     alt="Kiran Pailwan"
                     fill
                     sizes="(max-w-768px) 220px, 240px"
@@ -557,7 +556,7 @@ export default function OurMission() {
                   <span className="text-base sm:text-[17px] font-black text-brand-navy">Kiran Pailwan</span>
                   <span className="text-xs sm:text-sm font-bold text-slate-400 mt-1">Founder, OpenMarket</span>
                 </div>
-                
+
                 {/* Signature cursive graphic */}
                 <div className="font-serif italic text-2xl sm:text-3xl text-slate-400 mt-3 select-none">
                   K. Pailwan
@@ -588,7 +587,7 @@ export default function OurMission() {
                 </div>
               ))}
             </div>
- 
+
             {/* Address line below grid */}
             <div className="border-t border-[#e2eae5]/80 pt-6 flex items-center justify-center gap-2.5 text-center text-slate-500 font-semibold text-xs sm:text-sm md:text-[14.5px]">
               <FiMapPin className="text-[#0FA958] mt-0.5 flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
