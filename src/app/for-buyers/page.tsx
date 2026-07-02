@@ -347,7 +347,7 @@ export default function ForBuyers() {
         {/* SECTION 1: Hero Section */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-6 flex flex-col gap-6 text-left">
               <div className="flex flex-col gap-3.5">
@@ -392,7 +392,7 @@ export default function ForBuyers() {
             <div className="lg:col-span-6 flex justify-center relative min-h-[400px]">
               {/* Pale Green Circle backdrop */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full bg-brand-light-green/90 z-0" />
-              
+
               {/* Buyer Image Container */}
               <div className="relative w-[380px] h-[380px] z-10">
                 <Image
@@ -434,7 +434,7 @@ export default function ForBuyers() {
         {/* SECTION 2: The Problems Buyers Face Today */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Centered header with side lines */}
             <div className="flex flex-col items-center mb-12">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
@@ -464,7 +464,7 @@ export default function ForBuyers() {
         {/* SECTION 3: How OpenMarket Solves This */}
         <section id="how-it-works" className="bg-white py-16 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Centered header with side lines */}
             <div className="flex flex-col items-center mb-12">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
@@ -494,7 +494,7 @@ export default function ForBuyers() {
         {/* SECTION 4: Why Buyers Will Love OpenMarket */}
         <section className="bg-slate-50/50 py-16 border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             <div className="text-center mb-12">
               <h2 className="text-2xl font-black text-brand-navy tracking-tight">
                 Why Buyers Will Love OpenMarket
@@ -520,7 +520,7 @@ export default function ForBuyers() {
         <section className="max-w-7xl mx-auto px-6 py-12">
           <div className="rounded-3xl bg-[#f8fbf9] border border-[#e2eae5]/60 p-8 md:p-10 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
+
               {/* Left Part */}
               <div className="lg:col-span-5 flex flex-col text-left">
                 <h3 className="text-xl md:text-2xl font-extrabold text-brand-navy tracking-tight mb-1">
@@ -566,7 +566,7 @@ export default function ForBuyers() {
         <section className="max-w-7xl mx-auto px-6 py-4">
           <div className="bg-[#f8fbf9] border border-[#e2eae5]/60 rounded-3xl p-6 shadow-sm overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-              
+
               {/* Left Founder image with background */}
               <div className="lg:col-span-3 flex justify-center items-end">
                 <div className="relative flex h-[190px] w-[250px] items-end justify-center overflow-hidden lg:-mb-6">
@@ -574,7 +574,7 @@ export default function ForBuyers() {
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[120px] w-[240px] rounded-t-full bg-brand-green/20" />
                   <div className="relative z-10 h-[215px] w-[215px]">
                     <Image
-                      src="/founder2.png"
+                      src="/founder1.png"
                       alt="Kiran Pailwan"
                       fill
                       sizes="185px"
@@ -605,7 +605,7 @@ export default function ForBuyers() {
                   <span className="text-sm font-black text-brand-navy">Kiran Pailwan</span>
                   <span className="text-xs font-bold text-slate-400 mt-0.5">Founder, OpenMarket</span>
                 </div>
-                
+
                 {/* Signature cursive graphic */}
                 <div className="font-serif italic text-2xl text-brand-navy/60 leading-none mt-2">
                   K. Pailwan

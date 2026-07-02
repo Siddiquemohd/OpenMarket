@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
-import { 
-  FaGraduationCap, 
-  FaBriefcase, 
-  FaUsers, 
-  FaBuilding, 
-  FaCheck, 
-  FaArrowRight, 
+import {
+  FaGraduationCap,
+  FaBriefcase,
+  FaUsers,
+  FaBuilding,
+  FaCheck,
+  FaArrowRight,
   FaStar,
   FaMapMarkerAlt,
   FaEyeSlash,
@@ -212,7 +212,7 @@ export default function ForSellers() {
         {/* SECTION 1: Hero & Founder Testimonial */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-8 md:pt-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-4 flex flex-col gap-6 text-left">
               <div className="flex flex-col gap-3">
@@ -258,7 +258,7 @@ export default function ForSellers() {
               {/* Portrait Image Container */}
               <div className="relative w-[340px] h-[340px] z-10">
                 <Image
-                  src="/founder2.png"
+                  src="/founder1.png"
                   alt="Kiran Pailwan - Founder, OpenMarket"
                   fill
                   sizes="340px"
@@ -300,7 +300,7 @@ export default function ForSellers() {
         <section className="max-w-7xl mx-auto px-6 py-6">
           <div className="bg-white border border-slate-100 rounded-2xl p-4 md:p-5 shadow-sm">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-              
+
               {/* Item 1 */}
               <div className="flex items-center gap-3.5 px-2 md:px-4 py-2 md:py-0 text-left">
                 <div className="text-brand-navy flex-shrink-0">
@@ -352,7 +352,7 @@ export default function ForSellers() {
         {/* SECTION 3: Problems sellers face */}
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Header with Divider Lines */}
             <div className="flex flex-col items-center mb-10">
               <div className="flex items-center gap-4 w-full max-w-3xl mb-4">
@@ -382,13 +382,13 @@ export default function ForSellers() {
         {/* SECTION 4: OpenMarket value section */}
         <section className="bg-white pt-10 pb-8 border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Two Column Layout: Left (Heading + 5 Cards), Right (Checklist Panel) */}
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_300px]">
-              
+
               {/* Left Column: Heading & 5 Benefit Cards */}
               <div className="flex flex-col justify-start gap-4">
-                
+
                 {/* Header Content */}
                 <div className="mb-2">
                   <h2 className="text-center text-xl md:text-2xl font-black text-brand-navy tracking-tight mb-1">
@@ -397,25 +397,25 @@ export default function ForSellers() {
                   <p className="text-center text-xs md:text-sm font-semibold text-slate-500 max-w-xl leading-relaxed mx-auto mb-6">
                     We reward sellers who are active, responsive and engaged.
                   </p>
-               
 
-                {/* 5 Benefit Cards in one row on desktop */}
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
-                  {benefits.map((b, idx) => (
-                    <BenefitCard
-                      key={idx}
-                      title={b.title}
-                      desc={b.desc}
-                      icon={b.icon}
-                    />
-                  ))}
+
+                  {/* 5 Benefit Cards in one row on desktop */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                    {benefits.map((b, idx) => (
+                      <BenefitCard
+                        key={idx}
+                        title={b.title}
+                        desc={b.desc}
+                        icon={b.icon}
+                      />
+                    ))}
+                  </div>
                 </div>
- </div>
               </div>
 
               {/* Right Column: Visibility Checklist Panel */}
               <div className="bg-brand-light-green border border-emerald-100/60 rounded-2xl p-4 shadow-sm text-left relative overflow-hidden flex flex-col h-full justify-between">
-                
+
                 <div>
                   <h3 className="text-[12.5px] font-black text-brand-navy mb-2.5 flex items-center gap-1.5">
                     <FiTrendingUp className="text-brand-green flex-shrink-0" size={15} />
@@ -462,7 +462,7 @@ export default function ForSellers() {
         {/* SECTION 5: How it works */}
         <section id="how-it-works" className="bg-white py-16 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6">
-            
+
             {/* Header with Divider Lines */}
             <div className="flex flex-col items-center mb-14">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
@@ -476,10 +476,10 @@ export default function ForSellers() {
 
             {/* 5 steps Horizontal Line container */}
             <div className="relative max-w-5xl mx-auto">
-              
+
               {/* Horizontal Connector Line for Desktop */}
               <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[1.5px] bg-slate-200 border-dashed border-t border-slate-300 z-0" />
-              
+
               <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-2">
                 {steps.map((s, idx) => (
                   <StepCard
@@ -501,13 +501,13 @@ export default function ForSellers() {
         <section className="max-w-7xl mx-auto px-6 py-8">
           <div className="rounded-2xl bg-[#f8fbf9] border border-[#e2eae5]/60 px-8 py-7 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#e2eae5] items-stretch">
-              
+
               {/* Left Column: Bullets */}
               <div className="lg:col-span-5 pb-6 lg:pb-0 lg:pr-8 flex flex-col text-left">
                 <h3 className="text-[17px] md:text-[19px] font-extrabold text-brand-green tracking-tight mb-4">
                   Built By An Industrial Professional
                 </h3>
-                
+
                 <div className="flex flex-col gap-2.5">
                   <div className="flex items-start gap-2.5">
                     <FiCheckCircle size={16} className="text-brand-green mt-0.5 flex-shrink-0" />
@@ -591,7 +591,7 @@ export default function ForSellers() {
                     <PhoneIcon size={15} className="text-brand-green flex-shrink-0" />
                     <span>+91 93200 12345</span>
                   </a>
-                  
+
                   <a
                     href="https://wa.me/919320012345"
                     target="_blank"
