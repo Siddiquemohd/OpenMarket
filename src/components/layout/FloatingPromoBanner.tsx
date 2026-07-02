@@ -70,7 +70,7 @@ export function FloatingPromoBanner() {
       }
     }
 
-    const dismissed = 
+    const dismissed =
       localStorage.getItem("openmarket_promo_dismissed") === "true" ||
       sessionStorage.getItem("openmarket_promo_dismissed") === "true";
 
@@ -174,7 +174,7 @@ export function FloatingPromoBanner() {
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-full max-w-5xl px-4 md:px-6">
       {/* Outer Banner Wrapper */}
       <div className="relative bg-gradient-to-r from-[#031427] via-[#041a31] to-[#020f1f] border border-white/10 rounded-[28px] md:rounded-[36px] shadow-[0_20px_50px_rgba(0,0,0,0.7)] p-4 md:py-5 md:px-8 select-none">
-        
+
         {/* Inside Rocket Asset */}
         <div className="absolute left-8 md:left-12 top-1/2 -translate-y-1/2 w-14 h-14 md:w-20 md:h-20 pointer-events-none select-none z-20 animate-[float_4s_ease-in-out_infinite]">
           <img
@@ -240,7 +240,7 @@ export function FloatingPromoBanner() {
               }}
               className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6"
             >
-              
+
               {/* Left Section: Badge, Title & Description */}
               <div className="flex-1 min-w-0 pr-2">
                 <span className="bg-[#FFC72C] text-[#031427] font-black uppercase text-[8px] md:text-[9px] tracking-wider px-2 py-0.5 rounded-md inline-block mb-1 shadow-sm select-none">
