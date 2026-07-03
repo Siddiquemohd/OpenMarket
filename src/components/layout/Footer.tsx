@@ -13,6 +13,7 @@ export function Footer() {
   const quickLinks = [
     { label: "Home", href: "/" },
     { label: "Why OpenMarket", href: "/why-openmarket" },
+    { label: "Our Story", href: "/evolution" },
     { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/for-buyers" },
     { label: "Our Mission", href: "/our-mission" },

@@ -1,381 +1,499 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-
+import "../globals.css";
 import {
-  FaLinkedin,
-  FaWhatsapp,
+  FaCheck,
   FaUsers,
-  FaArrowRight,
-  FaGraduationCap,
-  FaBriefcase,
   FaStar,
-  FaLockOpen,
-  FaBalanceScale,
   FaHandshake,
-  FaCheck
+  FaBuilding,
+  FaStore,
+  FaShoppingBag,
+  FaBalanceScale,
+  FaArrowRight,
+  FaArrowLeft,
+  FaBrain,
+  FaPen,
 } from "react-icons/fa";
-import { FiCheckCircle } from "react-icons/fi";
-
-
-
-
-
+import {
+  FiShield,
+  FiTrendingUp,
+  FiSearch,
+  FiActivity,
+  FiCheckCircle,
+  FiUserCheck,
+  FiSliders,
+  FiEye,
+  FiXCircle,
+  FiUploadCloud,
+  FiMessageSquare,
+  FiFileText,
+  FiMousePointer,
+  FiCpu,
+  FiClock,
+  FiLock,
+  FiUsers as FiUsersIcon,
+  FiLink,
+  FiArrowRight as FiArrowRightIcon,
+  FiArrowDown,
+  FiAward,
+  FiGrid,
+  FiImage,
+} from "react-icons/fi";
 import { useOtpModal } from "@/providers/OtpModalProvider";
 
-/**
- * Why OpenMarket Page component
- */
-export default function WhyOpenMarket() {
-  const { openOtpModal } = useOtpModal();
-  const credentials = [
-    { text: "Electrical Engineer, VJTI Mumbai (2003)", icon: <FaGraduationCap className="text-brand-navy" size={15} /> },
-    { text: "Founder & Director, Uneefy Intratech Pvt. Ltd.", icon: <FaBriefcase className="text-brand-navy" size={14} /> },
-    { text: "20+ Years in Industrial Products, Projects & B2B Business", icon: <FaStar className="text-brand-navy" size={14} /> },
-    { text: "Worked with L&T, Bajaj Electricals, Valmont and other industry leaders", icon: <FaUsers className="text-brand-navy" size={14} /> },
-    { text: "Served 300+ Industrial Customers", icon: <FaUsers className="text-brand-navy" size={14} /> },
-    { text: "Passionate about building a fair and transparent marketplace for Indian businesses", icon: <FiCheckCircle className="text-brand-navy" size={15} /> },
-  ];
+// Reusable LogoCheckmark SVG component
+function LogoCheckmark({
+  size = 20,
+  checkColor = "#0B3C5F",
+  circleColor = "#0FA958",
+}: {
+  size?: number;
+  checkColor?: string;
+  circleColor?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="9" stroke={circleColor} strokeWidth="2.5" fill="none" />
+      <path
+        d="M8 12L11 15L16.5 9"
+        stroke={checkColor}
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
-  const benefits = [
-    "Create your business profile",
-    "Showcase your products & services",
-    "Invite your network",
-    "Influence the future roadmap",
-  ];
+export default function HowItWorks() {
+  const { openOtpModal } = useOtpModal();
 
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
-
-        {/* 1. Hero & Founder Profile Card */}
-        <section className="max-w-7xl mx-auto px-6 py-12 md:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-            {/* Left Column: Heading and Introduction */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="flex flex-col gap-3">
-                <div className="flex flex-col self-start">
-                  <span className="text-brand-green text-sm font-black tracking-widest uppercase">
-                    WHY OPENMARKET?
-                  </span>
-                  <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-brand-navy mt-4">
-                  We’re Not Building <br />
-                  Another Marketplace. <br />
-                  <span className="text-brand-green block mt-1.5">
-                    We’re Building <br />
-                    a Movement.
-                  </span>
-                </h1>
-                <div className="h-[2.5px] w-16 bg-brand-green mt-3 mb-1" />
-              </div>
-
-              {/* Body Text Matching Screenshot */}
-              <div className="flex flex-col gap-5 text-slate-600 font-semibold text-sm md:text-[15px] leading-relaxed max-w-2xl">
-                <p>
-                  For years, businesses have been told that success on B2B marketplaces depends on spending more money for visibility.
-                </p>
-                <p className="text-brand-navy font-black text-[16px] md:text-[17px]">
-                  We believe there is a better way.
-                </p>
-                <p>
-                  OpenMarket is being built to create a fair, transparent, and trusted marketplace where every{" "}
-                  <Link href="/for-sellers" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                    seller gets an opportunity to grow
-                  </Link>{" "}
-                  and every{" "}
-                  <Link href="/for-buyers" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                    buyer gets access to genuine suppliers
-                  </Link>
-                  .
-                </p>
-                <p>
-                  This is not just about technology. It is about empowering manufacturers, traders, service providers, startups, and entrepreneurs who believe business should be built on trust, quality, and relationships—not on who pays the most.
-                </p>
-              </div>
-
-              <div className="pt-2">
-                <button
-                  onClick={() => openOtpModal()}
-                  className="inline-flex items-center gap-4 bg-brand-green hover:bg-brand-dark-green text-white pl-6 pr-8 py-3.5 rounded-2xl shadow-md transition-all duration-300 hover:scale-102 active:scale-98 text-left group cursor-pointer focus:outline-none"
-                >
-                  <div className="flex-shrink-0 flex items-center justify-center w-11 h-11 rounded-xl bg-white/10 text-white">
-                    <FaUsers size={20} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[16px] font-black tracking-wide flex items-center gap-1.5">
-                      Join the First 1000 Businesses
-                      <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                    </span>
-                    <span className="text-[11px] font-semibold text-emerald-100 mt-0.5">
-                      Be an Early Member of OpenMarket
-                    </span>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column: Founder Profile Card matching the portrait styling */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="max-w-[430px] w-full bg-white border border-slate-100 rounded-[32px] shadow-xl relative overflow-hidden">
-
-                {/* Portrait Area Container */}
-                <div className="relative h-[328px] w-full overflow-hidden flex justify-center">
-                  {/* Pale Green Semi-Circle (Arch) Background behind Portrait */}
-                  <div className="absolute left-1/2 bottom-0 h-[210px] w-[420px] -translate-x-1/2 rounded-t-full bg-brand-light-green pointer-events-none" />
-
-                  {/* Dotted Grid Pattern SVG behind portrait but on top of arch */}
-                  <div
-                    className="absolute top-12 right-6 w-64 h-64 opacity-40 pointer-events-none"
-                    style={{
-                      backgroundImage: 'radial-gradient(#0FA958 1.5px, transparent 1.5px)',
-                      backgroundSize: '10px 10px',
-                      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)',
-                      maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 65%)'
-                    }}
-                  />
-
-                  {/* Profile Image - Normal Portrait with bottom crop */}
-                  <div className="absolute z-10 bottom-0 w-[400px] h-[328px] overflow-hidden left-1/2 -translate-x-1/2">
-                    <div className="absolute w-[400px] h-[340px] -bottom-[12px] left-0">
-                      <Image
-                        src="/founder2.png"
-                        alt="Kiran Pailwan - Founder, OpenMarket"
-                        fill
-                        sizes="400px"
-                        priority
-                        className="object-contain object-bottom"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Overlapping Attached Info Card below */}
-                <div className="relative z-20 bg-white -mt-6 p-6 rounded-[32px] shadow-[-5px_-5px_15px_-5px_rgba(0,0,0,0.02)]">
-                  <div className="text-left pb-4 border-b border-slate-100">
-                    <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-1">
-                      <Link href="/founding-members" className="underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                        MEET THE FOUNDER
-                      </Link>
-                    </span>
-                    <h3 className="text-[22px] font-black text-brand-navy leading-snug">
-                      Kiran Pailwan
-                    </h3>
-                    <span className="text-xs font-bold text-brand-green tracking-wide block mt-0.5">
-                      Founder, OpenMarket
-                    </span>
-                  </div>
-
-                  {/* Credentials checklist */}
-                  <div className="py-4 flex flex-col gap-3.5">
-                    {credentials.map((cred, idx) => (
-                      <div key={idx} className="flex items-start gap-3.5">
-                        <span className="flex-shrink-0 flex items-center justify-center w-[22px] h-[22px] rounded-full bg-brand-light-green text-brand-navy mt-0.5 shadow-sm">
-                          {cred.icon}
-                        </span>
-                        <span className="text-[13.5px] font-bold text-brand-navy leading-normal">
-                          {cred.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Contact Links */}
-                  <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
-                    <div className="flex items-center gap-3 w-full my-1">
-                      <div className="flex-grow h-[1px] bg-slate-200" />
-                      <span className="text-[11px] font-black text-brand-green text-center uppercase tracking-widest whitespace-nowrap">
-                        Connect with Kiran
-                      </span>
-                      <div className="flex-grow h-[1px] bg-slate-200" />
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3.5">
-                      {/* LinkedIn Button */}
-                      <a
-                        href="https://www.linkedin.com/in/kiranpailwan/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 border border-[#0077B5] hover:bg-[#0077B5]/5 text-[#0077B5] rounded-xl font-bold text-xs shadow-sm transition-all"
-                      >
-                        <FaLinkedin size={16} />
-                        <span>LinkedIn</span>
-                      </a>
-
-                      {/* WhatsApp Button */}
-                      <a
-                        href="https://wa.me/918108359977"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 py-3 border border-[#25D366] hover:bg-[#25D366]/5 text-[#25D366] rounded-xl font-bold text-xs shadow-sm transition-all"
-                      >
-                        <FaWhatsapp size={16} />
-                        <span>WhatsApp</span>
-                      </a>
-                    </div>
-
-                    <span className="text-[10px] font-semibold text-slate-400 italic text-center mt-1.5 block">
-                      I personally read every message from our founding members.
-                    </span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
+        
+        {/* SECTION 1: Page Header */}
+        <section className="max-w-7xl mx-auto px-6 pt-12 pb-8 text-center">
+          <h1 className="text-3xl md:text-5xl font-black text-brand-navy leading-tight mb-4">
+            How It{" "}
+            <span className="relative inline-block">
+              Works
+              <span className="absolute bottom-0.5 left-0 w-full h-[4.5px] bg-brand-green rounded-full opacity-90" />
+            </span>
+          </h1>
+          <p className="text-brand-green font-extrabold text-sm md:text-base leading-relaxed tracking-wider uppercase mb-3">
+            OpenMarket is built on activity and trust.
+          </p>
+          <p className="text-slate-500 font-bold text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
+            Our platform rewards businesses that participate actively, respond quickly, and maintain complete profiles. Here is how our ecosystem works.
+          </p>
         </section>
 
-        {/* 2. Mission Section (Single Large Card containing Header and Pillars) */}
-        <section className="bg-white py-16">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-white border border-slate-100 rounded-[32px] p-8 md:p-12 lg:p-14 shadow-sm w-full">
-
-              {/* Centered Mission Header */}
-              <div className="flex flex-col items-center text-center mb-6 lg:mb-8">
-                <div className="flex items-center gap-4 w-full max-w-xl mb-3.5">
-                  <div className="flex-grow h-[2px] bg-brand-green/40" />
-                  <span className="text-sm font-black text-brand-green tracking-widest uppercase">
-                    OUR MISSION
-                  </span>
-                  <div className="flex-grow h-[2px] bg-brand-green/40" />
-                </div>
-
-                <h2 className="text-2xl md:text-[32px] lg:text-[38px] font-extrabold text-brand-blue tracking-tight leading-tight mb-2 md:whitespace-nowrap">
-                  To build India’s most trusted B2B marketplace.
-                </h2>
-                <p className="text-sm md:text-[15px] font-medium text-brand-blue max-w-3xl leading-relaxed">
-                  A marketplace that is open. A marketplace that is fair. A marketplace built by its community.
-                </p>
+        {/* SECTION 2: 5-Step Process Map (Mockup Layout) */}
+        <section className="max-w-7xl mx-auto px-6 py-10 border-t border-slate-100 bg-slate-50/50">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full relative">
+            
+            {/* Step 01 */}
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+              {/* Number tag */}
+              <div className="w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+                01
               </div>
-
-              {/* Three Mission Items Grid with Vertical Dividers */}
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 md:gap-0 items-center w-full">
-
-                {/* Item 1: Open */}
-                <div className="flex items-center gap-5 lg:gap-6 md:pr-6 lg:pr-8">
-                  <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
-                    <FaLockOpen className="text-brand-green text-[42px] lg:text-[54px]" />
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-2xl font-extrabold text-brand-green mb-0.5">
-                      Open
-                    </h4>
-                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[210px] lg:max-w-[240px]">
-                      Transparent and accessible for all businesses.
-                    </p>
-                  </div>
+              {/* Icon Circle */}
+              <div className="relative w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
+                <FiFileText size={28} />
+                <div className="absolute bottom-[-2px] right-[-2px] w-5.5 h-5.5 rounded-full bg-brand-blue text-white border-[2.5px] border-white flex items-center justify-center shadow-sm">
+                  <FaCheck size={8} />
                 </div>
-
-                {/* Vertical Divider 1 */}
-                <div className="hidden md:block h-20 lg:h-24 w-[1px] bg-slate-200" />
-
-                {/* Item 2: Fair */}
-                <div className="flex items-center gap-5 lg:gap-6 md:px-6 lg:px-8">
-                  <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-blue flex items-center justify-center shadow-sm">
-                    <FaBalanceScale className="text-brand-blue text-[42px] lg:text-[54px]" />
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-2xl font-extrabold text-brand-blue mb-0.5">
-                      Fair
-                    </h4>
-                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[210px] lg:max-w-[240px]">
-                      Success should not depend on advertising budgets.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Vertical Divider 2 */}
-                <div className="hidden md:block h-20 lg:h-24 w-[1px] bg-slate-200" />
-
-                {/* Item 3: Community Driven */}
-                <div className="flex items-center gap-5 lg:gap-6 md:pl-6 lg:pl-8">
-                  <div className="flex-shrink-0 w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-brand-light-green flex items-center justify-center shadow-sm">
-                    <FaHandshake className="text-brand-green text-[50px] lg:text-[64px]" />
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-xl lg:text-2xl font-extrabold text-brand-green mb-0.5 whitespace-nowrap">
-                      Community Driven
-                    </h4>
-                    <p className="text-[13px] lg:text-[14.5px] font-semibold text-brand-navy leading-relaxed max-w-[190px] lg:max-w-[230px]">
-                      Built with sellers and buyers, not for them.
-                    </p>
-                  </div>
-                </div>
-
               </div>
-
+              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+                Register Your Business
+              </h3>
+              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+                Create your business profile in just a few minutes.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* 3. Founding Member Section */}
-        <section className="max-w-7xl mx-auto px-6 py-8">
-          <div className="bg-brand-light-green border border-emerald-100/60 rounded-3xl px-8 py-6 md:px-10 md:py-8 shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Connecting Arrow 1 */}
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            </div>
 
-              {/* Left Column: Business Handshake/Illustration Image */}
-              <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-[450px] aspect-[4/3] rounded-2xl overflow-hidden border border-slate-100">
-                  <Image
-                    src="/Partnership1.png"
-                    alt="Partnership B2B Illustration"
-                    fill
-                    sizes="(max-w-768px) 100vw, 380px"
-                    className="object-contain"
-                  />
-                </div>
+            {/* Step 02: Highlighted Blue Card */}
+            <div className="flex-grow flex-[1.7] flex flex-col border border-brand-blue/15 bg-[#f4f8fc] rounded-[24px] p-6 shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left lg:max-w-[420px] w-full">
+              {/* Center border number circle */}
+              <div className="absolute top-[-12px] left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center shadow-md z-10">
+                02
               </div>
 
-              {/* Right Column: Content and CTA */}
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <div className="flex flex-col gap-1.5">
-                  <h3 className="text-2xl md:text-3xl font-black text-brand-navy tracking-tight leading-snug">
-                    Become a Founding Member
+              {/* Title & Icon Header */}
+              <div className="flex items-start gap-4 mb-3.5">
+                <div className="w-[60px] h-[60px] rounded-full border border-brand-blue/20 text-brand-blue bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <FaBuilding size={24} />
+                </div>
+                <div className="flex flex-col pt-1">
+                  <h3 className="text-[17px] font-black text-brand-navy leading-tight">
+                    Build Your Profile with AI Tools
                   </h3>
-                  <p className="text-sm font-semibold text-slate-500 max-w-xl leading-relaxed">
-                    The first 1,000 businesses joining OpenMarket will help shape the future of the platform.{" "}
-                    <Link href="/founding-members" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                      Meet the founding members
-                    </Link>
-                    .
-                  </p>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-[13px] font-bold text-slate-500 leading-relaxed mb-4">
+                Add your business details, products, services, certifications, images and more.
+              </p>
+
+              {/* Horizontal list of AI tools */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 py-3.5 border-t border-slate-200/50 text-[11px] font-bold text-slate-500">
+                <div className="flex items-center gap-1.5">
+                  <FiSliders className="text-brand-blue flex-shrink-0" size={13} />
+                  <span>AI Profile Assistant</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <FaPen className="text-brand-blue flex-shrink-0" size={11} />
+                  <span>AI Product Writer</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <FiGrid className="text-brand-blue flex-shrink-0" size={13} />
+                  <span>Smart Category Suggestion</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <FiImage className="text-brand-blue flex-shrink-0" size={13} />
+                  <span>Image Enhancer</span>
+                </div>
+              </div>
+
+              {/* Bottom pill list */}
+              <div className="bg-white border border-brand-blue/10 rounded-xl py-2 px-3 text-[11.5px] font-black text-brand-blue text-center shadow-[0_1px_2px_rgba(0,0,0,0.01)] mt-1.5">
+                Products • Services • Certifications • Images • More
+              </div>
+            </div>
+
+            {/* Connecting Arrow 2 */}
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            </div>
+
+            {/* Step 03 */}
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+              {/* Number tag */}
+              <div className="w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+                03
+              </div>
+              {/* Icon Circle */}
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
+                <FiTrendingUp size={28} />
+              </div>
+              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+                Stay Active & Engaged
+              </h3>
+              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+                Update information, respond to enquiries and engage regularly.
+              </p>
+            </div>
+
+            {/* Connecting Arrow 3 */}
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            </div>
+
+            {/* Step 04 */}
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+              {/* Number tag */}
+              <div className="w-7 h-7 rounded-full bg-brand-green text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+                04
+              </div>
+              {/* Icon Circle */}
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-green flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
+                <FiCpu size={28} />
+              </div>
+              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+                AI Matches & Ranks
+              </h3>
+              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+                Our AI understands buyer needs and ranks businesses based on activity, relevance and trust.
+              </p>
+            </div>
+
+            {/* Connecting Arrow 4 */}
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            </div>
+
+            {/* Step 05 */}
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+              {/* Number tag */}
+              <div className="w-7 h-7 rounded-full bg-brand-green text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+                05
+              </div>
+              {/* Icon Circle */}
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-green flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
+                <FiSearch size={28} />
+              </div>
+              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+                Close the Deal Directly
+              </h3>
+              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+                Connect directly with matched buyers/sellers and finalize terms.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Connections bar underneath process steps */}
+          <div className="mt-12 border-t border-slate-200/60 pt-8 max-w-xl mx-auto flex flex-col items-center">
+            <div className="flex flex-col items-center gap-1.5 bg-[#f4f8fc] border border-brand-blue/15 rounded-2xl px-6 py-3.5 shadow-sm">
+              <div className="text-brand-blue flex items-center gap-2">
+                <FaHandshake size={22} className="animate-pulse" />
+                <span className="text-[13px] font-black uppercase tracking-wider">Direct connection, no commission charges</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 3: How Ranking Works (VS Comparison) */}
+        <section className="max-w-7xl mx-auto px-6 py-12">
+          <div className="text-center mb-8">
+            <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
+              THE OPENMARKET DIFFERENCE
+            </span>
+            <h2 className="text-2xl md:text-3xl font-black text-brand-navy">
+              How Ranking Works
+            </h2>
+            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full max-w-5xl mx-auto">
+            
+            {/* Traditional Card (Payment-Driven) */}
+            <div className="border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 flex flex-col justify-between shadow-sm h-full min-h-[190px]">
+              <span className="text-[10px] font-black text-red-500 tracking-widest uppercase text-center block mb-2">
+                Traditional Marketplaces (Payment-Driven)
+              </span>
+              
+              <div className="flex items-center justify-center gap-5 py-4">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-bold text-sm">
+                    ₹
+                  </div>
+                  <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-wider">Pay More</span>
+                </div>
+                
+                <FaArrowRight size={10} className="text-slate-300" />
+                
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center">
+                    <FiEye size={18} />
+                  </div>
+                  <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-wider">Higher Visibility</span>
+                </div>
+              </div>
+
+              <div className="bg-red-50/60 border-t border-red-100 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 -mb-6">
+                <FiXCircle className="text-red-500" size={16} />
+                <span className="text-[11px] font-black text-red-500 tracking-wide uppercase">
+                  Visibility depends on payment
+                </span>
+              </div>
+            </div>
+
+            {/* OpenMarket Card (Activity-Driven) */}
+            <div className="border border-brand-green/20 bg-brand-light-green/30 rounded-[24px] p-6 flex flex-col justify-between shadow-sm h-full min-h-[190px]">
+              <span className="text-[10px] font-black text-brand-green tracking-widest uppercase text-center block mb-2">
+                OpenMarket (Activity-Driven)
+              </span>
+              
+              {/* Horizontal chain flow wrapper */}
+              <div className="flex flex-wrap items-center justify-center gap-3.5 py-4">
+                {[
+                  { label: "Complete Profile", icon: <FiUserCheck size={16} /> },
+                  { label: "Updated Info", icon: <FiFileText size={16} /> },
+                  { label: "Quick Responses", icon: <FiMessageSquare size={16} /> },
+                  { label: "Marketplace Activity", icon: <FiTrendingUp size={16} /> },
+                  { label: "Meaningful Participation", icon: <FaStar size={16} /> },
+                ].map((node, idx, arr) => (
+                  <React.Fragment key={idx}>
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="w-[40px] h-[40px] rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm flex-shrink-0">
+                        {node.icon}
+                      </div>
+                      <span className="text-[9.5px] sm:text-[10px] font-black text-slate-500 uppercase text-center max-w-[56px] leading-tight mt-0.5">
+                        {node.label}
+                      </span>
+                    </div>
+                    {idx < arr.length - 1 && (
+                      <span className="text-slate-400 font-black text-[14px] mt-[-10px]">+</span>
+                    )}
+                  </React.Fragment>
+                ))}
+
+                <FaArrowRight size={10} className="text-brand-green mt-[-10px]" />
+
+                {/* Output Node */}
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-[40px] h-[40px] rounded-full bg-brand-green text-white flex items-center justify-center shadow-md flex-shrink-0">
+                    <FiAward size={18} />
+                  </div>
+                  <span className="text-[9.5px] font-black text-brand-green uppercase text-center max-w-[56px] leading-tight mt-0.5">
+                    Higher Visibility
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-[#eefcf4] border-t border-brand-green/10 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 -mb-6">
+                <FiCheckCircle className="text-brand-green" size={16} />
+                <span className="text-[11px] font-black text-brand-green tracking-wide uppercase">
+                  Visibility is earned through contribution
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* SECTION 4: Benefits for Sellers & Buyers (Horizontal Grid Layout) */}
+        <section className="max-w-7xl mx-auto px-6 py-8">
+          <div className="bg-[#f7fbf8]/50 border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 shadow-[0_2px_12px_rgba(0,0,0,0.01)] flex flex-col gap-10 items-stretch">
+            
+            {/* Upper half: Grid layout for Sellers & Buyers side-by-side */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center">
+              
+              {/* Left Column: Sellers Benefits with Horizontal Icons */}
+              <div className="flex flex-col gap-6 text-center lg:text-left">
+                <div className="flex flex-col items-center lg:items-start gap-1">
+                  <span className="text-[10px] font-black text-brand-blue tracking-widest uppercase">
+                    GROW YOUR ACCESS
+                  </span>
+                  <h3 className="text-lg font-black text-brand-navy uppercase tracking-wider">
+                    Benefits for Sellers
+                  </h3>
+                  <div className="h-[2px] w-8 bg-brand-blue mt-1" />
                 </div>
 
-                {/* Benefits checklist 2-column layout */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
-                  {benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <span className="flex-shrink-0 flex items-center justify-center w-[22px] h-[22px] rounded-full border-2 border-brand-green text-brand-green bg-white">
-                        <FaCheck size={9} className="stroke-[2.5]" />
-                      </span>
-                      <span className="text-[13.5px] font-bold text-brand-navy">
-                        {benefit}
+                {/* Horizontal row of 5 Seller benefits */}
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                  {[
+                    { text: "Earn visibility fairly", icon: <FiEye size={20} /> },
+                    { text: "Reach relevant buyers", icon: <FaUsers size={20} /> },
+                    { text: "Build trust with profiles", icon: <FiShield size={20} /> },
+                    { text: "Grow your business", icon: <FiTrendingUp size={20} /> },
+                    { text: "Direct connections", icon: <FiLink size={20} /> },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex flex-col items-center text-center gap-2.5 p-2 rounded-xl bg-white border border-slate-100 hover:scale-102 transition-transform shadow-[0_1px_4px_rgba(0,0,0,0.01)]">
+                      <div className="w-12 h-12 rounded-full bg-[#f4f8fc] border border-brand-blue/15 text-brand-blue flex items-center justify-center flex-shrink-0 shadow-sm">
+                        {item.icon}
+                      </div>
+                      <span className="text-[11.5px] font-bold text-slate-500 leading-snug">
+                        {item.text}
                       </span>
                     </div>
                   ))}
                 </div>
+              </div>
 
-                <div className="pt-2">
-                  <button
-                    onClick={() => openOtpModal()}
-                    className="inline-flex items-center gap-3 bg-brand-green hover:bg-brand-dark-green text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-md transition-all group cursor-pointer focus:outline-none"
-                  >
-                    <FaUsers size={16} />
-                    <span>Join the First 1000 Businesses</span>
-                  </button>
+              {/* Central checkmark badge logo */}
+              <div className="flex justify-center select-none py-2 lg:py-0">
+                <div className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-full border-[5px] border-brand-navy bg-white shadow-md flex items-center justify-center flex-shrink-0">
+                  <LogoCheckmark size={40} checkColor="#0B3C5F" circleColor="#0FA958" />
+                  {/* Left pointing arrow */}
+                  <div className="absolute left-[-18px] top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center w-6 h-6 rounded-full bg-white border border-slate-100 shadow-sm text-brand-blue">
+                    <FaArrowLeft size={8} />
+                  </div>
+                  {/* Right pointing arrow */}
+                  <div className="absolute right-[-18px] top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center w-6 h-6 rounded-full bg-white border border-slate-100 shadow-sm text-brand-green">
+                    <FaArrowRight size={8} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Buyers Benefits with Horizontal Icons */}
+              <div className="flex flex-col gap-6 text-center lg:text-left">
+                <div className="flex flex-col items-center lg:items-start gap-1">
+                  <span className="text-[10px] font-black text-brand-green tracking-widest uppercase">
+                    SIMPLIFIED SOURCING
+                  </span>
+                  <h3 className="text-lg font-black text-brand-navy uppercase tracking-wider">
+                    Benefits for Buyers
+                  </h3>
+                  <div className="h-[2px] w-8 bg-brand-green mt-1" />
+                </div>
+
+                {/* Horizontal row of 5 Buyer benefits */}
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                  {[
+                    { text: "Find suppliers faster", icon: <FiSearch size={20} /> },
+                    { text: "AI matching tool", icon: <FiCpu size={20} /> },
+                    { text: "Work with active sellers", icon: <FiUserCheck size={20} /> },
+                    { text: "Direct communications", icon: <FiMessageSquare size={20} /> },
+                    { text: "Trusted transactions", icon: <FiLock size={20} /> },
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex flex-col items-center text-center gap-2.5 p-2 rounded-xl bg-white border border-slate-100 hover:scale-102 transition-transform shadow-[0_1px_4px_rgba(0,0,0,0.01)]">
+                      <div className="w-12 h-12 rounded-full bg-[#f4faf6] border border-brand-green/15 text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
+                        {item.icon}
+                      </div>
+                      <span className="text-[11.5px] font-bold text-slate-500 leading-snug">
+                        {item.text}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
             </div>
+
           </div>
         </section>
 
+        {/* SECTION 5: Navy Pillars band */}
+        <section className="bg-brand-navy text-white py-12 mt-8">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <h4 className="text-base font-black text-brand-green tracking-wide uppercase mb-2">
+                Activity Drives Visibility
+              </h4>
+              <p className="text-xs text-slate-300 font-bold leading-relaxed max-w-[220px] mx-auto">
+                No pay-to-play. The more active and responsive you are, the higher you rank.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-base font-black text-brand-blue tracking-wide uppercase mb-2">
+                AI-Powered Matching
+              </h4>
+              <p className="text-xs text-slate-300 font-bold leading-relaxed max-w-[220px] mx-auto">
+                Smart algorithm maps buyer queries directly to most capable suppliers.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-base font-black text-brand-green tracking-wide uppercase mb-2">
+                Fair & Transparent
+              </h4>
+              <p className="text-xs text-slate-300 font-bold leading-relaxed max-w-[220px] mx-auto">
+                Equal ground for startups and established industrial leaders.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-base font-black text-brand-blue tracking-wide uppercase mb-2">
+                Open for All Businesses
+              </h4>
+              <p className="text-xs text-slate-300 font-bold leading-relaxed max-w-[220px] mx-auto">
+                Building India&apos;s strongest community of genuine manufacturers & buyers.
+              </p>
+            </div>
+          </div>
+        </section>
 
       </main>
     </div>

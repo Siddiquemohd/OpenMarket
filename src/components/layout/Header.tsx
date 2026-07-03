@@ -56,6 +56,7 @@ export function Header() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/our-mission" },
     { label: "How It Works", href: "/why-openmarket" },
+    { label: "Our Story", href: "/evolution" },
     { label: "Founding Members", href: "/founding-members" },
     { label: "Pricing", href: "/pricing" },
     { label: "For Sellers", href: "/for-sellers" },

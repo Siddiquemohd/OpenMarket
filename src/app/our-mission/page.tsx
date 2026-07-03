@@ -10,102 +10,63 @@ import {
   FaCheck,
   FaUsers,
   FaStar,
-  FaBuilding,
   FaHandshake,
+  FaGraduationCap,
+  FaBriefcase,
+  FaWhatsapp,
+  FaYoutube,
+  FaStore,
+  FaShoppingBag,
+  FaBalanceScale,
+  FaLeaf,
 } from "react-icons/fa";
 import {
   FiShield,
   FiTrendingUp,
-  FiAward,
   FiSearch,
   FiActivity,
   FiCheckCircle,
   FiUserCheck,
-  FiMapPin,
-  FiTarget,
-  FiFlag,
   FiSliders,
-  FiUsers
+  FiEye,
+  FiXCircle,
+  FiUploadCloud,
+  FiMessageSquare,
+  FiFileText,
+  FiMousePointer,
 } from "react-icons/fi";
+import { useOtpModal } from "@/providers/OtpModalProvider";
 
-// Floating card helper component
-function FloatingMissionCard({
+// Value item helper component for Section 5 (Our Values)
+function ValueItemCard({
   title,
-  subtitle,
-  dotPosition,
-  className,
+  desc,
+  icon,
+  isGreen,
 }: {
   title: string;
-  subtitle: string;
-  dotPosition: "left" | "right";
-  className: string;
+  desc: string;
+  icon: React.ReactNode;
+  isGreen: boolean;
 }) {
   return (
-    <div className={`absolute bg-white/95 backdrop-blur-sm border border-[#e2eae5]/80 rounded-2xl p-1.5 sm:p-3 md:p-4 flex flex-col justify-center shadow-md z-20 hover:scale-102 hover:shadow-lg transition-all duration-300 ${className}`}>
-      {/* Green Dot indicator */}
+    <div className="bg-white border border-[#e2eae5]/80 rounded-[20px] p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-start gap-4 hover:scale-[1.02] hover:shadow-md transition-all duration-300">
       <div
-        className={`absolute w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#0FA958] border border-white shadow-sm top-1/2 -translate-y-1/2 ${dotPosition === "left"
-          ? "left-0 -translate-x-1/2"
-          : "right-0 translate-x-1/2"
+        className={`w-[52px] h-[52px] rounded-full flex items-center justify-center flex-shrink-0 shadow-sm ${isGreen
+          ? "bg-[#f4faf6] text-brand-green border border-brand-green/20"
+          : "bg-[#f4f8fc] text-brand-blue border border-brand-blue/20"
           }`}
-      />
+      >
+        {icon}
+      </div>
       <div className="flex flex-col text-left">
-        <span className="text-[9px] sm:text-xs md:text-sm font-black text-brand-navy leading-tight mb-0.5">
-          {title}
-        </span>
-        <span className="text-[7px] sm:text-[9.5px] md:text-xs font-bold text-slate-400 tracking-wide leading-none">
-          {subtitle}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-// Value item helper component (Section 3)
-function ValueItem({
-  title,
-  desc,
-  icon,
-}: {
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-}) {
-  return (
-    <div className="flex flex-col items-center text-center p-6 sm:p-8 md:py-12 md:px-6 bg-white transition-all duration-300">
-      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-emerald-50 border border-emerald-100/40 text-brand-green flex items-center justify-center mb-6 shadow-sm">
-        {icon}
-      </div>
-      <h4 className="text-base md:text-lg font-extrabold text-[#0FA958] mb-3 leading-snug">
-        {title}
-      </h4>
-      <p className="text-xs md:text-[13.5px] font-semibold text-slate-400 leading-relaxed max-w-[200px]">
-        {desc}
-      </p>
-    </div>
-  );
-}
-
-// Build item helper component (Section 4 Left)
-function BuildItem({
-  title,
-  desc,
-  icon,
-}: {
-  title: string;
-  desc: string;
-  icon: React.ReactNode;
-}) {
-  return (
-    <div className="flex items-start gap-4 py-6 sm:py-7 first:pt-0 last:pb-0 border-b last:border-b-0 border-slate-100 text-left">
-      <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
-        {icon}
-      </div>
-      <div className="flex flex-col">
-        <h4 className="text-base sm:text-[17px] font-extrabold text-[#0FA958] mb-1.5 leading-snug">
+        <h4
+          className={`text-sm md:text-base font-extrabold mb-1 ${isGreen ? "text-brand-green" : "text-brand-blue"
+            }`}
+        >
           {title}
         </h4>
-        <p className="text-xs sm:text-[13.5px] font-semibold text-slate-500 leading-relaxed max-w-xl">
+        <p className="text-[12.5px] font-semibold text-slate-500 leading-snug">
           {desc}
         </p>
       </div>
@@ -113,132 +74,65 @@ function BuildItem({
   );
 }
 
-import { useOtpModal } from "@/providers/OtpModalProvider";
-
 export default function OurMission() {
   const { openOtpModal } = useOtpModal();
-  const values = [
-    {
-      title: "Integrity",
-      desc: "We believe in honest business and complete transparency.",
-      icon: <FiShield className="w-6 h-6 md:w-8 md:h-8" />
-    },
-    {
-      title: "Fairness",
-      desc: "Equal opportunity for every business to be seen and grow.",
-      icon: <FiSliders className="w-6 h-6 md:w-8 md:h-8" />
-    },
-    {
-      title: "Trust",
-      desc: "We build trust through verification, engagement, and accountability.",
-      icon: <FiUserCheck className="w-6 h-6 md:w-8 md:h-8" />
-    },
-    {
-      title: "Growth",
-      desc: "We empower businesses to grow sustainably together.",
-      icon: <FiTrendingUp className="w-6 h-6 md:w-8 md:h-8" />
-    },
-    {
-      title: "Community",
-      desc: "We are building a strong community of businesses and professionals.",
-      icon: <FiUsers className="w-6 h-6 md:w-8 md:h-8" />
-    }
-  ];
 
-  const buildItems = [
+  const founderCredentials = [
     {
-      title: "A Level Playing Field",
-      desc: "Where visibility is based on activity and engagement, not on advertising budgets.",
-      icon: <FiSliders className="w-6 h-6 sm:w-7 sm:h-7" />
+      text: "Electrical Engineer, VJTI Mumbai (2003)",
+      icon: <FaGraduationCap size={15} />,
     },
     {
-      title: "A Trust-First Marketplace",
-      desc: "Where buyers can confidently connect with verified and responsive suppliers.",
-      icon: <FiShield className="w-6 h-6 sm:w-7 sm:h-7" />
+      text: "Founder & Director, Uneefy Intratech Pvt. Ltd.",
+      icon: <FaBriefcase size={15} />,
     },
     {
-      title: "A Sustainable Ecosystem",
-      desc: "Where businesses grow together by creating value, not by competing unfairly.",
-      icon: <FiActivity className="w-6 h-6 sm:w-7 sm:h-7" />
-    }
-  ];
-
-  const promiseItems = [
-    "We will always put fairness first.",
-    "We will never sell visibility.",
-    "We will keep the platform transparent and accountable.",
-    "We will continuously listen, learn, and improve.",
-    "We will build for the long term, not for shortcuts."
-  ];
-
-  const trustStripBlocks = [
-    {
-      title: "Operated by",
-      highlight: "Uneefy Intratech Pvt. Ltd.",
-      icon: <FaBuilding className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-[#0FA958]" />,
-      iconBorder: "border-[#0FA958]/80",
-      textColorClass: "text-[#0FA958]"
+      text: "20+ Years in Industrial Products, Projects & B2B Business",
+      icon: <FaStar size={15} />,
     },
     {
-      title: "20+ Years of",
-      highlight: "Industrial Experience",
-      icon: <FiAward className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-brand-navy" />,
-      iconBorder: "border-brand-navy/30",
-      textColorClass: "text-brand-navy"
+      text: "Worked with L&T, Bajaj Electricals, Valmont and other industry leaders",
+      icon: <FaUsers size={15} />,
     },
     {
-      title: "Based in",
-      highlight: "Navi Mumbai, Maharashtra",
-      icon: <FiMapPin className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-[#0FA958]" />,
-      iconBorder: "border-[#0FA958]/80",
-      textColorClass: "text-[#0FA958]"
+      text: "Served 300+ Industrial Customers",
+      icon: <FiUserCheck size={15} />,
     },
     {
-      title: "Real Founder.",
-      highlight: "Real Office. Real Support.",
-      icon: <FiShield className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-brand-navy" />,
-      iconBorder: "border-brand-navy/30",
-      textColorClass: "text-brand-navy"
-    }
+      text: "Passionate about building a fair and transparent marketplace for Indian businesses",
+      icon: <FiCheckCircle size={15} />,
+    },
   ];
 
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
-
         {/* SECTION 1: Hero Section */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
             {/* Left Column Content */}
             <div className="lg:col-span-6 flex flex-col gap-6 text-left">
               <div className="flex flex-col gap-3.5">
                 <span className="text-brand-green text-sm font-black tracking-widest uppercase self-start">
-                  OUR MISSION
+                  ABOUT US
                 </span>
                 <h1 className="text-4xl md:text-5xl lg:text-[45px] font-extrabold tracking-tight leading-[1.15] text-brand-navy mt-1">
-                  Building a Fairer, <br />
-                  More Transparent <br />
-                  <span className="text-brand-green block mt-1.5">
-                    B2B Marketplace.
-                  </span>
+                  We&apos;re Building a <br />
+                  <span className="text-brand-green">Fair</span>{" "}
+                  <span className="text-brand-blue">B2B Marketplace</span>
                 </h1>
+                <div className="h-[3px] w-14 bg-brand-green mt-1" />
               </div>
 
-              <p className="text-sm md:text-[14.5px] font-bold text-slate-500 leading-relaxed max-w-lg">
-                We exist to create a trusted B2B ecosystem where visibility is earned through activity, engagement, and authenticity—not bought.{" "}
-                <Link href="/why-openmarket" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                  Read why OpenMarket is different
-                </Link>
-                .
+              <p className="text-base sm:text-lg font-bold text-brand-green italic leading-relaxed max-w-lg">
+                OpenMarket was created with one simple belief: Every business
+                deserves an equal opportunity to grow.
               </p>
 
               <p className="text-sm md:text-[14.5px] font-bold text-slate-500 leading-relaxed max-w-lg">
-                The mission starts with the{" "}
-                <Link href="/founding-members" className="text-brand-green underline decoration-brand-green/40 underline-offset-4 transition-colors hover:text-brand-dark-green focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40">
-                  founding members
-                </Link>{" "}
-                helping shape the platform from day one.
+                We believe there is a better way. OpenMarket is built to reward
+                businesses that are active, responsive, and committed—not simply
+                those who spend the most.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2">
@@ -252,350 +146,480 @@ export default function OurMission() {
               </div>
             </div>
 
-            {/* Right Column Content: Target Graphic & Floating cards with dotted lines */}
+            {/* Right Column Content: Circular Layout Graphic */}
             <div className="lg:col-span-6 flex items-center justify-center py-6 lg:py-0 w-full overflow-visible">
-              <div className="relative w-full max-w-[540px] h-[240px] sm:h-[300px] flex-shrink-0 select-none overflow-visible">
-
-                {/* SVG Dotted Lines Overlay */}
-                <svg viewBox="0 0 540 300" className="absolute inset-0 w-full h-full pointer-events-none z-0">
-                  {/* Outer Concentric Circle (faint guide circle) passing through dots */}
-                  <circle cx="270" cy="150" r="150.3" fill="none" stroke="#e2eae5" strokeWidth="1.5" strokeDasharray="3 3" />
-
-                  {/* Inner Concentric Circle (faint guide circle) */}
-                  <circle cx="270" cy="150" r="115" fill="none" stroke="#e2eae5" strokeWidth="1.5" strokeDasharray="3 3" />
-
-                  {/* Dashed Connecting Lines */}
-                  {/* Top Left Line: from (146, 65) to target (approx 196, 110) */}
-                  <path d="M 146 65 C 186 65, 191 90, 196 110" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-
-                  {/* Bottom Left Line: from (146, 235) to target (approx 196, 190) */}
-                  <path d="M 146 235 C 186 235, 191 210, 196 190" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-
-                  {/* Top Right Line: from (394, 65) to target (approx 344, 110) */}
-                  <path d="M 394 65 C 354 65, 349 90, 344 110" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-
-                  {/* Bottom Right Line: from (394, 235) to target (approx 344, 190) */}
-                  <path d="M 394 235 C 354 235, 349 210, 344 190" fill="none" stroke="#a3d6ba" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
+              <div className="relative w-full max-w-[420px] h-[420px] aspect-square flex-shrink-0 select-none overflow-visible">
+                {/* Dashed Connecting Circle (Behind) */}
+                <svg
+                  viewBox="0 0 400 400"
+                  className="absolute inset-0 w-full h-full pointer-events-none z-0"
+                >
+                  <circle
+                    cx="200"
+                    cy="200"
+                    r="135"
+                    fill="none"
+                    stroke="#e2eae5"
+                    strokeWidth="2.5"
+                    strokeDasharray="6 6"
+                  />
                 </svg>
 
-                {/* Target Image in the Center */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] sm:w-[240px] sm:h-[240px] z-10 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full bg-brand-light-green/90 -z-10 scale-[1.15]" />
-                  <Image
-                    src="/target_hero1.png"
-                    alt="OpenMarket Bullseye Target"
-                    fill
-                    sizes="(max-w-640px) 180px, 240px"
-                    priority
-                    className="object-contain"
-                  />
+                {/* Handshake Central Circle Graphic */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[190px] h-[190px] sm:w-[240px] sm:h-[240px] rounded-full border-[5px] border-brand-navy bg-white shadow-xl overflow-hidden flex items-center justify-center z-10">
+                  <div className="relative w-full h-full">
+                    {/* Checkmark overlay at top center */}
+                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 bg-brand-green text-white p-1 rounded-full shadow-sm z-20 flex items-center justify-center">
+                      <FaCheck size={9} />
+                    </div>
+
+                    <div className="absolute bottom-[-15%] left-[50%] -translate-x-1/2 w-[160%] h-[160%] max-w-none">
+                      <Image
+                        src="/business_handshake_worldmap_round_elements_TRANSPARENT.png"
+                        alt="Handshake illustration representing connections"
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                {/* Floating Cards */}
-                {/* Top Left Card */}
-                <FloatingMissionCard
-                  title="Fair Visibility"
-                  subtitle="Earned, not bought"
-                  dotPosition="right"
-                  className="right-[73%] top-[21.67%] -translate-y-1/2 w-[27%]"
-                />
+                {/* Radially Placed Nodes */}
+                {/* 1. Top Node: Fair Opportunity */}
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
+                  style={{ left: "50%", top: "16.25%" }}
+                >
+                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-md text-brand-green hover:scale-105 transition-transform">
+                    <FaUsers size={24} />
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
+                    Fair Opportunity
+                  </span>
+                </div>
 
-                {/* Bottom Left Card */}
-                <FloatingMissionCard
-                  title="Stronger Businesses"
-                  subtitle="Through opportunities"
-                  dotPosition="right"
-                  className="right-[73%] top-[78.33%] -translate-y-1/2 w-[27%]"
-                />
+                {/* 2. Top Left Node: Active Businesses */}
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
+                  style={{ left: "20.75%", top: "33.125%" }}
+                >
+                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-blue flex items-center justify-center shadow-md text-brand-blue hover:scale-105 transition-transform">
+                    <FiTrendingUp size={24} />
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
+                    Active Businesses
+                  </span>
+                </div>
 
-                {/* Top Right Card */}
-                <FloatingMissionCard
-                  title="Trusted Connections"
-                  subtitle="Built on credibility"
-                  dotPosition="left"
-                  className="left-[73%] top-[21.67%] -translate-y-1/2 w-[27%]"
-                />
+                {/* 3. Top Right Node: Genuine Connections */}
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
+                  style={{ left: "79.25%", top: "33.125%" }}
+                >
+                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-blue flex items-center justify-center shadow-md text-brand-blue hover:scale-105 transition-transform">
+                    <FaHandshake size={24} />
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
+                    Genuine Connections
+                  </span>
+                </div>
 
-                {/* Bottom Right Card */}
-                <FloatingMissionCard
-                  title="Long-Term Impact"
-                  subtitle="For the industry"
-                  dotPosition="left"
-                  className="left-[73%] top-[78.33%] -translate-y-1/2 w-[27%]"
-                />
+                {/* 4. Bottom Left Node: Sustainable Growth */}
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
+                  style={{ left: "26.125%", top: "73.875%" }}
+                >
+                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-md text-brand-green hover:scale-105 transition-transform">
+                    <FaLeaf size={24} />
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
+                    Sustainable Growth
+                  </span>
+                </div>
 
+                {/* 5. Bottom Right Node: Trusted Marketplace */}
+                <div
+                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
+                  style={{ left: "73.875%", top: "73.875%" }}
+                >
+                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-md text-brand-green hover:scale-105 transition-transform">
+                    <FiShield size={24} />
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
+                    Trusted Marketplace
+                  </span>
+                </div>
               </div>
             </div>
-
           </div>
         </section>
 
-        {/* SECTION 2: Mission statement band */}
-        <section className="max-w-7xl mx-auto px-6 py-4">
-          <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-2xl px-6 py-5 sm:px-10 sm:py-7 shadow-[0_1px_3px_rgba(0,0,0,0.02)]">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8">
+        {/* SECTION 2: Mission & Vision Cards */}
+        <section className="max-w-7xl mx-auto px-6 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* OUR MISSION CARD */}
+            <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-6 hover:shadow-md transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#f4faf6] border border-brand-green/20 flex items-center justify-center text-brand-green flex-shrink-0 shadow-sm">
+                <FiSliders size={28} />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-black text-brand-green tracking-widest uppercase mb-1.5 block">
+                  OUR MISSION
+                </span>
+                <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug mb-3">
+                  To create India&apos;s fairest B2B marketplace where every
+                  genuine business has an equal opportunity to be discovered.
+                </h3>
+                <p className="text-[13.5px] font-semibold text-slate-500 leading-relaxed">
+                  We want every manufacturer, trader, distributor, service
+                  provider, and industrial supplier to compete on effort, quality,
+                  and responsiveness—not on marketing budgets.
+                </p>
+              </div>
+            </div>
 
-              {/* Left Icon & Title */}
-              <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#0FA958] flex items-center justify-center text-white flex-shrink-0 shadow-sm">
-                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 sm:w-10 sm:h-10">
-                    <path d="M2 20 L9 11 L16 20" />
-                    <path d="M12 20 L16 15 L20 20" />
-                    <path d="M9 11 V5" />
-                    <path d="M9 5 H14 L12.5 7.5 L14 10 H9" fill="none" />
-                    <path d="M1 20 H23" />
-                  </svg>
-                </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold text-[#0FA958] whitespace-nowrap">
-                  Our Mission
+            {/* OUR VISION CARD */}
+            <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-6 hover:shadow-md transition-shadow">
+              <div className="w-16 h-16 rounded-full bg-[#f4f8fc] border border-brand-blue/20 flex items-center justify-center text-brand-blue flex-shrink-0 shadow-sm">
+                <FiEye size={28} />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-black text-brand-blue tracking-widest uppercase mb-1.5 block">
+                  OUR VISION
+                </span>
+                <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug">
+                  To become the world&apos;s most trusted activity-driven B2B
+                  marketplace, connecting buyers with genuine sellers while
+                  creating sustainable growth opportunities for businesses of every
+                  size.
                 </h3>
               </div>
-
-              {/* Vertical Divider */}
-              <div className="hidden lg:block h-14 w-[1.5px] bg-slate-200/80 flex-shrink-0" />
-
-              {/* Mission Text */}
-              <p className="text-[14px] sm:text-[16px] md:text-[17px] font-bold text-brand-navy/90 leading-relaxed text-left flex-grow max-w-3xl lg:px-6">
-                To build India&apos;s most <span className="font-extrabold text-brand-navy">trusted</span> B2B marketplace that promotes <span className="font-extrabold text-brand-navy">fair trade</span>, rewards <span className="font-extrabold text-brand-navy">genuine</span> businesses, and helps buyers connect with <span className="font-extrabold text-brand-navy">reliable and responsive suppliers</span>.
-              </p>
-
-              {/* Right Mountain climbing illustration */}
-              <div className="hidden sm:block flex-shrink-0">
-                <svg width="190" height="88" viewBox="0 0 150 70" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#0FA958]/80 w-[160px] h-[75px] sm:w-[190px] sm:h-[88px]">
-                  {/* Faint ground line */}
-                  <path d="M 5 65 H 145" stroke="#e2eae5" strokeWidth="1.5" strokeLinecap="round" />
-
-                  {/* Main mountain shape */}
-                  <path d="M 35 65 L 95 20 L 135 65" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
-                  {/* Ridge lines */}
-                  <path d="M 95 20 L 80 40 L 88 55" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M 95 20 L 105 38" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
-
-                  {/* Left smaller mountain */}
-                  <path d="M 15 65 L 50 48 L 75 65" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-
-                  {/* Right smaller mountain */}
-                  <path d="M 100 65 L 122 52 L 140 65" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-
-                  {/* Flag at the peak */}
-                  <path d="M 95 20 V 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <path d="M 95 5 H 108 L 105 8.5 L 108 12 H 95" fill="currentColor" opacity="0.9" />
-
-                  {/* Person 1 (holding flag, helping Person 2) */}
-                  {/* Head */}
-                  <circle cx="91" cy="14" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-                  {/* Torso */}
-                  <path d="M 91 16.5 V 20.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Arm holding flag */}
-                  <path d="M 91 17 H 95" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Reaching hand */}
-                  <path d="M 91 17.5 L 83.5 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Legs */}
-                  <path d="M 91 20.5 L 89 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <path d="M 91 20.5 L 93.5 24.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-
-                  {/* Person 2 (climbing and reaching up) */}
-                  {/* Head */}
-                  <circle cx="75.5" cy="30" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-                  {/* Torso */}
-                  <path d="M 75.5 32.5 L 72.5 37" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Reaching arm */}
-                  <path d="M 75.5 33 L 83 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Back arm */}
-                  <path d="M 75.5 33 L 71.5 34.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Legs */}
-                  <path d="M 72.5 37 L 68 41" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <path d="M 72.5 37 L 76.5 40.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-
-                  {/* Clouds */}
-                  {/* Left Cloud */}
-                  <path d="M 12 32 A 3 3 0 0 1 15 29 A 5 5 0 0 1 23 28 A 3 3 0 0 1 26 31 L 27 32" stroke="#ccd9d0" strokeWidth="1.25" strokeLinecap="round" />
-                  {/* Right Cloud */}
-                  <path d="M 122 41 A 2.5 2.5 0 0 1 124.5 38.5 A 4 4 0 0 1 131 37.5 A 2.5 2.5 0 0 1 133.5 40 L 134 41" stroke="#ccd9d0" strokeWidth="1.25" strokeLinecap="round" />
-                </svg>
-              </div>
-
             </div>
           </div>
         </section>
 
-        {/* SECTION 3: Our Core Values */}
-        <section className="bg-white py-16">
-          <div className="max-w-7xl mx-auto px-6">
+        {/* SECTION 3: The Problem We're Solving */}
+        <section className="max-w-7xl mx-auto px-6 py-12">
+          {/* Section Header */}
+          <div className="flex items-center gap-4 w-full max-w-2xl mx-auto mb-2.5">
+            <div className="flex-grow h-[1.5px] bg-slate-200" />
+            <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+              THE PROBLEM WE&apos;RE SOLVING
+            </h2>
+            <div className="flex-grow h-[1.5px] bg-slate-200" />
+          </div>
+          <p className="text-center text-slate-500 font-bold text-sm md:text-base mb-10">
+            Today&apos;s marketplaces create challenges for both sellers and buyers.
+          </p>
 
-            {/* Centered header with side lines */}
-            <div className="flex flex-col items-center mb-10">
-              <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
-                <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
-                  Our Core Values
-                </h2>
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
+          {/* Main Triple Column Card */}
+          <div className="bg-white border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Sellers Face List */}
+            <div className="lg:col-span-4 flex flex-col gap-6 text-left">
+              <div className="flex items-center gap-4">
+                <div className="w-[60px] h-[60px] rounded-full bg-[#f4faf6] text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm border border-brand-green/10">
+                  <FaStore size={24} />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-black text-brand-green tracking-widest uppercase">
+                    SELLERS FACE
+                  </span>
+                  <div className="h-[2px] w-8 bg-brand-green mt-1" />
+                </div>
               </div>
-            </div>
 
-            {/* Grid with vertical dividers */}
-            <div className="border border-slate-100 rounded-3xl overflow-hidden shadow-sm">
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 divide-y md:divide-y-0 lg:divide-x divide-slate-100">
-                {values.map((v, idx) => (
-                  <ValueItem
-                    key={idx}
-                    title={v.title}
-                    desc={v.desc}
-                    icon={v.icon}
-                  />
+              <div className="flex flex-col gap-4">
+                {[
+                  "Expensive memberships",
+                  "Low visibility without paid plans",
+                  "Poor-quality enquiries",
+                  "Rankings based on advertising spend",
+                  "Limited opportunities for new businesses",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <FiXCircle
+                      className="text-brand-green flex-shrink-0 mt-0.5"
+                      size={18}
+                    />
+                    <span className="text-sm font-bold text-slate-600">
+                      {item}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
 
-          </div>
-        </section>
-
-        {/* SECTION 4: What We’re Building */}
-        <section className="bg-white py-16 md:py-20 border-t border-slate-100">
-          <div className="max-w-7xl mx-auto px-6">
-
-            {/* Centered header with side lines */}
-            <div className="flex flex-col items-center mb-10">
-              <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
-                <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
-                  What We’re Building
-                </h2>
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
+            {/* Middle Column Illustration */}
+            <div className="lg:col-span-4 flex justify-center py-4 lg:py-0">
+              <div className="relative w-full max-w-[280px] aspect-square flex items-center justify-center">
+                <Image
+                  src="/confused_sellers_buyers.png"
+                  alt="Illustration representing problem analysis"
+                  width={240}
+                  height={240}
+                  className="object-contain"
+                  priority
+                />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-
-              {/* Left Column: Stacked build items */}
-              <div className="lg:col-span-7 flex flex-col justify-center">
+            {/* Buyers Face List */}
+            <div className="lg:col-span-4 flex flex-col gap-6 text-left">
+              <div className="flex items-center gap-4">
+                <div className="w-[60px] h-[60px] rounded-full bg-[#f4f8fc] text-brand-blue flex items-center justify-center flex-shrink-0 shadow-sm border border-brand-blue/10">
+                  <FaShoppingBag size={24} />
+                </div>
                 <div className="flex flex-col">
-                  {buildItems.map((item, idx) => (
-                    <BuildItem
-                      key={idx}
-                      title={item.title}
-                      desc={item.desc}
-                      icon={item.icon}
+                  <span className="text-[10px] font-black text-brand-blue tracking-widest uppercase">
+                    BUYERS FACE
+                  </span>
+                  <div className="h-[2px] w-8 bg-brand-blue mt-1" />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                {[
+                  "Inactive suppliers",
+                  "Fake or outdated listings",
+                  "Spam calls",
+                  "Difficulty finding responsive businesses",
+                  "Lack of transparency",
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <FiXCircle
+                      className="text-brand-blue flex-shrink-0 mt-0.5"
+                      size={18}
                     />
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column: Promise Card */}
-              <div className="lg:col-span-5">
-                <div className="bg-[#f8fbf9] border border-[#e2eae5]/60 rounded-3xl p-8 sm:p-10 shadow-sm text-left h-full relative overflow-hidden flex flex-col justify-between min-h-[360px]">
-
-                  {/* Floating handshake icon card */}
-                  <div className="absolute top-6 right-6 w-12 h-12 rounded-2xl bg-white border border-[#e2eae5]/40 shadow-sm flex items-center justify-center text-brand-green">
-                    <FaHandshake className="w-6 h-6" />
+                    <span className="text-sm font-bold text-slate-600">
+                      {item}
+                    </span>
                   </div>
-
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-extrabold text-[#0FA958] mb-6 flex items-center gap-1.5">
-                      <span>Our Promise</span>
-                    </h3>
-
-                    {/* Checklist */}
-                    <div className="flex flex-col gap-5">
-                      {promiseItems.map((tip, idx) => (
-                        <div key={idx} className="flex items-start gap-3.5">
-                          <span className="w-6 h-6 rounded-full bg-white border border-brand-green text-brand-green flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
-                            <FaCheck size={8} />
-                          </span>
-                          <span className="text-xs sm:text-[14px] font-bold text-brand-navy leading-normal">
-                            {tip}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                </div>
+                ))}
               </div>
-
             </div>
-
           </div>
         </section>
 
-        {/* SECTION 5: Founder quote section */}
-        <section className="max-w-7xl mx-auto px-6 py-4">
-          <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.02)] overflow-hidden relative">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:items-stretch">
-
-              {/* Left Founder image with background */}
-              <div className="lg:col-span-3 flex justify-center items-end relative overflow-hidden h-[200px] sm:h-[220px] lg:h-full lg:-mb-10 lg:-ml-10 lg:-mr-0 lg:self-end">
-                {/* Pale green semicircle background */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[120px] w-[240px] sm:h-[130px] sm:w-[260px] rounded-t-full bg-[#d6f0e3]" />
-                <div className="relative z-10 w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] lg:w-[240px] lg:h-[240px] select-none">
-                  <Image
-                    src="/pehlwan.png"
-                    alt="Kiran Pailwan"
-                    fill
-                    sizes="(max-w-768px) 220px, 240px"
-                    priority
-                    className="object-contain object-bottom"
-                  />
-                </div>
-              </div>
-
-              {/* Center Quote block */}
-              <div className="lg:col-span-6 flex flex-col justify-center text-left py-4 lg:py-0 lg:px-4">
-                <span className="text-[44px] font-serif text-[#0FA958] leading-none mb-1 opacity-70">
-                  “
+        {/* SECTION 4: Our Difference (Navy Blue Ribbon) */}
+        <section className="max-w-7xl mx-auto px-6 py-8">
+          <div className="bg-brand-navy rounded-[32px] p-8 md:p-12 text-white shadow-md flex flex-col gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Side */}
+              <div className="lg:col-span-4 text-left flex flex-col gap-3">
+                <span className="text-xs font-black text-brand-green tracking-widest uppercase">
+                  OUR DIFFERENCE
                 </span>
-                <p className="text-base sm:text-lg md:text-[17.5px] font-bold text-brand-navy/90 leading-relaxed pl-1">
-                  OpenMarket is more than a marketplace. It’s a movement towards fair trade, trust, and long-term success for every business.
+                <h3 className="text-2xl md:text-3xl font-extrabold leading-tight text-white">
+                  Visibility is <br />
+                  <span className="text-brand-green">Earned. Not Sold.</span>
+                </h3>
+                <p className="text-xs sm:text-sm font-bold text-slate-300 leading-relaxed max-w-sm">
+                  OpenMarket introduces an Activity-Based Ranking System.
                 </p>
               </div>
 
-              {/* Right Profile details and signature */}
-              <div className="lg:col-span-3 flex flex-col justify-center items-center text-center lg:border-l border-slate-200/80 lg:pl-8 py-2">
-                <div className="flex flex-col items-center">
-                  <span className="text-base sm:text-[17px] font-black text-brand-navy">Kiran Pailwan</span>
-                  <span className="text-xs sm:text-sm font-bold text-slate-400 mt-1">Founder, OpenMarket</span>
-                </div>
-
-                {/* Signature cursive graphic */}
-                <div className="font-serif italic text-2xl sm:text-3xl text-slate-400 mt-3 select-none">
-                  K. Pailwan
+              {/* Right Side 5 Column Check items */}
+              <div className="lg:col-span-8 flex flex-col gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                  {[
+                    {
+                      label: "Staying active",
+                      icon: <FiActivity size={22} />,
+                      isGreen: true,
+                    },
+                    {
+                      label: "Updating products & services",
+                      icon: <FiUploadCloud size={22} />,
+                      isGreen: false,
+                    },
+                    {
+                      label: "Responding quickly",
+                      icon: <FiMessageSquare size={22} />,
+                      isGreen: true,
+                    },
+                    {
+                      label: "Maintaining complete business info",
+                      icon: <FiFileText size={22} />,
+                      isGreen: false,
+                    },
+                    {
+                      label: "Building trust with buyers",
+                      icon: <FiShield size={22} />,
+                      isGreen: true,
+                    },
+                  ].map((act, idx) => (
+                    <div
+                      key={idx}
+                      className="flex flex-col items-center text-center gap-3 p-3 bg-[#082944]/40 border border-blue-900/30 rounded-2xl hover:scale-102 transition-transform"
+                    >
+                      <div
+                        className={`w-[50px] h-[50px] rounded-full flex items-center justify-center flex-shrink-0 shadow-md ${act.isGreen
+                          ? "bg-brand-green text-white border-2 border-brand-green/20"
+                          : "bg-brand-blue text-white border-2 border-brand-blue/20"
+                          }`}
+                      >
+                        {act.icon}
+                      </div>
+                      <span className="text-[10.5px] font-bold text-slate-200 leading-snug">
+                        {act.label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
+            </div>
 
+            {/* Bottom Pill Container */}
+            <div className="bg-[#082944] border border-blue-900/30 rounded-full px-6 py-2.5 text-center text-xs md:text-sm font-bold text-slate-200 self-center max-w-3xl shadow-inner">
+              Not by paying higher subscription fees. Because opportunities should
+              be <span className="text-brand-green">earned—not purchased.</span>
             </div>
           </div>
         </section>
 
-        {/* SECTION 6: Trust strip */}
-        <section className="max-w-7xl mx-auto px-6 py-4">
-          <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_1px_3px_rgba(0,0,0,0.02)] flex flex-col gap-6 sm:gap-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-center py-2">
-              {trustStripBlocks.map((block, idx) => (
-                <div key={idx} className="flex items-center gap-4 text-left">
-                  <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border ${block.iconBorder} flex items-center justify-center shadow-sm flex-shrink-0`}>
-                    {block.icon}
-                  </div>
-                  <div className="flex flex-col leading-tight">
-                    <span className="text-[9.5px] sm:text-[11px] font-black text-slate-400 uppercase tracking-wider">
-                      {block.title}
+        {/* SECTION 5: Our Values */}
+        <section className="max-w-7xl mx-auto px-6 py-12">
+          {/* Section Header */}
+          <div className="flex items-center gap-4 w-full max-w-2xl mx-auto mb-8">
+            <div className="flex-grow h-[1.5px] bg-slate-200" />
+            <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+              OUR VALUES
+            </h2>
+            <div className="flex-grow h-[1.5px] bg-slate-200" />
+          </div>
+
+          {/* Grid Layout of Values */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <ValueItemCard
+              title="Fairness"
+              desc="Every business starts with an equal opportunity."
+              icon={<FaBalanceScale size={22} />}
+              isGreen={true}
+            />
+            <ValueItemCard
+              title="Transparency"
+              desc="No hidden ranking algorithms favoring higher-paying sellers."
+              icon={<FiSearch size={22} />}
+              isGreen={false}
+            />
+            <ValueItemCard
+              title="Trust"
+              desc="Helping buyers connect with genuine and active businesses."
+              icon={<FaHandshake size={22} />}
+              isGreen={true}
+            />
+            <ValueItemCard
+              title="Simplicity"
+              desc="Easy registration, easy product uploads, easy business discovery."
+              icon={<FiMousePointer size={22} />}
+              isGreen={false}
+            />
+            <ValueItemCard
+              title="Growth"
+              desc="Supporting MSMEs and industrial businesses in expanding their reach."
+              icon={<FiTrendingUp size={22} />}
+              isGreen={true}
+            />
+          </div>
+        </section>
+
+        {/* SECTION 6: Meet The Founder */}
+        <section className="max-w-7xl mx-auto px-6 py-12">
+          <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Column Portrait */}
+            <div className="lg:col-span-4 flex justify-center">
+              <div className="relative max-w-[280px] w-full aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-slate-200 bg-white">
+                <Image
+                  src="/founder2.png"
+                  alt="Kiran Pailwan - Founder of OpenMarket"
+                  fill
+                  priority
+                  sizes="(max-w-768px) 100vw, 280px"
+                  className="object-cover hover:scale-103 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
+            {/* Right Column Content */}
+            <div className="lg:col-span-8 flex flex-col gap-6 text-left">
+              <div>
+                <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
+                  MEET THE FOUNDER
+                </span>
+                <h3 className="text-2xl font-black text-brand-navy">
+                  Kiran Pailwan
+                </h3>
+                <span className="text-xs font-bold text-slate-400 mt-1 block">
+                  Founder, OpenMarket
+                </span>
+              </div>
+
+              {/* Credentials Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2 border-t border-slate-200/60">
+                {founderCredentials.map((cred, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="w-[30px] h-[30px] rounded-full bg-brand-blue text-white flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm border border-brand-blue/10">
+                      {cred.icon}
+                    </div>
+                    <span className="text-xs sm:text-[13.5px] font-bold text-brand-navy leading-normal">
+                      {cred.text}
                     </span>
-                    <span className={`text-sm sm:text-base md:text-[16.5px] font-extrabold ${block.textColorClass} mt-1 leading-snug`}>
-                      {block.highlight}
-                    </span>
                   </div>
+                ))}
+              </div>
+
+              {/* Connect Section */}
+              <div className="pt-4 border-t border-slate-200/60 flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-black text-brand-green uppercase tracking-widest whitespace-nowrap">
+                    CONNECT WITH KIRAN
+                  </span>
+                  <div className="flex-grow h-[1px] bg-slate-200/80" />
                 </div>
-              ))}
-            </div>
 
-            {/* Address line below grid */}
-            <div className="border-t border-[#e2eae5]/80 pt-6 flex items-center justify-center gap-2.5 text-center text-slate-500 font-semibold text-xs sm:text-sm md:text-[14.5px]">
-              <FiMapPin className="text-[#0FA958] mt-0.5 flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
-              <span>S-33, 2nd Floor, Fantasia Business Park Premises, Vashi, Navi Mumbai - 400703, Maharashtra, India</span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {/* LinkedIn */}
+                  <a
+                    href="https://www.linkedin.com/in/kiranpailwan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 bg-white border border-[#0077B5] hover:bg-[#0077B5]/5 text-[#0077B5] rounded-xl font-bold text-xs shadow-sm transition-all"
+                  >
+                    <FaLinkedin size={16} />
+                    <span>LinkedIn</span>
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a
+                    href="https://wa.me/918108359977"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 bg-white border border-[#25D366] hover:bg-[#25D366]/5 text-[#25D366] rounded-xl font-bold text-xs shadow-sm transition-all"
+                  >
+                    <FaWhatsapp size={16} />
+                    <span>WhatsApp</span>
+                  </a>
+
+                  {/* YouTube */}
+                  <a
+                    href="https://www.youtube.com/@OpenMarket"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 bg-white border border-[#FF0000] hover:bg-[#FF0000]/5 text-[#FF0000] rounded-xl font-bold text-xs shadow-sm transition-all"
+                  >
+                    <FaYoutube size={16} />
+                    <span>YouTube</span>
+                  </a>
+                </div>
+
+                <p className="text-[11px] font-semibold text-slate-400 italic mt-1 text-center sm:text-left">
+                  I personally read every message from our founding members.
+                </p>
+              </div>
             </div>
           </div>
         </section>
-
       </main>
     </div>
   );
