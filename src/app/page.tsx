@@ -46,7 +46,7 @@ import {
   FiUsers,
   FiBriefcase,
   FiMail,
-  FiFrown
+  FiFrown,
 } from "react-icons/fi";
 
 // Validation schema for the mobile number
@@ -80,7 +80,14 @@ function LogoCheckmark({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <circle cx="12" cy="12" r="9" stroke={circleColor} strokeWidth="2" fill="none" />
+      <circle
+        cx="12"
+        cy="12"
+        r="9"
+        stroke={circleColor}
+        strokeWidth="2"
+        fill="none"
+      />
       <path
         d="M8 12L11 15L16.5 9"
         stroke={checkColor}
@@ -91,7 +98,6 @@ function LogoCheckmark({
     </svg>
   );
 }
-
 
 // Waitlist Form Component used in top and bottom banners
 function WaitlistForm({
@@ -119,10 +125,17 @@ function WaitlistForm({
 
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3 w-full">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-3 w-full"
+      >
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none select-none gap-1.5">
-            <img src="/indian_flag.webp" alt="India Flag" className="w-6 h-4 object-cover rounded-sm" />
+            <img
+              src="/indian_flag.webp"
+              alt="India Flag"
+              className="w-6 h-4 object-cover rounded-sm"
+            />
             <span className="text-brand-navy font-bold text-sm">+91</span>
             <span className="text-slate-300">|</span>
           </div>
@@ -131,12 +144,17 @@ function WaitlistForm({
             placeholder="Enter your mobile number"
             {...register("phone", {
               onChange: (e) => {
-                e.target.value = e.target.value.replace(/[^0-9]/g, "").slice(0, 10);
-              }
+                e.target.value = e.target.value
+                  .replace(/[^0-9]/g, "")
+                  .slice(0, 10);
+              },
             })}
             suppressHydrationWarning
-            className={`w-full py-3.5 pl-[84px] pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border ${errors.phone ? "border-red-500 ring-2 ring-red-200" : "border-slate-200"
-              } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all`}
+            className={`w-full py-3.5 pl-[84px] pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border ${
+              errors.phone
+                ? "border-red-500 ring-2 ring-red-200"
+                : "border-slate-200"
+            } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all`}
           />
         </div>
         {errors.phone && (
@@ -159,7 +177,10 @@ function WaitlistForm({
           JOIN THE WAITLIST
           <FaArrowRight size={14} />
         </motion.button>
-        <LegalConsentNotice tone={theme === "navy" ? "light" : "dark"} className="text-center px-1" />
+        <LegalConsentNotice
+          tone={theme === "navy" ? "light" : "dark"}
+          className="text-center px-1"
+        />
       </form>
     </div>
   );
@@ -170,7 +191,6 @@ export default function Home() {
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       {/* Main Page Layout */}
       <main className="flex-grow">
-
         {/* 2. Hero & Waitlist Box Container */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
           {/* Mobile/Tablet Text Layout */}
@@ -193,14 +213,46 @@ export default function Home() {
           {/* Mobile/Tablet Cards Grid Layout */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:hidden gap-4 md:gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { title: "Machinery & Equipment", image: "/images/machinery_equipment.png", rotate: "-rotate-2" },
-              { title: "Building & Construction", image: "/images/building_construction.png", rotate: "-rotate-1" },
-              { title: "Logistics & Material Handling", image: "/images/logistics_material.png", rotate: "rotate-2" },
-              { title: "Automobile & Auto Components", image: "/images/automobile_components.png", rotate: "-rotate-3" },
-              { title: "Chemicals & Raw Materials", image: "/images/chemicals_raw.png", rotate: "rotate-1" },
-              { title: "IT, Electronics & Automation", image: "/images/it_electronics.png", rotate: "rotate-3" },
-              { title: "Healthcare & Pharma", image: "/images/healthcare_pharma.png", rotate: "-rotate-1" },
-              { title: "Infrastructure & Govt. Projects", image: "/images/infrastructure_projects.png", rotate: "rotate-2" },
+              {
+                title: "Machinery & Equipment",
+                image: "/images/machinery_equipment.png",
+                rotate: "-rotate-2",
+              },
+              {
+                title: "Building & Construction",
+                image: "/images/building_construction.png",
+                rotate: "-rotate-1",
+              },
+              {
+                title: "Logistics & Material Handling",
+                image: "/images/logistics_material.png",
+                rotate: "rotate-2",
+              },
+              {
+                title: "Automobile & Auto Components",
+                image: "/images/automobile_components.png",
+                rotate: "-rotate-3",
+              },
+              {
+                title: "Chemicals & Raw Materials",
+                image: "/images/chemicals_raw.png",
+                rotate: "rotate-1",
+              },
+              {
+                title: "IT, Electronics & Automation",
+                image: "/images/it_electronics.png",
+                rotate: "rotate-3",
+              },
+              {
+                title: "Healthcare & Pharma",
+                image: "/images/healthcare_pharma.png",
+                rotate: "-rotate-1",
+              },
+              {
+                title: "Infrastructure & Govt. Projects",
+                image: "/images/infrastructure_projects.png",
+                rotate: "rotate-2",
+              },
             ].map((card, idx) => (
               <motion.div
                 key={idx}
@@ -226,7 +278,6 @@ export default function Home() {
 
           {/* Desktop Circular Layout (lg and up) */}
           <div className="hidden lg:flex relative w-full max-w-6xl mx-auto h-[740px] items-center justify-center overflow-visible mb-0">
-
             {/* Centered Hero Text */}
             <div className="text-center z-20 max-w-3xl mx-auto pointer-events-auto relative py-6">
               {/* Ambient Glow */}
@@ -239,7 +290,9 @@ export default function Home() {
                 className="text-5xl lg:text-[56px] font-black tracking-tight leading-[1.15]"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-[#0B3C5F] to-[#164D73]">
-                  A marketplace built for<br />genuine businesses.
+                  A marketplace built for
+                  <br />
+                  genuine businesses.
                 </span>
               </motion.h1>
 
@@ -264,7 +317,7 @@ export default function Home() {
                 rotate: -6,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -8
+                floatOffset: -8,
               },
               {
                 title: "Building & Construction",
@@ -273,7 +326,7 @@ export default function Home() {
                 rotate: 4,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -7
+                floatOffset: -7,
               },
               {
                 title: "Logistics & Material Handling",
@@ -282,7 +335,7 @@ export default function Home() {
                 rotate: -8,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -10
+                floatOffset: -10,
               },
               {
                 title: "Automobile & Auto Components",
@@ -291,7 +344,7 @@ export default function Home() {
                 rotate: 6,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -9
+                floatOffset: -9,
               },
               {
                 title: "Chemicals & Raw Materials",
@@ -300,7 +353,7 @@ export default function Home() {
                 rotate: -10,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -11
+                floatOffset: -11,
               },
               {
                 title: "IT, Electronics & Automation",
@@ -309,7 +362,7 @@ export default function Home() {
                 rotate: 3,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -8
+                floatOffset: -8,
               },
               {
                 title: "Healthcare & Pharma",
@@ -318,7 +371,7 @@ export default function Home() {
                 rotate: -8,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -10
+                floatOffset: -10,
               },
               {
                 title: "Infrastructure & Govt. Projects",
@@ -327,7 +380,7 @@ export default function Home() {
                 rotate: -4,
                 widthClass: "w-[150px]",
                 aspectClass: "aspect-[1/1]",
-                floatOffset: -9
+                floatOffset: -9,
               },
             ].map((card, idx) => (
               <motion.div
@@ -340,12 +393,12 @@ export default function Home() {
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  y: [0, card.floatOffset, 0]
+                  y: [0, card.floatOffset, 0],
                 }}
                 whileHover={{
                   scale: 1.08,
                   rotate: 0,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 transition={{
                   opacity: { duration: 0.5, delay: idx * 0.05 },
@@ -354,8 +407,8 @@ export default function Home() {
                     duration: 3.5 + (idx % 3) * 0.5,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: idx * 0.1
-                  }
+                    delay: idx * 0.1,
+                  },
                 }}
               >
                 <div
@@ -380,11 +433,13 @@ export default function Home() {
         <section className="bg-white py-8 md:py-12 border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
-
               {/* Left Column: Heading */}
               <div className="lg:col-span-4 flex flex-col gap-2">
                 <h2 className="text-xl md:text-2xl font-black text-brand-navy leading-[1.2] tracking-tight uppercase">
-                  The B2B<br />Marketplace<br />
+                  The B2B
+                  <br />
+                  Marketplace
+                  <br />
                   <span className="text-brand-blue">is Broken.</span>
                 </h2>
                 <div className="h-[2px] w-10 bg-brand-green rounded-full" />
@@ -400,28 +455,30 @@ export default function Home() {
                     {
                       icon: <FaBullhorn size={18} />,
                       dotColor: "bg-brand-blue",
-                      text: "Businesses spend lakhs on advertising."
+                      text: "Businesses spend lakhs on advertising.",
                     },
                     {
                       icon: <FiMail size={18} />,
                       dotColor: "bg-brand-green",
-                      text: "Over 90% enquiries are irrelevant."
+                      text: "Over 90% enquiries are irrelevant.",
                     },
                     {
                       icon: <FiUsers size={18} />,
                       dotColor: "bg-brand-blue",
-                      text: "The same enquiry reaches multiple sellers."
+                      text: "The same enquiry reaches multiple sellers.",
                     },
                     {
-                      icon: <span className="text-base font-bold font-sans">₹</span>,
+                      icon: (
+                        <span className="text-base font-bold font-sans">₹</span>
+                      ),
                       dotColor: "bg-brand-green",
-                      text: "The lowest price wins."
+                      text: "The lowest price wins.",
                     },
                     {
                       icon: <FiFrown size={18} />,
                       dotColor: "bg-brand-navy",
-                      text: "Everyone loses."
-                    }
+                      text: "Everyone loses.",
+                    },
                   ].map((step, idx) => (
                     <Fragment key={idx}>
                       <div className="flex flex-row md:flex-col items-center md:items-center flex-grow md:flex-1 md:max-w-[120px] gap-3 md:gap-0">
@@ -432,7 +489,9 @@ export default function Home() {
 
                         {/* Connecting Line & Dot Container */}
                         <div className="flex flex-col items-center md:w-full">
-                          <div className={`w-1.5 h-1.5 rounded-full ${step.dotColor} md:mt-2.5 md:mb-2`} />
+                          <div
+                            className={`w-1.5 h-1.5 rounded-full ${step.dotColor} md:mt-2.5 md:mb-2`}
+                          />
                         </div>
 
                         {/* Text */}
@@ -451,17 +510,20 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
         {/* B2B Trade Question Section */}
         <section className="relative overflow-hidden py-16 md:py-20 bg-brand-deep-navy text-white border-t border-brand-navy/20">
-
           {/* Night Sky & Mountain Silhouette SVG Overlay - positioned in top half */}
           <div className="absolute right-0 top-0 w-full md:w-[600px] h-full pointer-events-none select-none opacity-40 md:opacity-90 z-0">
-            <svg viewBox="0 0 600 320" className="w-full h-full object-cover object-right-bottom" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              viewBox="0 0 600 320"
+              className="w-full h-full object-cover object-right-bottom"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               {/* Stars */}
               <circle cx="100" cy="50" r="1" fill="#fff" opacity="0.6" />
               <circle cx="220" cy="90" r="1.5" fill="#fff" opacity="0.8" />
@@ -469,12 +531,28 @@ export default function Home() {
               <circle cx="480" cy="110" r="1.2" fill="#fff" opacity="0.7" />
               <circle cx="550" cy="50" r="1.5" fill="#fff" opacity="0.9" />
               {/* Mountains */}
-              <path d="M 180 320 L 320 200 L 460 320 Z" fill="#0B3C5F" opacity="0.3" />
-              <path d="M 380 320 L 480 150 L 600 260 L 600 320 Z" fill="#081E3B" opacity="0.6" />
-              <path d="M 440 320 L 520 120 L 600 220 L 600 320 Z" fill="#051427" />
+              <path
+                d="M 180 320 L 320 200 L 460 320 Z"
+                fill="#0B3C5F"
+                opacity="0.3"
+              />
+              <path
+                d="M 380 320 L 480 150 L 600 260 L 600 320 Z"
+                fill="#081E3B"
+                opacity="0.6"
+              />
+              <path
+                d="M 440 320 L 520 120 L 600 220 L 600 320 Z"
+                fill="#051427"
+              />
               {/* Person standing on the peak */}
               <circle cx="520" cy="99" r="3.5" fill="#ffffff" />
-              <path d="M 520 102.5 L 520 115 M 516 106 L 524 106 M 518.5 115 L 517 124 M 521.5 115 L 523 124" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+              <path
+                d="M 520 102.5 L 520 115 M 516 106 L 524 106 M 518.5 115 L 517 124 M 521.5 115 L 523 124"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           </div>
 
@@ -482,7 +560,8 @@ export default function Home() {
             {/* Question Banner */}
             <div className="flex flex-col items-start text-left">
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight leading-tight uppercase select-none max-w-xl">
-                Is this really how<br />
+                Is this really how
+                <br />
                 <span className="text-brand-green">B2B trade</span> should work?
               </h3>
             </div>
@@ -491,7 +570,6 @@ export default function Home() {
 
         {/* Beliefs Section */}
         <section className="relative overflow-hidden py-16 md:py-20 bg-brand-navy text-white border-b border-brand-navy/20">
-
           {/* Subtle circular checkmark logo watermark in the background of belief part */}
           <div className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full border-[16px] border-white/5 pointer-events-none flex items-center justify-center select-none translate-x-1/4 translate-y-1/4 z-0">
             <div className="w-[300px] h-[300px] rounded-full border-[8px] border-white/5 flex items-center justify-center">
@@ -502,7 +580,6 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Bottom Half: Belief Section */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-
               {/* Left Column: List of beliefs */}
               <div className="md:col-span-7 flex flex-col">
                 <span className="text-xs md:text-sm text-slate-300 font-semibold tracking-widest uppercase mb-3 block select-none">
@@ -535,23 +612,27 @@ export default function Home() {
                   />
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
-        <section id="sellers" className="bg-white pt-8 pb-10 md:pt-12 md:pb-12 border-y border-slate-100">
+        <section
+          id="sellers"
+          className="bg-white pt-8 pb-10 md:pt-12 md:pb-12 border-y border-slate-100"
+        >
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-
               {/* Left Column: Sellers Card */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                whileHover={{ y: -8, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)",
+                }}
                 className="bg-white border border-slate-200/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
@@ -559,7 +640,9 @@ export default function Home() {
                     <FaStore size={26} />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
-                    WHAT <span className="text-brand-green font-black">SELLERS</span> ARE FACING
+                    WHAT{" "}
+                    <span className="text-brand-green font-black">SELLERS</span>{" "}
+                    ARE FACING
                   </h3>
                 </div>
 
@@ -568,22 +651,42 @@ export default function Home() {
                     {
                       title: "90% of enquiries are useless",
                       desc: "Most enquiries never become business.",
-                      icon: <FiMessageSquare size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiMessageSquare
+                          size={24}
+                          className="text-brand-green flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                     {
                       title: "Same enquiry to multiple sellers",
                       desc: "Leading to price wars instead of genuine opportunities.",
-                      icon: <FiCheckCircle size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiCheckCircle
+                          size={24}
+                          className="text-brand-green flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                     {
                       title: "Membership fees keep increasing",
                       desc: "Pay more every year for little additional value.",
-                      icon: <FiCheckCircle size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiCheckCircle
+                          size={24}
+                          className="text-brand-green flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                     {
                       title: "Basic membership feels worthless",
                       desc: "The best opportunities often go to the highest bidder.",
-                      icon: <FiSliders size={24} className="text-brand-green flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiSliders
+                          size={24}
+                          className="text-brand-green flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-4 group">
@@ -605,7 +708,10 @@ export default function Home() {
                   className="flex items-center gap-2 text-brand-green font-bold hover:text-brand-dark-green transition-colors mt-4 self-start group text-sm"
                 >
                   Explore seller opportunities
-                  <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  <FaArrowRight
+                    size={12}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </Link>
               </motion.div>
 
@@ -616,7 +722,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                whileHover={{ y: -8, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)" }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)",
+                }}
                 className="bg-white border border-slate-200/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300 scroll-mt-24"
               >
                 <div className="flex items-center gap-4">
@@ -624,7 +733,9 @@ export default function Home() {
                     <FaShoppingCart size={26} />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
-                    WHAT <span className="text-brand-navy font-black">BUYERS</span> ARE FACING
+                    WHAT{" "}
+                    <span className="text-brand-navy font-black">BUYERS</span>{" "}
+                    ARE FACING
                   </h3>
                 </div>
 
@@ -633,22 +744,42 @@ export default function Home() {
                     {
                       title: "Fraud sellers damage trust",
                       desc: "A few bad actors make it harder for.",
-                      icon: <FiUserMinus size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiUserMinus
+                          size={24}
+                          className="text-brand-navy flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                     {
                       title: "Difficult to find genuine suppliers",
                       desc: "Trustworthy suppliers are difficult to identify.",
-                      icon: <FiUser size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiUser
+                          size={24}
+                          className="text-brand-navy flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                     {
                       title: "Difficult to find active suppliers",
                       desc: "Many listings are inactive or unresponsive.",
-                      icon: <FiCheckCircle size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiCheckCircle
+                          size={24}
+                          className="text-brand-navy flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                     {
                       title: "Too many choices. Too little clarity.",
                       desc: "Hundreds of suppliers. Very little transparency.",
-                      icon: <FiShield size={24} className="text-brand-navy flex-shrink-0 mt-0.5" />
+                      icon: (
+                        <FiShield
+                          size={24}
+                          className="text-brand-navy flex-shrink-0 mt-0.5"
+                        />
+                      ),
                     },
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-4 group">
@@ -670,26 +801,31 @@ export default function Home() {
                   className="flex items-center gap-2 text-brand-navy font-bold hover:text-slate-700 transition-colors mt-4 self-start group text-sm"
                 >
                   Learn how OpenMarket works for buyers
-                  <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  <FaArrowRight
+                    size={12}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </Link>
               </motion.div>
-
             </div>
           </div>
         </section>
 
         {/* 5. The OpenMarket Difference Grid */}
-        <section id="difference" className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white">
+        <section
+          id="difference"
+          className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white"
+        >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">
-                THE <span className="text-brand-green">OPENMARKET</span> DIFFERENCE
+                THE <span className="text-brand-green">OPENMARKET</span>{" "}
+                DIFFERENCE
               </h2>
               <div className="h-1 w-20 bg-brand-green mx-auto mt-4 rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
               {[
                 {
                   title: "Visibility Cannot Be Bought",
@@ -728,7 +864,8 @@ export default function Home() {
                 >
                   <div className="w-12 h-12 rounded-full bg-brand-light-green flex items-center justify-center mb-5 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
                     {cloneElement(benefit.icon, {
-                      className: "text-brand-green group-hover:text-brand-navy transition-colors duration-300"
+                      className:
+                        "text-brand-green group-hover:text-brand-navy transition-colors duration-300",
                     })}
                   </div>
                   <h4 className="text-base font-extrabold text-brand-navy leading-tight mb-2 min-h-[40px] flex items-center justify-center">
@@ -739,16 +876,17 @@ export default function Home() {
                   </p>
                 </motion.div>
               ))}
-
             </div>
           </div>
         </section>
 
         {/* 6. Why I'm Building OpenMarket (Founder Story Section) */}
-        <section id="why-building" className="py-16 md:py-24 bg-slate-50 border-t border-slate-100">
+        <section
+          id="why-building"
+          className="py-16 md:py-24 bg-slate-50 border-t border-slate-100"
+        >
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-
               {/* Left Column: Founder Photo Card */}
               <div className="lg:col-span-4 flex justify-center">
                 <motion.div
@@ -777,29 +915,40 @@ export default function Home() {
                 className="lg:col-span-8 flex flex-col gap-6"
               >
                 <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
-                  <span className="text-brand-navy">WHY I&apos;M BUILDING </span>
+                  <span className="text-brand-navy">
+                    WHY I&apos;M BUILDING{" "}
+                  </span>
                   <span className="text-brand-green">OPENMARKET</span>
                 </h2>
 
                 <div className="flex flex-col gap-4 text-slate-600 font-semibold text-sm md:text-base leading-relaxed">
                   <p>
-                    For more than two decades, I have worked with manufacturers, contractors, traders and suppliers.
+                    For more than two decades, I have worked with manufacturers,
+                    contractors, traders and suppliers.
                   </p>
                   <p>
-                    I have personally experienced the frustrations of today&apos;s B2B marketplaces.
+                    I have personally experienced the frustrations of
+                    today&apos;s B2B marketplaces.
                   </p>
                   <p>
-                    OpenMarket is my commitment to building a transparent, community-driven marketplace where businesses can connect with confidence and grow fairly.
+                    OpenMarket is my commitment to building a transparent,
+                    community-driven marketplace where businesses can connect
+                    with confidence and grow fairly.
                   </p>
                   <p>
-                    This journey begins with the first 1,000 businesses who believe change is possible.
+                    This journey begins with the first 1,000 businesses who
+                    believe change is possible.
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-4 border-t border-slate-200 mt-2">
                   <div className="flex flex-col">
-                    <span className="text-brand-navy font-black tracking-wide text-base">— KIRAN PAILWAN</span>
-                    <span className="text-brand-green font-black tracking-wider text-xs uppercase mt-0.5">FOUNDER, OPENMARKET</span>
+                    <span className="text-brand-navy font-black tracking-wide text-base">
+                      — KIRAN PAILWAN
+                    </span>
+                    <span className="text-brand-green font-black tracking-wider text-xs uppercase mt-0.5">
+                      FOUNDER, OPENMARKET
+                    </span>
                   </div>
 
                   <a
@@ -810,17 +959,15 @@ export default function Home() {
                   >
                     <FaLinkedin size={18} className="text-[#0077B5]" />
                     <span>Connect on Linkedin</span>
-                    <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    <span className="group-hover:translate-x-1 transition-transform">
+                      &rarr;
+                    </span>
                   </a>
                 </div>
               </motion.div>
-
             </div>
           </div>
         </section>
-
-
-
       </main>
     </div>
   );

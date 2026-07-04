@@ -292,10 +292,10 @@ export default function MarketplaceEvolution() {
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 items-center w-full max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center w-full max-w-7xl mx-auto">
             
             {/* Sellers Pain Points */}
-            <div className="border border-red-100 bg-[#fffbfc] rounded-2xl p-6 shadow-sm text-left">
+            <div className="border border-red-100 bg-[#fffbfc] rounded-2xl p-6 sm:p-8 shadow-sm text-left hover:shadow-md transition-all duration-300">
               <div className="flex items-center gap-3.5 mb-4">
                 <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center flex-shrink-0">
                   <FiUser size={20} />
@@ -323,7 +323,7 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Buyers Pain Points */}
-            <div className="border border-brand-blue/10 bg-[#f7fbfd] rounded-2xl p-6 shadow-sm text-left">
+            <div className="border border-brand-blue/10 bg-[#f7fbfd] rounded-2xl p-6 sm:p-8 shadow-sm text-left hover:shadow-md transition-all duration-300">
               <div className="flex items-center gap-3.5 mb-4">
                 <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-100 text-brand-blue flex items-center justify-center flex-shrink-0">
                   <FiUserCheck size={20} />

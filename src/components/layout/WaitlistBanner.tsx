@@ -55,10 +55,6 @@ export function WaitlistBanner() {
   const pathname = usePathname();
   const { openOtpModal } = useOtpModal();
 
-  if (pathname === "/founding-members") {
-    return null;
-  }
-
   const {
     register,
     handleSubmit,
@@ -67,6 +63,10 @@ export function WaitlistBanner() {
   } = useForm<PhoneFormValues>({
     resolver: zodResolver(phoneSchema),
   });
+
+  if (pathname === "/founding-members") {
+    return null;
+  }
 
   const onSubmit = (data: PhoneFormValues) => {
     openOtpModal(data.phone);

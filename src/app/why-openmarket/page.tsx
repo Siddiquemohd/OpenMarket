@@ -129,54 +129,22 @@ export default function HowItWorks() {
               <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
             </div>
 
-            {/* Step 02: Highlighted Blue Card */}
-            <div className="flex-grow flex-[1.7] flex flex-col border border-brand-blue/15 bg-[#f4f8fc] rounded-[24px] p-6 shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left lg:max-w-[420px] w-full">
-              {/* Center border number circle */}
-              <div className="absolute top-[-12px] left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center shadow-md z-10">
+            {/* Step 02 */}
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+              {/* Number tag */}
+              <div className="w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
                 02
               </div>
-
-              {/* Title & Icon Header */}
-              <div className="flex items-start gap-4 mb-3.5">
-                <div className="w-[60px] h-[60px] rounded-full border border-brand-blue/20 text-brand-blue bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <FaBuilding size={24} />
-                </div>
-                <div className="flex flex-col pt-1">
-                  <h3 className="text-[17px] font-black text-brand-navy leading-tight">
-                    Build Your Profile with AI Tools
-                  </h3>
-                </div>
+              {/* Icon Circle */}
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
+                <FaBuilding size={28} />
               </div>
-
-              {/* Description */}
-              <p className="text-[13px] font-bold text-slate-500 leading-relaxed mb-4">
-                Add your business details, products, services, certifications, images and more.
+              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+                Build Profile with AI
+              </h3>
+              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+                Add your business details, products, and services using our smart AI tools.
               </p>
-
-              {/* Horizontal list of AI tools */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 py-3.5 border-t border-slate-200/50 text-[11px] font-bold text-slate-500">
-                <div className="flex items-center gap-1.5">
-                  <FiSliders className="text-brand-blue flex-shrink-0" size={13} />
-                  <span>AI Profile Assistant</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <FaPen className="text-brand-blue flex-shrink-0" size={11} />
-                  <span>AI Product Writer</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <FiGrid className="text-brand-blue flex-shrink-0" size={13} />
-                  <span>Smart Category Suggestion</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <FiImage className="text-brand-blue flex-shrink-0" size={13} />
-                  <span>Image Enhancer</span>
-                </div>
-              </div>
-
-              {/* Bottom pill list */}
-              <div className="bg-white border border-brand-blue/10 rounded-xl py-2 px-3 text-[11.5px] font-black text-brand-blue text-center shadow-[0_1px_2px_rgba(0,0,0,0.01)] mt-1.5">
-                Products • Services • Certifications • Images • More
-              </div>
             </div>
 
             {/* Connecting Arrow 2 */}
@@ -276,86 +244,86 @@ export default function HowItWorks() {
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full max-w-6xl mx-auto">
             
             {/* Traditional Card (Payment-Driven) */}
-            <div className="border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 flex flex-col justify-between shadow-sm h-full min-h-[190px]">
-              <span className="text-[10px] font-black text-red-500 tracking-widest uppercase text-center block mb-2">
+            <div className="border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full min-h-[160px] sm:min-h-[180px]">
+              <span className="text-xs sm:text-sm font-black text-red-500 tracking-widest uppercase text-center block mb-4">
                 Traditional Marketplaces (Payment-Driven)
               </span>
               
-              <div className="flex items-center justify-center gap-5 py-4">
-                <div className="flex flex-col items-center gap-1">
-                  <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-bold text-sm">
+              <div className="flex items-center justify-center gap-6 py-4">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-extrabold text-sm sm:text-base shadow-sm hover:scale-105 transition-transform">
                     ₹
                   </div>
-                  <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-wider">Pay More</span>
+                  <span className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-wider">Pay More</span>
                 </div>
                 
-                <FaArrowRight size={10} className="text-slate-300" />
+                <FaArrowRight size={14} className="text-slate-300 animate-pulse" />
                 
-                <div className="flex flex-col items-center gap-1">
-                  <div className="w-10 h-10 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
                     <FiEye size={18} />
                   </div>
-                  <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-wider">Higher Visibility</span>
+                  <span className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-wider">Higher Visibility</span>
                 </div>
               </div>
 
-              <div className="bg-red-50/60 border-t border-red-100 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 -mb-6">
+              <div className="bg-red-50/60 border-t border-red-100 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
                 <FiXCircle className="text-red-500" size={16} />
-                <span className="text-[11px] font-black text-red-500 tracking-wide uppercase">
+                <span className="text-[11px] sm:text-[12px] font-black text-red-500 tracking-wide uppercase">
                   Visibility depends on payment
                 </span>
               </div>
             </div>
 
             {/* OpenMarket Card (Activity-Driven) */}
-            <div className="border border-brand-green/20 bg-brand-light-green/30 rounded-[24px] p-6 flex flex-col justify-between shadow-sm h-full min-h-[190px]">
-              <span className="text-[10px] font-black text-brand-green tracking-widest uppercase text-center block mb-2">
+            <div className="border border-brand-green/20 bg-brand-light-green/30 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full min-h-[160px] sm:min-h-[180px]">
+              <span className="text-xs sm:text-sm font-black text-brand-green tracking-widest uppercase text-center block mb-4">
                 OpenMarket (Activity-Driven)
               </span>
               
               {/* Horizontal chain flow wrapper */}
-              <div className="flex flex-wrap items-center justify-center gap-3.5 py-4">
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 sm:gap-2.5 py-4">
                 {[
-                  { label: "Complete Profile", icon: <FiUserCheck size={16} /> },
-                  { label: "Updated Info", icon: <FiFileText size={16} /> },
-                  { label: "Quick Responses", icon: <FiMessageSquare size={16} /> },
-                  { label: "Marketplace Activity", icon: <FiTrendingUp size={16} /> },
-                  { label: "Meaningful Participation", icon: <FaStar size={16} /> },
+                  { label: "Complete Profile", icon: <FiUserCheck size={18} /> },
+                  { label: "Updated Info", icon: <FiFileText size={18} /> },
+                  { label: "Quick Responses", icon: <FiMessageSquare size={18} /> },
+                  { label: "Marketplace Activity", icon: <FiTrendingUp size={18} /> },
+                  { label: "Meaningful Participation", icon: <FaStar size={18} /> },
                 ].map((node, idx, arr) => (
                   <React.Fragment key={idx}>
-                    <div className="flex flex-col items-center gap-1">
-                      <div className="w-[40px] h-[40px] rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm flex-shrink-0">
+                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
+                      <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm flex-shrink-0 hover:scale-105 transition-transform">
                         {node.icon}
                       </div>
-                      <span className="text-[9.5px] sm:text-[10px] font-black text-slate-500 uppercase text-center max-w-[56px] leading-tight mt-0.5">
+                      <span className="text-[9.5px] sm:text-[10.5px] font-black text-slate-500 uppercase text-center max-w-[52px] sm:max-w-[60px] leading-tight">
                         {node.label}
                       </span>
                     </div>
                     {idx < arr.length - 1 && (
-                      <span className="text-slate-400 font-black text-[14px] mt-[-10px]">+</span>
+                      <span className="text-slate-400 font-black text-[14px] sm:text-[16px] self-start mt-[14px] sm:mt-[15px] flex-shrink-0">+</span>
                     )}
                   </React.Fragment>
                 ))}
 
-                <FaArrowRight size={10} className="text-brand-green mt-[-10px]" />
+                <FaArrowRight size={14} className="text-brand-green self-start mt-[14px] sm:mt-[15px] animate-pulse flex-shrink-0" />
 
                 {/* Output Node */}
-                <div className="flex flex-col items-center gap-1">
-                  <div className="w-[40px] h-[40px] rounded-full bg-brand-green text-white flex items-center justify-center shadow-md flex-shrink-0">
-                    <FiAward size={18} />
+                <div className="flex flex-col items-center gap-2 flex-shrink-0">
+                  <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] rounded-full bg-brand-green text-white flex items-center justify-center shadow-md flex-shrink-0 hover:scale-105 transition-transform">
+                    <FiAward size={20} />
                   </div>
-                  <span className="text-[9.5px] font-black text-brand-green uppercase text-center max-w-[56px] leading-tight mt-0.5">
+                  <span className="text-[9.5px] sm:text-[10.5px] font-black text-brand-green uppercase text-center max-w-[52px] sm:max-w-[60px] leading-tight">
                     Higher Visibility
                   </span>
                 </div>
               </div>
 
-              <div className="bg-[#eefcf4] border-t border-brand-green/10 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 -mb-6">
+              <div className="bg-[#eefcf4] border-t border-brand-green/10 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
                 <FiCheckCircle className="text-brand-green" size={16} />
-                <span className="text-[11px] font-black text-brand-green tracking-wide uppercase">
+                <span className="text-[11px] sm:text-[12px] font-black text-brand-green tracking-wide uppercase">
                   Visibility is earned through contribution
                 </span>
               </div>

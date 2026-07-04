@@ -15,12 +15,12 @@ interface DigitProps {
 
 function Digit({ val }: DigitProps) {
   return (
-    <div className="relative w-6 h-8 md:w-7 md:h-10 bg-gradient-to-b from-[#1a2d3e] to-[#0b1724] border border-white/10 rounded-lg flex items-center justify-center shadow-[inset_0_-2px_6px_rgba(0,0,0,0.6),0_2px_4px_rgba(0,0,0,0.4)] overflow-hidden select-none">
+    <div className="relative w-[18px] h-[24px] md:w-[22px] md:h-[30px] bg-gradient-to-b from-[#1a2d3e] to-[#0b1724] border border-white/10 rounded-md flex items-center justify-center shadow-[inset_0_-1px_3px_rgba(0,0,0,0.6),0_1px_2px_rgba(0,0,0,0.4)] overflow-hidden select-none">
       {/* Top half shadow overlay */}
       <div className="absolute top-0 left-0 right-0 h-1/2 bg-white/[0.03] pointer-events-none" />
       {/* Split flap horizontal line */}
       <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-black/50 shadow-[0_1px_0_rgba(255,255,255,0.07)] pointer-events-none" />
-      <span className="font-mono font-black text-white text-base md:text-xl tracking-tighter leading-none">
+      <span className="font-mono font-black text-white text-xs md:text-sm tracking-tighter leading-none">
         {val}
       </span>
     </div>
@@ -61,18 +61,31 @@ export function FloatingPromoBanner() {
   useEffect(() => {
     setIsMounted(true);
 
-    // Support query parameter resetting for easy development/testing
     if (typeof window !== "undefined") {
-      const params = new URLSearchParams(window.location.search);
-      if (params.has("reset") || params.has("reset_banner")) {
-        localStorage.removeItem("openmarket_promo_dismissed");
-        sessionStorage.removeItem("openmarket_promo_dismissed");
+      try {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("reset") || params.has("reset_banner")) {
+          localStorage.removeItem("openmarket_promo_dismissed");
+          sessionStorage.removeItem("openmarket_promo_dismissed");
+        }
+      } catch (err) {
+        console.warn("Storage reset via URL parameters failed:", err);
       }
     }
 
-    const dismissed =
-      localStorage.getItem("openmarket_promo_dismissed") === "true" ||
-      sessionStorage.getItem("openmarket_promo_dismissed") === "true";
+    let dismissed = false;
+    try {
+      // In development mode, we bypass the dismissed state from storage so that
+      // refreshing the page always brings the banner back for easy testing.
+      if (process.env.NODE_ENV !== "development") {
+        dismissed =
+          localStorage.getItem("openmarket_promo_dismissed") === "true" ||
+          sessionStorage.getItem("openmarket_promo_dismissed") === "true";
+      }
+    } catch (err) {
+      console.warn("Storage access is blocked/restricted (e.g. in VS Code webview). Defaulting banner to visible.", err);
+      dismissed = false;
+    }
 
     if (!dismissed) {
       setIsVisible(true);
@@ -93,7 +106,7 @@ export function FloatingPromoBanner() {
       renderExtra: () => {
         const spotsLeft = Math.max(0, 1000 - joinedCount);
         return (
-          <div className="flex flex-col items-center justify-center min-w-[125px] md:border-l md:border-white/10 md:pl-6 select-none">
+          <div className="flex flex-col items-center justify-center min-w-[110px] md:border-l md:border-white/10 md:pl-5 select-none">
             <div className="flex items-center gap-1.5">
               <div className="flex gap-0.5">
                 {String(joinedCount)
@@ -103,13 +116,13 @@ export function FloatingPromoBanner() {
                     <Digit key={index} val={char} />
                   ))}
               </div>
-              <span className="text-white font-extrabold text-sm md:text-base">/ 1000</span>
+              <span className="text-white font-extrabold text-xs md:text-sm">/ 1000</span>
             </div>
-            <div className="text-[9px] text-[#A5C0D6] mt-1 font-bold uppercase tracking-wider">
+            <div className="text-[8px] text-[#A5C0D6] mt-0.5 font-bold uppercase tracking-wider">
               Joined So Far
             </div>
-            <div className="w-full h-px bg-white/10 my-1 md:my-1.5" />
-            <div className="text-[10px] md:text-xs text-[#FF5A5A] font-extrabold tracking-wide animate-pulse">
+            <div className="w-full h-px bg-white/10 my-0.5 md:my-1" />
+            <div className="text-[9px] md:text-[10px] text-[#FF5A5A] font-extrabold tracking-wide animate-pulse">
               {spotsLeft} Spots Left
             </div>
           </div>
@@ -132,8 +145,12 @@ export function FloatingPromoBanner() {
 
   const handleClose = () => {
     // Save in both session and local storage to prevent reappearing
-    sessionStorage.setItem("openmarket_promo_dismissed", "true");
-    localStorage.setItem("openmarket_promo_dismissed", "true");
+    try {
+      sessionStorage.setItem("openmarket_promo_dismissed", "true");
+      localStorage.setItem("openmarket_promo_dismissed", "true");
+    } catch (err) {
+      console.warn("Writing to storage failed in handleClose:", err);
+    }
     setIsVisible(false);
   };
 
@@ -173,15 +190,15 @@ export function FloatingPromoBanner() {
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-full max-w-5xl px-4 md:px-6">
       {/* Outer Banner Wrapper */}
-      <div className="relative bg-gradient-to-r from-[#031427] via-[#041a31] to-[#020f1f] border border-white/10 rounded-[28px] md:rounded-[36px] shadow-[0_20px_50px_rgba(0,0,0,0.7)] p-4 md:py-5 md:px-8 select-none">
+      <div className="relative bg-gradient-to-r from-[#031427] via-[#041a31] to-[#020f1f] border border-white/10 rounded-[20px] md:rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.7)] py-3 px-4 md:py-3.5 md:px-6 select-none">
 
         {/* Inside Rocket Asset */}
-        <div className="absolute left-8 md:left-12 top-1/2 -translate-y-1/2 w-14 h-14 md:w-20 md:h-20 pointer-events-none select-none z-20 animate-[float_4s_ease-in-out_infinite]">
+        <div className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-14 md:h-14 pointer-events-none select-none z-20 animate-[float_4s_ease-in-out_infinite]">
           <img
             src="/rocket.png?v=5"
             alt="Rocket"
-            width={80}
-            height={80}
+            width={56}
+            height={56}
             className="w-full h-full object-contain mix-blend-screen"
           />
         </div>
@@ -219,13 +236,13 @@ export function FloatingPromoBanner() {
         <button
           onClick={handleClose}
           aria-label="Close promotion"
-          className="absolute top-3.5 right-3.5 md:top-4 md:right-5 text-white/40 hover:text-white/80 p-1 md:p-1.5 rounded-full hover:bg-white/5 transition-all duration-200 z-30 cursor-pointer"
+          className="absolute top-1/2 -translate-y-1/2 right-3 md:right-5 text-white/40 hover:text-white/80 p-1 md:p-1.5 rounded-full hover:bg-white/5 transition-all duration-200 z-30 cursor-pointer"
         >
-          <FiX size={16} className="md:size-[18px]" />
+          <FiX size={14} className="md:size-[16px]" />
         </button>
 
         {/* Active Content Container */}
-        <div className="relative overflow-hidden pl-24 pr-5 sm:pl-28 md:pl-36 md:pr-4 min-h-[72px] flex items-center">
+        <div className="relative overflow-hidden pl-14 pr-8 sm:pl-18 md:pl-22 md:pr-10 min-h-[50px] md:min-h-[56px] flex items-center">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={slide.id}
@@ -243,13 +260,13 @@ export function FloatingPromoBanner() {
 
               {/* Left Section: Badge, Title & Description */}
               <div className="flex-1 min-w-0 pr-2">
-                <span className="bg-[#FFC72C] text-[#031427] font-black uppercase text-[8px] md:text-[9px] tracking-wider px-2 py-0.5 rounded-md inline-block mb-1 shadow-sm select-none">
+                <span className="bg-[#FFC72C] text-[#031427] font-black uppercase text-[7px] md:text-[8px] tracking-wider px-1.5 py-0.5 rounded-md inline-block mb-0.5 shadow-sm select-none">
                   {slide.badge}
                 </span>
-                <h3 className="text-white font-black text-xs sm:text-sm md:text-[19px] tracking-tight leading-tight select-none">
+                <h3 className="text-white font-black text-[11px] sm:text-xs md:text-[16px] tracking-tight leading-tight select-none">
                   {slide.title}
                 </h3>
-                <p className="text-[#A5C0D6] font-semibold text-[10px] md:text-[13px] mt-0.5 leading-snug select-none">
+                <p className="text-[#A5C0D6] font-semibold text-[9px] md:text-[11px] mt-0.5 leading-snug select-none">
                   {slide.subtitle}
                 </p>
               </div>
@@ -263,10 +280,10 @@ export function FloatingPromoBanner() {
               <div className="flex-shrink-0 self-stretch md:self-auto flex items-center">
                 <Link
                   href={slide.ctaHref}
-                  className="w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[#FFC72C] hover:bg-[#ebd545] text-black font-extrabold py-2 px-4 md:py-3.5 md:px-6 rounded-xl md:rounded-2xl transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] hover:shadow-[0_0_20px_rgba(255,199,44,0.3)] text-xs md:text-sm shadow-md"
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-1.2 bg-[#FFC72C] hover:bg-[#ebd545] text-black font-extrabold py-1.5 px-3 md:py-2 md:px-4.5 rounded-lg md:rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_15px_rgba(255,199,44,0.3)] text-[10px] md:text-xs shadow-md"
                 >
                   <span>{slide.ctaText}</span>
-                  <FaChevronRight size={10} className="stroke-[2px] mt-0.5" />
+                  <FaChevronRight size={8} className="stroke-[2px] mt-0.5" />
                 </Link>
               </div>
             </motion.div>
