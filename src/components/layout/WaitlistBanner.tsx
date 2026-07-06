@@ -21,33 +21,19 @@ type PhoneFormValues = z.infer<typeof phoneSchema>;
 
 function LogoCheckmark({
   className = "",
-  size = 20,
-  checkColor = "#0B3C5F",
-  circleColor = "#0FA958",
+  size = 32,
 }: {
   className?: string;
   size?: number;
-  checkColor?: string;
-  circleColor?: string;
 }) {
   return (
-    <svg
+    <img
+      src="/logo_mark.png"
+      alt="OpenMarket Logo"
       width={size}
       height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <circle cx="12" cy="12" r="9" stroke={circleColor} strokeWidth="2" fill="none" />
-      <path
-        d="M8 12L11 15L16.5 9"
-        stroke={checkColor}
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      className={`${className} object-contain`}
+    />
   );
 }
 
