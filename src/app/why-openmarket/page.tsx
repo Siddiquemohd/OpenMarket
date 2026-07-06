@@ -80,7 +80,7 @@ export default function HowItWorks() {
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
-        
+
         {/* SECTION 1: Page Header */}
         <section className="max-w-7xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-16 text-center">
           <h1 className="text-hero-title text-brand-navy leading-tight mb-4">
@@ -101,7 +101,7 @@ export default function HowItWorks() {
         {/* SECTION 2: 5-Step Process Map (Mockup Layout) */}
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100 bg-slate-50/50">
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full relative">
-            
+
             {/* Step 01 */}
             <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
               {/* Number tag */}
@@ -226,7 +226,7 @@ export default function HowItWorks() {
             <div className="flex flex-col items-center gap-1.5 bg-[#f4f8fc] border border-brand-blue/15 rounded-2xl px-6 py-3.5 shadow-sm">
               <div className="text-brand-blue flex items-center gap-2">
                 <FaHandshake size={22} className="animate-pulse" />
-                <span className="text-[13px] font-black uppercase tracking-wider">Direct connection, no commission charges</span>
+                <span className="text-[13px] font-black uppercase tracking-wider">Direct Enquiries. No Routing. No Interference.</span>
               </div>
             </div>
           </div>
@@ -245,13 +245,13 @@ export default function HowItWorks() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full max-w-6xl mx-auto">
-            
+
             {/* Traditional Card (Payment-Driven) */}
             <div className="border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full min-h-[160px] sm:min-h-[180px]">
               <span className="text-xs sm:text-sm font-black text-red-500 tracking-widest uppercase text-center block mb-4">
                 Traditional Marketplaces (Payment-Driven)
               </span>
-              
+
               <div className="flex items-center justify-center gap-6 py-4">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-extrabold text-sm sm:text-base shadow-sm hover:scale-105 transition-transform">
@@ -259,9 +259,9 @@ export default function HowItWorks() {
                   </div>
                   <span className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-wider">Pay More</span>
                 </div>
-                
+
                 <FaArrowRight size={14} className="text-slate-300 animate-pulse" />
-                
+
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
                     <FiEye size={18} />
@@ -283,7 +283,7 @@ export default function HowItWorks() {
               <span className="text-xs sm:text-sm font-black text-brand-green tracking-widest uppercase text-center block mb-4">
                 OpenMarket (Activity-Driven)
               </span>
-              
+
               {/* Horizontal chain flow wrapper */}
               <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 sm:gap-2.5 py-4">
                 {[
@@ -335,10 +335,10 @@ export default function HowItWorks() {
         {/* SECTION 4: Benefits for Sellers & Buyers (Horizontal Grid Layout) */}
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="bg-[#f7fbf8]/50 border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 shadow-[0_2px_12px_rgba(0,0,0,0.01)] flex flex-col gap-10 items-stretch">
-            
+
             {/* Upper half: Grid layout for Sellers & Buyers side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center">
-              
+
               {/* Left Column: Sellers Benefits with Horizontal Icons */}
               <div className="flex flex-col gap-6 text-center lg:text-left">
                 <div className="flex flex-col items-center lg:items-start gap-1">

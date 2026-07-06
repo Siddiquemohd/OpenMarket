@@ -150,11 +150,10 @@ function WaitlistForm({
               },
             })}
             suppressHydrationWarning
-            className={`w-full py-3.5 pl-[84px] pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border ${
-              errors.phone
-                ? "border-red-500 ring-2 ring-red-200"
-                : "border-slate-200"
-            } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all`}
+            className={`w-full py-3.5 pl-[84px] pr-4 rounded-xl text-slate-900 placeholder:text-slate-400 bg-white border ${errors.phone
+              ? "border-red-500 ring-2 ring-red-200"
+              : "border-slate-200"
+              } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-base font-medium shadow-sm transition-all`}
           />
         </div>
         {errors.phone && (
@@ -455,29 +454,29 @@ export default function Home() {
                     {
                       icon: <FaBullhorn size={18} />,
                       dotColor: "bg-brand-blue",
-                      text: "Businesses spend lakhs on advertising.",
+                      text: "High investment. Uncertain ROI.",
                     },
                     {
                       icon: <FiMail size={18} />,
                       dotColor: "bg-brand-green",
-                      text: "Over 90% enquiries are irrelevant.",
+                      text: "90% enquiries are irrelevant or already used.",
                     },
                     {
                       icon: <FiUsers size={18} />,
                       dotColor: "bg-brand-blue",
-                      text: "The same enquiry reaches multiple sellers.",
+                      text: "Same enquiry reaches Multiple competing sellers.",
                     },
                     {
                       icon: (
                         <span className="text-base font-bold font-sans">₹</span>
                       ),
                       dotColor: "bg-brand-green",
-                      text: "The lowest price wins.",
+                      text: "Membership fees rise YOY. Returns fall.",
                     },
                     {
                       icon: <FiFrown size={18} />,
                       dotColor: "bg-brand-navy",
-                      text: "Everyone loses.",
+                      text: "Visibility often depends on advertising budgets.",
                     },
                   ].map((step, idx) => (
                     <Fragment key={idx}>

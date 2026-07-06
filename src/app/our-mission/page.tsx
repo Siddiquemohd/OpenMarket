@@ -50,7 +50,7 @@ function ValueItemCard({
   isGreen: boolean;
 }) {
   return (
-    <div className="bg-white border border-[#e2eae5]/80 rounded-[20px] p-5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex items-start gap-4 hover:scale-[1.02] hover:shadow-md transition-all duration-300">
+    <div className="flex items-start gap-4 p-2">
       <div
         className={`w-[52px] h-[52px] rounded-full flex items-center justify-center flex-shrink-0 shadow-sm ${isGreen
           ? "bg-[#f4faf6] text-brand-green border border-brand-green/20"
@@ -471,7 +471,7 @@ export default function OurMission() {
             </div>
 
             {/* Bottom Pill Container */}
-            <div className="bg-[#082944] border border-blue-900/30 rounded-full px-6 py-2.5 text-center text-xs md:text-sm font-bold text-slate-200 self-center max-w-3xl shadow-inner">
+            <div className="bg-[#082944] border border-blue-900/30 rounded-full px-6 py-2.5 text-center text-xs md:text-sm font-bold text-slate-200 self-center max-w-4xl shadow-inner">
               Not by paying higher subscription fees. Because opportunities should
               be <span className="text-brand-green">earned—not purchased.</span>
             </div>
@@ -621,6 +621,6 @@ export default function OurMission() {
           </div>
         </section>
       </main>
-    </div>
+    </div >
   );
 }
