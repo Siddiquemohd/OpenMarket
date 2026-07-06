@@ -80,7 +80,7 @@ export default function PricingPage() {
           
           {/* Left Text */}
           <div className="lg:col-span-8 flex flex-col">
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight select-none">
+            <h1 className="text-hero-title leading-tight select-none">
               <span className="text-[#0B3C5F]">Open</span>
               <span className="text-brand-green">Market</span> Seller Plans
             </h1>
@@ -300,9 +300,9 @@ export default function PricingPage() {
       </section>
 
       {/* Understand Seller Status Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-20">
+      <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
         <div className="bg-white border border-slate-150 rounded-[28px] p-6 md:p-8 shadow-sm">
-          <h2 className="text-2xl font-black text-brand-navy uppercase tracking-tight text-center">
+          <h2 className="text-h2 text-brand-navy uppercase tracking-tight text-center">
             Understand Seller Status
           </h2>
           <div className="h-[2px] w-10 bg-brand-green mt-3.5 mb-8 mx-auto rounded-full" />
@@ -415,10 +415,10 @@ export default function PricingPage() {
       </section>
 
       {/* Status Lifecycle Section (Below Cards) */}
-      <section className="max-w-7xl mx-auto px-6 mt-20">
+      <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
         <div className="bg-white border border-slate-150 rounded-[28px] p-6 md:p-8 shadow-sm flex flex-col justify-between items-center text-center">
           <div className="w-full">
-            <h2 className="text-2xl font-black text-brand-navy uppercase tracking-tight">
+            <h2 className="text-h2 text-brand-navy uppercase tracking-tight">
               Status Lifecycle
             </h2>
             <div className="h-[2px] w-10 bg-brand-green mt-3.5 mb-8 mx-auto rounded-full" />
@@ -538,8 +538,8 @@ export default function PricingPage() {
       </section>
 
       {/* Powerful Tools Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-24">
-        <h2 className="text-3xl font-black text-center text-brand-navy uppercase tracking-tight">
+      <section className="max-w-7xl mx-auto px-6 mt-28 md:mt-36">
+        <h2 className="text-h2 text-center text-brand-navy uppercase tracking-tight">
           Powerful Tools. Better Business.
         </h2>
         <div className="h-[3px] w-12 bg-brand-green mt-3.5 mb-14 mx-auto rounded-full" />
@@ -568,12 +568,12 @@ export default function PricingPage() {
       </section>
 
       {/* Our Promise Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-20">
+      <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
         <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
           {/* Left Text */}
           <div className="md:col-span-7">
-            <h2 className="text-2xl font-black text-brand-navy uppercase tracking-tight">
+            <h2 className="text-h2 text-brand-navy uppercase tracking-tight">
               Our Promise
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mt-3.5 mb-5 rounded-full" />
@@ -586,10 +586,10 @@ export default function PricingPage() {
           {/* Right Tagline */}
           <div className="md:col-span-5 flex justify-center md:justify-end">
             <div className="text-center md:text-right select-none leading-none">
-              <h3 className="text-2xl md:text-3xl font-black tracking-tight text-[#0B3C5F]">
+              <h3 className="text-h3 font-black tracking-tight text-[#0B3C5F]">
                 Be Active.
               </h3>
-              <h3 className="text-2xl md:text-3xl font-black tracking-tight text-brand-green mt-2">
+              <h3 className="text-h3 font-black tracking-tight text-brand-green mt-2">
                 Be Visible.
               </h3>
             </div>

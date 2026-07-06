@@ -198,8 +198,8 @@ export default function Home() {
             {/* Soft Ambient Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-brand-green/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-[#0B3C5F] to-[#164D73]">
+            <h1 className="text-hero-title leading-tight tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-brand-blue to-brand-navy">
                 A marketplace built for genuine businesses.
               </span>
             </h1>
@@ -287,9 +287,9 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-5xl lg:text-[56px] font-black tracking-tight leading-[1.15]"
+                className="text-hero-title leading-[1.15]"
               >
-                <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-[#0B3C5F] to-[#164D73]">
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-brand-navy via-brand-blue to-brand-navy">
                   A marketplace built for
                   <br />
                   genuine businesses.
@@ -430,12 +430,12 @@ export default function Home() {
         </section>
 
         {/* 3. B2B Broken Marketplace Analysis */}
-        <section className="bg-white py-8 md:py-12 border-b border-slate-100">
+        <section className="bg-white py-16 md:py-24 border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
               {/* Left Column: Heading */}
               <div className="lg:col-span-4 flex flex-col gap-2">
-                <h2 className="text-xl md:text-2xl font-black text-brand-navy leading-[1.2] tracking-tight uppercase">
+                <h2 className="text-h2 uppercase text-brand-navy leading-[1.2]">
                   The B2B
                   <br />
                   Marketplace
@@ -559,7 +559,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Question Banner */}
             <div className="flex flex-col items-start text-left">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black tracking-tight leading-tight uppercase select-none max-w-xl">
+              <h3 className="text-h3 uppercase select-none max-w-xl">
                 Is this really how
                 <br />
                 <span className="text-brand-green">B2B trade</span> should work?
@@ -619,7 +619,7 @@ export default function Home() {
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
         <section
           id="sellers"
-          className="bg-white pt-8 pb-10 md:pt-12 md:pb-12 border-y border-slate-100"
+          className="bg-white pt-16 pb-20 md:pt-24 md:pb-24 border-y border-slate-100"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -639,7 +639,7 @@ export default function Home() {
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-green/10 text-brand-green">
                     <FaStore size={26} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
+                  <h3 className="text-h2 text-brand-navy">
                     WHAT{" "}
                     <span className="text-brand-green font-black">SELLERS</span>{" "}
                     ARE FACING
@@ -732,7 +732,7 @@ export default function Home() {
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-navy/10 text-brand-navy">
                     <FaShoppingCart size={26} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-brand-navy">
+                  <h3 className="text-h2 text-brand-navy">
                     WHAT{" "}
                     <span className="text-brand-navy font-black">BUYERS</span>{" "}
                     ARE FACING
@@ -814,11 +814,11 @@ export default function Home() {
         {/* 5. The OpenMarket Difference Grid */}
         <section
           id="difference"
-          className="pt-10 pb-16 md:pt-12 md:pb-24 bg-white"
+          className="pt-16 pb-24 md:pt-24 md:pb-32 bg-white"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight uppercase">
+              <h2 className="text-h2 text-brand-navy uppercase">
                 THE <span className="text-brand-green">OPENMARKET</span>{" "}
                 DIFFERENCE
               </h2>
@@ -914,7 +914,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="lg:col-span-8 flex flex-col gap-6"
               >
-                <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                <h2 className="text-h2">
                   <span className="text-brand-navy">
                     WHY I&apos;M BUILDING{" "}
                   </span>

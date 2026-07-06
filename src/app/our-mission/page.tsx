@@ -108,7 +108,7 @@ export default function OurMission() {
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
         {/* SECTION 1: Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16">
+        <section className="max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column Content */}
             <div className="lg:col-span-6 flex flex-col gap-6 text-left">
@@ -116,7 +116,7 @@ export default function OurMission() {
                 <span className="text-brand-green text-sm font-black tracking-widest uppercase self-start">
                   ABOUT US
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-[45px] font-extrabold tracking-tight leading-[1.15] text-brand-navy mt-1">
+                <h1 className="text-hero-title text-brand-navy mt-1">
                   We&apos;re Building a <br />
                   <span className="text-brand-green">Fair</span>{" "}
                   <span className="text-brand-blue">B2B Marketplace</span>
@@ -300,14 +300,14 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 3: The Problem We're Solving */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           {/* Section Header */}
           <div className="flex items-center gap-4 w-full max-w-2xl mx-auto mb-2.5">
-            <div className="flex-grow h-[1.5px] bg-slate-200" />
-            <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+            <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
+            <h2 className="text-h2 text-brand-navy tracking-tight text-center uppercase px-2 max-w-full">
               THE PROBLEM WE&apos;RE SOLVING
             </h2>
-            <div className="flex-grow h-[1.5px] bg-slate-200" />
+            <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
           </div>
           <p className="text-center text-slate-500 font-bold text-sm md:text-base mb-10">
             Today&apos;s marketplaces create challenges for both sellers and buyers.
@@ -402,7 +402,7 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 4: Our Difference (Navy Blue Ribbon) */}
-        <section className="max-w-7xl mx-auto px-6 py-8">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           <div className="bg-brand-navy rounded-[32px] p-8 md:p-12 text-white shadow-md flex flex-col gap-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Side */}
@@ -410,7 +410,7 @@ export default function OurMission() {
                 <span className="text-xs font-black text-brand-green tracking-widest uppercase">
                   OUR DIFFERENCE
                 </span>
-                <h3 className="text-2xl md:text-3xl font-extrabold leading-tight text-white">
+                <h3 className="text-h2 leading-tight text-white">
                   Visibility is <br />
                   <span className="text-brand-green">Earned. Not Sold.</span>
                 </h3>
@@ -479,14 +479,14 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 5: Our Values */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           {/* Section Header */}
           <div className="flex items-center gap-4 w-full max-w-2xl mx-auto mb-8">
-            <div className="flex-grow h-[1.5px] bg-slate-200" />
-            <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+            <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
+            <h2 className="text-h2 text-brand-navy tracking-tight text-center uppercase px-2 max-w-full">
               OUR VALUES
             </h2>
-            <div className="flex-grow h-[1.5px] bg-slate-200" />
+            <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
           </div>
 
           {/* Grid Layout of Values */}
@@ -525,7 +525,7 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 6: Meet The Founder */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column Portrait */}
             <div className="lg:col-span-4 flex justify-center">
@@ -547,7 +547,7 @@ export default function OurMission() {
                 <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
                   MEET THE FOUNDER
                 </span>
-                <h3 className="text-2xl font-black text-brand-navy">
+                <h3 className="text-h3 text-brand-navy">
                   Kiran Pailwan
                 </h3>
                 <span className="text-xs font-bold text-slate-400 mt-1 block">

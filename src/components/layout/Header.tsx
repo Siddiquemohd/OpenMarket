@@ -52,6 +52,24 @@ export function Header() {
     };
   }, [pathname]);
 
+  const desktopLinks = [
+    { label: "Home", href: "/" },
+    {
+      label: "About Us",
+      dropdown: [
+        { label: "Our Mission", href: "/our-mission" },
+        { label: "Our Story", href: "/evolution" },
+        { label: "Founding Members", href: "/founding-members" },
+      ],
+    },
+    { label: "How It Works", href: "/why-openmarket" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "For Sellers", href: "/for-sellers" },
+    { label: "For Buyers", href: "/for-buyers" },
+    { label: "All Categories", href: "/category" },
+    { label: "Contact Us", href: "/contact-us" },
+  ];
+
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/our-mission" },
@@ -61,8 +79,8 @@ export function Header() {
     { label: "Pricing", href: "/pricing" },
     { label: "For Sellers", href: "/for-sellers" },
     { label: "For Buyers", href: "/for-buyers" },
-    { label: "Contact Us", href: "/contact-us" },
     { label: "All Categories", href: "/category" },
+    { label: "Contact Us", href: "/contact-us" },
   ];
 
   const isActive = (link: { label: string; href: string }) => {
@@ -114,26 +132,76 @@ export function Header() {
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 font-semibold text-sm">
-          {navLinks.map((link, idx) => (
-            <Link
-              key={idx}
-              href={link.href}
-              aria-current={isActive(link) ? "page" : undefined}
-              className={`transition-colors duration-200 py-1 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${isActive(link)
-                ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
-                : "text-brand-navy hover:text-brand-green"
+        <nav className="hidden lg:flex items-center gap-2 xl:gap-4 font-semibold text-[13px] xl:text-sm">
+          {desktopLinks.map((link, idx) => {
+            if (link.dropdown) {
+              const isDropdownActive = link.dropdown.some((sub) => pathname === sub.href);
+              return (
+                <div key={idx} className="relative group py-1">
+                  <button
+                    className={`flex items-center gap-1 transition-colors duration-200 focus:outline-none cursor-pointer whitespace-nowrap ${
+                      isDropdownActive ? "text-brand-green font-bold" : "text-brand-navy hover:text-brand-green"
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    <span className="text-[9px] translate-y-[1px] group-hover:rotate-180 transition-transform duration-200">▼</span>
+                  </button>
+                  <div className="absolute left-0 mt-2 w-48 bg-white border border-slate-100/80 rounded-xl shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-2">
+                    {link.dropdown.map((sub, sIdx) => {
+                      const isSubActive = pathname === sub.href;
+                      return (
+                        <Link
+                          key={sIdx}
+                          href={sub.href}
+                          className={`block px-4 py-2 text-xs font-semibold transition-colors ${
+                            isSubActive ? "text-brand-green bg-slate-50/50" : "text-brand-navy hover:bg-slate-50 hover:text-brand-green"
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={idx}
+                href={link.href}
+                aria-current={isActive(link) ? "page" : undefined}
+                className={`transition-colors duration-200 py-1 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${
+                  isActive(link)
+                    ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
+                    : "text-brand-navy hover:text-brand-green"
                 }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="relative">
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <div className="relative pl-1">
             <button
               onClick={() => openOtpModal()}
-              className="flex items-center gap-2 px-5 py-2.5 bg-[#097B3E] hover:bg-[#075F30] text-white rounded-full transition-colors text-sm font-bold shadow-sm cursor-pointer focus:outline-none whitespace-nowrap"
+              className="flex items-center gap-1.5 px-3.5 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white rounded-full transition-colors text-xs xl:text-sm font-bold shadow-sm cursor-pointer focus:outline-none whitespace-nowrap xl:px-5"
             >
-              <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" y1="8" x2="19" y2="14"></line><line x1="22" y1="11" x2="16" y2="11"></line></svg>
+              <svg
+                stroke="currentColor"
+                fill="none"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                height="15"
+                width="15"
+                className="hidden xl:block"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <line x1="19" y1="8" x2="19" y2="14"></line>
+                <line x1="22" y1="11" x2="16" y2="11"></line>
+              </svg>
               <span>Join Waitlist</span>
             </button>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PhoneIcon } from "@/components/shared/PhoneIcon";
-import { FaLinkedin, FaWhatsapp, FaChevronRight, FaEnvelope, FaFacebookF } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp, FaChevronRight, FaEnvelope, FaFacebookF, FaYoutube } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 
 /**
@@ -145,6 +145,19 @@ export function Footer() {
                     className="text-[#25D366] hover:scale-110 transition-transform flex items-center justify-center"
                   >
                     <FaWhatsapp />
+                  </a>
+
+                  {/* Vertical separator */}
+                  <span className="text-slate-300 text-sm">|</span>
+
+                  <a
+                    href="https://www.youtube.com/@OpenMarketInd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect on YouTube"
+                    className="text-[#FF0000] hover:scale-110 transition-transform flex items-center justify-center"
+                  >
+                    <FaYoutube />
                   </a>
                 </div>
               </div>

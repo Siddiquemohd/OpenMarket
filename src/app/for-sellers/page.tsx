@@ -219,7 +219,7 @@ export default function ForSellers() {
                 <span className="text-brand-green text-sm font-black tracking-widest uppercase self-start">
                   FOR SELLERS
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-[44px] font-extrabold tracking-tight leading-[1.15] text-brand-navy mt-1">
+                <h1 className="text-hero-title text-brand-navy mt-1">
                   Grow Your Business <br />
                   Without Paying <br />
                   <span className="text-brand-green block mt-1">For Visibility.</span>
@@ -350,17 +350,17 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 3: Problems sellers face */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Header with Divider Lines */}
             <div className="flex flex-col items-center mb-10">
               <div className="flex items-center gap-4 w-full max-w-3xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
-                <h2 className="text-xl md:text-2xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
+                <h2 className="text-h2 text-brand-navy tracking-tight text-center uppercase px-2 max-w-full">
                   The Real Problems Sellers Face On Other Marketplaces
                 </h2>
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
               </div>
             </div>
 
@@ -380,7 +380,7 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 4: OpenMarket value section */}
-        <section className="bg-white pt-10 pb-8 border-t border-b border-slate-100">
+        <section className="bg-white py-16 md:py-24 border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Two Column Layout: Left (Heading + 5 Cards), Right (Checklist Panel) */}
@@ -391,7 +391,7 @@ export default function ForSellers() {
 
                 {/* Header Content */}
                 <div className="mb-2">
-                  <h2 className="text-center text-xl md:text-2xl font-black text-brand-navy tracking-tight mb-1">
+                  <h2 className="text-center text-h2 text-brand-navy tracking-tight mb-1">
                     On OpenMarket, Visibility is Earned - Not Bought
                   </h2>
                   <p className="text-center text-xs md:text-sm font-semibold text-slate-500 max-w-xl leading-relaxed mx-auto mb-6">
@@ -460,17 +460,17 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 5: How it works */}
-        <section id="how-it-works" className="bg-white py-16 scroll-mt-24">
+        <section id="how-it-works" className="bg-white py-16 md:py-24 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Header with Divider Lines */}
             <div className="flex flex-col items-center mb-14">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
-                <h2 className="text-xl md:text-2xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
+                <h2 className="text-h2 text-brand-navy tracking-tight text-center uppercase px-2 max-w-full">
                   How It Works For Sellers
                 </h2>
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
               </div>
             </div>
 
@@ -498,13 +498,13 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 6: Professional profile / contact info */}
-        <section className="max-w-7xl mx-auto px-6 py-8">
+        <section className="max-w-7xl mx-auto px-6 py-12 md:py-16">
           <div className="rounded-2xl bg-[#f8fbf9] border border-[#e2eae5]/60 px-8 py-7 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#e2eae5] items-stretch">
 
               {/* Left Column: Bullets */}
               <div className="lg:col-span-5 pb-6 lg:pb-0 lg:pr-8 flex flex-col text-left">
-                <h3 className="text-[17px] md:text-[19px] font-extrabold text-brand-green tracking-tight mb-4">
+                <h3 className="text-h3 text-brand-green tracking-tight mb-4">
                   Built By An Industrial Professional
                 </h3>
 
@@ -567,7 +567,7 @@ export default function ForSellers() {
               </div>
 
               {/* Right Column: Office info */}
-              <div className="lg:col-span-4 pt-6 lg:pt-0 lg:pl-8 flex flex-col text-left gap-3">
+              <div className="lg:col-span-4 pt-6 lg:pt-0 lg:pl-8 flex flex-col text-left gap-3 mt-8">
                 <div className="flex items-start gap-2.5">
                   <FiMapPin className="text-brand-green mt-0.5 flex-shrink-0" size={17} />
                   <div className="flex flex-col leading-snug">

@@ -302,17 +302,17 @@ export default function FoundingMembersPage() {
 
   return (
     <main className="flex-grow bg-white text-brand-navy">
-      <section className="mx-auto max-w-7xl px-6 pt-10 md:pt-14">
+      <section className="mx-auto max-w-7xl px-6 pt-16 pb-12 md:pt-24 md:pb-16">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-start gap-5">
             <span className="text-sm font-black uppercase tracking-wide text-brand-green">
               Founding Members
             </span>
-            <h1 className="max-w-xl text-4xl font-black leading-tight tracking-tight md:text-5xl lg:text-[54px]">
+            <h1 className="max-w-xl text-hero-title leading-tight">
               Become One of the First{" "}
               <span className="text-brand-green">1,000</span> Businesses
             </h1>
-            <h2 className="max-w-lg text-xl font-black leading-snug md:text-2xl">
+            <h2 className="max-w-lg text-hero-subtitle text-slate-700">
               Help Build India&apos;s Most Trusted B2B Marketplace
             </h2>
             <p className="max-w-lg text-lg font-semibold leading-relaxed text-brand-navy/90">
@@ -360,10 +360,10 @@ export default function FoundingMembersPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="mt-9 mb-5 flex items-center justify-center gap-7">
           <div className="h-px w-20 bg-brand-green/50" />
-          <h2 className="text-center text-[26px] font-black leading-none text-brand-navy">
+          <h2 className="text-h2 text-brand-navy">
             Founding Members Journey
           </h2>
           <div className="h-px w-20 bg-brand-green/50" />
@@ -405,9 +405,9 @@ export default function FoundingMembersPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-6 pb-8 lg:grid-cols-3">
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-6 pb-16 md:pb-24 lg:grid-cols-3">
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 className="text-xl font-black text-brand-navy">Founding Member Benefits</h3>
+          <h3 className="text-h3 text-brand-navy">Founding Member Benefits</h3>
           <h4 className="mt-5 text-sm font-black text-brand-green">Today</h4>
           <ul className="mt-2 space-y-2">
             {todayBenefits.map((benefit) => (
@@ -429,7 +429,7 @@ export default function FoundingMembersPage() {
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-          <h3 className="text-xl font-black text-brand-navy">Founding Members Goal</h3>
+          <h3 className="text-h3 text-brand-navy">Founding Members Goal</h3>
           <div className="mx-auto mt-8 flex h-28 w-28 items-center justify-center rounded-full bg-brand-green text-5xl text-white">
             <FaUsers />
           </div>
@@ -445,7 +445,7 @@ export default function FoundingMembersPage() {
         </div>
 
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 className="text-xl font-black text-brand-navy">Get Started Today</h3>
+          <h3 className="text-h3 text-brand-navy">Get Started Today</h3>
           <div className="mt-4 divide-y divide-dashed divide-slate-200">
             {gettingStarted.map((item) => (
               <div key={item.title} className="flex items-center gap-5 py-5">

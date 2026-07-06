@@ -86,9 +86,9 @@ export default function MarketplaceEvolution() {
       <main className="flex-grow">
         
         {/* SECTION 1: Page Header & Buyer-Seller Connection Visual */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-8">
+        <section className="max-w-7xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-16">
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-5xl font-black text-brand-navy leading-tight mb-4">
+            <h1 className="text-hero-title text-brand-navy leading-tight mb-4">
               How B2B Marketplaces{" "}
               <span className="relative inline-block">
                 Evolved
@@ -281,12 +281,12 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 3: The Challenge */}
-        <section className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-100">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               PAIN POINTS
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-brand-navy">
+            <h2 className="text-h2 text-brand-navy">
               The Challenge
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
@@ -349,9 +349,9 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 4: We Asked Different Questions */}
-        <section className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-100 bg-slate-50/30">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100 bg-slate-50/30">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-black text-brand-navy">
+            <h2 className="text-h2 text-brand-navy">
               We Asked Different Questions
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
@@ -419,12 +419,12 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 5: The OpenMarket Model */}
-        <section className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-100">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               THE NEXT GENERATION
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-brand-navy">
+            <h2 className="text-h2 text-brand-navy">
               The OpenMarket Model
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
@@ -500,12 +500,12 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 7: Everyone Wins */}
-        <section className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-100 mt-6 bg-slate-50/50">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100 mt-6 bg-slate-50/50">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               MUTUAL VALUE
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-brand-navy">
+            <h2 className="text-h2 text-brand-navy">
               Everyone Wins
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
@@ -589,12 +589,12 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 8: The Difference */}
-        <section className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-100">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               COMPARISON
             </span>
-            <h2 className="text-2xl md:text-3xl font-black text-brand-navy">
+            <h2 className="text-h2 text-brand-navy">
               The Difference
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />

@@ -105,7 +105,7 @@ export default function ContactUs() {
               {/* Left Column: Heading, description and inline icons */}
               <div className="lg:col-span-6 flex flex-col justify-between py-4 gap-8">
                 <div className="flex flex-col gap-6">
-                  <h1 className="text-4xl md:text-5xl lg:text-[56px] font-extrabold tracking-tight leading-[1.1] text-brand-navy">
+                  <h1 className="text-hero-title leading-[1.1] text-brand-navy">
                     Let’s Connect <br />
                     <span className="text-brand-green">In Person!</span>
                   </h1>
@@ -174,7 +174,7 @@ export default function ContactUs() {
 
               {/* Heading */}
               <div className="flex flex-col self-start mb-8">
-                <h2 className="text-2xl md:text-3xl font-extrabold text-brand-green tracking-tight">
+                <h2 className="text-h2 text-brand-green tracking-tight">
                   Our Office Location
                 </h2>
                 <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
@@ -270,7 +270,7 @@ export default function ContactUs() {
             <div className="lg:col-span-5 bg-white border border-slate-200/60 rounded-[32px] p-8 md:p-10 shadow-lg flex flex-col justify-between">
               <div className="flex flex-col gap-3 mb-6">
                 <div className="flex flex-col self-start">
-                  <h2 className="text-2xl md:text-3xl font-extrabold text-brand-green tracking-tight">
+                  <h2 className="text-h2 text-brand-green tracking-tight">
                     Connect With Us
                   </h2>
                   <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
@@ -347,7 +347,7 @@ export default function ContactUs() {
               <div>
                 <div className="flex flex-col gap-3 mb-8">
                   <div className="flex flex-col self-start">
-                    <h3 className="text-2xl font-black text-brand-green">
+                    <h3 className="text-h3 text-brand-green">
                       Send Us a Message
                     </h3>
                     <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
@@ -543,7 +543,7 @@ export default function ContactUs() {
               <div className="flex flex-col justify-between p-8 md:p-10 bg-white border border-slate-200/60 rounded-[32px] shadow-sm">
                 <div className="flex flex-col gap-5">
                   <div className="flex flex-col self-start">
-                    <h3 className="text-2xl font-black text-brand-green tracking-tight">
+                    <h3 className="text-h3 text-brand-green tracking-tight">
                       We'd Love to Meet You!
                     </h3>
                     <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />

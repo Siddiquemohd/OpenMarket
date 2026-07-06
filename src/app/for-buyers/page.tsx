@@ -354,7 +354,7 @@ export default function ForBuyers() {
                 <span className="text-brand-green text-sm font-black tracking-widest uppercase self-start">
                   FOR BUYERS
                 </span>
-                <h1 className="text-4xl md:text-5xl lg:text-[45px] font-extrabold tracking-tight leading-[1.15] text-brand-navy mt-1">
+                <h1 className="text-hero-title text-brand-navy mt-1">
                   Find Genuine Suppliers Faster. <br />
                   <span className="text-brand-green block mt-1.5">
                     Not More Suppliers. <br />
@@ -432,17 +432,17 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 2: The Problems Buyers Face Today */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Centered header with side lines */}
             <div className="flex flex-col items-center mb-12">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
-                <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
+                <h2 className="text-h2 text-brand-navy tracking-tight text-center uppercase px-2 max-w-full">
                   The Problems Buyers Face Today
                 </h2>
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
               </div>
             </div>
 
@@ -462,17 +462,17 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 3: How OpenMarket Solves This */}
-        <section id="how-it-works" className="bg-white py-16 border-t border-slate-100">
+        <section id="how-it-works" className="bg-white py-16 md:py-24 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Centered header with side lines */}
             <div className="flex flex-col items-center mb-12">
               <div className="flex items-center gap-4 w-full max-w-2xl mb-4">
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
-                <h2 className="text-lg md:text-xl font-extrabold text-brand-navy tracking-tight text-center uppercase whitespace-nowrap px-2">
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
+                <h2 className="text-h2 text-brand-navy tracking-tight text-center uppercase px-2 max-w-full">
                   How OpenMarket Solves This
                 </h2>
-                <div className="flex-grow h-[1.5px] bg-slate-200" />
+                <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
               </div>
             </div>
 
@@ -492,11 +492,11 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 4: Why Buyers Will Love OpenMarket */}
-        <section className="bg-slate-50/50 py-16 border-t border-b border-slate-100">
+        <section className="bg-slate-50/50 py-16 md:py-24 border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
 
             <div className="text-center mb-12">
-              <h2 className="text-2xl font-black text-brand-navy tracking-tight">
+              <h2 className="text-h2 text-brand-navy tracking-tight">
                 Why Buyers Will Love OpenMarket
               </h2>
             </div>
@@ -517,13 +517,13 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 5: What Makes OpenMarket Different? */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
           <div className="rounded-3xl bg-[#f8fbf9] border border-[#e2eae5]/60 p-8 md:p-10 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
               {/* Left Part */}
               <div className="lg:col-span-5 flex flex-col text-left">
-                <h3 className="text-xl md:text-2xl font-extrabold text-brand-navy tracking-tight mb-1">
+                <h3 className="text-h3 text-brand-navy tracking-tight mb-1">
                   What Makes OpenMarket Different?
                 </h3>
                 <span className="text-lg font-black text-brand-green mt-1">
