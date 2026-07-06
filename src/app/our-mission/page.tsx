@@ -603,7 +603,7 @@ export default function OurMission() {
 
                   {/* YouTube */}
                   <a
-                    href="https://www.youtube.com/@OpenMarket"
+                    href="https://www.youtube.com/@OpenMarketInd"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 py-3 bg-white border border-[#FF0000] hover:bg-[#FF0000]/5 text-[#FF0000] rounded-xl font-bold text-xs shadow-sm transition-all"
