@@ -84,9 +84,9 @@ export default function MarketplaceEvolution() {
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
-        
+
         {/* SECTION 1: Page Header & Buyer-Seller Connection Visual */}
-        <section className="max-w-7xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-16">
+        <section className="max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-14 md:pb-10">
           <div className="text-center mb-12">
             <h1 className="text-hero-title text-brand-navy leading-tight mb-4">
               How B2B Marketplaces{" "}
@@ -105,10 +105,10 @@ export default function MarketplaceEvolution() {
 
           {/* Buyer-Seller Connection Graphic */}
           <div className="max-w-xl mx-auto py-6 relative flex flex-col items-center">
-            
+
             {/* Horizontal Connection Row */}
             <div className="flex items-center justify-between w-full relative z-10 px-4">
-              
+
               {/* Buyer Block */}
               <div className="flex flex-col items-center gap-2.5">
                 <div className="w-[72px] h-[72px] rounded-2xl bg-slate-50 border border-slate-200/80 text-brand-navy flex items-center justify-center shadow-sm">
@@ -165,9 +165,9 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 2: Timeline Row */}
-        <section className="max-w-7xl mx-auto px-6 py-10 border-t border-slate-100 bg-slate-50/50">
+        <section className="max-w-7xl  mx-auto px-6 py-10 ">
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full relative">
-            
+
             {/* Timeline Item 1: 1996 */}
             <div className="flex-grow flex-1 flex flex-col justify-start p-5 border border-slate-200 bg-white rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left w-full lg:max-w-[220px]">
               <span className="text-sm font-black text-brand-blue mb-2.5 block">1996</span>
@@ -186,7 +186,7 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Connecting Arrow 1 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-24">
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
               <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
               <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
             </div>
@@ -209,7 +209,7 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Connecting Arrow 2 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-24">
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
               <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
               <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
             </div>
@@ -232,7 +232,7 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Connecting Arrow 3 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-24">
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
               <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
               <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
             </div>
@@ -255,7 +255,7 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Connecting Arrow 4 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-24">
+            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
               <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
               <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
             </div>
@@ -281,7 +281,7 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 3: The Challenge */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               PAIN POINTS
@@ -293,7 +293,7 @@ export default function MarketplaceEvolution() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center w-full max-w-7xl mx-auto">
-            
+
             {/* Sellers Pain Points */}
             <div className="border border-red-100 bg-[#fffbfc] rounded-2xl p-6 sm:p-8 shadow-sm text-left hover:shadow-md transition-all duration-300">
               <div className="flex items-center gap-3.5 mb-4">
@@ -349,7 +349,7 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 4: We Asked Different Questions */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100 bg-slate-50/30">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 ">
           <div className="text-center mb-8">
             <h2 className="text-h2 text-brand-navy">
               We Asked Different Questions
@@ -358,7 +358,7 @@ export default function MarketplaceEvolution() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
-            
+
             {/* Card 01 */}
             <div className="bg-white border border-slate-150 rounded-2xl p-5 shadow-sm text-center flex flex-col items-center">
               <div className="w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center mb-3">
@@ -419,7 +419,7 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 5: The OpenMarket Model */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               THE NEXT GENERATION
@@ -431,7 +431,7 @@ export default function MarketplaceEvolution() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            
+
             {/* Model Card 1 */}
             <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
               <div className="w-12 h-12 rounded-lg bg-blue-50 border border-blue-150 text-brand-blue flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
@@ -500,7 +500,7 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 7: Everyone Wins */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100 mt-6 bg-slate-50/50">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 mt-4 ">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               MUTUAL VALUE
@@ -512,7 +512,7 @@ export default function MarketplaceEvolution() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-            
+
             {/* Sellers Grid */}
             <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
@@ -589,7 +589,7 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 8: The Difference */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               COMPARISON
@@ -601,11 +601,11 @@ export default function MarketplaceEvolution() {
           </div>
 
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 w-full max-w-5xl mx-auto">
-            
+
             {/* Traditional Marketplace Flow */}
             <div className="flex-grow flex-1 border border-slate-200 bg-white rounded-2xl p-6 shadow-sm flex flex-col justify-between items-center text-center w-full max-w-[420px]">
               <span className="text-[10px] font-black text-red-500 tracking-widest uppercase block mb-3">Traditional Marketplace</span>
-              
+
               <div className="flex items-center justify-center gap-4 py-4 w-full">
                 <div className="flex flex-col items-center gap-1.5">
                   <div className="w-11 h-11 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-bold text-sm">
@@ -613,9 +613,9 @@ export default function MarketplaceEvolution() {
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Pay</span>
                 </div>
-                
+
                 <FaArrowRight size={10} className="text-slate-300" />
-                
+
                 <div className="flex flex-col items-center gap-1.5">
                   <div className="w-11 h-11 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center">
                     <FiEye size={18} />
@@ -642,7 +642,7 @@ export default function MarketplaceEvolution() {
             {/* OpenMarket Flow */}
             <div className="flex-grow flex-[1.2] border border-brand-green/20 bg-brand-light-green/20 rounded-2xl p-6 shadow-sm flex flex-col justify-between items-center text-center w-full max-w-[480px]">
               <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-3">OpenMarket</span>
-              
+
               <div className="flex items-center justify-center gap-4 py-4 w-full">
                 <div className="flex flex-col items-center gap-1.5">
                   <div className="w-11 h-11 rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm">
@@ -650,9 +650,9 @@ export default function MarketplaceEvolution() {
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Create Value</span>
                 </div>
-                
+
                 <FaArrowRight size={10} className="text-brand-green" />
-                
+
                 <div className="flex flex-col items-center gap-1.5">
                   <div className="w-11 h-11 rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm">
                     <FiEye size={18} />

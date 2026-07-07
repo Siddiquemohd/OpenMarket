@@ -221,11 +221,11 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
-        
+
         {/* Section 1: Hero & B2B Diagram Card */}
-        <section className="max-w-7xl mx-auto px-6 pt-16 pb-12">
+        <section className="max-w-7xl mx-auto px-6 pt-10 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Hero Left Content */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div className="flex flex-col gap-4">
@@ -234,7 +234,7 @@ export default function Home() {
                     100% B2B. 100% Free to Join.
                   </span>
                 </div>
-                
+
                 <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-brand-navy">
                   <span className="block">A Fairer B2B</span>
                   <span className="block mt-1">Marketplace Is</span>
@@ -322,7 +322,7 @@ export default function Home() {
         <section className="bg-white border-y border-slate-100 py-10">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              
+
               {/* Feature 1 */}
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-[#097B3E]">
@@ -383,7 +383,7 @@ export default function Home() {
         </section>
 
         {/* Section 3: Industries We Support (B2B Only) */}
-        <section id="categories" className="scroll-mt-20 bg-slate-50/50 py-16 md:py-20">
+        <section id="categories" className="scroll-mt-20 py-10 md:py-12">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center flex flex-col gap-3 mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold text-brand-navy tracking-tight">
@@ -441,7 +441,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full border-2 border-[#097B3E] flex items-center justify-center text-[#097B3E]">
                     <FiPlus size={20} className="stroke-[3]" />
                   </div>
-                  
+
                   <div className="flex flex-col gap-1.5">
                     <h4 className="text-sm font-extrabold text-[#097B3E]">
                       Don&apos;t see your
@@ -489,7 +489,7 @@ export default function Home() {
                     Join the first 1,000 businesses shaping OpenMarket.
                   </p>
                 </div>
-                
+
                 {/* Dynamic Joined Stats Box */}
                 <div className="bg-white border border-emerald-100 rounded-2xl p-4 shadow-sm flex flex-col gap-3 min-w-[280px]">
                   <div className="flex items-center gap-4">
@@ -507,8 +507,8 @@ export default function Home() {
                   </div>
                   {/* Progress Bar */}
                   <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                    <div 
-                      className="bg-[#097B3E] h-full rounded-full transition-all duration-500" 
+                    <div
+                      className="bg-[#097B3E] h-full rounded-full transition-all duration-500"
                       style={{ width: `${Math.min((joined / 1000) * 100, 100)}%` }}
                     />
                   </div>
@@ -560,7 +560,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-extrabold text-brand-navy text-center">
               How OpenMarket Works
             </h2>
-            
+
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 max-w-5xl mx-auto w-full">
               {/* Step 1 */}
               <div className="flex items-center gap-4 flex-1">
@@ -644,7 +644,7 @@ export default function Home() {
         {/* Section 6: Stats & Founder Goal CTA Banner (Dark green, large block) */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-16">
           <div className="w-full bg-[#1b6d45] rounded-3xl overflow-hidden shadow-xl flex flex-col lg:flex-row items-center lg:items-stretch relative py-8 px-6 lg:py-6 lg:px-8">
-            
+
             {/* Left Column: Shaking hands illustration */}
             <div className="lg:w-[240px] w-full h-[120px] lg:h-full lg:absolute lg:left-0 lg:bottom-0 relative overflow-visible flex-shrink-0 z-10">
               <Image
@@ -654,7 +654,7 @@ export default function Home() {
                 sizes="240px"
                 className="object-contain object-bottom"
               />
-              
+
               {/* White verification badge overlapping the handshake */}
               <div className="absolute right-[-16px] lg:right-[-20px] top-[40%] -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 flex items-center justify-center w-[44px] h-[44px] lg:w-[48px] lg:h-[48px]">
                 <svg viewBox="0 0 24 24" className="w-8 h-8 lg:w-9 lg:h-9 text-[#1b6d45]" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -694,7 +694,7 @@ export default function Home() {
                     <circle cx="12" cy="7.5" r="3.5" />
                     <path d="M5.5 19.5a6.5 6.5 0 0 1 13 0" />
                   </svg>
-                  
+
                   <div className="flex flex-col items-start text-left">
                     <span className="text-2xl lg:text-3xl font-extrabold leading-none text-white">{joined}+</span>
                     <span className="text-[10px] lg:text-xs text-white/80 font-medium mt-1">Businesses Joined</span>
@@ -742,7 +742,7 @@ export default function Home() {
         {/* Section 7: Bottom Info / Footer Links Strip */}
         <section className="bg-slate-50 border-t border-slate-200 py-6 -mb-16">
           <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
-            
+
             {/* Badges Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-xs font-bold text-slate-600">
               <div className="flex items-center gap-2">

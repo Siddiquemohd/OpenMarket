@@ -82,7 +82,7 @@ export default function HowItWorks() {
       <main className="flex-grow">
 
         {/* SECTION 1: Page Header */}
-        <section className="max-w-7xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-16 text-center">
+        <section className="max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-14 md:pb-10 text-center">
           <h1 className="text-hero-title text-brand-navy leading-tight mb-4">
             How It{" "}
             <span className="relative inline-block">
@@ -99,7 +99,7 @@ export default function HowItWorks() {
         </section>
 
         {/* SECTION 2: 5-Step Process Map (Mockup Layout) */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 border-t border-slate-100 bg-slate-50/50">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 rounded-xl border-t border-slate-100 bg-slate-50/50">
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full relative">
 
             {/* Step 01 */}
@@ -233,7 +233,7 @@ export default function HowItWorks() {
         </section>
 
         {/* SECTION 3: How Ranking Works (VS Comparison) */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           <div className="text-center mb-8">
             <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
               THE OPENMARKET DIFFERENCE
@@ -333,7 +333,7 @@ export default function HowItWorks() {
         </section>
 
         {/* SECTION 4: Benefits for Sellers & Buyers (Horizontal Grid Layout) */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-12">
           <div className="bg-[#f7fbf8]/50 border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 shadow-[0_2px_12px_rgba(0,0,0,0.01)] flex flex-col gap-10 items-stretch">
 
             {/* Upper half: Grid layout for Sellers & Buyers side-by-side */}
@@ -426,7 +426,7 @@ export default function HowItWorks() {
         </section>
 
         {/* SECTION 5: Navy Pillars band */}
-        <section className="bg-brand-navy text-white py-16 md:py-24 mt-8">
+        <section className="bg-brand-navy text-white py-10 md:py-14 mt-6">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
               <h4 className="text-base font-black text-brand-green tracking-wide uppercase mb-2">

@@ -10,7 +10,7 @@ interface LegalPageLayoutProps {
 export function LegalPageLayout({ title, lastUpdated, intro, children }: LegalPageLayoutProps) {
   return (
     <main className="flex-grow bg-white text-slate-700">
-      <article className="mx-auto w-full max-w-[880px] px-6 py-12 md:py-16">
+      <article className="mx-auto w-full max-w-[880px] px-6 py-8 md:py-12">
         <header className="mb-10 border-b border-slate-200 pb-8">
           <p className="mb-3 text-sm font-bold uppercase tracking-wide text-brand-green">
             Last updated: {lastUpdated}

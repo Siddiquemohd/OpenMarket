@@ -72,7 +72,7 @@ export default function PricingPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50/50 pt-6 pb-20 font-sans">
+    <main className="min-h-screen bg-slate-50/50 pt-6 pb-12 font-sans">
       
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center md:text-left relative overflow-hidden">
@@ -300,7 +300,7 @@ export default function PricingPage() {
       </section>
 
       {/* Understand Seller Status Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
+      <section className="max-w-7xl mx-auto px-6 mt-12 md:mt-16">
         <div className="bg-white border border-slate-150 rounded-[28px] p-6 md:p-8 shadow-sm">
           <h2 className="text-h2 text-brand-navy uppercase tracking-tight text-center">
             Understand Seller Status
@@ -415,7 +415,7 @@ export default function PricingPage() {
       </section>
 
       {/* Status Lifecycle Section (Below Cards) */}
-      <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
+      <section className="max-w-7xl mx-auto px-6 mt-12 md:mt-16">
         <div className="bg-white border border-slate-150 rounded-[28px] p-6 md:p-8 shadow-sm flex flex-col justify-between items-center text-center">
           <div className="w-full">
             <h2 className="text-h2 text-brand-navy uppercase tracking-tight">
@@ -538,7 +538,7 @@ export default function PricingPage() {
       </section>
 
       {/* Powerful Tools Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-28 md:mt-36">
+      <section className="max-w-7xl mx-auto px-6 mt-14 md:mt-18">
         <h2 className="text-h2 text-center text-brand-navy uppercase tracking-tight">
           Powerful Tools. Better Business.
         </h2>
@@ -568,7 +568,7 @@ export default function PricingPage() {
       </section>
 
       {/* Our Promise Section */}
-      <section className="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
+      <section className="max-w-7xl mx-auto px-6 mt-12 md:mt-16">
         <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
           {/* Left Text */}

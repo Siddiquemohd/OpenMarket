@@ -302,7 +302,7 @@ export default function FoundingMembersPage() {
 
   return (
     <main className="flex-grow bg-white text-brand-navy">
-      <section className="mx-auto max-w-7xl px-6 pt-16 pb-12 md:pt-24 md:pb-16">
+      <section className="mx-auto max-w-7xl px-6 pt-10 pb-8 md:pt-14 md:pb-10">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-start gap-5">
             <span className="text-sm font-black uppercase tracking-wide text-brand-green">
@@ -360,7 +360,7 @@ export default function FoundingMembersPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      <section className="mx-auto max-w-7xl px-6 py-10 md:py-14">
         <div className="mt-9 mb-5 flex items-center justify-center gap-7">
           <div className="h-px w-20 bg-brand-green/50" />
           <h2 className="text-h2 text-brand-navy">
@@ -405,7 +405,7 @@ export default function FoundingMembersPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-6 pb-16 md:pb-24 lg:grid-cols-3">
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-6 pb-10 md:pb-14 lg:grid-cols-3">
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 className="text-h3 text-brand-navy">Founding Member Benefits</h3>
           <h4 className="mt-5 text-sm font-black text-brand-green">Today</h4>

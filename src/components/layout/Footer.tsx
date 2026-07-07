@@ -26,7 +26,7 @@ export function Footer() {
   return (
     <footer className="w-full bg-white border-t border-slate-200 mt-0 text-slate-600 font-sans">
       {/* Top spacing and main content container */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-6 pt-10 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-12 lg:gap-8">
 
           <div className="flex flex-col sm:col-span-6 lg:col-span-3">

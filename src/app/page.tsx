@@ -191,7 +191,7 @@ export default function Home() {
       {/* Main Page Layout */}
       <main className="flex-grow">
         {/* 2. Hero & Waitlist Box Container */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-16 md:pt-16 md:pb-24">
+        <section className="max-w-7xl mx-auto px-6 pt-8 pb-10 md:pt-10 md:pb-12">
           {/* Mobile/Tablet Text Layout */}
           <div className="lg:hidden text-center mb-8 px-4 flex flex-col items-center gap-4 relative">
             {/* Soft Ambient Glow */}
@@ -429,7 +429,7 @@ export default function Home() {
         </section>
 
         {/* 3. B2B Broken Marketplace Analysis */}
-        <section className="bg-white py-16 md:py-24 border-b border-slate-100">
+        <section className="bg-white py-10 md:py-14 border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
               {/* Left Column: Heading */}
@@ -514,7 +514,7 @@ export default function Home() {
         </section>
 
         {/* B2B Trade Question Section */}
-        <section className="relative overflow-hidden py-16 md:py-20 bg-brand-deep-navy text-white border-t border-brand-navy/20">
+        <section className="relative overflow-hidden py-10 md:py-12 bg-brand-deep-navy text-white border-t border-brand-navy/20">
           {/* Night Sky & Mountain Silhouette SVG Overlay - positioned in top half */}
           <div className="absolute right-0 top-0 w-full md:w-[600px] h-full pointer-events-none select-none opacity-40 md:opacity-90 z-0">
             <svg
@@ -568,7 +568,7 @@ export default function Home() {
         </section>
 
         {/* Beliefs Section */}
-        <section className="relative overflow-hidden py-16 md:py-20 bg-brand-navy text-white border-b border-brand-navy/20">
+        <section className="relative overflow-hidden py-10 md:py-12 bg-brand-navy text-white border-b border-brand-navy/20">
           {/* Subtle circular checkmark logo watermark in the background of belief part */}
           <div className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full border-[16px] border-white/5 pointer-events-none flex items-center justify-center select-none translate-x-1/4 translate-y-1/4 z-0">
             <div className="w-[300px] h-[300px] rounded-full border-[8px] border-white/5 flex items-center justify-center">
@@ -618,7 +618,7 @@ export default function Home() {
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
         <section
           id="sellers"
-          className="bg-white pt-16 pb-20 md:pt-24 md:pb-24 border-y border-slate-100"
+          className="bg-white pt-10 pb-12 md:pt-12 md:pb-16 border-y border-slate-100"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -632,7 +632,7 @@ export default function Home() {
                   y: -8,
                   boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)",
                 }}
-                className="bg-white border border-slate-200/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white border border-slate-200/60 rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-green/10 text-brand-green">
@@ -725,7 +725,7 @@ export default function Home() {
                   y: -8,
                   boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)",
                 }}
-                className="bg-white border border-slate-200/60 rounded-3xl p-10 md:p-14 lg:p-16 flex flex-col gap-10 shadow-sm hover:shadow-md transition-all duration-300 scroll-mt-24"
+                className="bg-white border border-slate-200/60 rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all duration-300 scroll-mt-24"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-navy/10 text-brand-navy">
@@ -813,9 +813,9 @@ export default function Home() {
         {/* 5. The OpenMarket Difference Grid */}
         <section
           id="difference"
-          className="pt-16 pb-24 md:pt-24 md:pb-32 bg-white"
+          className="pt-10 pb-14 md:pt-12 md:pb-16 bg-white"
         >
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6 ">
             <div className="text-center mb-16">
               <h2 className="text-h2 text-brand-navy uppercase">
                 THE <span className="text-brand-green">OPENMARKET</span>{" "}
@@ -882,7 +882,7 @@ export default function Home() {
         {/* 6. Why I'm Building OpenMarket (Founder Story Section) */}
         <section
           id="why-building"
-          className="py-16 md:py-24 bg-slate-50 border-t border-slate-100"
+          className="py-10 md:py-14 border-none "
         >
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">

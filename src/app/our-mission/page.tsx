@@ -108,7 +108,7 @@ export default function OurMission() {
     <div className="flex flex-col flex-grow bg-white text-slate-800 antialiased font-sans">
       <main className="flex-grow">
         {/* SECTION 1: Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32">
+        <section className="max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column Content */}
             <div className="lg:col-span-6 flex flex-col gap-6 text-left">
@@ -300,7 +300,7 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 3: The Problem We're Solving */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           {/* Section Header */}
           <div className="flex items-center gap-4 w-full max-w-2xl mx-auto mb-2.5">
             <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
@@ -402,7 +402,7 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 4: Our Difference (Navy Blue Ribbon) */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           <div className="bg-brand-navy rounded-[32px] p-8 md:p-12 text-white shadow-md flex flex-col gap-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Side */}
@@ -479,7 +479,7 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 5: Our Values */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           {/* Section Header */}
           <div className="flex items-center gap-4 w-full max-w-2xl mx-auto mb-8">
             <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
@@ -525,7 +525,7 @@ export default function OurMission() {
         </section>
 
         {/* SECTION 6: Meet The Founder */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
           <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column Portrait */}
             <div className="lg:col-span-4 flex justify-center">

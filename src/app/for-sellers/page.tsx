@@ -350,7 +350,7 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 3: Problems sellers face */}
-        <section className="bg-white py-16 md:py-24">
+        <section className="bg-white py-10 md:py-14">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Header with Divider Lines */}
@@ -380,7 +380,7 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 4: OpenMarket value section */}
-        <section className="bg-white py-16 md:py-24 border-t border-b border-slate-100">
+        <section className="bg-white py-10 md:py-14 border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Two Column Layout: Left (Heading + 5 Cards), Right (Checklist Panel) */}
@@ -460,7 +460,7 @@ export default function ForSellers() {
         </section>
 
         {/* SECTION 5: How it works */}
-        <section id="how-it-works" className="bg-white py-16 md:py-24 scroll-mt-24">
+        <section id="how-it-works" className="bg-white py-10 md:py-14 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Header with Divider Lines */}

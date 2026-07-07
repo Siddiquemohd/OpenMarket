@@ -432,7 +432,7 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 2: The Problems Buyers Face Today */}
-        <section className="bg-white py-16 md:py-24">
+        <section className="bg-white py-10 md:py-14">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Centered header with side lines */}
@@ -462,7 +462,7 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 3: How OpenMarket Solves This */}
-        <section id="how-it-works" className="bg-white py-16 md:py-24 border-t border-slate-100">
+        <section id="how-it-works" className="bg-white py-10 md:py-14 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
 
             {/* Centered header with side lines */}
@@ -492,7 +492,7 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 4: Why Buyers Will Love OpenMarket */}
-        <section className="bg-slate-50/50 py-16 md:py-24 border-t border-b border-slate-100">
+        <section className="py-10 md:py-14 ">
           <div className="max-w-7xl mx-auto px-6">
 
             <div className="text-center mb-12">
@@ -517,7 +517,7 @@ export default function ForBuyers() {
         </section>
 
         {/* SECTION 5: What Makes OpenMarket Different? */}
-        <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-12">
           <div className="rounded-3xl bg-[#f8fbf9] border border-[#e2eae5]/60 p-8 md:p-10 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
