@@ -146,26 +146,10 @@ export default function OurMission() {
               </div>
             </div>
 
-            {/* Right Column Content: Circular Layout Graphic */}
+            {/* Right Column Content: Mockup Diagram Image */}
             <div className="lg:col-span-6 flex items-center justify-center py-6 lg:py-0 w-full overflow-visible">
-              <div className="relative w-full max-w-[420px] h-[420px] aspect-square flex-shrink-0 select-none overflow-visible">
-                {/* Dashed Connecting Circle (Behind) */}
-                <svg
-                  viewBox="0 0 400 400"
-                  className="absolute inset-0 w-full h-full pointer-events-none z-0"
-                >
-                  <circle
-                    cx="200"
-                    cy="200"
-                    r="135"
-                    fill="none"
-                    stroke="#e2eae5"
-                    strokeWidth="2.5"
-                    strokeDasharray="6 6"
-                  />
-                </svg>
-
-                {/* Skyline Background (Inside the diagram container, behind nodes/image) */}
+              <div className="relative w-full max-w-[450px] h-[450px] sm:max-w-[500px] sm:h-[500px] aspect-square flex-shrink-0 select-none overflow-visible">
+                {/* Skyline Background (Inside the diagram container, behind mockup image) */}
                 <div className="absolute inset-x-[-60px] bottom-0 h-[280px] pointer-events-none select-none z-0 opacity-40">
                   <svg viewBox="0 0 540 300" className="w-full h-full text-slate-200/50" fill="currentColor">
                     {/* Left Skyline Buildings */}
@@ -187,83 +171,13 @@ export default function OurMission() {
                   </svg>
                 </div>
 
-                {/* Handshake Central Graphic using DEAL.png */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] z-10 flex items-center justify-center">
-                  <div className="relative w-full h-full">
-                    <Image
-                      src="/DEAL.png"
-                      alt="Business partnership shaking hands representing OpenMarket"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
-
-                {/* Radially Placed Nodes */}
-                {/* 1. Top Node: Fair Opportunity */}
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
-                  style={{ left: "50%", top: "16.25%" }}
-                >
-                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-md text-brand-green hover:scale-105 transition-transform">
-                    <FaUsers size={24} />
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
-                    Fair Opportunity
-                  </span>
-                </div>
-
-                {/* 2. Top Left Node: Active Businesses */}
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
-                  style={{ left: "20.75%", top: "33.125%" }}
-                >
-                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-blue flex items-center justify-center shadow-md text-brand-blue hover:scale-105 transition-transform">
-                    <FiTrendingUp size={24} />
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
-                    Active Businesses
-                  </span>
-                </div>
-
-                {/* 3. Top Right Node: Genuine Connections */}
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
-                  style={{ left: "79.25%", top: "33.125%" }}
-                >
-                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-blue flex items-center justify-center shadow-md text-brand-blue hover:scale-105 transition-transform">
-                    <FaHandshake size={24} />
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
-                    Genuine Connections
-                  </span>
-                </div>
-
-                {/* 4. Bottom Left Node: Sustainable Growth */}
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
-                  style={{ left: "26.125%", top: "73.875%" }}
-                >
-                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-md text-brand-green hover:scale-105 transition-transform">
-                    <FaLeaf size={24} />
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
-                    Sustainable Growth
-                  </span>
-                </div>
-
-                {/* 5. Bottom Right Node: Trusted Marketplace */}
-                <div
-                  className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20"
-                  style={{ left: "73.875%", top: "73.875%" }}
-                >
-                  <div className="w-[60px] h-[60px] rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-md text-brand-green hover:scale-105 transition-transform">
-                    <FiShield size={24} />
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-brand-navy mt-1.5 text-center leading-tight whitespace-nowrap bg-white/80 px-1 py-0.5 rounded">
-                    Trusted Marketplace
-                  </span>
+                {/* Transparent Mockup Diagram Image */}
+                <div className="absolute inset-0 w-full h-full z-10 flex items-center justify-center">
+                  <img
+                    src="/mission_diagram_mockup.png?v=5"
+                    alt="B2B Marketplace Partnership Diagram"
+                    className="w-full h-full object-contain select-none pointer-events-none"
+                  />
                 </div>
               </div>
             </div>
