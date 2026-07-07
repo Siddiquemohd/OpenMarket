@@ -41,6 +41,7 @@ import {
   FiAward,
   FiGrid,
   FiImage,
+  FiStar,
 } from "react-icons/fi";
 import { useOtpModal } from "@/providers/OtpModalProvider";
 
@@ -74,6 +75,134 @@ function LogoCheckmark({
   );
 }
 
+// Custom SVG Icons matching the mockup exactly
+function RegisterIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#0055CC] relative z-10" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 8h22l14 14v32a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z" />
+      <circle cx="32" cy="22" r="5" />
+      <path d="M22 36c0-4 4-6 8-6s8 2 8 6" />
+      <line x1="20" y1="44" x2="44" y2="44" />
+      <line x1="20" y1="50" x2="36" y2="50" />
+    </svg>
+  );
+}
+
+function BuildingIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="w-[52px] h-[52px] md:w-[60px] md:h-[60px] text-[#0055CC] flex-shrink-0" fill="currentColor">
+      <rect x="10" y="16" width="16" height="40" rx="2" />
+      <rect x="28" y="28" width="16" height="28" rx="2" />
+      <g fill="white">
+        <rect x="14" y="22" width="3" height="4" rx="0.5" />
+        <rect x="19" y="22" width="3" height="4" rx="0.5" />
+        <rect x="14" y="30" width="3" height="4" rx="0.5" />
+        <rect x="19" y="30" width="3" height="4" rx="0.5" />
+        <rect x="14" y="38" width="3" height="4" rx="0.5" />
+        <rect x="19" y="38" width="3" height="4" rx="0.5" />
+        <rect x="14" y="46" width="3" height="4" rx="0.5" />
+        <rect x="19" y="46" width="3" height="4" rx="0.5" />
+      </g>
+      <g fill="white">
+        <rect x="32" y="34" width="3" height="4" rx="0.5" />
+        <rect x="37" y="34" width="3" height="4" rx="0.5" />
+        <rect x="32" y="42" width="3" height="4" rx="0.5" />
+        <rect x="37" y="42" width="3" height="4" rx="0.5" />
+        <rect x="32" y="50" width="3" height="4" rx="0.5" />
+        <rect x="37" y="50" width="3" height="4" rx="0.5" />
+      </g>
+      <path d="M48 16l1.2 2.8 2.8 1.2-2.8 1.2-1.2 2.8-1.2-2.8-2.8-1.2 2.8-1.2z" />
+      <path d="M54 26l0.8 1.8 1.8 0.8-1.8 0.8-0.8 1.8-0.8-1.8-1.8-0.8 1.8-0.8z" />
+    </svg>
+  );
+}
+
+function TrendsIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#0055CC]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="14" y="38" width="6" height="12" rx="1" fill="#0055CC" stroke="none" />
+      <rect x="26" y="28" width="6" height="22" rx="1" fill="#0055CC" stroke="none" />
+      <rect x="38" y="18" width="6" height="32" rx="1" fill="#0055CC" stroke="none" />
+      <path d="M14 32l14-14 16 16 12-12" stroke="#0055CC" strokeWidth="3" />
+      <path d="M50 22h6v6" stroke="#0055CC" strokeWidth="3" />
+    </svg>
+  );
+}
+
+function CpuAiIcon() {
+  return (
+    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#007b3e]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="16" y="16" width="32" height="32" rx="6" />
+      <rect x="22" y="22" width="20" height="20" rx="3" />
+      <line x1="26" y1="10" x2="26" y2="16" />
+      <line x1="32" y1="10" x2="32" y2="16" />
+      <line x1="38" y1="10" x2="38" y2="16" />
+      <line x1="26" y1="48" x2="26" y2="54" />
+      <line x1="32" y1="48" x2="32" y2="54" />
+      <line x1="38" y1="48" x2="38" y2="54" />
+      <line x1="10" y1="26" x2="16" y2="26" />
+      <line x1="10" y1="32" x2="16" y2="32" />
+      <line x1="10" y1="38" x2="16" y2="38" />
+      <line x1="48" y1="26" x2="54" y2="26" />
+      <line x1="48" y1="32" x2="54" y2="32" />
+      <line x1="48" y1="38" x2="54" y2="38" />
+      <text x="32" y="35" textAnchor="middle" fill="#007b3e" fontSize="10.5" fontWeight="bold" fontFamily="system-ui" stroke="none">AI</text>
+    </svg>
+  );
+}
+
+function SearchIconCustom() {
+  return (
+    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#007b3e]" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="26" cy="26" r="13" />
+      <line x1="36" y1="36" x2="50" y2="50" strokeWidth="4.5" />
+    </svg>
+  );
+}
+
+function SparkleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+      <path d="M12 3c-.1 4-3.1 7-7 7.1 3.9.1 6.9 3.1 7 7 .1-3.9 3.1-6.9 7-7.1-3.9-.1-6.9-3.1-7-7z" />
+      <path d="M19 13c-.03 1.5-1.12 2.6-2.6 2.6 1.5.03 2.6 1.12 2.6 2.6.03-1.5 1.12-2.6 2.6-2.6-1.5-.03-2.6-1.12-2.6-2.6z" />
+    </svg>
+  );
+}
+
+function PenIconCustom() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+      <path d="M17.8 2.2c-.4-.4-1-.4-1.4 0L14 4.6l5.4 5.4 2.4-2.4c.4-.4.4-1 0-1.4l-4-4zM12.6 6L3 15.6V21h5.4L18 11.4 12.6 6z" />
+    </svg>
+  );
+}
+
+function GridIconCustom() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+      <circle cx="5" cy="5" r="2.2" />
+      <circle cx="12" cy="5" r="2.2" />
+      <circle cx="19" cy="5" r="2.2" />
+      <circle cx="5" cy="12" r="2.2" />
+      <circle cx="12" cy="12" r="2.2" />
+      <circle cx="19" cy="12" r="2.2" />
+      <circle cx="5" cy="19" r="2.2" />
+      <circle cx="12" cy="19" r="2.2" />
+      <circle cx="19" cy="19" r="2.2" />
+    </svg>
+  );
+}
+
+function ImageIconCustom() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" fill="currentColor" className="text-[#0055CC]/10" />
+      <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" stroke="none" />
+      <polyline points="21 15 16 10 5 21" />
+    </svg>
+  );
+}
+
 export default function HowItWorks() {
   const { openOtpModal } = useOtpModal();
 
@@ -99,123 +228,191 @@ export default function HowItWorks() {
         </section>
 
         {/* SECTION 2: 5-Step Process Map (Mockup Layout) */}
-        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 rounded-xl border-t border-slate-100 bg-slate-50/50">
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full relative">
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border border-slate-100 bg-slate-50/30 rounded-[32px]">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-3 w-full relative">
 
             {/* Step 01 */}
-            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px] lg:max-w-[15%]">
               {/* Number tag */}
-              <div className="w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+              <div className="w-7 h-7 rounded-full bg-[#0055CC] text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
                 01
               </div>
               {/* Icon Circle */}
-              <div className="relative w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
-                <FiFileText size={28} />
-                <div className="absolute bottom-[-2px] right-[-2px] w-5.5 h-5.5 rounded-full bg-brand-blue text-white border-[2.5px] border-white flex items-center justify-center shadow-sm">
-                  <FaCheck size={8} />
+              <div className="relative w-[72px] h-[72px] rounded-full bg-white border border-slate-200/50 flex items-center justify-center mb-4">
+                <RegisterIcon />
+                <div className="absolute bottom-[-1px] right-[-1px] w-[21px] h-[21px] rounded-full bg-[#0055CC] text-white border-[2.5px] border-white flex items-center justify-center shadow-sm">
+                  <FaCheck size={7} />
                 </div>
               </div>
-              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+              <h3 className="text-[14.5px] font-black text-brand-navy mb-2">
                 Register Your Business
               </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+              <p className="text-[12px] font-bold text-slate-400 leading-relaxed">
                 Create your business profile in just a few minutes.
               </p>
             </div>
 
             {/* Connecting Arrow 1 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            <div className="flex items-center justify-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-2" />
             </div>
 
-            {/* Step 02 */}
-            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
-              {/* Number tag */}
-              <div className="w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+            {/* Step 02 - Highlighted Card */}
+            <div className="flex-shrink-0 w-full lg:w-[41%] bg-[#f4f7fb] border border-[#e2eaf4] rounded-[24px] p-5 relative shadow-[0_2px_12px_rgba(0,0,0,0.02)] my-4 lg:my-0">
+              {/* Number tag sitting on the top border */}
+              <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#0055CC] text-white font-extrabold text-[12px] flex items-center justify-center shadow-sm border border-[#f4f7fb] z-10">
                 02
               </div>
-              {/* Icon Circle */}
-              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
-                <FaBuilding size={28} />
+
+              <div className="flex flex-col gap-4 h-full justify-between">
+                {/* Header Row */}
+                <div className="flex items-start gap-4 text-left">
+                  <BuildingIcon />
+                  <div className="flex flex-col">
+                    <h3 className="text-[17px] font-black text-brand-navy leading-tight">
+                      Build Your Profile with AI Tools
+                    </h3>
+                    <p className="text-[11.5px] font-bold text-slate-500 leading-relaxed mt-1">
+                      Add your business details, products, services, certifications, images and more.
+                    </p>
+                  </div>
+                </div>
+
+                {/* AI Features Grid */}
+                <div className="flex flex-row justify-between items-center pt-3 border-t border-slate-200/50 gap-1 md:gap-2">
+                  
+                  {/* Feature 1 */}
+                  <div className="flex items-center gap-1.5 text-left flex-1 min-w-0">
+                    <SparkleIcon />
+                    <div className="flex flex-col min-w-0 leading-[1.1]">
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">AI Profile</span>
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">Assistant</span>
+                    </div>
+                  </div>
+
+                  {/* Divider 1 */}
+                  <div className="w-[1px] h-7 bg-slate-200/80 mx-0.5 md:mx-1 flex-shrink-0" />
+
+                  {/* Feature 2 */}
+                  <div className="flex items-center gap-1.5 text-left flex-1 min-w-0">
+                    <PenIconCustom />
+                    <div className="flex flex-col min-w-0 leading-[1.1]">
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">AI Product</span>
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">Writer</span>
+                    </div>
+                  </div>
+
+                  {/* Divider 2 */}
+                  <div className="w-[1px] h-7 bg-slate-200/80 mx-0.5 md:mx-1 flex-shrink-0" />
+
+                  {/* Feature 3 */}
+                  <div className="flex items-center gap-1.5 text-left flex-1 min-w-0">
+                    <GridIconCustom />
+                    <div className="flex flex-col min-w-0 leading-[1.1]">
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">Smart Category</span>
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">Suggestion</span>
+                    </div>
+                  </div>
+
+                  {/* Divider 3 */}
+                  <div className="w-[1px] h-7 bg-slate-200/80 mx-0.5 md:mx-1 flex-shrink-0" />
+
+                  {/* Feature 4 */}
+                  <div className="flex items-center gap-1.5 text-left flex-1 min-w-0">
+                    <ImageIconCustom />
+                    <div className="flex flex-col min-w-0 leading-[1.1]">
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">Image</span>
+                      <span className="text-[9.5px] font-black text-brand-navy whitespace-nowrap">Enhancer</span>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Tags Pill Bar */}
+                <div className="w-full bg-[#e8eff7] rounded-full py-1.5 px-3 text-center text-[10px] font-black text-[#0055CC] flex items-center justify-center gap-1.5 whitespace-nowrap">
+                  <span>Products</span>
+                  <span className="text-slate-400">•</span>
+                  <span>Services</span>
+                  <span className="text-slate-400">•</span>
+                  <span>Certifications</span>
+                  <span className="text-slate-400">•</span>
+                  <span>Images</span>
+                  <span className="text-slate-400">•</span>
+                  <span>More</span>
+                </div>
               </div>
-              <h3 className="text-[16px] font-black text-brand-navy mb-2">
-                Build Profile with AI
-              </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
-                Add your business details, products, and services using our smart AI tools.
-              </p>
             </div>
 
             {/* Connecting Arrow 2 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            <div className="flex items-center justify-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-2" />
             </div>
 
             {/* Step 03 */}
-            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px] lg:max-w-[15%]">
               {/* Number tag */}
-              <div className="w-7 h-7 rounded-full bg-brand-blue text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+              <div className="w-7 h-7 rounded-full bg-[#0055CC] text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
                 03
               </div>
               {/* Icon Circle */}
-              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
-                <FiTrendingUp size={28} />
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/50 flex items-center justify-center mb-4">
+                <TrendsIcon />
               </div>
-              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+              <h3 className="text-[14.5px] font-black text-brand-navy mb-2">
                 Stay Active & Engaged
               </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+              <p className="text-[12px] font-bold text-slate-400 leading-relaxed">
                 Update information, respond to enquiries and engage regularly.
               </p>
             </div>
 
             {/* Connecting Arrow 3 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            <div className="flex items-center justify-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-2" />
             </div>
 
             {/* Step 04 */}
-            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px] lg:max-w-[15%]">
               {/* Number tag */}
-              <div className="w-7 h-7 rounded-full bg-brand-green text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+              <div className="w-7 h-7 rounded-full bg-[#007b3e] text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
                 04
               </div>
               {/* Icon Circle */}
-              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-green flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
-                <FiCpu size={28} />
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-emerald-100 flex items-center justify-center mb-4">
+                <CpuAiIcon />
               </div>
-              <h3 className="text-[16px] font-black text-brand-navy mb-2">
+              <h3 className="text-[14.5px] font-black text-brand-navy mb-2">
                 AI Matches & Ranks
               </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
+              <p className="text-[12px] font-bold text-slate-400 leading-relaxed">
                 Our AI understands buyer needs and ranks businesses based on activity, relevance and trust.
               </p>
             </div>
 
             {/* Connecting Arrow 4 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-12">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-5.5 h-5.5" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-5.5 h-5.5 my-2" />
+            <div className="flex items-center justify-center flex-shrink-0 lg:mt-12">
+              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
+              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-2" />
             </div>
 
             {/* Step 05 */}
-            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px]">
+            <div className="flex-grow flex-1 flex flex-col items-center text-center max-w-[200px] lg:max-w-[15%]">
               {/* Number tag */}
-              <div className="w-7 h-7 rounded-full bg-brand-green text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
+              <div className="w-7 h-7 rounded-full bg-[#007b3e] text-white font-extrabold text-[12px] flex items-center justify-center mb-3.5 shadow-sm">
                 05
               </div>
               {/* Icon Circle */}
-              <div className="w-[72px] h-[72px] rounded-full bg-white border border-slate-200/80 text-brand-green flex items-center justify-center shadow-[0_3px_10px_rgba(0,0,0,0.04)] mb-4 hover:scale-103 transition-transform flex-shrink-0">
-                <FiSearch size={28} />
+              <div className="w-[72px] h-[72px] rounded-full bg-white border border-emerald-100 flex items-center justify-center mb-4">
+                <SearchIconCustom />
               </div>
-              <h3 className="text-[16px] font-black text-brand-navy mb-2">
-                Close the Deal Directly
+              <h3 className="text-[14.5px] font-black text-brand-navy mb-2">
+                Buyers Discover You
               </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed">
-                Connect directly with matched buyers/sellers and finalize terms.
+              <p className="text-[12px] font-bold text-slate-400 leading-relaxed">
+                Buyers find relevant businesses and connect directly with you.
               </p>
             </div>
 
@@ -375,7 +572,7 @@ export default function HowItWorks() {
               {/* Central checkmark badge logo */}
               <div className="flex justify-center select-none py-2 lg:py-0">
                 <div className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-full border-[5px] border-brand-navy bg-white shadow-md flex items-center justify-center flex-shrink-0">
-                  <LogoCheckmark size={40} checkColor="#0B3C5F" circleColor="#0FA958" />
+                  <LogoCheckmark size={40} checkColor="#0FA958" circleColor="#0B3C5F" />
                   {/* Left pointing arrow */}
                   <div className="absolute left-[-18px] top-1/2 -translate-y-1/2 hidden lg:flex items-center justify-center w-6 h-6 rounded-full bg-white border border-slate-100 shadow-sm text-brand-blue">
                     <FaArrowLeft size={8} />

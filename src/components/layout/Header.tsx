@@ -117,7 +117,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md  shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Logo />
 
@@ -139,9 +139,8 @@ export function Header() {
               return (
                 <div key={idx} className="relative group py-1">
                   <button
-                    className={`flex items-center gap-1 transition-colors duration-200 focus:outline-none cursor-pointer whitespace-nowrap ${
-                      isDropdownActive ? "text-brand-green font-bold" : "text-brand-navy hover:text-brand-green"
-                    }`}
+                    className={`flex items-center gap-1 transition-colors duration-200 focus:outline-none cursor-pointer whitespace-nowrap ${isDropdownActive ? "text-brand-green font-bold" : "text-brand-navy hover:text-brand-green"
+                      }`}
                   >
                     <span>{link.label}</span>
                     <span className="text-[9px] translate-y-[1px] group-hover:rotate-180 transition-transform duration-200">▼</span>
@@ -153,9 +152,8 @@ export function Header() {
                         <Link
                           key={sIdx}
                           href={sub.href}
-                          className={`block px-4 py-2 text-xs font-semibold transition-colors ${
-                            isSubActive ? "text-brand-green bg-slate-50/50" : "text-brand-navy hover:bg-slate-50 hover:text-brand-green"
-                          }`}
+                          className={`block px-4 py-2 text-xs font-semibold transition-colors ${isSubActive ? "text-brand-green bg-slate-50/50" : "text-brand-navy hover:bg-slate-50 hover:text-brand-green"
+                            }`}
                         >
                           {sub.label}
                         </Link>
@@ -171,11 +169,10 @@ export function Header() {
                 key={idx}
                 href={link.href}
                 aria-current={isActive(link) ? "page" : undefined}
-                className={`transition-colors duration-200 py-1 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${
-                  isActive(link)
+                className={`transition-colors duration-200 py-1 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green/40 focus-visible:ring-offset-4 ${isActive(link)
                     ? "text-brand-green font-bold border-b-2 border-brand-green pb-[4px]"
                     : "text-brand-navy hover:text-brand-green"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>

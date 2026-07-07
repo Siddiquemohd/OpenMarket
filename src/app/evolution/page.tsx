@@ -10,7 +10,7 @@ import {
   FaHandshake,
   FaBuilding,
   FaStore,
-  FaShoppingBag,
+  FaShoppingCart,
   FaBalanceScale,
   FaArrowRight,
   FaArrowLeft,
@@ -87,77 +87,91 @@ export default function MarketplaceEvolution() {
 
         {/* SECTION 1: Page Header & Buyer-Seller Connection Visual */}
         <section className="max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-14 md:pb-10">
-          <div className="text-center mb-12">
-            <h1 className="text-hero-title text-brand-navy leading-tight mb-4">
-              How B2B Marketplaces{" "}
-              <span className="relative inline-block">
-                Evolved
-                <span className="absolute bottom-0.5 left-0 w-full h-[4.5px] bg-brand-green rounded-full opacity-90" />
-              </span>
-            </h1>
-            <p className="text-brand-green font-extrabold text-sm md:text-base leading-relaxed tracking-wider uppercase mb-3">
-              Every marketplace has one purpose. Connect the right buyer with the right seller.
-            </p>
-            <p className="text-slate-500 font-bold text-xs md:text-sm max-w-3xl mx-auto leading-relaxed">
-              Over the years, B2B marketplaces evolved through different business models. Each model solved a problem. Each also created new challenges. We believe it&apos;s time for the next evolution.
-            </p>
-          </div>
-
-          {/* Buyer-Seller Connection Graphic */}
-          <div className="max-w-xl mx-auto py-6 relative flex flex-col items-center">
-
-            {/* Horizontal Connection Row */}
-            <div className="flex items-center justify-between w-full relative z-10 px-4">
-
-              {/* Buyer Block */}
-              <div className="flex flex-col items-center gap-2.5">
-                <div className="w-[72px] h-[72px] rounded-2xl bg-slate-50 border border-slate-200/80 text-brand-navy flex items-center justify-center shadow-sm">
-                  <FaShoppingBag size={26} />
-                </div>
-                <span className="text-[13.5px] font-black text-brand-navy">Buyer</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Column Content */}
+            <div className="lg:col-span-5 flex flex-col gap-6 text-left">
+              <div className="flex flex-col">
+                <h1 className="text-hero-title text-brand-navy leading-tight">
+                  How B2B <br />
+                  Marketplaces <br />
+                  <span className="text-brand-blue">Evolved</span>
+                </h1>
+                <div className="h-[3px] w-12 bg-brand-green mt-3.5 mb-2" />
               </div>
 
-              {/* Dashed Left-Right Connection Line */}
-              <div className="flex-grow mx-4 relative h-[2px]">
-                <div className="absolute inset-0 border-t-2 border-dashed border-slate-300" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-slate-400" />
-              </div>
+              <p className="text-brand-navy font-bold text-base leading-relaxed">
+                Every marketplace has one purpose.{" "}
+                <span className="text-brand-green block">Connect the right buyer with the right seller.</span>
+              </p>
 
-              {/* Center Circle OpenMarket Logo */}
-              <div className="flex flex-col items-center gap-1.5 z-20">
-                <div className="w-22 h-22 rounded-full border-[6px] border-brand-navy bg-white shadow-md flex items-center justify-center">
-                  <LogoCheckmark size={46} checkColor="#0B3C5F" circleColor="#0FA958" />
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <span className="text-sm font-black text-brand-navy tracking-tight">OpenMarket</span>
-                  <span className="text-[9.5px] font-bold text-slate-400 leading-tight">Be Active. Be Visible. Grow Together.</span>
-                </div>
-              </div>
-
-              {/* Dashed Right-Left Connection Line */}
-              <div className="flex-grow mx-4 relative h-[2px]">
-                <div className="absolute inset-0 border-t-2 border-dashed border-slate-300" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-slate-400" />
-              </div>
-
-              {/* Seller Block */}
-              <div className="flex flex-col items-center gap-2.5">
-                <div className="w-[72px] h-[72px] rounded-2xl bg-slate-50 border border-slate-200/80 text-brand-navy flex items-center justify-center shadow-sm">
-                  <FaStore size={26} />
-                </div>
-                <span className="text-[13.5px] font-black text-brand-navy">Seller</span>
-              </div>
-
+              <p className="text-slate-500 font-bold text-xs md:text-sm leading-relaxed max-w-lg">
+                Over the years, B2B marketplaces evolved through different business models. Each model solved a problem. Each also created new challenges. We believe it&apos;s time for the next evolution.
+              </p>
             </div>
 
-            {/* Vertical Dashed Line to bottom block */}
-            <div className="h-10 w-[2px] border-l-2 border-dashed border-slate-300 my-1" />
+            {/* Right Column Connection Graphic */}
+            <div className="lg:col-span-7 flex items-center justify-center py-6 lg:py-0 w-full overflow-visible">
+              <div className="max-w-xl w-full py-6 relative flex flex-col items-center">
 
-            {/* Bottom Connections pill */}
-            <div className="flex flex-col items-center gap-1 bg-[#f4f8fc] border border-brand-blue/15 rounded-xl px-5 py-2.5 shadow-sm">
-              <div className="text-brand-blue flex items-center gap-1.5">
-                <FaUsers size={20} />
-                <span className="text-[12.5px] font-black uppercase tracking-wide">Better Connections. Better Business.</span>
+                {/* Horizontal Connection Row */}
+                <div className="flex items-center justify-between w-full relative z-10 px-4">
+
+                  {/* Buyer Block */}
+                  <div className="flex flex-col items-center gap-2.5">
+                    <div className="w-[72px] h-[72px] rounded-2xl bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-sm">
+                      <FaShoppingCart size={26} />
+                    </div>
+                    <span className="text-[13.5px] font-black text-brand-navy">Buyer</span>
+                  </div>
+
+                  {/* Dashed Left-Right Connection Line */}
+                  <div className="flex-grow mx-4 relative h-[2px]">
+                    <div className="absolute inset-0 border-t-2 border-dashed border-slate-300" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-slate-400" />
+                  </div>
+
+                  {/* Center Circle OpenMarket Logo */}
+                  <div className="flex flex-col items-center gap-1.5 z-20">
+                    <div className="w-22 h-22 rounded-full border-[6px] border-brand-navy bg-white shadow-md flex items-center justify-center">
+                      <LogoCheckmark size={46} checkColor="#0FA958" circleColor="#0B3C5F" />
+                    </div>
+                    <div className="flex flex-col items-center text-center">
+                      <span className="text-sm font-black tracking-tight"><span className="text-brand-blue">Open</span><span className="text-brand-green">Market</span></span>
+                      <span className="text-[9.5px] font-bold text-slate-400 leading-tight">Be Active. Be Visible,<br />Grow Together.</span>
+                    </div>
+                  </div>
+
+                  {/* Dashed Right-Left Connection Line */}
+                  <div className="flex-grow mx-4 relative h-[2px]">
+                    <div className="absolute inset-0 border-t-2 border-dashed border-slate-300" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-slate-400" />
+                  </div>
+
+                  {/* Seller Block */}
+                  <div className="flex flex-col items-center gap-2.5">
+                    <div className="w-[72px] h-[72px] rounded-2xl bg-white border border-slate-200/80 text-brand-green flex items-center justify-center shadow-sm">
+                      <FaStore size={26} />
+                    </div>
+                    <span className="text-[13.5px] font-black text-brand-navy">Seller</span>
+                  </div>
+
+                </div>
+
+                {/* Vertical Dashed Line to bottom block */}
+                <div className="h-10 w-[2px] border-l-2 border-dashed border-slate-300 my-1" />
+
+                {/* Bottom Connections */}
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-brand-light-blue flex items-center justify-center text-brand-blue shadow-sm border border-brand-blue/10">
+                    <FaUsers size={20} />
+                  </div>
+                  <div className="flex flex-col text-center">
+                    <span className="text-[12.5px] font-black text-brand-navy leading-snug">Better Connections.</span>
+                    <span className="text-[12.5px] font-black text-brand-navy leading-snug">Better Business.</span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
