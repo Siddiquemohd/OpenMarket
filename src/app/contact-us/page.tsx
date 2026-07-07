@@ -262,275 +262,275 @@ export default function ContactUs() {
         </section>
 
         {/* Section 3: Connect With Us & Send Us a Message */}
-        <section className="bg-white border-b border-slate-100 py-16">
+        <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-            {/* Left Column: Direct Links Connect wrapped in rounded card */}
-            <div className="lg:col-span-5 bg-white border border-slate-200/60 rounded-[32px] p-8 md:p-10 shadow-lg flex flex-col justify-between">
-              <div className="flex flex-col gap-3 mb-6">
-                <div className="flex flex-col self-start">
-                  <h2 className="text-h2 text-brand-green tracking-tight">
-                    Connect With Us
-                  </h2>
-                  <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-4 flex-grow justify-center">
-                {[
-                  {
-                    title: "WhatsApp",
-                    desc: "Chat with us instantly",
-                    href: "https://wa.me/918108359977",
-                    icon: <FaWhatsapp size={20} />,
-                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
-                    iconBg: "bg-[#0FA958]"
-                  },
-                  {
-                    title: "LinkedIn",
-                    desc: "Connect with us on LinkedIn",
-                    href: "https://www.linkedin.com/in/kiranpailwan/",
-                    icon: <FaLinkedin size={20} />,
-                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
-                    iconBg: "bg-[#0077B5]"
-                  },
-                  {
-                    title: "Email",
-                    desc: "info@openmarketco.in",
-                    href: "mailto:info@openmarketco.in",
-                    icon: <FaEnvelope size={18} />,
-                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
-                    iconBg: "bg-[#0FA958]"
-                  },
-                  {
-                    title: "Call Us",
-                    desc: "+91 81083 59977",
-                    href: "tel:+918108359977",
-                    icon: <FiPhone size={18} />,
-                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
-                    iconBg: "bg-[#0FA958]"
-                  },
-                  {
-                    title: "Website",
-                    desc: "www.openmarketco.in",
-                    href: "https://www.openmarketco.in",
-                    icon: <FaGlobe size={18} />,
-                    bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
-                    iconBg: "bg-[#0FA958]"
-                  },
-                ].map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`flex items-center justify-between p-4 ${item.bgColor} rounded-2xl transition-all group focus:outline-none`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-full ${item.iconBg} flex items-center justify-center text-white flex-shrink-0 transition-transform group-hover:scale-105`}>
-                        {item.icon}
-                      </div>
-                      <div className="flex flex-col text-left">
-                        <span className="text-[15px] font-black text-brand-navy">{item.title}</span>
-                        <span className="text-xs font-semibold text-slate-500 mt-0.5">{item.desc}</span>
-                      </div>
-                    </div>
-                    <FaChevronRight size={12} className="text-slate-400 group-hover:text-brand-green group-hover:translate-x-0.5 transition-all" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column: Message Form wrapped in rounded card */}
-            <div className="lg:col-span-7 bg-white border border-slate-200/60 rounded-[32px] p-8 md:p-10 shadow-lg relative flex flex-col justify-between">
-              <div>
-                <div className="flex flex-col gap-3 mb-8">
+              {/* Left Column: Direct Links Connect wrapped in rounded card */}
+              <div className="lg:col-span-5 bg-white rounded-[32px] p-8 md:p-10 shadow-lg flex flex-col justify-between">
+                <div className="flex flex-col gap-3 mb-6">
                   <div className="flex flex-col self-start">
-                    <h3 className="text-h3 text-brand-green">
-                      Send Us a Message
-                    </h3>
+                    <h2 className="text-h2 text-brand-green tracking-tight">
+                      Connect With Us
+                    </h2>
                     <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
                   </div>
                 </div>
 
-                <AnimatePresence mode="wait">
-                  {formSubmitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      className="flex flex-col items-center text-center py-12 px-6"
+                <div className="flex flex-col gap-4 flex-grow justify-center">
+                  {[
+                    {
+                      title: "WhatsApp",
+                      desc: "Chat with us instantly",
+                      href: "https://wa.me/918108359977",
+                      icon: <FaWhatsapp size={20} />,
+                      bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
+                      iconBg: "bg-[#0FA958]"
+                    },
+                    {
+                      title: "LinkedIn",
+                      desc: "Connect with us on LinkedIn",
+                      href: "https://www.linkedin.com/in/kiranpailwan/",
+                      icon: <FaLinkedin size={20} />,
+                      bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
+                      iconBg: "bg-[#0077B5]"
+                    },
+                    {
+                      title: "Email",
+                      desc: "info@openmarketco.in",
+                      href: "mailto:info@openmarketco.in",
+                      icon: <FaEnvelope size={18} />,
+                      bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
+                      iconBg: "bg-[#0FA958]"
+                    },
+                    {
+                      title: "Call Us",
+                      desc: "+91 81083 59977",
+                      href: "tel:+918108359977",
+                      icon: <FiPhone size={18} />,
+                      bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
+                      iconBg: "bg-[#0FA958]"
+                    },
+                    {
+                      title: "Website",
+                      desc: "www.openmarketco.in",
+                      href: "https://www.openmarketco.in",
+                      icon: <FaGlobe size={18} />,
+                      bgColor: "bg-white border border-slate-200 hover:bg-slate-50 shadow-sm",
+                      iconBg: "bg-[#0FA958]"
+                    },
+                  ].map((item, idx) => (
+                    <a
+                      key={idx}
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className={`flex items-center justify-between p-4 ${item.bgColor} rounded-2xl transition-all group focus:outline-none`}
                     >
-                      <div className="w-16 h-16 rounded-full bg-brand-light-green text-brand-green flex items-center justify-center mb-6 shadow-sm">
-                        <FaCheckCircle size={36} />
+                      <div className="flex items-center gap-4">
+                        <div className={`w-10 h-10 rounded-full ${item.iconBg} flex items-center justify-center text-white flex-shrink-0 transition-transform group-hover:scale-105`}>
+                          {item.icon}
+                        </div>
+                        <div className="flex flex-col text-left">
+                          <span className="text-[15px] font-black text-brand-navy">{item.title}</span>
+                          <span className="text-xs font-semibold text-slate-500 mt-0.5">{item.desc}</span>
+                        </div>
                       </div>
-                      <h4 className="text-2xl font-black text-brand-navy mb-3">Message Sent!</h4>
-                      <p className="text-slate-500 font-semibold leading-relaxed max-w-md">
-                        Thank you for reaching out. We have received your message and our team will get back to you shortly.
-                      </p>
-                      <button
-                        onClick={() => setFormSubmitted(false)}
-                        className="mt-8 px-6 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white font-bold rounded-xl shadow-sm text-sm transition-colors focus:outline-none"
+                      <FaChevronRight size={12} className="text-slate-400 group-hover:text-brand-green group-hover:translate-x-0.5 transition-all" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: Message Form wrapped in rounded card */}
+              <div className="lg:col-span-7 bg-white rounded-[32px] p-8 md:p-10 shadow-lg relative flex flex-col justify-between">
+                <div>
+                  <div className="flex flex-col gap-3 mb-8">
+                    <div className="flex flex-col self-start">
+                      <h3 className="text-h3 text-brand-green">
+                        Send Us a Message
+                      </h3>
+                      <div className="h-[2.5px] w-12 bg-brand-green mt-1.5" />
+                    </div>
+                  </div>
+
+                  <AnimatePresence mode="wait">
+                    {formSubmitted ? (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        className="flex flex-col items-center text-center py-12 px-6"
                       >
-                        Send Another Message
-                      </button>
-                    </motion.div>
-                  ) : (
-                    <motion.form
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      onSubmit={handleSubmit(onSubmit)}
-                      className="flex flex-col gap-5"
-                    >
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {/* Name */}
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-sm font-bold text-brand-navy pl-1">
-                            Your Name <span className="text-red-500">*</span>
-                          </label>
-                          <div className="relative">
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
-                              <FiUser size={18} />
-                            </span>
-                            <input
-                              type="text"
-                              placeholder="Enter your full name"
-                              {...register("name")}
-                              className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.name ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
-                                } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
-                            />
-                          </div>
-                          {errors.name && <span className="text-xs text-red-500 font-bold px-1">{errors.name.message}</span>}
+                        <div className="w-16 h-16 rounded-full bg-brand-light-green text-brand-green flex items-center justify-center mb-6 shadow-sm">
+                          <FaCheckCircle size={36} />
                         </div>
-
-                        {/* Company */}
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-sm font-bold text-brand-navy pl-1">
-                            Company / Business Name <span className="text-red-500">*</span>
-                          </label>
-                          <div className="relative">
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
-                              <FaBuilding size={16} />
-                            </span>
-                            <input
-                              type="text"
-                              placeholder="Enter your company name"
-                              {...register("company")}
-                              className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.company ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
-                                } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
-                            />
-                          </div>
-                          {errors.company && <span className="text-xs text-red-500 font-bold px-1">{errors.company.message}</span>}
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {/* Mobile */}
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-sm font-bold text-brand-navy pl-1">
-                            Mobile Number <span className="text-red-500">*</span>
-                          </label>
-                          <div className="relative">
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
-                              <FiPhone size={18} />
-                            </span>
-                            <input
-                              type="tel"
-                              placeholder="Enter your mobile number"
-                              {...register("mobile")}
-                              className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.mobile ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
-                                } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
-                            />
-                          </div>
-                          {errors.mobile && <span className="text-xs text-red-500 font-bold px-1">{errors.mobile.message}</span>}
-                        </div>
-
-                        {/* Email */}
-                        <div className="flex flex-col gap-1.5">
-                          <label className="text-sm font-bold text-brand-navy pl-1">
-                            Email Address <span className="text-red-500">*</span>
-                          </label>
-                          <div className="relative">
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
-                              <FaEnvelope size={16} />
-                            </span>
-                            <input
-                              type="email"
-                              placeholder="Enter your email address"
-                              {...register("email")}
-                              className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.email ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
-                                } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
-                            />
-                          </div>
-                          {errors.email && <span className="text-xs text-red-500 font-bold px-1">{errors.email.message}</span>}
-                        </div>
-                      </div>
-
-                      {/* Subject */}
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-sm font-bold text-brand-navy pl-1">
-                          Subject
-                        </label>
-                        <select
-                          {...register("subject")}
-                          className="w-full py-3.5 px-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold text-slate-700 transition-all cursor-pointer"
+                        <h4 className="text-2xl font-black text-brand-navy mb-3">Message Sent!</h4>
+                        <p className="text-slate-500 font-semibold leading-relaxed max-w-md">
+                          Thank you for reaching out. We have received your message and our team will get back to you shortly.
+                        </p>
+                        <button
+                          onClick={() => setFormSubmitted(false)}
+                          className="mt-8 px-6 py-2.5 bg-brand-green hover:bg-brand-dark-green text-white font-bold rounded-xl shadow-sm text-sm transition-colors focus:outline-none"
                         >
-                          <option>How can we help you?</option>
-                          <option>Become a Founding Seller</option>
-                          <option>Buyer Support & Security</option>
-                          <option>Partnership & Integration</option>
-                          <option>Feedback & General Inquiry</option>
-                        </select>
-                      </div>
-
-                      {/* Message */}
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-sm font-bold text-brand-navy pl-1">
-                          Message <span className="text-red-500">*</span>
-                        </label>
-                        <div className="relative">
-                          <span className="absolute left-4 top-3.5 text-slate-400">
-                            <FiMessageSquare size={18} />
-                          </span>
-                          <textarea
-                            rows={4}
-                            placeholder="Write your message here..."
-                            {...register("message")}
-                            className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.message ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
-                              } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all resize-none`}
-                          />
-                        </div>
-                        {errors.message && <span className="text-xs text-red-500 font-bold px-1">{errors.message.message}</span>}
-                      </div>
-
-                      {/* Submit Button */}
-                      {submitError && (
-                        <div className="text-sm text-red-600 font-bold px-4 py-3 bg-red-50 rounded-xl border border-red-200 text-center">
-                          {submitError}
-                        </div>
-                      )}
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="mt-2 w-full py-4 bg-[#097B3E] hover:bg-brand-dark-green disabled:bg-slate-300 text-white rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-md text-base tracking-wide cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+                          Send Another Message
+                        </button>
+                      </motion.div>
+                    ) : (
+                      <motion.form
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onSubmit={handleSubmit(onSubmit)}
+                        className="flex flex-col gap-5"
                       >
-                        <FaPaperPlane size={15} />
-                        <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                      </button>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          {/* Name */}
+                          <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-bold text-brand-navy pl-1">
+                              Your Name <span className="text-red-500">*</span>
+                            </label>
+                            <div className="relative">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                <FiUser size={18} />
+                              </span>
+                              <input
+                                type="text"
+                                placeholder="Enter your full name"
+                                {...register("name")}
+                                className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.name ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
+                                  } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
+                              />
+                            </div>
+                            {errors.name && <span className="text-xs text-red-500 font-bold px-1">{errors.name.message}</span>}
+                          </div>
 
-                      {/* Security Notice */}
-                      <div className="flex items-center justify-center gap-2 text-xs font-bold text-slate-400 mt-2">
-                        <FaLock size={10} className="text-brand-green" />
-                        <span>We respect your privacy. Your information is secure and will never be shared.</span>
-                      </div>
-                    </motion.form>
-                  )}
-                </AnimatePresence>
+                          {/* Company */}
+                          <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-bold text-brand-navy pl-1">
+                              Company / Business Name <span className="text-red-500">*</span>
+                            </label>
+                            <div className="relative">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                <FaBuilding size={16} />
+                              </span>
+                              <input
+                                type="text"
+                                placeholder="Enter your company name"
+                                {...register("company")}
+                                className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.company ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
+                                  } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
+                              />
+                            </div>
+                            {errors.company && <span className="text-xs text-red-500 font-bold px-1">{errors.company.message}</span>}
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          {/* Mobile */}
+                          <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-bold text-brand-navy pl-1">
+                              Mobile Number <span className="text-red-500">*</span>
+                            </label>
+                            <div className="relative">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                <FiPhone size={18} />
+                              </span>
+                              <input
+                                type="tel"
+                                placeholder="Enter your mobile number"
+                                {...register("mobile")}
+                                className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.mobile ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
+                                  } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
+                              />
+                            </div>
+                            {errors.mobile && <span className="text-xs text-red-500 font-bold px-1">{errors.mobile.message}</span>}
+                          </div>
+
+                          {/* Email */}
+                          <div className="flex flex-col gap-1.5">
+                            <label className="text-sm font-bold text-brand-navy pl-1">
+                              Email Address <span className="text-red-500">*</span>
+                            </label>
+                            <div className="relative">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                <FaEnvelope size={16} />
+                              </span>
+                              <input
+                                type="email"
+                                placeholder="Enter your email address"
+                                {...register("email")}
+                                className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.email ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
+                                  } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all`}
+                              />
+                            </div>
+                            {errors.email && <span className="text-xs text-red-500 font-bold px-1">{errors.email.message}</span>}
+                          </div>
+                        </div>
+
+                        {/* Subject */}
+                        <div className="flex flex-col gap-1.5">
+                          <label className="text-sm font-bold text-brand-navy pl-1">
+                            Subject
+                          </label>
+                          <select
+                            {...register("subject")}
+                            className="w-full py-3.5 px-4 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold text-slate-700 transition-all cursor-pointer"
+                          >
+                            <option>How can we help you?</option>
+                            <option>Become a Founding Seller</option>
+                            <option>Buyer Support & Security</option>
+                            <option>Partnership & Integration</option>
+                            <option>Feedback & General Inquiry</option>
+                          </select>
+                        </div>
+
+                        {/* Message */}
+                        <div className="flex flex-col gap-1.5">
+                          <label className="text-sm font-bold text-brand-navy pl-1">
+                            Message <span className="text-red-500">*</span>
+                          </label>
+                          <div className="relative">
+                            <span className="absolute left-4 top-3.5 text-slate-400">
+                              <FiMessageSquare size={18} />
+                            </span>
+                            <textarea
+                              rows={4}
+                              placeholder="Write your message here..."
+                              {...register("message")}
+                              className={`w-full py-3.5 pl-11 pr-4 rounded-xl border ${errors.message ? "border-red-500 ring-2 ring-red-100" : "border-slate-200"
+                                } focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm font-semibold transition-all resize-none`}
+                            />
+                          </div>
+                          {errors.message && <span className="text-xs text-red-500 font-bold px-1">{errors.message.message}</span>}
+                        </div>
+
+                        {/* Submit Button */}
+                        {submitError && (
+                          <div className="text-sm text-red-600 font-bold px-4 py-3 bg-red-50 rounded-xl border border-red-200 text-center">
+                            {submitError}
+                          </div>
+                        )}
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="mt-2 w-full py-4 bg-[#097B3E] hover:bg-brand-dark-green disabled:bg-slate-300 text-white rounded-xl font-bold flex items-center justify-center gap-3 transition-colors shadow-md text-base tracking-wide cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-green/30"
+                        >
+                          <FaPaperPlane size={15} />
+                          <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                        </button>
+
+                        {/* Security Notice */}
+                        <div className="flex items-center justify-center gap-2 text-xs font-bold text-slate-400 mt-2">
+                          <FaLock size={10} className="text-brand-green" />
+                          <span>We respect your privacy. Your information is secure and will never be shared.</span>
+                        </div>
+                      </motion.form>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
 

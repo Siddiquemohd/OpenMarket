@@ -740,7 +740,7 @@ export default function Home() {
         </section>
 
         {/* Section 7: Bottom Info / Footer Links Strip */}
-        <section className="bg-slate-50 border-t border-slate-200 py-6 -mb-16">
+        <section className="py-6 -mb-16">
           <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-6">
 
             {/* Badges Row */}

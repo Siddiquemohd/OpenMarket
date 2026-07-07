@@ -618,7 +618,7 @@ export default function Home() {
         {/* 4. Pain Points Columns (Sellers vs Buyers Facing) */}
         <section
           id="sellers"
-          className="bg-white pt-10 pb-12 md:pt-12 md:pb-16 border-y border-slate-100"
+          className="bg-white pt-10 pb-12 md:pt-12 md:pb-16 "
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
