@@ -165,23 +165,38 @@ export default function OurMission() {
                   />
                 </svg>
 
-                {/* Handshake Central Circle Graphic */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[190px] h-[190px] sm:w-[240px] sm:h-[240px] rounded-full border-[5px] border-brand-navy bg-white shadow-xl overflow-hidden flex items-center justify-center z-10">
-                  <div className="relative w-full h-full">
-                    {/* Checkmark overlay at top center */}
-                    <div className="absolute top-2.5 left-1/2 -translate-x-1/2 bg-brand-green text-white p-1 rounded-full shadow-sm z-20 flex items-center justify-center">
-                      <FaCheck size={9} />
-                    </div>
+                {/* Skyline Background (Inside the diagram container, behind nodes/image) */}
+                <div className="absolute inset-x-[-60px] bottom-0 h-[280px] pointer-events-none select-none z-0 opacity-40">
+                  <svg viewBox="0 0 540 300" className="w-full h-full text-slate-200/50" fill="currentColor">
+                    {/* Left Skyline Buildings */}
+                    <rect x="0" y="210" width="12" height="90" />
+                    <rect x="18" y="170" width="16" height="130" />
+                    <rect x="40" y="120" width="20" height="180" />
+                    <path d="M68 300 V90 L74 40 L80 90 V300 Z" />
+                    <rect x="88" y="140" width="18" height="160" />
+                    <rect x="112" y="190" width="14" height="110" />
+                    
+                    {/* Right Skyline Buildings */}
+                    <rect x="390" y="190" width="14" height="110" />
+                    <rect x="410" y="140" width="18" height="160" />
+                    <path d="M434 300 V90 L440 40 L446 90 V300 Z" />
+                    <rect x="454" y="110" width="22" height="190" />
+                    <rect x="482" y="160" width="16" height="140" />
+                    <rect x="504" y="200" width="12" height="100" />
+                    <rect x="522" y="230" width="10" height="70" />
+                  </svg>
+                </div>
 
-                    <div className="absolute bottom-[-15%] left-[50%] -translate-x-1/2 w-[160%] h-[160%] max-w-none">
-                      <Image
-                        src="/business_handshake_worldmap_round_elements_TRANSPARENT.png"
-                        alt="Handshake illustration representing connections"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
+                {/* Handshake Central Graphic using DEAL.png */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] z-10 flex items-center justify-center">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/DEAL.png"
+                      alt="Business partnership shaking hands representing OpenMarket"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
                   </div>
                 </div>
 
