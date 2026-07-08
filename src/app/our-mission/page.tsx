@@ -10,18 +10,14 @@ import {
   FaCheck,
   FaUsers,
   FaStar,
-  FaHandshake,
   FaGraduationCap,
   FaBriefcase,
   FaWhatsapp,
   FaYoutube,
-  FaBalanceScale,
   FaLeaf,
 } from "react-icons/fa";
 import {
   FiShield,
-  FiTrendingUp,
-  FiSearch,
   FiActivity,
   FiCheckCircle,
   FiUserCheck,
@@ -29,7 +25,6 @@ import {
   FiUploadCloud,
   FiMessageSquare,
   FiFileText,
-  FiMousePointer,
 } from "react-icons/fi";
 import { useOtpModal } from "@/providers/OtpModalProvider";
 
@@ -37,27 +32,28 @@ import { useOtpModal } from "@/providers/OtpModalProvider";
 function ValueItemCard({
   title,
   desc,
-  icon,
+  imageSrc,
   isGreen,
 }: {
   title: string;
   desc: string;
-  icon: React.ReactNode;
+  imageSrc: string;
   isGreen: boolean;
 }) {
   return (
-    <div className="flex items-start gap-4 p-2">
-      <div
-        className={`w-[52px] h-[52px] rounded-full flex items-center justify-center flex-shrink-0 shadow-sm ${isGreen
-          ? "bg-[#f4faf6] text-brand-green border border-brand-green/20"
-          : "bg-[#f4f8fc] text-brand-blue border border-brand-blue/20"
-          }`}
-      >
-        {icon}
+    <div className="flex items-start gap-3 p-3 xl:p-4">
+      <div className="w-16 h-16 flex-shrink-0 mt-0.5">
+        <Image
+          src={imageSrc}
+          alt={title}
+          width={64}
+          height={64}
+          className="object-contain"
+        />
       </div>
       <div className="flex flex-col text-left">
         <h4
-          className={`text-sm md:text-base font-extrabold mb-1 ${isGreen ? "text-brand-green" : "text-brand-blue"
+          className={`text-sm md:text-[15px] font-extrabold mb-1 ${isGreen ? "text-brand-green" : "text-brand-blue"
             }`}
         >
           {title}
@@ -436,36 +432,36 @@ export default function OurMission() {
             <div className="hidden md:block flex-grow h-[1.5px] bg-slate-200" />
           </div>
 
-          {/* Grid Layout of Values */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {/* Grid Layout of Values with Dividers */}
+          <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] shadow-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-0 lg:divide-x divide-slate-100 p-2 sm:p-4">
             <ValueItemCard
               title="Fairness"
               desc="Every business starts with an equal opportunity."
-              icon={<FaBalanceScale size={22} />}
+              imageSrc="/value_fairness_clean.png"
               isGreen={true}
             />
             <ValueItemCard
               title="Transparency"
               desc="No hidden ranking algorithms favoring higher-paying sellers."
-              icon={<FiSearch size={22} />}
+              imageSrc="/value_transparency_clean.png"
               isGreen={false}
             />
             <ValueItemCard
               title="Trust"
               desc="Helping buyers connect with genuine and active businesses."
-              icon={<FaHandshake size={22} />}
+              imageSrc="/value_trust_clean.png"
               isGreen={true}
             />
             <ValueItemCard
               title="Simplicity"
               desc="Easy registration, easy product uploads, easy business discovery."
-              icon={<FiMousePointer size={22} />}
+              imageSrc="/value_simplicity_clean.png"
               isGreen={false}
             />
             <ValueItemCard
               title="Growth"
               desc="Supporting MSMEs and industrial businesses in expanding their reach."
-              icon={<FiTrendingUp size={22} />}
+              imageSrc="/value_growth_clean.png"
               isGreen={true}
             />
           </div>
