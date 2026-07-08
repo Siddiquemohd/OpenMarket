@@ -159,7 +159,7 @@ export default function OurMission() {
                     <path d="M68 300 V90 L74 40 L80 90 V300 Z" />
                     <rect x="88" y="140" width="18" height="160" />
                     <rect x="112" y="190" width="14" height="110" />
-                    
+
                     {/* Right Skyline Buildings */}
                     <rect x="390" y="190" width="14" height="110" />
                     <rect x="410" y="140" width="18" height="160" />
@@ -197,13 +197,10 @@ export default function OurMission() {
                   OUR MISSION
                 </span>
                 <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug mb-3">
-                  To create India&apos;s fairest B2B marketplace where every
-                  genuine business has an equal opportunity to be discovered.
+                  To build India's fairest online B2B marketplace where every genuine business big or small has an equal opportunity to be discovered, connect with buyers, and grow.
                 </h3>
                 <p className="text-[13.5px] font-semibold text-slate-500 leading-relaxed">
-                  We want every manufacturer, trader, distributor, service
-                  provider, and industrial supplier to compete on effort, quality,
-                  and responsiveness—not on marketing budgets.
+                  We believe visibility should be earned through quality, service, responsiveness, and business activity not purchased through larger marketing budgets. Our mission is to create a level playing field where every business can compete on merit.
                 </p>
               </div>
             </div>
@@ -218,10 +215,7 @@ export default function OurMission() {
                   OUR VISION
                 </span>
                 <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug">
-                  To become the world&apos;s most trusted activity-driven B2B
-                  marketplace, connecting buyers with genuine sellers while
-                  creating sustainable growth opportunities for businesses of every
-                  size.
+                  To build the world’s most open, fair, and transparent online B2B marketplace.
                 </h3>
               </div>
             </div>

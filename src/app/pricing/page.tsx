@@ -2,19 +2,19 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-  FiDollarSign, 
-  FiLayers, 
-  FiImage, 
-  FiVideo, 
-  FiPlay, 
-  FiCpu, 
-  FiCloud, 
-  FiClock, 
-  FiCalendar, 
-  FiUsers, 
-  FiShield, 
-  FiHeadphones, 
+import {
+  FiDollarSign,
+  FiLayers,
+  FiImage,
+  FiVideo,
+  FiPlay,
+  FiCpu,
+  FiCloud,
+  FiClock,
+  FiCalendar,
+  FiUsers,
+  FiShield,
+  FiHeadphones,
   FiSearch,
   FiSlash,
   FiAward,
@@ -38,8 +38,8 @@ export default function PricingPage() {
 
   const features = [
     { name: "Annual Price", icon: <FiDollarSign />, free: "₹0", starter: "₹999 / year", professional: "₹2,999 / year", business: "₹4,999 / year", enterprise: "Custom" },
-    { name: "Live (Online) Status (Except Free)", icon: <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />, tooltip: "Requires active seller login to show online badge on search and details page.", free: "cross", starter: "check", professional: "check", business: "check", enterprise: "check" },
-    { name: "Active Status (Available for all)", icon: <span className="w-2.5 h-2.5 rounded-full bg-[#0B3C5F] inline-block" />, tooltip: "Shows that your business page is actively maintained (visited within last 30 days).", free: "check", starter: "check", professional: "check", business: "check", enterprise: "check" },
+    { name: "Live (Online) Status", icon: <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" />, tooltip: "Requires active seller login to show online badge on search and details page.", free: "cross", starter: "check", professional: "check", business: "check", enterprise: "check" },
+    { name: "Active Status", icon: <span className="w-2.5 h-2.5 rounded-full bg-[#0B3C5F] inline-block" />, tooltip: "Shows that your business page is actively maintained (visited within last 30 days).", free: "check", starter: "check", professional: "check", business: "check", enterprise: "check" },
     { name: "Products / Services", icon: <FiLayers />, free: "25", starter: "50", professional: "75", business: "100", enterprise: "Custom" },
     { name: "Images per Product / Service", icon: <FiImage />, free: "3", starter: "5", professional: "10", business: "15", enterprise: "15" },
     { name: "30-Second Videos per Product / Service", icon: <FiVideo />, free: "1", starter: "2", professional: "3", business: "5", enterprise: "5" },
@@ -73,11 +73,11 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen bg-slate-50/50 pt-6 pb-12 font-sans">
-      
+
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 pt-10 pb-6 text-center md:text-left relative overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
+
           {/* Left Text */}
           <div className="lg:col-span-8 flex flex-col">
             <h1 className="text-hero-title leading-tight select-none">
@@ -125,18 +125,18 @@ export default function PricingPage() {
       {/* Pricing Matrix Section */}
       <section className="max-w-7xl mx-auto px-6 mt-6">
         <div className="bg-white rounded-[28px] shadow-md border border-slate-150 overflow-hidden p-1">
-          
+
           {/* Scrollable table container */}
           <div className="overflow-x-auto rounded-[24px]">
             <table className="w-full min-w-[900px] border-collapse text-left">
-              
+
               {/* Header */}
               <thead>
                 <tr className="border-b border-slate-100">
                   <th className="p-6 text-base font-black text-white bg-[#031427] w-[20%] text-center uppercase tracking-wider">
                     FEATURES
                   </th>
-                  
+
                   {/* FREE Plan */}
                   <th className="p-0 text-center w-[16%] border-l border-slate-150 bg-white">
                     <div className="h-2 bg-[#0FA958] w-full" />
@@ -198,7 +198,7 @@ export default function PricingPage() {
                         </div>
                       )}
                     </td>
-                    
+
                     {/* Free val */}
                     <td className="p-5 text-center font-bold text-[14px] text-slate-600 border-l border-slate-100 bg-slate-50/10">
                       {renderCell(f.free)}
@@ -229,10 +229,10 @@ export default function PricingPage() {
                 {/* Bottom Buttons Row */}
                 <tr>
                   <td className="p-6 bg-slate-50/40" />
-                  
+
                   {/* Free button */}
                   <td className="p-6 text-center border-l border-slate-100 bg-slate-50/10">
-                    <button 
+                    <button
                       onClick={() => openOtpModal()}
                       className="w-full max-w-[130px] border-2 border-[#0FA958] text-[#0FA958] py-2 px-3 rounded-xl font-extrabold text-sm transition-all hover:bg-[#0FA958] hover:text-white"
                     >
@@ -242,7 +242,7 @@ export default function PricingPage() {
 
                   {/* Starter button */}
                   <td className="p-6 text-center border-l border-slate-100">
-                    <button 
+                    <button
                       onClick={() => openOtpModal()}
                       className="w-full max-w-[130px] bg-[#0B3C5F] text-white py-2.5 px-3 rounded-xl font-extrabold text-sm transition-all hover:bg-[#12629B]"
                     >
@@ -252,7 +252,7 @@ export default function PricingPage() {
 
                   {/* Professional button */}
                   <td className="p-6 text-center border-l border-slate-100">
-                    <button 
+                    <button
                       onClick={() => openOtpModal()}
                       className="w-full max-w-[130px] bg-[#12629B] text-white py-2.5 px-3 rounded-xl font-extrabold text-sm transition-all hover:bg-[#0B3C5F]"
                     >
@@ -262,7 +262,7 @@ export default function PricingPage() {
 
                   {/* Business button */}
                   <td className="p-6 text-center border-l border-slate-100">
-                    <button 
+                    <button
                       onClick={() => openOtpModal()}
                       className="w-full max-w-[130px] bg-[#0FA958] text-white py-2.5 px-3 rounded-xl font-extrabold text-sm transition-all hover:bg-[#0c8a48]"
                     >
@@ -272,7 +272,7 @@ export default function PricingPage() {
 
                   {/* Enterprise button */}
                   <td className="p-6 text-center border-l border-slate-100">
-                    <Link 
+                    <Link
                       href="/contact-us"
                       className="inline-block w-full max-w-[130px] bg-[#031427] text-white py-2.5 px-3 rounded-xl font-extrabold text-sm transition-all hover:bg-[#0A2540] text-center"
                     >
@@ -293,7 +293,7 @@ export default function PricingPage() {
             <FiShield className="stroke-[2.5px]" />
           </div>
           <p className="text-[12px] font-bold text-slate-500 leading-relaxed">
-            Any misuse of the platform by using Live Status through automated means shall be suspended from the platform. 
+            Any misuse of the platform by using Live Status through automated means shall be suspended from the platform.
             Further repeated offences shall lead to permanent ban of the seller.
           </p>
         </div>
@@ -384,7 +384,7 @@ export default function PricingPage() {
                   <span className="text-[9px] font-extrabold text-slate-400 block mb-3 uppercase tracking-wider text-center sm:text-left">
                     {status.badge}
                   </span>
-                  
+
                   {/* Avatar Icon */}
                   <div className={`relative w-14 h-14 rounded-full border-2 border-slate-200 ${status.avatarBg} flex items-center justify-center text-xl mx-auto mb-4 ring-4 ${status.avatarRing}`}>
                     <FiUser className="stroke-[2.5px]" />
@@ -570,7 +570,7 @@ export default function PricingPage() {
       {/* Our Promise Section */}
       <section className="max-w-7xl mx-auto px-6 mt-12 md:mt-16">
         <div className="bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          
+
           {/* Left Text */}
           <div className="md:col-span-7">
             <h2 className="text-h2 text-brand-navy uppercase tracking-tight">
@@ -578,7 +578,7 @@ export default function PricingPage() {
             </h2>
             <div className="h-[2px] w-8 bg-brand-green mt-3.5 mb-5 rounded-full" />
             <p className="text-[14.5px] font-bold text-slate-500 leading-relaxed">
-              Unlike traditional B2B marketplaces, OpenMarket does not sell search rankings or visibility. 
+              Unlike traditional B2B marketplaces, OpenMarket does not sell search rankings or visibility.
               Every seller earns visibility through participation, responsiveness, and consistent activity.
             </p>
           </div>
