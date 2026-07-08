@@ -15,8 +15,6 @@ import {
   FaBriefcase,
   FaWhatsapp,
   FaYoutube,
-  FaStore,
-  FaShoppingBag,
   FaBalanceScale,
   FaLeaf,
 } from "react-icons/fa";
@@ -27,8 +25,6 @@ import {
   FiActivity,
   FiCheckCircle,
   FiUserCheck,
-  FiSliders,
-  FiEye,
   FiXCircle,
   FiUploadCloud,
   FiMessageSquare,
@@ -188,34 +184,46 @@ export default function OurMission() {
         <section className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* OUR MISSION CARD */}
-            <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-6 hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 rounded-full bg-[#f4faf6] border border-brand-green/20 flex items-center justify-center text-brand-green flex-shrink-0 shadow-sm">
-                <FiSliders size={28} />
+            <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:shadow-md transition-shadow">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+                <Image
+                  src="/mission_target.jpg"
+                  alt="Our Mission"
+                  width={128}
+                  height={128}
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-black text-brand-green tracking-widest uppercase mb-1.5 block">
                   OUR MISSION
                 </span>
                 <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug mb-3">
-                  To build India's fairest online B2B marketplace where every genuine business big or small has an equal opportunity to be discovered, connect with buyers, and grow.
+                  To create India's fairest B2B marketplace where every genuine business has an equal opportunity to be discovered.
                 </h3>
                 <p className="text-[13.5px] font-semibold text-slate-500 leading-relaxed">
-                  We believe visibility should be earned through quality, service, responsiveness, and business activity not purchased through larger marketing budgets. Our mission is to create a level playing field where every business can compete on merit.
+                  We want every manufacturer, trader, distributor, service provider, and industrial supplier to compete on effort, quality, and responsiveness—not on marketing budgets.
                 </p>
               </div>
             </div>
 
             {/* OUR VISION CARD */}
-            <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start gap-6 hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 rounded-full bg-[#f4f8fc] border border-brand-blue/20 flex items-center justify-center text-brand-blue flex-shrink-0 shadow-sm">
-                <FiEye size={28} />
+            <div className="bg-white border border-[#e2eae5]/80 rounded-[28px] p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:shadow-md transition-shadow">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+                <Image
+                  src="/vision_eye.jpg"
+                  alt="Our Vision"
+                  width={128}
+                  height={128}
+                  className="object-contain"
+                />
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-black text-brand-blue tracking-widest uppercase mb-1.5 block">
                   OUR VISION
                 </span>
                 <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug">
-                  To build the world’s most open, fair, and transparent online B2B marketplace.
+                  To become the world's most trusted activity-driven B2B marketplace, connecting buyers with genuine sellers while creating sustainable growth opportunities for businesses of every size.
                 </h3>
               </div>
             </div>
@@ -237,39 +245,47 @@ export default function OurMission() {
           </p>
 
           {/* Main Triple Column Card */}
-          <div className="bg-white border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Sellers Face List */}
-            <div className="lg:col-span-4 flex flex-col gap-6 text-left">
-              <div className="flex items-center gap-4">
-                <div className="w-[60px] h-[60px] rounded-full bg-[#f4faf6] text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm border border-brand-green/10">
-                  <FaStore size={24} />
-                </div>
+          <div className="bg-white border border-[#e2eae5]/80 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Sellers Face */}
+            <div className="lg:col-span-4 flex flex-col sm:flex-row items-center gap-6 text-left">
+              <div className="w-32 h-32 sm:w-36 sm:h-36 flex-shrink-0">
+                <Image
+                  src="/seller_store_new.png"
+                  alt="Sellers Store"
+                  width={144}
+                  height={144}
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="flex-grow flex flex-col gap-4 text-left">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-brand-green tracking-widest uppercase">
                     SELLERS FACE
                   </span>
                   <div className="h-[2px] w-8 bg-brand-green mt-1" />
                 </div>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {[
-                  "Expensive memberships",
-                  "Low visibility without paid plans",
-                  "Poor-quality enquiries",
-                  "Rankings based on advertising spend",
-                  "Limited opportunities for new businesses",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <FiXCircle
-                      className="text-brand-green flex-shrink-0 mt-0.5"
-                      size={18}
-                    />
-                    <span className="text-sm font-bold text-slate-600">
-                      {item}
-                    </span>
-                  </div>
-                ))}
+                
+                <div className="flex flex-col gap-3">
+                  {[
+                    "Expensive memberships",
+                    "Low visibility without paid plans",
+                    "Poor-quality enquiries",
+                    "Rankings based on advertising spend",
+                    "Limited opportunities for new businesses",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <FiXCircle
+                        className="text-brand-green flex-shrink-0 mt-0.5"
+                        size={16}
+                      />
+                      <span className="text-xs sm:text-[13.5px] font-bold text-slate-600">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -277,50 +293,58 @@ export default function OurMission() {
             <div className="lg:col-span-4 flex justify-center py-4 lg:py-0">
               <div className="relative w-full max-w-[280px] aspect-square flex items-center justify-center">
                 <Image
-                  src="/confused_sellers_buyers.png"
+                  src="/confused_sellers_buyers_new.jpg"
                   alt="Illustration representing problem analysis"
-                  width={240}
-                  height={240}
+                  width={280}
+                  height={280}
                   className="object-contain"
                   priority
                 />
               </div>
             </div>
 
-            {/* Buyers Face List */}
-            <div className="lg:col-span-4 flex flex-col gap-6 text-left">
-              <div className="flex items-center gap-4">
-                <div className="w-[60px] h-[60px] rounded-full bg-[#f4f8fc] text-brand-blue flex items-center justify-center flex-shrink-0 shadow-sm border border-brand-blue/10">
-                  <FaShoppingBag size={24} />
-                </div>
+            {/* Buyers Face */}
+            <div className="lg:col-span-4 flex flex-col sm:flex-row items-center gap-6 text-left">
+              <div className="flex-grow flex flex-col gap-4 order-2 sm:order-1">
                 <div className="flex flex-col">
                   <span className="text-[10px] font-black text-brand-blue tracking-widest uppercase">
                     BUYERS FACE
                   </span>
                   <div className="h-[2px] w-8 bg-brand-blue mt-1" />
                 </div>
+                
+                <div className="flex flex-col gap-3">
+                  {[
+                    "Inactive suppliers",
+                    "Fake or outdated listings",
+                    "Spam calls",
+                    "Difficulty finding responsive businesses",
+                    "Lack of transparency",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <FiXCircle
+                        className="text-brand-blue flex-shrink-0 mt-0.5"
+                        size={16}
+                      />
+                      <span className="text-xs sm:text-[13.5px] font-bold text-slate-600">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="flex flex-col gap-4">
-                {[
-                  "Inactive suppliers",
-                  "Fake or outdated listings",
-                  "Spam calls",
-                  "Difficulty finding responsive businesses",
-                  "Lack of transparency",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <FiXCircle
-                      className="text-brand-blue flex-shrink-0 mt-0.5"
-                      size={18}
-                    />
-                    <span className="text-sm font-bold text-slate-600">
-                      {item}
-                    </span>
-                  </div>
-                ))}
+              <div className="w-32 h-32 sm:w-36 sm:h-36 flex-shrink-0 order-1 sm:order-2">
+                <Image
+                  src="/buyer_bag_new.jpg"
+                  alt="Buyers Bag"
+                  width={144}
+                  height={144}
+                  className="object-contain"
+                />
               </div>
             </div>
+
           </div>
         </section>
 
