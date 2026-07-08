@@ -17,15 +17,16 @@ import {
   FaLeaf,
 } from "react-icons/fa";
 import {
-  FiShield,
-  FiActivity,
   FiCheckCircle,
   FiUserCheck,
   FiXCircle,
-  FiUploadCloud,
-  FiMessageSquare,
-  FiFileText,
 } from "react-icons/fi";
+import {
+  IoPulseOutline,
+  IoCloudUploadOutline,
+  IoChatbubbleEllipsesOutline,
+} from "react-icons/io5";
+import { RiShieldStarLine, RiFileInfoLine } from "react-icons/ri";
 import { useOtpModal } from "@/providers/OtpModalProvider";
 
 // Value item helper component for Section 5 (Our Values)
@@ -75,20 +76,20 @@ export default function OurMission() {
       icon: <FaGraduationCap size={15} />,
     },
     {
-      text: "Founder & Director, Uneefy Intratech Pvt. Ltd.",
-      icon: <FaBriefcase size={15} />,
-    },
-    {
-      text: "20+ Years in Industrial Products, Projects & B2B Business",
-      icon: <FaStar size={15} />,
-    },
-    {
       text: "Worked with L&T, Bajaj Electricals, Valmont and other industry leaders",
       icon: <FaUsers size={15} />,
     },
     {
+      text: "Founder & Director, Uneefy Intratech Pvt. Ltd.",
+      icon: <FaBriefcase size={15} />,
+    },
+    {
       text: "Served 300+ Industrial Customers",
       icon: <FiUserCheck size={15} />,
+    },
+    {
+      text: "20+ Years in Industrial Products, Projects & B2B Business",
+      icon: <FaStar size={15} />,
     },
     {
       text: "Passionate about building a fair and transparent marketplace for Indian businesses",
@@ -364,47 +365,47 @@ export default function OurMission() {
 
               {/* Right Side 5 Column Check items */}
               <div className="lg:col-span-8 flex flex-col gap-6">
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-y-6 md:gap-y-0 md:divide-x divide-white/10">
                   {[
                     {
                       label: "Staying active",
-                      icon: <FiActivity size={22} />,
+                      icon: <IoPulseOutline size={38} />,
                       isGreen: true,
                     },
                     {
                       label: "Updating products & services",
-                      icon: <FiUploadCloud size={22} />,
+                      icon: <IoCloudUploadOutline size={38} />,
                       isGreen: false,
                     },
                     {
                       label: "Responding quickly",
-                      icon: <FiMessageSquare size={22} />,
+                      icon: <IoChatbubbleEllipsesOutline size={38} />,
                       isGreen: true,
                     },
                     {
                       label: "Maintaining complete business info",
-                      icon: <FiFileText size={22} />,
+                      icon: <RiFileInfoLine size={38} />,
                       isGreen: false,
                     },
                     {
                       label: "Building trust with buyers",
-                      icon: <FiShield size={22} />,
+                      icon: <RiShieldStarLine size={38} />,
                       isGreen: true,
                     },
                   ].map((act, idx) => (
                     <div
                       key={idx}
-                      className="flex flex-col items-center text-center gap-3 p-3 bg-[#082944]/40 border border-blue-900/30 rounded-2xl hover:scale-102 transition-transform"
+                      className="flex flex-col items-center text-center gap-3.5 px-4 py-2 hover:scale-105 transition-all duration-300"
                     >
                       <div
-                        className={`w-[50px] h-[50px] rounded-full flex items-center justify-center flex-shrink-0 shadow-md ${act.isGreen
+                        className={`w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg ${act.isGreen
                           ? "bg-brand-green text-white border-2 border-brand-green/20"
                           : "bg-brand-blue text-white border-2 border-brand-blue/20"
                           }`}
                       >
                         {act.icon}
                       </div>
-                      <span className="text-[10.5px] font-bold text-slate-200 leading-snug">
+                      <span className="text-[11.5px] font-bold text-slate-200 leading-snug">
                         {act.label}
                       </span>
                     </div>
@@ -472,14 +473,14 @@ export default function OurMission() {
           <div className="bg-[#f7fbf8] border border-[#e2eae5]/80 rounded-[32px] p-8 sm:p-10 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column Portrait */}
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative max-w-[280px] w-full aspect-[4/5] rounded-[32px] overflow-hidden shadow-lg border border-slate-200 bg-white">
+              <div className="relative max-w-[350px] w-full aspect-[4/5]">
                 <Image
                   src="/founder2.png"
                   alt="Kiran Pailwan - Founder of OpenMarket"
                   fill
                   priority
-                  sizes="(max-w-768px) 100vw, 280px"
-                  className="object-cover hover:scale-103 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 350px"
+                  className="object-contain hover:scale-103 transition-transform duration-500"
                 />
               </div>
             </div>
