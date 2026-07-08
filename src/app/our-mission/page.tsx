@@ -42,13 +42,13 @@ function ValueItemCard({
 }) {
   return (
     <div className="flex items-start gap-3 p-3 xl:p-4">
-      <div className="w-16 h-16 flex-shrink-0 mt-0.5">
+      <div className="w-16 h-16 flex-shrink-0 mt-0.5 flex items-center justify-center overflow-visible">
         <Image
           src={imageSrc}
           alt={title}
           width={64}
           height={64}
-          className="object-contain"
+          className="object-contain scale-[1.3]"
         />
       </div>
       <div className="flex flex-col text-left">
