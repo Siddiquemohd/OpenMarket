@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import "../globals.css";
 import {
@@ -111,67 +112,16 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Right Column Connection Graphic */}
-            <div className="lg:col-span-7 flex items-center justify-center py-6 lg:py-0 w-full overflow-visible">
-              <div className="max-w-xl w-full py-6 relative flex flex-col items-center">
-
-                {/* Horizontal Connection Row */}
-                <div className="flex items-center justify-between w-full relative z-10 px-4">
-
-                  {/* Buyer Block */}
-                  <div className="flex flex-col items-center gap-2.5">
-                    <div className="w-[72px] h-[72px] rounded-2xl bg-white border border-slate-200/80 text-brand-blue flex items-center justify-center shadow-sm">
-                      <FaShoppingCart size={26} />
-                    </div>
-                    <span className="text-[13.5px] font-black text-brand-navy">Buyer</span>
-                  </div>
-
-                  {/* Dashed Left-Right Connection Line */}
-                  <div className="flex-grow mx-4 relative h-[2px]">
-                    <div className="absolute inset-0 border-t-2 border-dashed border-slate-300" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-slate-400" />
-                  </div>
-
-                  {/* Center Circle OpenMarket Logo */}
-                  <div className="flex flex-col items-center gap-1.5 z-20">
-                    <div className="w-22 h-22 rounded-full border-[6px] border-brand-navy bg-white shadow-md flex items-center justify-center">
-                      <LogoCheckmark size={46} checkColor="#0FA958" circleColor="#0B3C5F" />
-                    </div>
-                    <div className="flex flex-col items-center text-center">
-                      <span className="text-sm font-black tracking-tight"><span className="text-brand-blue">Open</span><span className="text-brand-green">Market</span></span>
-                      <span className="text-[9.5px] font-bold text-slate-400 leading-tight">Be Active. Be Visible,<br />Grow Together.</span>
-                    </div>
-                  </div>
-
-                  {/* Dashed Right-Left Connection Line */}
-                  <div className="flex-grow mx-4 relative h-[2px]">
-                    <div className="absolute inset-0 border-t-2 border-dashed border-slate-300" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-slate-400" />
-                  </div>
-
-                  {/* Seller Block */}
-                  <div className="flex flex-col items-center gap-2.5">
-                    <div className="w-[72px] h-[72px] rounded-2xl bg-white border border-slate-200/80 text-brand-green flex items-center justify-center shadow-sm">
-                      <FaStore size={26} />
-                    </div>
-                    <span className="text-[13.5px] font-black text-brand-navy">Seller</span>
-                  </div>
-
-                </div>
-
-                {/* Vertical Dashed Line to bottom block */}
-                <div className="h-10 w-[2px] border-l-2 border-dashed border-slate-300 my-1" />
-
-                {/* Bottom Connections */}
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-light-blue flex items-center justify-center text-brand-blue shadow-sm border border-brand-blue/10">
-                    <FaUsers size={20} />
-                  </div>
-                  <div className="flex flex-col text-center">
-                    <span className="text-[12.5px] font-black text-brand-navy leading-snug">Better Connections.</span>
-                    <span className="text-[12.5px] font-black text-brand-navy leading-snug">Better Business.</span>
-                  </div>
-                </div>
-
+            <div className="lg:col-span-7 flex items-center justify-center py-6 lg:py-0 w-full overflow-hidden">
+              <div className="relative w-full max-w-[560px] aspect-[1024/576] flex items-center justify-center transition-transform duration-300 hover:scale-103">
+                <Image
+                  src="/buyer_seller_connection_diagram.png"
+                  alt="Buyer Seller Connection Diagram"
+                  width={560}
+                  height={315}
+                  className="object-contain"
+                  priority
+                />
               </div>
             </div>
 
@@ -179,116 +129,108 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 2: Timeline Row */}
-        <section className="max-w-7xl  mx-auto px-6 py-10 ">
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 w-full relative">
+        <section className="max-w-7xl mx-auto px-6 py-10">
+          <div className="bg-white border border-slate-150 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
+            
+            {/* Horizontal Line behind the icons (desktop only) */}
+            <div className="absolute top-[102px] left-[10%] right-[10%] h-[2px] bg-slate-200/80 -z-0 hidden lg:block" />
+            
+            {/* Connecting dots (desktop only) */}
+            <div className="absolute top-[98px] left-[20%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[98px] left-[40%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[98px] left-[60%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[98px] left-[80%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
 
-            {/* Timeline Item 1: 1996 */}
-            <div className="flex-grow flex-1 flex flex-col justify-start p-5 border border-slate-200 bg-white rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left w-full lg:max-w-[220px]">
-              <span className="text-sm font-black text-brand-blue mb-2.5 block">1996</span>
-              <div className="w-12 h-12 rounded-full border border-brand-blue/15 text-brand-blue bg-white flex items-center justify-center flex-shrink-0 shadow-sm mb-4">
-                <FiBookOpen size={18} />
-              </div>
-              <h3 className="text-[15px] font-black text-brand-navy leading-snug mb-2">
-                Directory Model
-              </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed mb-4">
-                Businesses became discoverable online.
-              </p>
-              <div className="bg-[#eef5fe] border border-blue-100 rounded-lg py-1.5 px-2.5 text-[10px] font-black text-[#0070f3] text-center mt-auto">
-                Focus: Business Listings
-              </div>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-8 lg:gap-x-4 items-stretch relative z-10">
+              {[
+                {
+                  year: "1996",
+                  title: "Directory Model",
+                  description: "Businesses became discoverable online.",
+                  focus: "Focus: Business Listings",
+                  colorClass: "text-[#0066CC]",
+                  badgeBg: "bg-[#0066CC]/5 border border-[#0066CC]/10 text-[#0066CC]",
+                  iconClass: "border-[#0066CC]/20 text-[#0066CC] bg-[#0066CC]/5 shadow-sm",
+                  icon: <FiBookOpen size={20} />,
+                },
+                {
+                  year: "2005",
+                  title: "Membership Model",
+                  description: "Businesses paid for better visibility.",
+                  focus: "Focus: Pay for Visibility",
+                  colorClass: "text-brand-green",
+                  badgeBg: "bg-brand-green/5 border border-brand-green/10 text-brand-green",
+                  iconClass: "border-brand-green/20 text-brand-green bg-brand-green/5 shadow-sm",
+                  icon: <FiUserCheck size={20} />,
+                },
+                {
+                  year: "2015",
+                  title: "Lead Generation Model",
+                  description: "Success was measured by the number of enquiries.",
+                  focus: "Focus: Pay for Enquiries",
+                  colorClass: "text-amber-500",
+                  badgeBg: "bg-amber-50 border border-amber-100 text-amber-600",
+                  iconClass: "border-amber-500/20 text-amber-500 bg-amber-50/50 shadow-sm",
+                  icon: <FaEnvelope size={20} />,
+                },
+                {
+                  year: "2022",
+                  title: "Advertising Model",
+                  description: "Sponsored listings increased visibility.",
+                  focus: "Focus: Sponsored Visibility",
+                  colorClass: "text-red-500",
+                  badgeBg: "bg-red-50 border border-red-100 text-red-500",
+                  iconClass: "border-red-200 text-red-500 bg-red-50/50 shadow-sm",
+                  icon: <FaBullhorn size={20} />,
+                },
+                {
+                  year: "Today",
+                  title: "OpenMarket Model",
+                  description: "Visibility is earned through value creation, not payment.",
+                  focus: "Focus: Earn Visibility",
+                  colorClass: "text-brand-green",
+                  badgeBg: "bg-brand-light-green border border-brand-green/20 text-brand-green",
+                  iconClass: "border-brand-green/20 text-brand-green bg-brand-light-green/30 shadow-md",
+                  icon: <LogoCheckmark size={22} checkColor="#0FA958" circleColor="#0066CC" />,
+                },
+              ].map((item, idx) => (
+                <React.Fragment key={idx}>
+                  {/* Milestone Column */}
+                  <div className="flex flex-col items-center text-center flex-1">
+                    {/* Year */}
+                    <span className={`text-[15px] font-black ${item.colorClass} mb-3 block`}>
+                      {item.year}
+                    </span>
 
-            {/* Connecting Arrow 1 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
-            </div>
+                    {/* Icon Circle */}
+                    <div className={`w-16 h-16 rounded-full border-2 bg-white flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110 mb-5 ${item.iconClass}`}>
+                      {item.icon}
+                    </div>
 
-            {/* Timeline Item 2: 2005 */}
-            <div className="flex-grow flex-1 flex flex-col justify-start p-5 border border-slate-200 bg-white rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left w-full lg:max-w-[220px]">
-              <span className="text-sm font-black text-brand-green mb-2.5 block">2005</span>
-              <div className="w-12 h-12 rounded-full border border-brand-green/15 text-brand-green bg-white flex items-center justify-center flex-shrink-0 shadow-sm mb-4">
-                <FiUserCheck size={18} />
-              </div>
-              <h3 className="text-[15px] font-black text-brand-navy leading-snug mb-2">
-                Membership Model
-              </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed mb-4">
-                Businesses paid for better visibility.
-              </p>
-              <div className="bg-[#eefff3] border border-emerald-100 rounded-lg py-1.5 px-2.5 text-[10px] font-black text-[#00c853] text-center mt-auto">
-                Focus: Pay for Visibility
-              </div>
-            </div>
+                    {/* Model Title */}
+                    <h3 className={`text-[15px] font-black ${item.colorClass} leading-snug mb-2`}>
+                      {item.title}
+                    </h3>
 
-            {/* Connecting Arrow 2 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
-            </div>
+                    {/* Description */}
+                    <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed mb-5 max-w-[180px] mx-auto">
+                      {item.description}
+                    </p>
 
-            {/* Timeline Item 3: 2015 */}
-            <div className="flex-grow flex-1 flex flex-col justify-start p-5 border border-slate-200 bg-white rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left w-full lg:max-w-[220px]">
-              <span className="text-sm font-black text-amber-500 mb-2.5 block">2015</span>
-              <div className="w-12 h-12 rounded-full border border-amber-200 text-amber-500 bg-white flex items-center justify-center flex-shrink-0 shadow-sm mb-4">
-                <FaEnvelope size={18} />
-              </div>
-              <h3 className="text-[15px] font-black text-brand-navy leading-snug mb-2">
-                Lead Generation Model
-              </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed mb-4">
-                Success was measured by the number of enquiries.
-              </p>
-              <div className="bg-[#fff7ee] border border-amber-100 rounded-lg py-1.5 px-2.5 text-[10px] font-black text-[#ff9100] text-center mt-auto">
-                Focus: Pay for Enquiries
-              </div>
-            </div>
+                    {/* Focus Badge */}
+                    <div className={`rounded-xl py-1.5 px-3 text-[10.5px] font-black text-center mt-auto ${item.badgeBg}`}>
+                      {item.focus}
+                    </div>
+                  </div>
 
-            {/* Connecting Arrow 3 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
-            </div>
-
-            {/* Timeline Item 4: 2022 */}
-            <div className="flex-grow flex-1 flex flex-col justify-start p-5 border border-slate-200 bg-white rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left w-full lg:max-w-[220px]">
-              <span className="text-sm font-black text-red-500 mb-2.5 block">2022</span>
-              <div className="w-12 h-12 rounded-full border border-red-200 text-red-500 bg-white flex items-center justify-center flex-shrink-0 shadow-sm mb-4">
-                <FaBullhorn size={18} />
-              </div>
-              <h3 className="text-[15px] font-black text-brand-navy leading-snug mb-2">
-                Advertising Model
-              </h3>
-              <p className="text-[12.5px] font-bold text-slate-400 leading-relaxed mb-4">
-                Sponsored listings increased visibility.
-              </p>
-              <div className="bg-[#ffffee] border border-red-100 rounded-lg py-1.5 px-2.5 text-[10px] font-black text-[#ff3d00] text-center mt-auto">
-                Focus: Sponsored Visibility
-              </div>
-            </div>
-
-            {/* Connecting Arrow 4 */}
-            <div className="flex items-center justify-center self-center flex-shrink-0 lg:mt-16">
-              <FiArrowRightIcon className="hidden lg:block text-slate-300 w-4 h-4" />
-              <FiArrowDown className="block lg:hidden text-slate-300 w-4 h-4 my-1" />
-            </div>
-
-            {/* Timeline Item 5: Today */}
-            <div className="flex-grow flex-1 flex flex-col justify-start p-5 border border-brand-green/20 bg-brand-light-green/30 rounded-3xl shadow-sm hover:shadow-md hover:scale-[1.01] transition-all relative text-left w-full lg:max-w-[220px]">
-              <span className="text-sm font-black text-brand-green mb-2.5 block">Today</span>
-              <div className="w-12 h-12 rounded-full border border-brand-green/20 text-brand-green bg-white flex items-center justify-center flex-shrink-0 shadow-sm mb-4">
-                <LogoCheckmark size={22} checkColor="#0FA958" circleColor="#0FA958" />
-              </div>
-              <h3 className="text-[15px] font-black text-brand-navy leading-snug mb-2">
-                OpenMarket Model
-              </h3>
-              <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed mb-4">
-                Visibility is earned through value creation, not payment.
-              </p>
-              <div className="bg-brand-light-green border border-brand-green/10 rounded-lg py-1.5 px-2.5 text-[10px] font-black text-brand-green text-center mt-auto">
-                Focus: Earn Visibility
-              </div>
+                  {/* Vertical Arrow for Mobile between items */}
+                  {idx < 4 && (
+                    <div className="flex lg:hidden items-center justify-center my-2 text-slate-300">
+                      <FiArrowDown className="w-5 h-5" />
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
 
           </div>
