@@ -244,11 +244,11 @@ export default function OurMission() {
             Today&apos;s marketplaces create challenges for both sellers and buyers.
           </p>
 
-          {/* Main Double Column Card with divider */}
-          <div className="bg-white border border-[#e2eae5]/80 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-x-0 items-stretch lg:divide-x divide-slate-150">
+          {/* Main Triple Column Card */}
+          <div className="bg-white border border-[#e2eae5]/80 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
             {/* Sellers Face */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 text-left w-full justify-between pb-8 lg:pb-0 lg:pr-4 xl:pr-6 h-full">
+            <div className="lg:col-span-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 text-left w-full justify-between h-full">
               {/* Left: Shop Icon */}
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#E8F8F0] border border-[#B3F5D1]/30 flex items-center justify-center text-brand-green flex-shrink-0 shadow-sm text-2xl">
                 <FaStore />
@@ -282,13 +282,16 @@ export default function OurMission() {
                   ))}
                 </div>
               </div>
+            </div>
 
-              {/* Right: Illustration (Man) */}
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+            {/* Middle Column Illustration */}
+            <div className="lg:col-span-4 flex justify-center py-4 lg:py-0 w-full">
+              <div className="relative w-full max-w-[360px] aspect-[1024/581] flex items-center justify-center transition-transform duration-300 hover:scale-105">
                 <Image
-                  src="/sellers_thinking_v6.png"
-                  alt="Man thinking"
-                  fill
+                  src="/confused_sellers_buyers_v2.png"
+                  alt="Sellers and Buyers Thinking"
+                  width={360}
+                  height={204}
                   className="object-contain"
                   priority
                 />
@@ -296,19 +299,8 @@ export default function OurMission() {
             </div>
 
             {/* Buyers Face */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 text-left w-full justify-between pt-8 lg:pt-0 lg:pl-4 xl:pl-6 h-full">
-              {/* Left: Illustration (Woman) */}
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0 transition-transform duration-300 hover:scale-105">
-                <Image
-                  src="/buyers_thinking_v6.png"
-                  alt="Woman thinking"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-
-              {/* Middle: Bullets & Title */}
+            <div className="lg:col-span-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 text-left w-full justify-between h-full">
+              {/* Left: Bullets & Title */}
               <div className="flex-grow flex flex-col gap-4 text-center sm:text-left w-full sm:w-auto px-1">
                 <div className="flex flex-col items-center sm:items-start">
                   <span className="text-[15px] font-black text-brand-blue tracking-widest uppercase">
@@ -338,7 +330,7 @@ export default function OurMission() {
               </div>
 
               {/* Right: Bag Icon */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#E6EFF5] border border-blue-100 flex items-center justify-center text-brand-blue flex-shrink-0 shadow-sm text-3xl">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#E6EFF5] border border-blue-100 flex items-center justify-center text-brand-blue flex-shrink-0 shadow-sm text-2xl">
                 <FaShoppingBag />
               </div>
             </div>

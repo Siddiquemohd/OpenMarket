@@ -26,6 +26,7 @@
   --color-brand-deep-navy: #0F172A;     /* Deep slate/navy for dark sections */
   --color-brand-light-green: #F0FDF4;   /* Very light clean green tint */
   --color-brand-light-blue: #F0F9FF;    /* Very light clean blue tint */
+  --color-slate-150: #e2e8f0;           /* Clean light gray border/divider */
 
   /* Global typography mapping to ensure the whole site scales nicely */
   --text-xs: 12px;
