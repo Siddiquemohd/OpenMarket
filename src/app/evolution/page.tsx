@@ -113,14 +113,11 @@ export default function MarketplaceEvolution() {
 
             {/* Right Column Connection Graphic */}
             <div className="lg:col-span-7 flex items-center justify-center py-6 lg:py-0 w-full overflow-hidden">
-              <div className="relative w-full max-w-[560px] aspect-[1024/576] flex items-center justify-center transition-transform duration-300 hover:scale-103">
-                <Image
-                  src="/buyer_seller_connection_diagram.png"
+              <div className="w-full max-w-[560px] flex items-center justify-center transition-transform duration-300 hover:scale-103">
+                <img
+                  src="/buyer_seller_connection_diagram.png?v=3"
                   alt="Buyer Seller Connection Diagram"
-                  width={560}
-                  height={315}
-                  className="object-contain"
-                  priority
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
