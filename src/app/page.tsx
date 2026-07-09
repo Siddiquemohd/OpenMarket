@@ -833,7 +833,7 @@ export default function Home() {
                 },
                 {
                   title: "Leads Not Diverted to Highest Bidder",
-                  desc: "Relevant businesses\nget fair visibility.",
+                  desc: "We never reroute buyer enquiries based on membership or payments.",
                   icon: <FiTarget size={24} />,
                 },
                 {
