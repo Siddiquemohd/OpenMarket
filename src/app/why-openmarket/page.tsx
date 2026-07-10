@@ -454,7 +454,7 @@ export default function HowItWorks() {
             <div className="w-full lg:w-[80%] flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-0 relative">
 
               {/* Traditional Card (30% relative width) */}
-              <div className="w-full lg:w-[30%] flex-shrink-0 border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 min-h-[180px] z-0">
+              <div className="w-full lg:w-[30%] flex-shrink-0 border border-red-100/80 bg-red-50/30 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 min-h-[180px] z-0">
                 <span className="text-[10px] font-black text-red-500 tracking-widest uppercase text-center block mb-4">
                   Traditional Marketplace
                 </span>

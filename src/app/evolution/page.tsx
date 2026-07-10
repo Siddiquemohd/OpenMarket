@@ -275,10 +275,10 @@ export default function MarketplaceEvolution() {
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center w-full max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-0 relative w-full max-w-5xl mx-auto">
 
             {/* Sellers Pain Points */}
-            <div className="border border-red-100 bg-[#fffbfc] rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-full lg:w-1/2 flex-shrink-0 bg-red-50/30 rounded-[24px] lg:rounded-r-none p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 z-0">
               <div className="flex items-start gap-4">
                 {/* Left Side: Header Circle */}
                 <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
@@ -314,12 +314,12 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* VS Circle */}
-            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner mx-auto">
+            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-2 lg:my-0">
               VS
             </div>
 
             {/* Buyers Pain Points */}
-            <div className="border border-brand-blue/10 bg-[#f7fbfd] rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-full lg:w-1/2 flex-shrink-0  bg-blue-50/20 rounded-[24px] lg:rounded-l-none p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 z-0 lg:-ml-[1px]">
               <div className="flex items-start gap-4">
                 {/* Left Side: Header Circle */}
                 <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
@@ -539,11 +539,11 @@ export default function MarketplaceEvolution() {
 
         {/* SECTION 6: Our Philosophy */}
         <section className="max-w-7xl mx-auto px-6 py-6">
-          <div className="bg-[#f4faf6] border border-brand-green/20 rounded-2xl p-6 sm:p-8 text-center max-w-4xl mx-auto shadow-sm relative hover:scale-[1.01] transition-transform">
+          <div className="bg-[#f4faf6] border border-brand-green/20 rounded-2xl p-6 sm:p-8 text-center w-full mx-auto shadow-sm relative hover:scale-[1.01] transition-transform">
             <span className="text-[44px] font-serif text-brand-green leading-none absolute left-4 top-2 opacity-25">“</span>
             <span className="text-[44px] font-serif text-brand-green leading-none absolute right-4 bottom-[-10px] opacity-25">”</span>
-            <span className="text-[10px] font-black text-brand-green uppercase tracking-widest block mb-2">Our Philosophy</span>
-            <p className="text-base sm:text-lg font-extrabold text-brand-navy leading-relaxed italic max-w-3xl mx-auto">
+            <span className="text-[20px] font-black text-brand-green uppercase tracking-widest block mb-2">Our Philosophy</span>
+            <p className="text-base sm:text-lg font-extrabold text-brand-navy leading-relaxed italic max-w-5xl mx-auto">
               We reward businesses that create value for the marketplace through active participation, timely responses, updated information, and meaningful engagement.
             </p>
           </div>
@@ -665,10 +665,10 @@ export default function MarketplaceEvolution() {
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-4 w-full max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-0 relative w-full max-w-5xl mx-auto">
 
             {/* Traditional Marketplace Flow */}
-            <div className="flex-grow flex-1 border border-slate-200 bg-white rounded-2xl p-6 shadow-sm flex flex-col justify-between items-center text-center w-full max-w-[420px]">
+            <div className="w-full lg:w-1/2 flex-shrink-0 bg-red-50/30 rounded-[24px] lg:rounded-r-none p-6 shadow-sm flex flex-col justify-between items-center text-center z-0">
               <span className="text-[10px] font-black text-red-500 tracking-widest uppercase block mb-3">Traditional Marketplace</span>
 
               <div className="flex items-center justify-center gap-4 py-4 w-full">
@@ -715,12 +715,12 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* VS Circle */}
-            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-2 lg:my-0">
               VS
             </div>
 
             {/* OpenMarket Flow */}
-            <div className="flex-grow flex-[1.2] border border-brand-green/20 bg-brand-light-green/20 rounded-2xl p-6 shadow-sm flex flex-col justify-between items-center text-center w-full max-w-[480px]">
+            <div className="w-full lg:w-1/2 flex-shrink-0 bg-brand-light-green/20 rounded-[24px] lg:rounded-l-none p-6 shadow-sm flex flex-col justify-between items-center text-center z-0 lg:-ml-[1px]">
               <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-3">OpenMarket</span>
 
               <div className="flex items-center justify-center gap-4 py-4 w-full">
