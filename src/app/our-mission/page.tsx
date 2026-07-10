@@ -199,11 +199,9 @@ export default function OurMission() {
                   OUR MISSION
                 </span>
                 <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug mb-3">
-                  To create India's fairest B2B marketplace where every genuine business has an equal opportunity to be discovered.
-                </h3>
+                  To build India's fairest online B2B marketplace where every genuine business—big or small—has an equal opportunity to be discovered, connect with buyers, and grow.                </h3>
                 <p className="text-[13.5px] font-semibold text-slate-500 leading-relaxed">
-                  We want every manufacturer, trader, distributor, service provider, and industrial supplier to compete on effort, quality, and responsiveness—not on marketing budgets.
-                </p>
+                  We believe visibility should be earned through quality, service, responsiveness, and business activity—not purchased through larger marketing budgets. Our mission is to create a level playing field where every business can compete on merit.                </p>
               </div>
             </div>
 
@@ -223,8 +221,7 @@ export default function OurMission() {
                   OUR VISION
                 </span>
                 <h3 className="text-base sm:text-lg font-extrabold text-brand-navy leading-snug">
-                  To become the world's most trusted activity-driven B2B marketplace, connecting buyers with genuine sellers while creating sustainable growth opportunities for businesses of every size.
-                </h3>
+                  To build the world’s most open, fair, and transparent online B2B marketplace.                </h3>
               </div>
             </div>
           </div>
