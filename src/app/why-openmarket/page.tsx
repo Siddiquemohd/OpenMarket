@@ -16,6 +16,7 @@ import {
   FaArrowLeft,
   FaBrain,
   FaPen,
+  FaRupeeSign,
 } from "react-icons/fa";
 import {
   FiShield,
@@ -78,7 +79,7 @@ function LogoCheckmark({
 // Custom SVG Icons matching the mockup exactly
 function RegisterIcon() {
   return (
-    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#0055CC] relative z-10" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 64 64" className="w-[52px] h-[52px] md:w-[56px] md:h-[56px] text-[#0055CC] relative z-10" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M16 8h22l14 14v32a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z" />
       <circle cx="32" cy="22" r="5" />
       <path d="M22 36c0-4 4-6 8-6s8 2 8 6" />
@@ -90,7 +91,7 @@ function RegisterIcon() {
 
 function BuildingIcon() {
   return (
-    <svg viewBox="0 0 64 64" className="w-[52px] h-[52px] md:w-[60px] md:h-[60px] text-[#0055CC] flex-shrink-0" fill="currentColor">
+    <svg viewBox="0 0 64 64" className="w-[64px] h-[64px] md:w-[72px] md:h-[72px] text-[#0055CC] flex-shrink-0" fill="currentColor">
       <rect x="10" y="16" width="16" height="40" rx="2" />
       <rect x="28" y="28" width="16" height="28" rx="2" />
       <g fill="white">
@@ -119,7 +120,7 @@ function BuildingIcon() {
 
 function TrendsIcon() {
   return (
-    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#0055CC]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 64 64" className="w-[52px] h-[52px] md:w-[56px] md:h-[56px] text-[#0055CC]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <rect x="14" y="38" width="6" height="12" rx="1" fill="#0055CC" stroke="none" />
       <rect x="26" y="28" width="6" height="22" rx="1" fill="#0055CC" stroke="none" />
       <rect x="38" y="18" width="6" height="32" rx="1" fill="#0055CC" stroke="none" />
@@ -131,7 +132,7 @@ function TrendsIcon() {
 
 function CpuAiIcon() {
   return (
-    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#007b3e]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 64 64" className="w-[52px] h-[52px] md:w-[56px] md:h-[56px] text-[#007b3e]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <rect x="16" y="16" width="32" height="32" rx="6" />
       <rect x="22" y="22" width="20" height="20" rx="3" />
       <line x1="26" y1="10" x2="26" y2="16" />
@@ -153,7 +154,7 @@ function CpuAiIcon() {
 
 function SearchIconCustom() {
   return (
-    <svg viewBox="0 0 64 64" className="w-[44px] h-[44px] md:w-[48px] md:h-[48px] text-[#007b3e]" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 64 64" className="w-[52px] h-[52px] md:w-[56px] md:h-[56px] text-[#007b3e]" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="26" cy="26" r="13" />
       <line x1="36" y1="36" x2="50" y2="50" strokeWidth="4.5" />
     </svg>
@@ -162,7 +163,7 @@ function SearchIconCustom() {
 
 function SparkleIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px] text-[#0055CC] flex-shrink-0">
       <path d="M12 3c-.1 4-3.1 7-7 7.1 3.9.1 6.9 3.1 7 7 .1-3.9 3.1-6.9 7-7.1-3.9-.1-6.9-3.1-7-7z" />
       <path d="M19 13c-.03 1.5-1.12 2.6-2.6 2.6 1.5.03 2.6 1.12 2.6 2.6.03-1.5 1.12-2.6 2.6-2.6-1.5-.03-2.6-1.12-2.6-2.6z" />
     </svg>
@@ -171,7 +172,7 @@ function SparkleIcon() {
 
 function PenIconCustom() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px] text-[#0055CC] flex-shrink-0">
       <path d="M17.8 2.2c-.4-.4-1-.4-1.4 0L14 4.6l5.4 5.4 2.4-2.4c.4-.4.4-1 0-1.4l-4-4zM12.6 6L3 15.6V21h5.4L18 11.4 12.6 6z" />
     </svg>
   );
@@ -179,7 +180,7 @@ function PenIconCustom() {
 
 function GridIconCustom() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px] text-[#0055CC] flex-shrink-0">
       <circle cx="5" cy="5" r="2.2" />
       <circle cx="12" cy="5" r="2.2" />
       <circle cx="19" cy="5" r="2.2" />
@@ -195,7 +196,7 @@ function GridIconCustom() {
 
 function ImageIconCustom() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px] md:w-[20px] md:h-[20px] text-[#0055CC] flex-shrink-0">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-[22px] h-[22px] md:w-[24px] md:h-[24px] text-[#0055CC] flex-shrink-0">
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" fill="currentColor" className="text-[#0055CC]/10" />
       <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" stroke="none" />
       <polyline points="21 15 16 10 5 21" />
@@ -458,29 +459,19 @@ export default function HowItWorks() {
                   Traditional Marketplace
                 </span>
 
-                <div className="flex items-center justify-center gap-4 py-4 w-full">
+                <div className="flex items-center justify-center gap-1.5 sm:gap-2 py-4 w-full">
                   <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <img
-                        src="/images/evolution/trad-pay.png"
-                        alt="Pay More"
-                        className="w-full h-full object-cover"
-                        style={{ mixBlendMode: "multiply" }}
-                      />
+                    <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center flex-shrink-0">
+                      <FaRupeeSign size={44} className="text-red-500 hover:scale-105 transition-transform" />
                     </div>
                     <span className="text-[8.5px] sm:text-[9px] font-black text-slate-500 uppercase tracking-wider text-center max-w-[64px] sm:max-w-[70px] leading-tight">Pay More</span>
                   </div>
 
-                  <FaArrowRight size={14} className="text-red-500 self-start mt-[20px] sm:mt-[24px] flex-shrink-0" />
+                  <FaArrowRight size={14} className="text-red-500 self-start mt-[24px] sm:mt-[28px] flex-shrink-0" />
 
                   <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <img
-                        src="/images/evolution/trad-visibility.png"
-                        alt="Higher Visibility"
-                        className="w-full h-full object-cover"
-                        style={{ mixBlendMode: "multiply" }}
-                      />
+                    <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center flex-shrink-0">
+                      <FiEye size={44} className="text-red-500 hover:scale-105 transition-transform" />
                     </div>
                     <span className="text-[8.5px] sm:text-[9px] font-black text-slate-500 uppercase tracking-wider text-center max-w-[64px] sm:max-w-[70px] leading-tight">Higher Visibility</span>
                   </div>
@@ -505,9 +496,9 @@ export default function HowItWorks() {
                   OpenMarket (Activity-Driven)
                 </span>
 
-                <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-3 lg:gap-4 py-4 w-full">
+                <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-1 sm:gap-1.5 lg:gap-2 py-4 w-full">
                   {[
-                    { label: "Complete Profile", imgUrl: "/images/why-openmarket/act-profile.jpg" },
+                    { label: "Complete Profile", imgUrl: "/images/why-openmarket/act-profile.png" },
                     { label: "Updated Info", imgUrl: "/images/why-openmarket/act-document.png" },
                     { label: "Quick Responses", imgUrl: "/images/why-openmarket/act-chat.png" },
                     { label: "Marketplace Activity", imgUrl: "/images/why-openmarket/act-activity.jpg" },
@@ -515,36 +506,32 @@ export default function HowItWorks() {
                   ].map((node, idx, arr) => (
                     <React.Fragment key={idx}>
                       <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
-                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform shadow-sm">
-                          <img
-                            src={node.imgUrl}
-                            alt={node.label}
-                            className="w-full h-full object-cover"
-                            style={{ mixBlendMode: "multiply" }}
-                          />
-                        </div>
+                        <img
+                          src={node.imgUrl}
+                          alt={node.label}
+                          className="w-16 h-16 sm:w-18 sm:h-18 object-contain flex-shrink-0 hover:scale-105 transition-transform"
+                          style={{ mixBlendMode: "multiply" }}
+                        />
                         <span className="text-[8px] font-black text-slate-500 uppercase text-center max-w-[64px] sm:max-w-[72px] leading-tight">
                           {node.label}
                         </span>
                       </div>
                       {idx < arr.length - 1 && (
-                        <span className="text-slate-400 font-black text-[15px] sm:text-[18px] self-start mt-[18px] sm:mt-[22px] flex-shrink-0">+</span>
+                        <span className="text-slate-400 font-black text-[15px] sm:text-[18px] self-start mt-[24px] sm:mt-[28px] flex-shrink-0">+</span>
                       )}
                     </React.Fragment>
                   ))}
 
-                  <FaArrowRight size={14} className="text-brand-green self-start mt-[20px] sm:mt-[24px] animate-pulse flex-shrink-0" />
+                  <FaArrowRight size={14} className="text-brand-green self-start mt-[24px] sm:mt-[28px] animate-pulse flex-shrink-0" />
 
                   {/* Output Node */}
                   <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform shadow-sm">
-                      <img
-                        src="/images/why-openmarket/act-award.jpg"
-                        alt="Higher Visibility"
-                        className="w-full h-full object-cover"
-                        style={{ mixBlendMode: "multiply" }}
-                      />
-                    </div>
+                    <img
+                      src="/images/why-openmarket/act-award.jpg"
+                      alt="Higher Visibility"
+                      className="w-16 h-16 sm:w-18 sm:h-18 object-contain flex-shrink-0 hover:scale-105 transition-transform"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                     <span className="text-[8px] font-black text-brand-green uppercase text-center max-w-[64px] sm:max-w-[72px] leading-tight">
                       Higher Visibility
                     </span>

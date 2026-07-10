@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -34,6 +34,32 @@ export function Header() {
   const pathname = usePathname();
   const [currentHash, setCurrentHash] = useState("");
   const { openOtpModal } = useOtpModal();
+
+  // Hover delay states for About Us dropdown
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleDropdownMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); // 300ms hover delay buffer
+  };
+
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     // Set initial hash
@@ -137,15 +163,24 @@ export function Header() {
             if (link.dropdown) {
               const isDropdownActive = link.dropdown.some((sub) => pathname === sub.href);
               return (
-                <div key={idx} className="relative group py-1">
+                <div
+                  key={idx}
+                  className="relative py-1"
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
+                >
                   <button
                     className={`flex items-center gap-1 transition-colors duration-200 focus:outline-none cursor-pointer whitespace-nowrap ${isDropdownActive ? "text-brand-green font-bold" : "text-brand-navy hover:text-brand-green"
                       }`}
                   >
                     <span>{link.label}</span>
-                    <span className="text-[9px] translate-y-[1px] group-hover:rotate-180 transition-transform duration-200">▼</span>
+                    <span className={`text-[9px] translate-y-[1px] transition-transform duration-200 ${isDropdownOpen ? "rotate-180 text-brand-green" : ""}`}>▼</span>
                   </button>
-                  <div className="absolute left-0 mt-2 w-48 bg-white border border-slate-100/80 rounded-xl shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 z-50 py-2">
+                  <div className={`absolute left-0 mt-1 w-48 bg-white border border-slate-100/80 rounded-xl shadow-lg transition-all duration-200 z-50 py-2 before:content-[''] before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 before:bg-transparent ${
+                    isDropdownOpen
+                      ? "opacity-100 pointer-events-auto translate-y-0"
+                      : "opacity-0 pointer-events-none translate-y-1"
+                  }`}>
                     {link.dropdown.map((sub, sIdx) => {
                       const isSubActive = pathname === sub.href;
                       return (

@@ -47,12 +47,30 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [resendTimer, setResendTimer] = useState(0);
 
   const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
 
+  useEffect(() => {
+    let intervalId: number;
+    if (resendTimer > 0) {
+      intervalId = window.setInterval(() => {
+        setResendTimer((prev) => (prev > 0 ? prev - 1 : 0));
+      }, 1000);
+    }
+    return () => {
+      if (intervalId) window.clearInterval(intervalId);
+    };
+  }, [resendTimer]);
+
   const formatPhoneNumber = (num: string) => {
     const cleaned = num.trim().replace(/[\s()-]/g, "");
-    const phoneWithPlus = cleaned.startsWith("+") ? cleaned : `+${cleaned}`;
+    let phoneWithPlus = cleaned;
+    if (cleaned.length === 10) {
+      phoneWithPlus = `+91${cleaned}`;
+    } else if (!cleaned.startsWith("+")) {
+      phoneWithPlus = `+${cleaned}`;
+    }
     const phoneWithoutPlus = phoneWithPlus.replace("+", "");
     return { phoneWithPlus, phoneWithoutPlus };
   };
@@ -78,6 +96,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
         return;
       }
       setStep("otp");
+      setResendTimer(60);
     } catch (err: unknown) {
       console.error("Error sending OTP:", err);
       setError(getErrorMessage(err, "Failed to send OTP. Please try again."));
@@ -130,6 +149,7 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
         return;
       }
       setStep("otp");
+      setResendTimer(60);
     } catch (err: unknown) {
       console.error("Error sending OTP:", err);
       setError(getErrorMessage(err, "Failed to send OTP. Please try again."));
@@ -149,9 +169,9 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
     setIsLoading(true);
     setError(null);
     try {
-      const { phoneWithoutPlus } = formatPhoneNumber(phone);
+      const { phoneWithPlus } = formatPhoneNumber(phone);
       await api.post("/web/wishlist/verify-otp", {
-        number: phoneWithoutPlus,
+        number: phoneWithPlus,
         otp: otpString,
       });
       setSuccessMessage("OTP verified successfully! You are now on the waitlist.");
@@ -409,10 +429,10 @@ export function PhoneOTPModal({ isOpen, onClose, initialPhone = "" }: PhoneOTPMo
                     <button
                       type="button"
                       onClick={() => autoSendOtp(phone)}
-                      disabled={isLoading}
-                      className="text-brand-green hover:text-brand-dark-green font-bold transition-colors disabled:opacity-50"
+                      disabled={resendTimer > 0 || isLoading}
+                      className="text-brand-green hover:text-brand-dark-green font-bold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Resend code
+                      {resendTimer > 0 ? `Resend in ${resendTimer}s` : "Resend code"}
                     </button>
                   </div>
                 </form>
