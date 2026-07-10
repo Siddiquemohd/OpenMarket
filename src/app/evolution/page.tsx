@@ -373,7 +373,7 @@ export default function MarketplaceEvolution() {
               <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
                 01
               </div>
-              <div className="w-16 h-16 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+              <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
                 <img
                   src="/images/evolution/question-eye.png"
                   alt="Visibility"
@@ -391,7 +391,7 @@ export default function MarketplaceEvolution() {
               <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
                 02
               </div>
-              <div className="w-16 h-16 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+              <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
                 <img
                   src="/images/evolution/question-rupee.png"
                   alt="Marketing Costs"
@@ -409,7 +409,7 @@ export default function MarketplaceEvolution() {
               <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-blue-50 border border-blue-100 text-brand-blue font-extrabold text-[11px] flex items-center justify-center">
                 03
               </div>
-              <div className="w-16 h-16 rounded-full border border-blue-200 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+              <div className="w-24 h-24 rounded-full border border-blue-200 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
                 <img
                   src="/images/evolution/question-ai.png"
                   alt="AI Matching"
@@ -427,7 +427,7 @@ export default function MarketplaceEvolution() {
               <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
                 04
               </div>
-              <div className="w-16 h-16 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+              <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
                 <img
                   src="/images/evolution/question-shield.png"
                   alt="Opportunity"
@@ -463,7 +463,7 @@ export default function MarketplaceEvolution() {
 
             {/* Model Card 1 */}
             <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                 <img
                   src="/images/evolution/model-trophy.png"
                   alt="Earn Visibility"
@@ -481,7 +481,7 @@ export default function MarketplaceEvolution() {
 
             {/* Model Card 2 */}
             <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                 <img
                   src="/images/evolution/model-profile.png"
                   alt="Smart Matching"
@@ -499,7 +499,7 @@ export default function MarketplaceEvolution() {
 
             {/* Model Card 3 */}
             <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                 <img
                   src="/images/evolution/model-shield.png"
                   alt="Build Trust"
@@ -517,7 +517,7 @@ export default function MarketplaceEvolution() {
 
             {/* Model Card 4 */}
             <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full border border-purple-200 bg-white flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                 <img
                   src="/images/evolution/model-growth.png"
                   alt="Grow Together"
@@ -623,7 +623,7 @@ export default function MarketplaceEvolution() {
             {/* Marketplace Grid */}
             <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-24 h-24 rounded-full bg-[#f4faf6] border border-brand-green/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <div className="w-20 h-20 rounded-full bg-[#f4faf6] border border-brand-green/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
                   <img
                     src="/images/evolution/win-marketplace.png"
                     alt="Marketplace"
@@ -664,7 +664,7 @@ export default function MarketplaceEvolution() {
             <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 w-full max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-4 w-full max-w-5xl mx-auto">
 
             {/* Traditional Marketplace Flow */}
             <div className="flex-grow flex-1 border border-slate-200 bg-white rounded-2xl p-6 shadow-sm flex flex-col justify-between items-center text-center w-full max-w-[420px]">
@@ -672,26 +672,41 @@ export default function MarketplaceEvolution() {
 
               <div className="flex items-center justify-center gap-4 py-4 w-full">
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-bold text-sm">
-                    ₹
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/trad-pay.png"
+                      alt="Pay"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Pay</span>
                 </div>
 
-                <FaArrowRight size={10} className="text-slate-300" />
+                <FaArrowRight size={12} className="text-red-500 flex-shrink-0" />
 
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center">
-                    <FiEye size={18} />
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/trad-visibility.png"
+                      alt="Get Visibility"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Get Visibility</span>
                 </div>
 
-                <FaArrowRight size={10} className="text-slate-300" />
+                <FaArrowRight size={12} className="text-red-500 flex-shrink-0" />
 
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center">
-                    <FaEnvelope size={18} />
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/trad-enquiries.png"
+                      alt="Get Enquiries"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Get Enquiries</span>
                 </div>
@@ -699,7 +714,7 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* VS Circle */}
-            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center mx-auto">
+            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0">
               VS
             </div>
 
@@ -709,35 +724,55 @@ export default function MarketplaceEvolution() {
 
               <div className="flex items-center justify-center gap-4 py-4 w-full">
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm">
-                    <FiUserCheck size={18} />
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/open-create-value.jpg"
+                      alt="Create Value"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Create Value</span>
                 </div>
 
-                <FaArrowRight size={10} className="text-brand-green" />
+                <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
 
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm">
-                    <FiEye size={18} />
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/open-earn-visibility.jpg"
+                      alt="Earn Visibility"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Earn Visibility</span>
                 </div>
 
-                <FaArrowRight size={10} className="text-brand-green" />
+                <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
 
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm">
-                    <FiSliders size={18} />
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/open-better-matching.jpg"
+                      alt="Better Matching"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Better Matching</span>
                 </div>
 
-                <FaArrowRight size={10} className="text-brand-green" />
+                <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
 
                 <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center shadow-md">
-                    <FiTrendingUp size={18} />
+                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                    <img
+                      src="/images/evolution/open-better-business.jpg"
+                      alt="Better Business"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
                   <span className="text-[8px] font-black text-brand-green uppercase tracking-wider">Better Business</span>
                 </div>
