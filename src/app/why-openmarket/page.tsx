@@ -430,102 +430,136 @@ export default function HowItWorks() {
         </section>
 
         {/* SECTION 3: How Ranking Works (VS Comparison) */}
-        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
-          <div className="text-center mb-8">
-            <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
-              THE OPENMARKET DIFFERENCE
-            </span>
-            <h2 className="text-h2 text-brand-navy">
-              How Ranking Works
-            </h2>
-            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
-          </div>
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 w-full max-w-7xl mx-auto items-stretch">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full max-w-6xl mx-auto">
-
-            {/* Traditional Card (Payment-Driven) */}
-            <div className="border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full min-h-[160px] sm:min-h-[180px]">
-              <span className="text-xs sm:text-sm font-black text-red-500 tracking-widest uppercase text-center block mb-4">
-                Traditional Marketplaces (Payment-Driven)
-              </span>
-
-              <div className="flex items-center justify-center gap-6 py-4">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center font-extrabold text-sm sm:text-base shadow-sm hover:scale-105 transition-transform">
-                    ₹
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-wider">Pay More</span>
-                </div>
-
-                <FaArrowRight size={14} className="text-slate-300 animate-pulse" />
-
-                <div className="flex flex-col items-center gap-2">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center shadow-sm hover:scale-105 transition-transform">
-                    <FiEye size={18} />
-                  </div>
-                  <span className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-wider">Higher Visibility</span>
-                </div>
-              </div>
-
-              <div className="bg-red-50/60 border-t border-red-100 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
-                <FiXCircle className="text-red-500" size={16} />
-                <span className="text-[11px] sm:text-[12px] font-black text-red-500 tracking-wide uppercase">
-                  Visibility depends on payment
-                </span>
+            {/* Left side: Heading and Paragraphs */}
+            <div className="w-full lg:w-[20%] flex flex-col justify-center text-left lg:pr-4">
+              <h2 className="text-2xl sm:text-3xl font-black text-brand-navy leading-tight">
+                How Ranking Works
+              </h2>
+              <div className="h-[3px] w-12 bg-brand-green mt-3 mb-5" />
+              <div className="flex flex-col gap-4 text-[13.5px] font-bold text-slate-500 leading-relaxed">
+                <p>
+                  Visibility on OpenMarket is earned, not bought.
+                </p>
+                <p>
+                  Our activity-driven ranking rewards businesses that contribute more value to the marketplace.
+                </p>
               </div>
             </div>
 
-            {/* OpenMarket Card (Activity-Driven) */}
-            <div className="border border-brand-green/20 bg-brand-light-green/30 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 h-full min-h-[160px] sm:min-h-[180px]">
-              <span className="text-xs sm:text-sm font-black text-brand-green tracking-widest uppercase text-center block mb-4">
-                OpenMarket (Activity-Driven)
-              </span>
+            {/* Right side: VS Comparison Grid (30% vs 70%) */}
+            <div className="w-full lg:w-[80%] flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-0 relative">
 
-              {/* Horizontal chain flow wrapper */}
-              <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 sm:gap-2.5 py-4">
-                {[
-                  { label: "Complete Profile", icon: <FiUserCheck size={18} /> },
-                  { label: "Updated Info", icon: <FiFileText size={18} /> },
-                  { label: "Quick Responses", icon: <FiMessageSquare size={18} /> },
-                  { label: "Marketplace Activity", icon: <FiTrendingUp size={18} /> },
-                  { label: "Meaningful Participation", icon: <FaStar size={18} /> },
-                ].map((node, idx, arr) => (
-                  <React.Fragment key={idx}>
-                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                      <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] rounded-full bg-white border border-brand-green/20 text-brand-green flex items-center justify-center shadow-sm flex-shrink-0 hover:scale-105 transition-transform">
-                        {node.icon}
-                      </div>
-                      <span className="text-[9.5px] sm:text-[10.5px] font-black text-slate-500 uppercase text-center max-w-[52px] sm:max-w-[60px] leading-tight">
-                        {node.label}
-                      </span>
+              {/* Traditional Card (30% relative width) */}
+              <div className="w-full lg:w-[30%] flex-shrink-0 border border-red-100 bg-[#fffbfc] rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 min-h-[180px] z-0">
+                <span className="text-[10px] font-black text-red-500 tracking-widest uppercase text-center block mb-4">
+                  Traditional Marketplace
+                </span>
+
+                <div className="flex items-center justify-center gap-4 py-4 w-full">
+                  <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <img
+                        src="/images/evolution/trad-pay.png"
+                        alt="Pay More"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
                     </div>
-                    {idx < arr.length - 1 && (
-                      <span className="text-slate-400 font-black text-[14px] sm:text-[16px] self-start mt-[14px] sm:mt-[15px] flex-shrink-0">+</span>
-                    )}
-                  </React.Fragment>
-                ))}
-
-                <FaArrowRight size={14} className="text-brand-green self-start mt-[14px] sm:mt-[15px] animate-pulse flex-shrink-0" />
-
-                {/* Output Node */}
-                <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                  <div className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] rounded-full bg-brand-green text-white flex items-center justify-center shadow-md flex-shrink-0 hover:scale-105 transition-transform">
-                    <FiAward size={20} />
+                    <span className="text-[8.5px] sm:text-[9px] font-black text-slate-500 uppercase tracking-wider text-center max-w-[64px] sm:max-w-[70px] leading-tight">Pay More</span>
                   </div>
-                  <span className="text-[9.5px] sm:text-[10.5px] font-black text-brand-green uppercase text-center max-w-[52px] sm:max-w-[60px] leading-tight">
-                    Higher Visibility
+
+                  <FaArrowRight size={14} className="text-red-500 self-start mt-[20px] sm:mt-[24px] flex-shrink-0" />
+
+                  <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <img
+                        src="/images/evolution/trad-visibility.png"
+                        alt="Higher Visibility"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8.5px] sm:text-[9px] font-black text-slate-500 uppercase tracking-wider text-center max-w-[64px] sm:max-w-[70px] leading-tight">Higher Visibility</span>
+                  </div>
+                </div>
+
+                <div className="bg-red-50/60 border-t border-red-100 rounded-b-[24px] py-2.5 flex items-center justify-center gap-1.5 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
+                  <FiXCircle className="text-red-500" size={14} />
+                  <span className="text-[10px] font-black text-red-500 tracking-wide uppercase text-center">
+                    Visibility depends on payment
                   </span>
                 </div>
               </div>
 
-              <div className="bg-[#eefcf4] border-t border-brand-green/10 rounded-b-[24px] py-3 flex items-center justify-center gap-1.5 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
-                <FiCheckCircle className="text-brand-green" size={16} />
-                <span className="text-[11px] sm:text-[12px] font-black text-brand-green tracking-wide uppercase">
-                  Visibility is earned through contribution
-                </span>
+              {/* VS Badge */}
+              <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-2 lg:my-0">
+                VS
               </div>
-            </div>
 
+              {/* OpenMarket Card (70% relative width) */}
+              <div className="w-full lg:w-[70%] flex-shrink-0 border border-brand-green/20 bg-brand-light-green/30 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300 min-h-[180px] z-0">
+                <span className="text-[10px] font-black text-brand-green tracking-widest uppercase text-center block mb-4">
+                  OpenMarket (Activity-Driven)
+                </span>
+
+                <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-3 lg:gap-4 py-4 w-full">
+                  {[
+                    { label: "Complete Profile", imgUrl: "/images/why-openmarket/act-profile.jpg" },
+                    { label: "Updated Info", imgUrl: "/images/why-openmarket/act-document.png" },
+                    { label: "Quick Responses", imgUrl: "/images/why-openmarket/act-chat.png" },
+                    { label: "Marketplace Activity", imgUrl: "/images/why-openmarket/act-activity.jpg" },
+                    { label: "Meaningful Participation", imgUrl: "/images/why-openmarket/act-star.png" },
+                  ].map((node, idx, arr) => (
+                    <React.Fragment key={idx}>
+                      <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform shadow-sm">
+                          <img
+                            src={node.imgUrl}
+                            alt={node.label}
+                            className="w-full h-full object-cover"
+                            style={{ mixBlendMode: "multiply" }}
+                          />
+                        </div>
+                        <span className="text-[8px] font-black text-slate-500 uppercase text-center max-w-[64px] sm:max-w-[72px] leading-tight">
+                          {node.label}
+                        </span>
+                      </div>
+                      {idx < arr.length - 1 && (
+                        <span className="text-slate-400 font-black text-[15px] sm:text-[18px] self-start mt-[18px] sm:mt-[22px] flex-shrink-0">+</span>
+                      )}
+                    </React.Fragment>
+                  ))}
+
+                  <FaArrowRight size={14} className="text-brand-green self-start mt-[20px] sm:mt-[24px] animate-pulse flex-shrink-0" />
+
+                  {/* Output Node */}
+                  <div className="flex flex-col items-center gap-1.5 flex-shrink-0">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform shadow-sm">
+                      <img
+                        src="/images/why-openmarket/act-award.jpg"
+                        alt="Higher Visibility"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-brand-green uppercase text-center max-w-[64px] sm:max-w-[72px] leading-tight">
+                      Higher Visibility
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-[#eefcf4] border-t border-brand-green/10 rounded-b-[24px] py-2.5 flex items-center justify-center gap-1.5 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
+                  <FiCheckCircle className="text-brand-green" size={14} />
+                  <span className="text-[10px] font-black text-brand-green tracking-wide uppercase text-center">
+                    Visibility is earned through contribution
+                  </span>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 

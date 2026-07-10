@@ -476,6 +476,7 @@ export default function MarketplaceEvolution() {
                 <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
                   Visibility is earned through participation—not payment.
                 </p>
+
               </div>
             </div>
 
