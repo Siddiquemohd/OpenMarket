@@ -89,7 +89,7 @@ export default function MarketplaceEvolution() {
         {/* SECTION 1: Page Header & Buyer-Seller Connection Visual */}
         <section className="max-w-7xl mx-auto px-6 pt-10 pb-8 md:pt-14 md:pb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Left Column Content */}
             <div className="lg:col-span-5 flex flex-col gap-6 text-left">
               <div className="flex flex-col">
@@ -113,7 +113,7 @@ export default function MarketplaceEvolution() {
 
             {/* Right Column Connection Graphic */}
             <div className="lg:col-span-7 flex items-center justify-center py-6 lg:py-0 w-full overflow-hidden">
-              <div className="w-full max-w-[560px] flex items-center justify-center transition-transform duration-300 hover:scale-103">
+              <div className="w-full max-w-[660px] flex items-center justify-center transition-transform duration-300 hover:scale-103">
                 <img
                   src="/buyer_seller_connection_diagram.png?v=3"
                   alt="Buyer Seller Connection Diagram"
@@ -128,15 +128,15 @@ export default function MarketplaceEvolution() {
         {/* SECTION 2: Timeline Row */}
         <section className="max-w-7xl mx-auto px-6 py-10">
           <div className="bg-white border border-slate-150 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
-            
+
             {/* Horizontal Line behind the icons (desktop only) */}
-            <div className="absolute top-[102px] left-[10%] right-[10%] h-[2px] bg-slate-200/80 -z-0 hidden lg:block" />
-            
+            <div className="absolute top-[118px] left-[10%] right-[10%] h-[2px] bg-slate-200/80 -z-0 hidden lg:block" />
+
             {/* Connecting dots (desktop only) */}
-            <div className="absolute top-[98px] left-[20%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
-            <div className="absolute top-[98px] left-[40%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
-            <div className="absolute top-[98px] left-[60%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
-            <div className="absolute top-[98px] left-[80%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[114px] left-[20%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[114px] left-[40%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[114px] left-[60%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
+            <div className="absolute top-[114px] left-[80%] w-2.5 h-2.5 bg-slate-400 rounded-full -translate-x-1/2 -z-0 hidden lg:block" />
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-y-8 lg:gap-x-4 items-stretch relative z-10">
               {[
@@ -148,7 +148,13 @@ export default function MarketplaceEvolution() {
                   colorClass: "text-[#0066CC]",
                   badgeBg: "bg-[#0066CC]/5 border border-[#0066CC]/10 text-[#0066CC]",
                   iconClass: "border-[#0066CC]/20 text-[#0066CC] bg-[#0066CC]/5 shadow-sm",
-                  icon: <FiBookOpen size={20} />,
+                  icon: (
+                    <img
+                      src="/images/evolution/directory-model.jpg"
+                      alt="Directory Model"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  ),
                 },
                 {
                   year: "2005",
@@ -158,7 +164,13 @@ export default function MarketplaceEvolution() {
                   colorClass: "text-brand-green",
                   badgeBg: "bg-brand-green/5 border border-brand-green/10 text-brand-green",
                   iconClass: "border-brand-green/20 text-brand-green bg-brand-green/5 shadow-sm",
-                  icon: <FiUserCheck size={20} />,
+                  icon: (
+                    <img
+                      src="/images/evolution/membership-model.png"
+                      alt="Membership Model"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  ),
                 },
                 {
                   year: "2015",
@@ -168,7 +180,13 @@ export default function MarketplaceEvolution() {
                   colorClass: "text-amber-500",
                   badgeBg: "bg-amber-50 border border-amber-100 text-amber-600",
                   iconClass: "border-amber-500/20 text-amber-500 bg-amber-50/50 shadow-sm",
-                  icon: <FaEnvelope size={20} />,
+                  icon: (
+                    <img
+                      src="/images/evolution/lead-generation-model.png"
+                      alt="Lead Generation Model"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  ),
                 },
                 {
                   year: "2022",
@@ -178,7 +196,13 @@ export default function MarketplaceEvolution() {
                   colorClass: "text-red-500",
                   badgeBg: "bg-red-50 border border-red-100 text-red-500",
                   iconClass: "border-red-200 text-red-500 bg-red-50/50 shadow-sm",
-                  icon: <FaBullhorn size={20} />,
+                  icon: (
+                    <img
+                      src="/images/evolution/advertising-model.png"
+                      alt="Advertising Model"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  ),
                 },
                 {
                   year: "Today",
@@ -188,7 +212,13 @@ export default function MarketplaceEvolution() {
                   colorClass: "text-brand-green",
                   badgeBg: "bg-brand-light-green border border-brand-green/20 text-brand-green",
                   iconClass: "border-brand-green/20 text-brand-green bg-brand-light-green/30 shadow-md",
-                  icon: <LogoCheckmark size={22} checkColor="#0FA958" circleColor="#0066CC" />,
+                  icon: (
+                    <img
+                      src="/images/evolution/openmarket-model.png"
+                      alt="OpenMarket Model"
+                      className="w-full h-full mt-2 rounded-full object-cover"
+                    />
+                  ),
                 },
               ].map((item, idx) => (
                 <React.Fragment key={idx}>
@@ -200,7 +230,7 @@ export default function MarketplaceEvolution() {
                     </span>
 
                     {/* Icon Circle */}
-                    <div className={`w-16 h-16 rounded-full border-2 bg-white flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110 mb-5 ${item.iconClass}`}>
+                    <div className={`w-24 h-24 rounded-full border-2 bg-white flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110 mb-5 ${item.iconClass}`}>
                       {item.icon}
                     </div>
 
