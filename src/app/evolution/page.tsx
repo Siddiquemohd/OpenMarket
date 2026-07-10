@@ -278,25 +278,38 @@ export default function MarketplaceEvolution() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center w-full max-w-7xl mx-auto">
 
             {/* Sellers Pain Points */}
-            <div className="border border-red-100 bg-[#fffbfc] rounded-2xl p-6 sm:p-8 shadow-sm text-left hover:shadow-md transition-all duration-300">
-              <div className="flex items-center gap-3.5 mb-4">
-                <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 text-red-500 flex items-center justify-center flex-shrink-0">
-                  <FiUser size={20} />
+            <div className="border border-red-100 bg-[#fffbfc] rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex items-start gap-4">
+                {/* Left Side: Header Circle */}
+                <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                  <img
+                    src="/images/evolution/sellers-header.png"
+                    alt="Sellers"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-base font-black text-brand-navy uppercase tracking-wider">Sellers</h3>
-              </div>
-              <div className="flex flex-col gap-3">
-                {[
-                  "Lower ROI",
-                  "Wasted Time",
-                  "Higher Marketing Costs",
-                  "Visibility Depends on Budget",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5">
-                    <FiXCircle className="text-red-500 flex-shrink-0" size={18} />
-                    <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item}</span>
+                {/* Right Side: Header Title + Pain Points List */}
+                <div className="flex flex-col gap-3.5 flex-grow">
+                  <h3 className="text-[17px] font-black text-red-500 leading-none mt-1">Sellers</h3>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { text: "Lower ROI", iconUrl: "/images/evolution/sellers-pain-point-coin.png" },
+                      { text: "Wasted Time", iconUrl: "/images/evolution/sellers-pain-point-clock.png" },
+                      { text: "Higher Marketing Costs", iconUrl: "/images/evolution/sellers-pain-point-rupee.png" },
+                      { text: "Visibility Depends on Budget", iconUrl: "/images/evolution/sellers-pain-point-eye.png" },
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <img
+                          src={item.iconUrl}
+                          alt={item.text}
+                          className="w-6 h-6 flex-shrink-0 object-contain"
+                          style={{ mixBlendMode: "multiply" }}
+                        />
+                        <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item.text}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
@@ -306,25 +319,38 @@ export default function MarketplaceEvolution() {
             </div>
 
             {/* Buyers Pain Points */}
-            <div className="border border-brand-blue/10 bg-[#f7fbfd] rounded-2xl p-6 sm:p-8 shadow-sm text-left hover:shadow-md transition-all duration-300">
-              <div className="flex items-center gap-3.5 mb-4">
-                <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-100 text-brand-blue flex items-center justify-center flex-shrink-0">
-                  <FiUserCheck size={20} />
+            <div className="border border-brand-blue/10 bg-[#f7fbfd] rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex items-start gap-4">
+                {/* Left Side: Header Circle */}
+                <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                  <img
+                    src="/images/evolution/buyers-header.jpg"
+                    alt="Buyers"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-base font-black text-brand-navy uppercase tracking-wider">Buyers</h3>
-              </div>
-              <div className="flex flex-col gap-3">
-                {[
-                  "Too Many Suppliers",
-                  "Difficult to Find the Right Seller",
-                  "Wasted Time Searching",
-                  "Lower Trust",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5">
-                    <FiXCircle className="text-brand-blue flex-shrink-0" size={18} />
-                    <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item}</span>
+                {/* Right Side: Header Title + Pain Points List */}
+                <div className="flex flex-col gap-3.5 flex-grow">
+                  <h3 className="text-[17px] font-black text-brand-blue leading-none mt-1">Buyers</h3>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { text: "Too Many Suppliers", iconUrl: "/images/evolution/buyers-pain-point-people.png" },
+                      { text: "Difficult to Find the Right Seller", iconUrl: "/images/evolution/buyers-pain-point-target.png" },
+                      { text: "Wasted Time Searching", iconUrl: "/images/evolution/buyers-pain-point-clock.png" },
+                      { text: "Lower Trust", iconUrl: "/images/evolution/buyers-pain-point-shield.png" },
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <img
+                          src={item.iconUrl}
+                          alt={item.text}
+                          className="w-6 h-6 flex-shrink-0 object-contain"
+                          style={{ mixBlendMode: "multiply" }}
+                        />
+                        <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item.text}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
