@@ -127,7 +127,7 @@ export default function MarketplaceEvolution() {
 
         {/* SECTION 2: Timeline Row */}
         <section className="max-w-7xl mx-auto px-6 py-10">
-          <div className="bg-white border border-slate-150 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
+          <div className="bg-white border border-slate-150 rounded-xl p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
 
             {/* Horizontal Line behind the icons (desktop only) */}
             <div className="absolute top-[118px] left-[10%] right-[10%] h-[2px] bg-slate-200/80 -z-0 hidden lg:block" />
@@ -265,275 +265,277 @@ export default function MarketplaceEvolution() {
 
         {/* SECTION 3: The Challenge */}
         <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
-          <div className="text-center mb-8">
-            <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
-              PAIN POINTS
-            </span>
-            <h2 className="text-h2 text-brand-navy">
-              The Challenge
-            </h2>
-            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
-          </div>
+          <div className="w-full max-w-5xl mx-auto border border-slate-100/80 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden relative bg-white">
+            
+            {/* The Challenge Heading inside the card */}
+            <div className="absolute top-6 left-0 right-0 z-20 text-center pointer-events-none">
+              <h2 className="text-[20px] sm:text-[24px] font-black text-brand-navy">
+                The Challenge
+              </h2>
+            </div>
 
-          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-0 relative w-full max-w-5xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-stretch justify-center relative w-full">
 
-            {/* Sellers Pain Points */}
-            <div className="w-full lg:w-1/2 flex-shrink-0 bg-red-50/30 rounded-[24px] lg:rounded-r-none p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 z-0">
-              <div className="flex items-start gap-4">
-                {/* Left Side: Header Circle */}
-                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                  <img
-                    src="/images/evolution/sellers-header.png"
-                    alt="Sellers"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Right Side: Header Title + Pain Points List */}
-                <div className="flex flex-col gap-3.5 flex-grow">
-                  <h3 className="text-[17px] font-black text-red-500 leading-none mt-1">Sellers</h3>
-                  <div className="flex flex-col gap-1">
-                    {[
-                      { text: "Lower ROI", iconUrl: "/images/evolution/sellers-pain-point-coin.png" },
-                      { text: "Wasted Time", iconUrl: "/images/evolution/sellers-pain-point-clock.png" },
-                      { text: "Higher Marketing Costs", iconUrl: "/images/evolution/sellers-pain-point-rupee.png" },
-                      { text: "Visibility Depends on Budget", iconUrl: "/images/evolution/sellers-pain-point-eye.png" },
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <img
-                          src={item.iconUrl}
-                          alt={item.text}
-                          className="w-8 h-8 flex-shrink-0 object-contain"
-                          style={{ mixBlendMode: "multiply" }}
-                        />
-                        <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item.text}</span>
-                      </div>
-                    ))}
+              {/* Sellers Pain Points */}
+              <div className="w-full lg:w-1/2 flex-shrink-0 bg-red-50/30 p-6 sm:p-8 pt-16 sm:pt-20 lg:pt-20 lg:border-r lg:border-slate-200/50 transition-all duration-300 z-0">
+                <div className="flex items-start gap-4">
+                  {/* Left Side: Header Circle */}
+                  <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="/images/evolution/sellers-header.png"
+                      alt="Sellers"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Right Side: Header Title + Pain Points List */}
+                  <div className="flex flex-col gap-3.5 flex-grow">
+                    <h3 className="text-[17px] font-black text-red-500 leading-none mt-1">Sellers</h3>
+                    <div className="flex flex-col gap-1">
+                      {[
+                        { text: "Lower ROI", iconUrl: "/images/evolution/sellers-pain-point-coin.png" },
+                        { text: "Wasted Time", iconUrl: "/images/evolution/sellers-pain-point-clock.png" },
+                        { text: "Higher Marketing Costs", iconUrl: "/images/evolution/sellers-pain-point-rupee.png" },
+                        { text: "Visibility Depends on Budget", iconUrl: "/images/evolution/sellers-pain-point-eye.png" },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2.5">
+                          <img
+                            src={item.iconUrl}
+                            alt={item.text}
+                            className="w-8 h-8 flex-shrink-0 object-contain"
+                            style={{ mixBlendMode: "multiply" }}
+                          />
+                          <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item.text}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* VS Circle */}
-            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-2 lg:my-0">
-              VS
-            </div>
+              {/* VS Circle */}
+              <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-4 lg:my-0">
+                VS
+              </div>
 
-            {/* Buyers Pain Points */}
-            <div className="w-full lg:w-1/2 flex-shrink-0  bg-blue-50/20 rounded-[24px] lg:rounded-l-none p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 z-0 lg:-ml-[1px]">
-              <div className="flex items-start gap-4">
-                {/* Left Side: Header Circle */}
-                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                  <img
-                    src="/images/evolution/buyers-header.jpg"
-                    alt="Buyers"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Right Side: Header Title + Pain Points List */}
-                <div className="flex flex-col gap-3.5 flex-grow">
-                  <h3 className="text-[17px] font-black text-brand-blue leading-none mt-1">Buyers</h3>
-                  <div className="flex flex-col gap-1">
-                    {[
-                      { text: "Too Many Suppliers", iconUrl: "/images/evolution/buyers-pain-point-people.png" },
-                      { text: "Difficult to Find the Right Seller", iconUrl: "/images/evolution/buyers-pain-point-target.png" },
-                      { text: "Wasted Time Searching", iconUrl: "/images/evolution/buyers-pain-point-clock.png" },
-                      { text: "Lower Trust", iconUrl: "/images/evolution/buyers-pain-point-shield.png" },
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <img
-                          src={item.iconUrl}
-                          alt={item.text}
-                          className="w-8 h-8 flex-shrink-0 object-contain"
-                          style={{ mixBlendMode: "multiply" }}
-                        />
-                        <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item.text}</span>
-                      </div>
-                    ))}
+              {/* Buyers Pain Points */}
+              <div className="w-full lg:w-1/2 flex-shrink-0 bg-blue-50/20 p-6 sm:p-8 pt-10 lg:pt-20 transition-all duration-300 z-0">
+                <div className="flex items-start gap-4">
+                  {/* Left Side: Header Circle */}
+                  <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="/images/evolution/buyers-header.jpg"
+                      alt="Buyers"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Right Side: Header Title + Pain Points List */}
+                  <div className="flex flex-col gap-3.5 flex-grow">
+                    <h3 className="text-[17px] font-black text-brand-blue leading-none mt-1">Buyers</h3>
+                    <div className="flex flex-col gap-1">
+                      {[
+                        { text: "Too Many Suppliers", iconUrl: "/images/evolution/buyers-pain-point-people.png" },
+                        { text: "Difficult to Find the Right Seller", iconUrl: "/images/evolution/buyers-pain-point-target.png" },
+                        { text: "Wasted Time Searching", iconUrl: "/images/evolution/buyers-pain-point-clock.png" },
+                        { text: "Lower Trust", iconUrl: "/images/evolution/buyers-pain-point-shield.png" },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2.5">
+                          <img
+                            src={item.iconUrl}
+                            alt={item.text}
+                            className="w-8 h-8 flex-shrink-0 object-contain"
+                            style={{ mixBlendMode: "multiply" }}
+                          />
+                          <span className="text-xs sm:text-[13px] font-bold text-slate-500">{item.text}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </section>
 
         {/* SECTION 4: We Asked Different Questions */}
-        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 ">
-          <div className="text-center mb-8">
-            <h2 className="text-h2 text-brand-navy">
-              We Asked Different Questions
-            </h2>
-            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14">
+          <div className="w-full max-w-5xl mx-auto border border-slate-100/80 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white p-6 sm:p-8 md:p-10 relative">
+            
+            {/* Title at the top center of the card */}
+            <div className="text-center mb-8">
+              <h2 className="text-[20px] sm:text-[24px] font-black text-brand-navy">
+                We Asked Different Questions
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
+
+              {/* Card 01 */}
+              <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
+                <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
+                  01
+                </div>
+                <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+                  <img
+                    src="/images/evolution/question-eye.png"
+                    alt="Visibility"
+                    className="w-full h-full object-cover"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
+                  What if visibility was earned, not purchased?
+                </p>
+              </div>
+
+              {/* Card 02 */}
+              <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
+                <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
+                  02
+                </div>
+                <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+                  <img
+                    src="/images/evolution/question-rupee.png"
+                    alt="Marketing Costs"
+                    className="w-full h-full object-cover"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
+                  What if technology reduced marketing costs?
+                </p>
+              </div>
+
+              {/* Card 03 */}
+              <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
+                <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-blue-50 border border-blue-100 text-brand-blue font-extrabold text-[11px] flex items-center justify-center">
+                  03
+                </div>
+                <div className="w-24 h-24 rounded-full border border-blue-200 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+                  <img
+                    src="/images/evolution/question-ai.png"
+                    alt="AI Matching"
+                    className="w-full h-full object-cover"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
+                  What if AI matched buyers with the right sellers?
+                </p>
+              </div>
+
+              {/* Card 04 */}
+              <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
+                <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
+                  04
+                </div>
+                <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
+                  <img
+                    src="/images/evolution/question-shield.png"
+                    alt="Opportunity"
+                    className="w-full h-full object-cover"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
+                  What if every business had a fair opportunity to grow?
+                </p>
+              </div>
+
+            </div>
+
+            <p className="text-center text-slate-500 font-extrabold text-xs sm:text-[13.5px] tracking-wide mt-6">
+              These questions became the foundation of <span className="text-brand-green">OpenMarket</span>.
+            </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
-
-            {/* Card 01 */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
-              <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
-                01
-              </div>
-              <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
-                <img
-                  src="/images/evolution/question-eye.png"
-                  alt="Visibility"
-                  className="w-full h-full object-cover"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </div>
-              <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
-                What if visibility was earned, not purchased?
-              </p>
-            </div>
-
-            {/* Card 02 */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
-              <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
-                02
-              </div>
-              <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
-                <img
-                  src="/images/evolution/question-rupee.png"
-                  alt="Marketing Costs"
-                  className="w-full h-full object-cover"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </div>
-              <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
-                What if technology reduced marketing costs?
-              </p>
-            </div>
-
-            {/* Card 03 */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
-              <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-blue-50 border border-blue-100 text-brand-blue font-extrabold text-[11px] flex items-center justify-center">
-                03
-              </div>
-              <div className="w-24 h-24 rounded-full border border-blue-200 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
-                <img
-                  src="/images/evolution/question-ai.png"
-                  alt="AI Matching"
-                  className="w-full h-full object-cover"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </div>
-              <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
-                What if AI matched buyers with the right sellers?
-              </p>
-            </div>
-
-            {/* Card 04 */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-5 pt-8 shadow-sm text-center flex flex-col items-center relative">
-              <div className="absolute top-4 left-4 w-7 h-7 rounded-full bg-brand-light-green border border-brand-green/20 text-brand-green font-extrabold text-[11px] flex items-center justify-center">
-                04
-              </div>
-              <div className="w-24 h-24 rounded-full border border-brand-green/20 bg-white shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0 mb-4">
-                <img
-                  src="/images/evolution/question-shield.png"
-                  alt="Opportunity"
-                  className="w-full h-full object-cover"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </div>
-              <p className="text-[14px] font-bold text-slate-600 leading-relaxed max-w-[180px] mx-auto">
-                What if every business had a fair opportunity to grow?
-              </p>
-            </div>
-
-          </div>
-
-          <p className="text-center text-slate-500 font-extrabold text-xs sm:text-[13.5px] tracking-wide mt-6">
-            These questions became the foundation of <span className="text-brand-green">OpenMarket</span>.
-          </p>
         </section>
 
         {/* SECTION 5: The OpenMarket Model */}
         <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
-          <div className="text-center mb-8">
-            <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
-              THE NEXT GENERATION
-            </span>
-            <h2 className="text-h2 text-brand-navy">
-              The OpenMarket Model
-            </h2>
-            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-
-            {/* Model Card 1 */}
-            <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img
-                  src="/images/evolution/model-trophy.png"
-                  alt="Earn Visibility"
-                  className="w-full h-full object-cover scale-[1.5]"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </div>
-              <div className="flex flex-col mt-0.5">
-                <h4 className="text-[15px] font-black text-blue-500 mb-1.5">Earn Visibility</h4>
-                <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
-                  Visibility is earned through participation—not payment.
-                </p>
-
-              </div>
+          <div className="w-full max-w-5xl mx-auto border border-slate-100/80 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white p-6 sm:p-8 md:p-10 relative">
+            
+            {/* Title at the top center of the card */}
+            <div className="text-center mb-8">
+              <h2 className="text-[20px] sm:text-[24px] font-black text-brand-navy">
+                The OpenMarket Model
+              </h2>
             </div>
 
-            {/* Model Card 2 */}
-            <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img
-                  src="/images/evolution/model-profile.png"
-                  alt="Smart Matching"
-                  className="w-full h-full object-cover scale-[1.5]"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </div>
-              <div className="flex flex-col mt-0.5">
-                <h4 className="text-[15px] font-black text-brand-green mb-1.5">Smart Matching</h4>
-                <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
-                  AI matches buyers with the most appropriate sellers.
-                </p>
-              </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            {/* Model Card 3 */}
-            <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img
-                  src="/images/evolution/model-shield.png"
-                  alt="Build Trust"
-                  className="w-full h-full object-cover scale-[1.5]"
-                  style={{ mixBlendMode: "multiply" }}
-                />
+              {/* Model Card 1 */}
+              <div className="border border-slate-100 bg-blue-50/40 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
+                <div className="w-20 h-20 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img
+                    src="/images/evolution/model-trophy.png"
+                    alt="Earn Visibility"
+                    className="w-full h-full object-cover scale-[1.5]"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <div className="flex flex-col mt-0.5">
+                  <h4 className="text-[15px] font-black text-blue-500 mb-1.5">Earn Visibility</h4>
+                  <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
+                    Visibility is earned through participation—not payment.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col mt-0.5">
-                <h4 className="text-[15px] font-black text-amber-600 mb-1.5">Build Trust</h4>
-                <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
-                  Reward businesses that are active, transparent and responsive.
-                </p>
-              </div>
-            </div>
 
-            {/* Model Card 4 */}
-            <div className="border border-slate-150 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                <img
-                  src="/images/evolution/model-growth.png"
-                  alt="Grow Together"
-                  className="w-full h-full object-cover scale-[1.5]"
-                  style={{ mixBlendMode: "multiply" }}
-                />
+              {/* Model Card 2 */}
+              <div className="border border-slate-100 bg-green-50/40 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
+                <div className="w-20 h-20 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img
+                    src="/images/evolution/model-profile.png"
+                    alt="Smart Matching"
+                    className="w-full h-full object-cover scale-[1.5]"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <div className="flex flex-col mt-0.5">
+                  <h4 className="text-[15px] font-black text-brand-green mb-1.5">Smart Matching</h4>
+                  <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
+                    AI matches buyers with the most appropriate sellers.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col mt-0.5">
-                <h4 className="text-[15px] font-black text-purple-600 mb-1.5">Grow Together</h4>
-                <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
-                  A stronger marketplace benefits buyers, sellers and the entire ecosystem.
-                </p>
-              </div>
-            </div>
 
+              {/* Model Card 3 */}
+              <div className="border border-slate-100 bg-orange-50/40 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
+                <div className="w-20 h-20 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img
+                    src="/images/evolution/model-shield.png"
+                    alt="Build Trust"
+                    className="w-full h-full object-cover scale-[1.5]"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <div className="flex flex-col mt-0.5">
+                  <h4 className="text-[15px] font-black text-amber-600 mb-1.5">Build Trust</h4>
+                  <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
+                    Reward businesses that are active, transparent and responsive.
+                  </p>
+                </div>
+              </div>
+
+              {/* Model Card 4 */}
+              <div className="border border-slate-100 bg-purple-50/40 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow text-left flex items-start gap-4">
+                <div className="w-20 h-20 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img
+                    src="/images/evolution/model-growth.png"
+                    alt="Grow Together"
+                    className="w-full h-full object-cover scale-[1.5]"
+                    style={{ mixBlendMode: "multiply" }}
+                  />
+                </div>
+                <div className="flex flex-col mt-0.5">
+                  <h4 className="text-[15px] font-black text-purple-600 mb-1.5">Grow Together</h4>
+                  <p className="text-[12.5px] font-bold text-slate-500 leading-relaxed">
+                    A stronger marketplace benefits buyers, sellers and the entire ecosystem.
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -550,236 +552,236 @@ export default function MarketplaceEvolution() {
         </section>
 
         {/* SECTION 7: Everyone Wins */}
-        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 mt-4 ">
-          <div className="text-center mb-8">
-            <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
-              MUTUAL VALUE
-            </span>
-            <h2 className="text-h2 text-brand-navy">
-              Everyone Wins
-            </h2>
-            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
-
-            {/* Sellers Grid */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                  <img
-                    src="/images/evolution/win-sellers.png"
-                    alt="Sellers"
-                    className="w-full h-full object-cover"
-                    style={{ mixBlendMode: "multiply" }}
-                  />
-                </div>
-                <h4 className="text-sm font-black text-brand-navy uppercase tracking-wider">Sellers</h4>
-              </div>
-              <div className="flex flex-col gap-2.5">
-                {[
-                  "Better ROI",
-                  "Lower Marketing Costs",
-                  "Better Business Opportunities",
-                  "Fair Visibility",
-                  "Sustainable Growth",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-[13px] font-bold text-slate-500">
-                    <FiCheckCircle className="text-brand-green" size={16} />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+        <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 mt-4">
+          <div className="w-full max-w-5xl mx-auto border border-slate-100/80 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 bg-white p-6 sm:p-8 md:p-10 relative">
+            
+            {/* Title at the top center of the card */}
+            <div className="text-center mb-8">
+              <h2 className="text-[20px] sm:text-[24px] font-black text-brand-navy">
+                Everyone Wins
+              </h2>
             </div>
 
-            {/* Buyers Grid */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                  <img
-                    src="/images/evolution/win-buyers.png"
-                    alt="Buyers"
-                    className="w-full h-full object-cover"
-                    style={{ mixBlendMode: "multiply" }}
-                  />
-                </div>
-                <h4 className="text-sm font-black text-brand-navy uppercase tracking-wider">Buyers</h4>
-              </div>
-              <div className="flex flex-col gap-2.5">
-                {[
-                  "Find the Right Supplier Faster",
-                  "Better Buyer-Seller Matching",
-                  "Trusted Businesses",
-                  "Save Time",
-                  "Better Business Relationships",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-[13px] font-bold text-slate-500">
-                    <FiCheckCircle className="text-brand-green" size={16} />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
 
-            {/* Marketplace Grid */}
-            <div className="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-20 h-20 rounded-full bg-[#f4faf6] border border-brand-green/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                  <img
-                    src="/images/evolution/win-marketplace.png"
-                    alt="Marketplace"
-                    className="w-full h-full object-contain scale-[0.7]"
-                    style={{ mixBlendMode: "multiply" }}
-                  />
-                </div>
-                <h4 className="text-sm font-black text-brand-navy uppercase tracking-wider">Marketplace</h4>
-              </div>
-              <div className="flex flex-col gap-2.5">
-                {[
-                  "Rewards Participation",
-                  "Builds Trust",
-                  "Improves Buyer-Seller Matching",
-                  "Creates Sustainable Growth",
-                  "Fair Opportunities for Every Business",
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-[13px] font-bold text-slate-500">
-                    <FiCheckCircle className="text-brand-green" size={16} />
-                    <span>{item}</span>
+              {/* Sellers Grid */}
+              <div className="bg-red-50/30 border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="/images/evolution/win-sellers.png"
+                      alt="Sellers"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
                   </div>
-                ))}
+                  <h4 className="text-sm font-black text-brand-navy uppercase tracking-wider">Sellers</h4>
+                </div>
+                <div className="flex flex-col gap-2.5">
+                  {[
+                    "Better ROI",
+                    "Lower Marketing Costs",
+                    "Better Business Opportunities",
+                    "Fair Visibility",
+                    "Sustainable Growth",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-[13px] font-bold text-slate-500">
+                      <FiCheckCircle className="text-red-500" size={16} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
+              {/* Buyers Grid */}
+              <div className="bg-blue-50/20 border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+                    <img
+                      src="/images/evolution/win-buyers.png"
+                      alt="Buyers"
+                      className="w-full h-full object-cover"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
+                  </div>
+                  <h4 className="text-sm font-black text-brand-navy uppercase tracking-wider">Buyers</h4>
+                </div>
+                <div className="flex flex-col gap-2.5">
+                  {[
+                    "Find the Right Supplier Faster",
+                    "Better Buyer-Seller Matching",
+                    "Trusted Businesses",
+                    "Save Time",
+                    "Better Business Relationships",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-[13px] font-bold text-slate-500">
+                      <FiCheckCircle className="text-brand-blue" size={16} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Marketplace Grid */}
+              <div className="bg-green-50/30 border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-20 h-20 rounded-full bg-white border border-slate-100/50 flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+                    <img
+                      src="/images/evolution/win-marketplace.png"
+                      alt="Marketplace"
+                      className="w-full h-full object-contain scale-[0.7]"
+                      style={{ mixBlendMode: "multiply" }}
+                    />
+                  </div>
+                  <h4 className="text-sm font-black text-brand-navy uppercase tracking-wider">Marketplace</h4>
+                </div>
+                <div className="flex flex-col gap-2.5">
+                  {[
+                    "Rewards Participation",
+                    "Builds Trust",
+                    "Improves Buyer-Seller Matching",
+                    "Creates Sustainable Growth",
+                    "Fair Opportunities for Every Business",
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-[13px] font-bold text-slate-500">
+                      <FiCheckCircle className="text-brand-green" size={16} />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
         {/* SECTION 8: The Difference */}
         <section className="max-w-7xl mx-auto px-6 py-10 md:py-14 border-t border-slate-100">
-          <div className="text-center mb-8">
-            <span className="text-xs font-black text-brand-green tracking-widest uppercase block mb-1">
-              COMPARISON
-            </span>
-            <h2 className="text-h2 text-brand-navy">
-              The Difference
-            </h2>
-            <div className="h-[2px] w-8 bg-brand-green mx-auto mt-2" />
-          </div>
+          <div className="w-full max-w-5xl mx-auto border border-slate-100/80 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden relative bg-white">
+            
+            {/* The Difference Heading inside the card */}
+            <div className="absolute top-6 left-0 right-0 z-20 text-center pointer-events-none">
+              <h2 className="text-[20px] sm:text-[24px] font-black text-brand-navy">
+                The Difference
+              </h2>
+            </div>
 
-          <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 lg:gap-0 relative w-full max-w-5xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-stretch justify-center relative w-full">
 
-            {/* Traditional Marketplace Flow */}
-            <div className="w-full lg:w-1/2 flex-shrink-0 bg-red-50/30 rounded-[24px] lg:rounded-r-none p-6 shadow-sm flex flex-col justify-between items-center text-center z-0">
-              <span className="text-[10px] font-black text-red-500 tracking-widest uppercase block mb-3">Traditional Marketplace</span>
+              {/* Traditional Marketplace Flow */}
+              <div className="w-full lg:w-1/2 flex-shrink-0 bg-red-50/30 p-6 pt-16 sm:pt-20 lg:pt-20 lg:border-r lg:border-slate-200/50 flex flex-col justify-between items-center text-center transition-all duration-300 z-0">
+                <span className="text-[10px] font-black text-red-500 tracking-widest uppercase block mb-3">Traditional Marketplace</span>
 
-              <div className="flex items-center justify-center gap-4 py-4 w-full">
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/trad-pay.png"
-                      alt="Pay"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                <div className="flex items-center justify-center gap-4 py-4 w-full">
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/trad-pay.png"
+                        alt="Pay"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Pay</span>
                   </div>
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Pay</span>
-                </div>
 
-                <FaArrowRight size={12} className="text-red-500 flex-shrink-0" />
+                  <FaArrowRight size={12} className="text-red-500 flex-shrink-0" />
 
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/trad-visibility.png"
-                      alt="Get Visibility"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/trad-visibility.png"
+                        alt="Get Visibility"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Get Visibility</span>
                   </div>
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Get Visibility</span>
-                </div>
 
-                <FaArrowRight size={12} className="text-red-500 flex-shrink-0" />
+                  <FaArrowRight size={12} className="text-red-500 flex-shrink-0" />
 
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/trad-enquiries.png"
-                      alt="Get Enquiries"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/trad-enquiries.png"
+                        alt="Get Enquiries"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Get Enquiries</span>
                   </div>
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Get Enquiries</span>
                 </div>
               </div>
-            </div>
 
-            {/* VS Circle */}
-            <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-2 lg:my-0">
-              VS
-            </div>
+              {/* VS Circle */}
+              <div className="w-10 h-10 rounded-full bg-slate-100 border border-slate-200 text-slate-400 font-extrabold text-[12px] flex items-center justify-center shadow-inner self-center flex-shrink-0 z-10 lg:-mx-5 my-4 lg:my-0">
+                VS
+              </div>
 
-            {/* OpenMarket Flow */}
-            <div className="w-full lg:w-1/2 flex-shrink-0 bg-brand-light-green/20 rounded-[24px] lg:rounded-l-none p-6 shadow-sm flex flex-col justify-between items-center text-center z-0 lg:-ml-[1px]">
-              <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-3">OpenMarket</span>
+              {/* OpenMarket Flow */}
+              <div className="w-full lg:w-1/2 flex-shrink-0 bg-brand-light-green/20 p-6 pt-10 lg:pt-20 flex flex-col justify-between items-center text-center transition-all duration-300 z-0">
+                <span className="text-[10px] font-black text-brand-green tracking-widest uppercase block mb-3">OpenMarket</span>
 
-              <div className="flex items-center justify-center gap-4 py-4 w-full">
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/open-create-value.jpg"
-                      alt="Create Value"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                <div className="flex items-center justify-center gap-4 py-4 w-full">
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/open-create-value.jpg"
+                        alt="Create Value"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Create Value</span>
                   </div>
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Create Value</span>
-                </div>
 
-                <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
+                  <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
 
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/open-earn-visibility.jpg"
-                      alt="Earn Visibility"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/open-earn-visibility.jpg"
+                        alt="Earn Visibility"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Earn Visibility</span>
                   </div>
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Earn Visibility</span>
-                </div>
 
-                <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
+                  <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
 
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/open-better-matching.jpg"
-                      alt="Better Matching"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/open-better-matching.jpg"
+                        alt="Better Matching"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Better Matching</span>
                   </div>
-                  <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Better Matching</span>
-                </div>
 
-                <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
+                  <FaArrowRight size={12} className="text-brand-green flex-shrink-0" />
 
-                <div className="flex flex-col items-center gap-1.5">
-                  <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src="/images/evolution/open-better-business.jpg"
-                      alt="Better Business"
-                      className="w-full h-full object-cover"
-                      style={{ mixBlendMode: "multiply" }}
-                    />
+                  <div className="flex flex-col items-center gap-1.5">
+                    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <img
+                        src="/images/evolution/open-better-business.jpg"
+                        alt="Better Business"
+                        className="w-full h-full object-cover"
+                        style={{ mixBlendMode: "multiply" }}
+                      />
+                    </div>
+                    <span className="text-[8px] font-black text-brand-green uppercase tracking-wider">Better Business</span>
                   </div>
-                  <span className="text-[8px] font-black text-brand-green uppercase tracking-wider">Better Business</span>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </section>
 
