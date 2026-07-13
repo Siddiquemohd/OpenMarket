@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "../globals.css";
 import {
   FaCheck,
@@ -557,32 +558,32 @@ export default function HowItWorks() {
             {/* Upper half: Grid layout for Sellers & Buyers side-by-side */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 items-center">
 
-              {/* Left Column: Sellers Benefits with Horizontal Icons */}
-              <div className="flex flex-col gap-6 text-center lg:text-left">
-                <div className="flex flex-col items-center lg:items-start gap-1">
-                  <span className="text-[10px] font-black text-brand-blue tracking-widest uppercase">
-                    GROW YOUR ACCESS
-                  </span>
-                  <h3 className="text-h3 text-brand-navy uppercase tracking-wider">
-                    Benefits for Sellers
-                  </h3>
-                  <div className="h-[2px] w-8 bg-brand-blue mt-1" />
-                </div>
-
+              {/* Left Column: Sellers Benefits Panel */}
+              <div className="bg-[#f4f8fc]/90 border border-blue-100/50 rounded-3xl p-4 sm:py-6 sm:px-3 flex flex-col gap-6 text-center">
+                <h4 className="text-[15px] font-black text-brand-blue tracking-wide text-center">
+                  Benefits for Sellers
+                </h4>
+                
                 {/* Horizontal row of 5 Seller benefits */}
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-6 sm:gap-y-0 sm:divide-x divide-blue-200/50">
                   {[
-                    { text: "Earn visibility fairly", icon: <FiEye size={20} /> },
-                    { text: "Reach relevant buyers", icon: <FaUsers size={20} /> },
-                    { text: "Build trust with profiles", icon: <FiShield size={20} /> },
-                    { text: "Grow your business", icon: <FiTrendingUp size={20} /> },
-                    { text: "Direct connections", icon: <FiLink size={20} /> },
+                    { text: "Earn visibility fairly", icon: "/images/why-openmarket/seller-benefit-visibility.png" },
+                    { text: "Reach relevant buyers", icon: "/images/why-openmarket/seller-benefit-buyers.png" },
+                    { text: "Build trust with complete profiles", icon: "/images/why-openmarket/seller-benefit-trust.png" },
+                    { text: "Grow your business", icon: "/images/why-openmarket/seller-benefit-growth.png" },
+                    { text: "Direct business connections", icon: "/images/why-openmarket/seller-benefit-connections.png" },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex flex-col items-center text-center gap-2.5 p-2 rounded-xl bg-white border border-slate-100 hover:scale-102 transition-transform shadow-[0_1px_4px_rgba(0,0,0,0.01)]">
-                      <div className="w-12 h-12 rounded-full bg-[#f4f8fc] border border-brand-blue/15 text-brand-blue flex items-center justify-center flex-shrink-0 shadow-sm">
-                        {item.icon}
+                    <div key={idx} className="flex flex-col items-center text-center gap-3 px-1 sm:px-2 hover:scale-102 transition-transform">
+                      <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                        <Image
+                          src={item.icon}
+                          alt={item.text}
+                          width={48}
+                          height={48}
+                          className="w-12 h-12 object-contain"
+                        />
                       </div>
-                      <span className="text-[11.5px] font-bold text-slate-500 leading-snug">
+                      <span className="text-[10.5px] font-bold text-brand-navy leading-tight max-w-[110px] sm:max-w-[80px] mx-auto">
                         {item.text}
                       </span>
                     </div>
@@ -605,32 +606,38 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              {/* Right Column: Buyers Benefits with Horizontal Icons */}
-              <div className="flex flex-col gap-6 text-center lg:text-left">
-                <div className="flex flex-col items-center lg:items-start gap-1">
-                  <span className="text-[10px] font-black text-brand-green tracking-widest uppercase">
-                    SIMPLIFIED SOURCING
-                  </span>
-                  <h3 className="text-h3 text-brand-navy uppercase tracking-wider">
-                    Benefits for Buyers
-                  </h3>
-                  <div className="h-[2px] w-8 bg-brand-green mt-1" />
-                </div>
-
+              {/* Right Column: Buyers Benefits Panel */}
+              <div className="bg-[#f4faf6]/90 border border-emerald-100/50 rounded-3xl p-4 sm:py-6 sm:px-3 flex flex-col gap-6 text-center">
+                <h4 className="text-[15px] font-black text-[#087f45] tracking-wide text-center">
+                  Benefits for Buyers
+                </h4>
+                
                 {/* Horizontal row of 5 Buyer benefits */}
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-5 gap-y-6 sm:gap-y-0 sm:divide-x divide-emerald-200/50">
                   {[
-                    { text: "Find suppliers faster", icon: <FiSearch size={20} /> },
-                    { text: "AI matching tool", icon: <FiCpu size={20} /> },
-                    { text: "Work with active sellers", icon: <FiUserCheck size={20} /> },
-                    { text: "Direct communications", icon: <FiMessageSquare size={20} /> },
-                    { text: "Trusted transactions", icon: <FiLock size={20} /> },
+                    { text: "Find relevant suppliers", icon: "search" },
+                    { text: "AI-powered search & recommendations", icon: "/images/why-openmarket/buyer-benefit-ai.png" },
+                    { text: "Access verified information", icon: "/images/why-openmarket/buyer-benefit-trust.png" },
+                    { text: "Save time in supplier search", icon: "/images/why-openmarket/buyer-benefit-speed.png" },
+                    { text: "Connect with genuine businesses", icon: "/images/why-openmarket/buyer-benefit-sellers.png" },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex flex-col items-center text-center gap-2.5 p-2 rounded-xl bg-white border border-slate-100 hover:scale-102 transition-transform shadow-[0_1px_4px_rgba(0,0,0,0.01)]">
-                      <div className="w-12 h-12 rounded-full bg-[#f4faf6] border border-brand-green/15 text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
-                        {item.icon}
+                    <div key={idx} className="flex flex-col items-center text-center gap-3 px-1 sm:px-2 hover:scale-102 transition-transform">
+                      <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                        {item.icon === "search" ? (
+                          <div className="w-12 h-12 rounded-full bg-white border border-brand-green/15 text-brand-green flex items-center justify-center flex-shrink-0 shadow-sm">
+                            <FiSearch size={20} />
+                          </div>
+                        ) : (
+                          <Image
+                            src={item.icon}
+                            alt={item.text}
+                            width={48}
+                            height={48}
+                            className="w-12 h-12 object-contain"
+                          />
+                        )}
                       </div>
-                      <span className="text-[11.5px] font-bold text-slate-500 leading-snug">
+                      <span className="text-[10.5px] font-bold text-brand-navy leading-tight max-w-[110px] sm:max-w-[80px] mx-auto">
                         {item.text}
                       </span>
                     </div>
